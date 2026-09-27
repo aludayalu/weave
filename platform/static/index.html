@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>weave &middot; your team's history, turned into a model</title>
+<meta name="description" content="Point weave at a GitHub repo and a Discord export. It finds the stretches of work that were a task, builds a dataset, and serves you a model that knows how your team ships.">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="/">weave<span>.</span></a>
+    <nav class="nav">
+      <a href="#how">How it works</a>
+      <a href="#api">API</a>
+      <a href="/app">Sign in</a>
+      <a class="btn btn-primary btn-sm" href="/app">Get started</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <p class="eyebrow">Trajectory models</p>
+    <h1>Your team's history,<br>turned into a model.</h1>
+    <p class="lede">
+      Point weave at a GitHub repo and a Discord export. It finds the stretches of
+      work that were actually a task, builds a dataset from them, and serves you a
+      model that knows how your team ships.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="/app">Start free</a>
+      <a class="btn btn-ghost" href="#how">See how it works</a>
+    </div>
+    <p class="dim" style="margin-top:20px;font-size:0.875rem">
+      25 credits to start. No card.
+    </p>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="container">
+    <div class="center" style="margin-bottom:56px">
+      <p class="eyebrow">The pipeline</p>
+      <h2>Three steps, no magic</h2>
+      <p class="lede center" style="margin:16px auto 0">
+        A model proposes where each task started and ended. Static code checks every
+        proposal against the source before a single byte reaches your dataset.
+      </p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card">
+        <span class="step-num">1</span>
+        <h3>Connect</h3>
+        <p>
+          A public GitHub repo, or upload a Discord export. weave reads commits,
+          pull requests and messages, and links them into a single timeline.
+        </p>
+      </div>
+      <div class="card">
+        <span class="step-num">2</span>
+        <h3>Detect</h3>
+        <p>
+          A model proposes task windows. Each one is validated against the records
+          it claims to cover, and scored against a deterministic baseline. If the
+          model does not beat the baseline, the baseline wins.
+        </p>
+      </div>
+      <div class="card">
+        <span class="step-num">3</span>
+        <h3>Serve</h3>
+        <p>
+          You get an OpenAI compatible endpoint. Point an existing client at it,
+          mint a key, and keep working. Every call is metered and logged.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="api">
+  <div class="container narrow center">
+    <p class="eyebrow">API</p>
+    <h2>Drop-in compatible</h2>
+    <p class="lede center" style="margin:16px auto 32px">
+      One endpoint, the shape you already know. Nothing to learn.
+    </p>
+    <div class="card" style="text-align:left;background:var(--bg)">
+      <pre class="mono" style="margin:0;overflow-x:auto;color:var(--muted);line-height:1.7">curl https://your-app.databricksapps.com/v1/chat/completions \
+  -H "Authorization: Bearer $WEAVE_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"weave","messages":[{"role":"user","content":"how do we cut a release?"}]}'</pre>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container center">
+    <h2>Ready?</h2>
+    <p class="lede center" style="margin:16px auto 32px">
+      Twenty five credits on signup. Connect one repo and see what it finds.
+    </p>
+    <a class="btn btn-primary" href="/app">Create your account</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>weave.</span>
+    <span>Built on Databricks</span>
+  </div>
+</footer>
+
+</body>
+</html>

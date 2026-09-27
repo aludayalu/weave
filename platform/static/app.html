@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard &middot; weave</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="/">weave<span>.</span></a>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/docs">API</a>
+    </nav>
+  </div>
+</header>
+
+<div class="app-bar">
+  <div class="container">
+    <div class="app-user">
+      <strong id="who">Loading</strong>
+      <span class="credits" id="credits">&mdash;</span>
+    </div>
+    <div class="app-user">
+      <button class="btn btn-ghost btn-sm" id="logout">Sign out</button>
+    </div>
+  </div>
+</div>
+
+<main class="container section-tight" id="main" hidden>
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-view="overview" role="tab">Overview</button>
+    <button class="tab" data-view="sources" role="tab">Sources</button>
+    <button class="tab" data-view="models" role="tab">Models</button>
+    <button class="tab" data-view="usage" role="tab">Usage</button>
+    <button class="tab" data-view="keys" role="tab">API keys</button>
+  </div>
+
+  <!-- ------------------------------------------------------- overview -->
+  <section data-panel="overview">
+    <div class="metrics" style="margin-bottom:32px">
+      <div class="metric"><div class="label">Credits left</div><div class="value" id="m-credits">&mdash;</div><div class="sub" id="m-spent"></div></div>
+      <div class="metric"><div class="label">Records</div><div class="value" id="m-records">&mdash;</div><div class="sub">across all sources</div></div>
+      <div class="metric"><div class="label">Models</div><div class="value" id="m-models">&mdash;</div><div class="sub">latest version</div></div>
+      <div class="metric"><div class="label">API calls</div><div class="value" id="m-calls">&mdash;</div><div class="sub" id="m-tokens"></div></div>
+    </div>
+
+    <div class="panel-head">
+      <h2>Recent runs</h2>
+      <a class="btn btn-ghost btn-sm" href="#" data-goto="sources">Connect a source</a>
+    </div>
+    <div id="runs"></div>
+  </section>
+
+  <!-- -------------------------------------------------------- sources -->
+  <section data-panel="sources" hidden>
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Add a GitHub repository</h3>
+        <p style="margin:10px 0 22px;font-size:0.9rem">
+          Public repos need no token. Private ones need a read-only token, used once
+          and never stored.
+        </p>
+        <div class="form-error" id="gh-error" hidden></div>
+        <form id="gh-form">
+          <div class="field">
+            <label for="repo">Repository</label>
+            <input id="repo" type="text" placeholder="https://github.com/owner/repo" required>
+          </div>
+          <div class="field">
+            <label for="gh-token">Access token <span class="dim">(optional)</span></label>
+            <input id="gh-token" type="password" placeholder="ghp_..." autocomplete="off">
+          </div>
+          <button class="btn btn-primary" type="submit" id="gh-submit">Import repository</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Upload a Discord export</h3>
+        <p style="margin:10px 0 22px;font-size:0.9rem">
+          A zip of per channel json files, one channel json, or the folder the
+          <span class="mono">weave</span> bot writes. Messages, authors,
+          timestamps and attachment names are all kept.
+        </p>
+        <div class="form-error" id="dc-error" hidden></div>
+        <form id="dc-form">
+          <div class="field">
+            <label for="dc-guild">Server name <span class="dim">(optional)</span></label>
+            <input id="dc-guild" type="text" placeholder="Heketon">
+          </div>
+          <div class="field">
+            <label for="dc-file">Export</label>
+            <input id="dc-file" type="file" accept=".zip,.json" required>
+          </div>
+          <button class="btn btn-primary" type="submit" id="dc-submit">Import messages</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="grid grid-2" style="margin-top:24px">
+      <div class="card card-wide">
+        <h3>How the pipeline runs</h3>
+        <p style="margin:18px 0 0;font-size:0.9rem">
+          Importing collects commits, pull requests and messages into a single
+          timeline. Then run the pipeline, which cleans that into silver, asks a
+          model where each task window began and ended, validates every window
+          against the records it claims, and slices the result into a training
+          dataset. It is scored against a deterministic baseline, and the baseline
+          wins ties.
+        </p>
+        <p style="margin:14px 0 0;font-size:0.9rem">
+          A run takes a few minutes. You can close this page.
+        </p>
+      </div>
+    </div>
+
+    <div class="panel-head" style="margin-top:44px">
+      <h2>Your sources</h2>
+    </div>
+    <div id="sources"></div>
+  </section>
+
+  <!-- --------------------------------------------------------- models -->
+  <section data-panel="models" hidden>
+    <div class="panel-head"><h2>Model versions</h2></div>
+    <div id="models"></div>
+  </section>
+
+  <!-- ---------------------------------------------------------- usage -->
+  <section data-panel="usage" hidden>
+    <div class="metrics" style="margin-bottom:32px">
+      <div class="metric"><div class="label">Credits spent</div><div class="value" id="u-credits">&mdash;</div><div class="sub">on inference</div></div>
+      <div class="metric"><div class="label">Calls</div><div class="value" id="u-calls">&mdash;</div><div class="sub">all time</div></div>
+      <div class="metric"><div class="label">Prompt tokens</div><div class="value" id="u-prompt">&mdash;</div><div class="sub">billed</div></div>
+      <div class="metric"><div class="label">Completion tokens</div><div class="value" id="u-completion">&mdash;</div><div class="sub">billed</div></div>
+    </div>
+    <div class="panel-head"><h2>Recent requests</h2></div>
+    <div id="usage"></div>
+  </section>
+
+  <!-- ----------------------------------------------------------- keys -->
+  <section data-panel="keys" hidden>
+    <div class="panel-head"><h2>API keys</h2></div>
+    <div class="notice">
+      <strong>A key is shown once.</strong> Copy it now. If you lose it, make a new one.
+    </div>
+    <div class="card" style="margin-bottom:24px">
+      <div class="field" style="margin-bottom:14px">
+        <label for="key-name">Name</label>
+        <input id="key-name" type="text" placeholder="laptop, ci, teammate" value="default">
+      </div>
+      <button class="btn btn-primary" id="make-key">Create key</button>
+    </div>
+    <div class="form-error" id="key-error" hidden></div>
+    <div class="copy-row" id="key-new" hidden style="margin-bottom:24px">
+      <input id="key-value" readonly>
+      <button class="btn btn-ghost" id="copy-key">Copy</button>
+    </div>
+    <div id="keys"></div>
+  </section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const state = { user: null, sources: [], runs: [], models: [], wallet: null, usage: null, keys: [] };
+
+async function api(path, options) {
+  const response = await fetch(path, options);
+  if (response.status === 401) { window.location.href = '/auth'; throw new Error('signed out'); }
+  const data = await response.json().catch(() => ({}));
+  if (!response.ok) throw new Error(data.detail || 'Request failed');
+  return data;
+}
+
+function esc(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (c) =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+function when(seconds) {
+  if (!seconds) return 'never';
+  const delta = Date.now() / 1000 - seconds;
+  if (delta < 60) return 'just now';
+  if (delta < 3600) return `${Math.floor(delta / 60)}m ago`;
+  if (delta < 86400) return `${Math.floor(delta / 3600)}h ago`;
+  return `${Math.floor(delta / 86400)}d ago`;
+}
+
+function num(value) {
+  return (value ?? 0).toLocaleString();
+}
+
+function badge(status) {
+  const map = {
+    succeeded: 'badge-ok', ready: 'badge-ok', ok: 'badge-ok',
+    running: 'badge-run', queued: 'badge-run', pending: 'badge-run',
+    failed: 'badge-bad', error: 'badge-bad',
+  };
+  return `<span class="badge ${map[status] || 'badge-idle'}">${esc(status || 'unknown')}</span>`;
+}
+
+function empty(message) {
+  return `<div class="empty">${esc(message)}</div>`;
+}
+
+// ------------------------------------------------------------- rendering
+function render() {
+  const records = state.sources.reduce((total, s) => total + (s.records || 0), 0);
+  const latest = state.models[0];
+
+  $('who').textContent = state.user.name || state.user.email;
+  $('credits').textContent = `${num(state.wallet.credits)} credits`;
+  $('m-credits').textContent = num(state.wallet.credits);
+  $('m-spent').textContent = `${num(state.wallet.spent)} spent`;
+  $('m-records').textContent = num(records);
+  $('m-models').textContent = latest ? `v${latest.version}` : '0';
+  $('m-calls').textContent = num(state.usage.totals.calls);
+  $('m-tokens').textContent = `${num(state.usage.totals.completion_tokens)} completion tokens`;
+
+  $('runs').innerHTML = state.runs.length ? `<div class="card" style="padding:8px 20px">
+      <table class="table">
+        <thead><tr><th>Run</th><th>Status</th><th>Stage</th><th>Started</th></tr></thead>
+        <tbody>${state.runs.map((r) => `<tr>
+          <td class="mono">${esc(r.id)}</td>
+          <td>${badge(r.status)}</td>
+          <td class="muted">${esc(r.stage || '—')}</td>
+          <td class="muted">${when(r.started_at)}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>`
+    : empty('No runs yet. Connect a source, then start one.');
+
+  $('sources').innerHTML = state.sources.length ? `<div class="row-list">${
+    state.sources.map((s) => `<div class="row-item">
+      <div class="main">
+        <div class="title">${esc(s.name)}</div>
+        <div class="meta">${num(s.records)} records &middot; synced ${when(s.last_synced_at)}</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        ${badge(s.status)}
+        <button class="btn btn-primary btn-sm" data-run="${esc(s.pair_id || s.id)}">Run pipeline</button>
+      </div>
+    </div>`).join('')}</div>`
+    : empty('No sources yet. Add a repository above.');
+
+  $('models').innerHTML = state.models.length ? `<div class="card" style="padding:8px 20px">
+      <table class="table">
+        <thead><tr><th>Version</th><th>Name</th><th>Status</th><th>Base</th><th>Created</th></tr></thead>
+        <tbody>${state.models.map((m) => `<tr>
+          <td class="num">v${m.version}</td>
+          <td class="mono">${esc(m.name)}</td>
+          <td>${badge(m.status)}</td>
+          <td class="muted">${esc(m.base_model || '—')}</td>
+          <td class="muted">${when(m.created_at)}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>`
+    : empty('No models yet. Run the pipeline on a connected source.');
+
+  const t = state.usage.totals;
+  $('u-credits').textContent = num(t.credits);
+  $('u-calls').textContent = num(t.calls);
+  $('u-prompt').textContent = num(t.prompt_tokens);
+  $('u-completion').textContent = num(t.completion_tokens);
+  $('usage').innerHTML = state.usage.log.length ? `<div class="card" style="padding:8px 20px">
+      <table class="table">
+        <thead><tr><th>When</th><th>Model</th><th class="num">Prompt</th><th class="num">Completion</th><th class="num">Credits</th><th>Status</th></tr></thead>
+        <tbody>${state.usage.log.map((r) => `<tr>
+          <td class="muted">${when(r.at)}</td>
+          <td class="mono">${esc(r.model_id || '—')}</td>
+          <td class="num">${num(r.prompt_tokens)}</td>
+          <td class="num">${num(r.completion_tokens)}</td>
+          <td class="num">${num(r.credits)}</td>
+          <td>${badge(r.status)}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>`
+    : empty('No requests yet. Mint a key and call the endpoint.');
+
+  $('keys').innerHTML = state.keys.length ? `<div class="card" style="padding:8px 20px">
+      <table class="table">
+        <thead><tr><th>Name</th><th>Key</th><th>Created</th><th>Status</th></tr></thead>
+        <tbody>${state.keys.map((k) => `<tr>
+          <td>${esc(k.name || 'default')}</td>
+          <td class="mono dim">${esc(k.prefix || '')}…</td>
+          <td class="muted">${when(k.created_at)}</td>
+          <td>${k.revoked ? badge('revoked') : badge('active')}</td>
+        </tr>`).join('')}</tbody>
+      </table></div>`
+    : empty('No keys yet.');
+}
+
+// ------------------------------------------------------------- behaviour
+function show(view) {
+  document.querySelectorAll('[data-panel]').forEach((el) => { el.hidden = el.dataset.panel !== view; });
+  document.querySelectorAll('.tab').forEach((el) => el.classList.toggle('active', el.dataset.view === view));
+  window.scrollTo({ top: 0 });
+}
+
+document.querySelectorAll('.tab').forEach((tab) => {
+  tab.addEventListener('click', () => show(tab.dataset.view));
+});
+document.querySelectorAll('[data-goto]').forEach((link) => {
+  link.addEventListener('click', (e) => { e.preventDefault(); show(link.dataset.goto); });
+});
+
+$('gh-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const error = $('gh-error');
+  error.hidden = true;
+  $('gh-submit').disabled = true;
+  $('gh-submit').textContent = 'Importing...';
+  try {
+    await api('/api/sources/github', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ repo_url: $('repo').value.trim(), token: $('gh-token').value }),
+    });
+    $('repo').value = '';
+    $('gh-token').value = '';
+    await load();
+  } catch (failure) {
+    error.textContent = failure.message;
+    error.hidden = false;
+  } finally {
+    $('gh-submit').disabled = false;
+    $('gh-submit').textContent = 'Import repository';
+  }
+});
+
+$('dc-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const error = $('dc-error');
+  error.hidden = true;
+  const file = $('dc-file').files[0];
+  if (!file) { error.textContent = 'Choose a file first.'; error.hidden = false; return; }
+  $('dc-submit').disabled = true;
+  $('dc-submit').textContent = 'Importing...';
+  try {
+    const body = new FormData();
+    body.append('file', file);
+    body.append('guild_name', $('dc-guild').value.trim());
+    const data = await api('/api/sources/discord', { method: 'POST', body });
+    $('dc-file').value = '';
+    $('dc-guild').value = '';
+    await load();
+    error.textContent = `Imported ${data.ingested.messages.toLocaleString()} messages `
+      + `from ${data.ingested.channels} channel(s).`;
+    error.style.color = 'var(--ok)';
+    error.style.background = 'rgba(139,191,90,0.1)';
+    error.style.borderColor = 'rgba(139,191,90,0.35)';
+    error.hidden = false;
+  } catch (failure) {
+    error.textContent = failure.message;
+    error.style.color = '';
+    error.style.background = '';
+    error.style.borderColor = '';
+    error.hidden = false;
+  } finally {
+    $('dc-submit').disabled = false;
+    $('dc-submit').textContent = 'Import messages';
+  }
+});
+
+document.addEventListener('click', async (event) => {
+  const button = event.target.closest('[data-run]');
+  if (!button) return;
+  button.disabled = true;
+  button.textContent = 'Starting...';
+  try {
+    await api('/api/runs', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pair_id: button.dataset.run }),
+    });
+    show('overview');
+    await load();
+  } catch (failure) {
+    alert(failure.message);
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Run pipeline';
+  }
+});
+
+$('make-key').addEventListener('click', async () => {
+  const error = $('key-error');
+  error.hidden = true;
+  try {
+    const data = await api('/api/keys', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: $('key-name').value.trim() || 'default' }),
+    });
+    $('key-value').value = data.key;
+    $('key-new').hidden = false;
+    $('key-value').select();
+    await load();
+  } catch (failure) {
+    error.textContent = failure.message;
+    error.hidden = false;
+  }
+});
+
+$('copy-key').addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText($('key-value').value);
+    $('copy-key').textContent = 'Copied';
+    setTimeout(() => { $('copy-key').textContent = 'Copy'; }, 1500);
+  } catch {
+    $('key-value').select();
+  }
+});
+
+$('logout').addEventListener('click', async () => {
+  await fetch('/api/auth/logout', { method: 'POST' });
+  window.location.href = '/auth';
+});
+
+// ------------------------------------------------------------------ load
+async function load() {
+  const [me, sources, runs, models, wallet, usage, keys] = await Promise.all([
+    api('/api/me'), api('/api/sources'), api('/api/runs'), api('/api/models'),
+    api('/api/wallet'), api('/api/inference'), api('/api/keys'),
+  ]);
+  state.user = me.user;
+  state.wallet = me.wallet;
+  state.sources = sources.sources;
+  state.runs = runs.runs;
+  state.models = models.models;
+  state.usage = usage;
+  state.keys = keys.keys;
+  render();
+  $('main').hidden = false;
+}
+
+load().catch((failure) => {
+  if (failure.message !== 'signed out') console.error(failure);
+});
+</script>
+
+</body>
+</html>

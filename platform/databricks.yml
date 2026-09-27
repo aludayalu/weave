@@ -1,0 +1,32 @@
+# Databricks Apps deployment for weave.
+#
+#   databricks apps create weave
+#   databricks apps deploy weave --source-code .
+#
+# Apps injects DATABASE_URL, PORT and workspace credentials automatically, so
+# there are no secrets in this file.
+
+command:
+  - "uvicorn"
+  - "app:app"
+  - "--host"
+  - "0.0.0.0"
+  - "--port"
+  - "8000"
+  # One worker while the app is on SQLite: two processes writing one file is a
+  # locking bug, not a speedup. Raise this to 2+ once DATABASE_URL points at
+  # Lakebase, which handles concurrent writers properly.
+  - "--workers"
+  - "1"
+
+env:
+  - name: WEAVE_DATA
+    value: "/tmp/weave"
+  - name: LOG_LEVEL
+    value: "info"
+
+# Lakebase is attached after first deploy: databricks database instances grant
+# <app-name> ...
+#
+# Without DATABASE_URL the app falls back to SQLite under WEAVE_DATA, which is
+# fine for a smoke test and wrong for anything with more than one worker.

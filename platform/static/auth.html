@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign in &middot; weave</title>
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="/">weave<span>.</span></a>
+    <nav class="nav"><a href="/">Home</a></nav>
+  </div>
+</header>
+
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="card">
+      <div class="tabs" role="tablist">
+        <button class="tab active" id="tab-signin" role="tab" aria-selected="true">Sign in</button>
+        <button class="tab" id="tab-signup" role="tab" aria-selected="false">Create account</button>
+      </div>
+
+      <h1 id="auth-title">Welcome back</h1>
+      <p class="sub" id="auth-sub">Sign in to your dashboard.</p>
+
+      <div class="form-error" id="auth-error" hidden></div>
+
+      <form id="auth-form">
+        <div class="field" id="name-field" hidden>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" placeholder="Ada Lovelace">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email"
+                 placeholder="you@company.com">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" required
+                 autocomplete="current-password" placeholder="At least 8 characters">
+        </div>
+        <button class="btn btn-primary" id="auth-submit" type="submit"
+                style="width:100%;margin-top:6px">Sign in</button>
+      </form>
+    </div>
+    <p class="auth-foot" id="auth-foot">
+      No account yet? <a href="#" id="switch-signup">Create one</a>
+    </p>
+  </div>
+</div>
+
+<script>
+const tabs = { signin: document.getElementById('tab-signin'), signup: document.getElementById('tab-signup') };
+const title = document.getElementById('auth-title');
+const sub = document.getElementById('auth-sub');
+const submit = document.getElementById('auth-submit');
+const nameField = document.getElementById('name-field');
+const nameInput = document.getElementById('name');
+const passwordInput = document.getElementById('password');
+const errorBox = document.getElementById('auth-error');
+const foot = document.getElementById('auth-foot');
+let mode = 'signin';
+
+function show(next) {
+  mode = next;
+  const signingUp = next === 'signup';
+  tabs.signin.classList.toggle('active', !signingUp);
+  tabs.signup.classList.toggle('active', signingUp);
+  tabs.signin.setAttribute('aria-selected', String(!signingUp));
+  tabs.signup.setAttribute('aria-selected', String(signingUp));
+  title.textContent = signingUp ? 'Create your account' : 'Welcome back';
+  sub.textContent = signingUp ? '25 credits to start. No card.' : 'Sign in to your dashboard.';
+  submit.textContent = signingUp ? 'Create account' : 'Sign in';
+  nameField.hidden = !signingUp;
+  nameInput.required = signingUp;
+  passwordInput.autocomplete = signingUp ? 'new-password' : 'current-password';
+  foot.innerHTML = signingUp
+    ? 'Already have an account? <a href="#" id="switch-signin">Sign in</a>'
+    : 'No account yet? <a href="#" id="switch-signup">Create one</a>';
+  bindSwitch();
+  errorBox.hidden = true;
+}
+
+function bindSwitch() {
+  const up = document.getElementById('switch-signup');
+  const down = document.getElementById('switch-signin');
+  if (up) up.addEventListener('click', (e) => { e.preventDefault(); show('signup'); });
+  if (down) down.addEventListener('click', (e) => { e.preventDefault(); show('signin'); });
+}
+
+function fail(message) {
+  errorBox.textContent = message;
+  errorBox.hidden = false;
+}
+
+document.getElementById('auth-form').addEventListener('submit', async (event) => {
+  event.preventDefault();
+  errorBox.hidden = true;
+  submit.disabled = true;
+  submit.textContent = mode === 'signup' ? 'Creating...' : 'Signing in...';
+  try {
+    const body = {
+      email: document.getElementById('email').value.trim(),
+      password: passwordInput.value,
+    };
+    if (mode === 'signup') body.name = nameInput.value.trim();
+    const response = await fetch(`/api/auth/${mode}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      fail(data.detail || 'Something went wrong. Try again.');
+      return;
+    }
+    window.location.href = '/app';
+  } catch (error) {
+    fail('Could not reach the server.');
+  } finally {
+    submit.disabled = false;
+    submit.textContent = mode === 'signup' ? 'Create account' : 'Sign in';
+  }
+});
+
+tabs.signin.addEventListener('click', () => show('signin'));
+tabs.signup.addEventListener('click', () => show('signup'));
+bindSwitch();
+// The server redirects an already signed in visitor to /app, so there is
+// deliberately no /api/me call here. Doing that in JS produced a 401 in the
+// console on every page load.
+</script>
+
+</body>
+</html>
