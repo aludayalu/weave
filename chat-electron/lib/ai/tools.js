@@ -147,6 +147,34 @@ export var tools = [
     {
         type: "function",
         function: {
+            name: "list_changes",
+            description: "List every file you have changed this session, with how many lines were added and removed. Use it to review your own work, or to find something to revert.",
+            parameters: {
+                type: "object",
+                properties: {}
+            }
+        }
+    },
+    {
+        type: "function",
+        function: {
+            name: "revert_file",
+            description: "Put one file back exactly as it was before you changed it this session. Use it when you made a change that turned out to be wrong.",
+            parameters: {
+                type: "object",
+                properties: {
+                    path: {
+                        type: "string",
+                        description: "File to revert, relative to the workspace root"
+                    }
+                },
+                required: ["path"]
+            }
+        }
+    },
+    {
+        type: "function",
+        function: {
             name: "diff",
             description: "Show what changed in a file, or the whole workspace, compared with the last git commit. Returns a unified diff plus added and removed line counts. Use it to review your own work, or to see what someone else changed before you touch a file.",
             parameters: {
@@ -264,6 +292,7 @@ export var tools = [
 var LOCAL_TOOLS = new Set([
     "list_dir", "read_file", "write_file", "edit_file",
     "search", "run_command", "read_media", "diff",
+    "list_changes", "revert_file",
     "make_dir", "delete_path", "environment"
 ])
 

@@ -3,6 +3,7 @@ import { sendMessage, useOnMessage } from "@/lib/messages"
 import { ChevronUp, Plus } from "lucide-react";
 import { useEffect, useRef, useState } from "react"
 import { FileItem } from "./FileItem";
+import { PendingBar } from "./PendingBar";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function ChatInput() {
@@ -136,8 +137,10 @@ export default function ChatInput() {
     }, [chat_id])
 
     return (
-        <div style={{position: "absolute", bottom: 20}} className="flex justify-center items-center w-full px-5 pointer-events-none">
-            <div className="max-w-[720px] w-full bg-[#111] p-2 pointer-events-auto" style={{border: "1px solid rgba(255, 255, 255, 0.14)", borderRadius: "8px"}}>
+        <div style={{position: "absolute", bottom: 20}} className="flex flex-col justify-center items-center w-full px-5 pointer-events-none">
+            <div className="w-full max-w-[720px] flex flex-col gap-2">
+            <PendingBar />
+            <div className="w-full bg-[#111] p-2 pointer-events-auto" style={{border: "1px solid rgba(255, 255, 255, 0.14)", borderRadius: "8px"}}>
                 <div className={`flex flex-wrap gap-2 items-end ${files.length > 0 && "mb-3"}`}>
                     {files.map((x) => <FileItem file={x} key={x.id} onDelete={() => {
                         setFiles((files) => files.filter((y) => y.id != x.id))
@@ -155,6 +158,7 @@ export default function ChatInput() {
                         <ChevronUp></ChevronUp>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     )

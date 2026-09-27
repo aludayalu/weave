@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import {
     ChevronRight, Terminal, FileText, FolderSearch,
-    Search, PenLine, Globe, Check, X, Wrench, FolderPlus, Trash2, Monitor, Image, FileDiff
+    Search, PenLine, Globe, Check, X, Wrench, FolderPlus, Trash2, Monitor, Image, FileDiff, FileCode2
 } from "lucide-react"
 import { useCommandOutput } from "@/lib/ai/commandStream"
 import { respond, useApprovals } from "@/lib/ai/approvals"
-import { DiffButton, MediaPreview } from "./previews"
+import { MediaPreview } from "./previews"
+import { usePanel } from "@/components/panels/panelState"
 
 const ICONS = {
     web_search: Globe,
@@ -117,6 +118,7 @@ function ApprovalCard({ request }) {
  */
 export function ToolActivity({ call, result }) {
     const [open, setOpen] = useState(false)
+    const panel = usePanel()
     const Icon = ICONS[call.name] || Wrench
     const args = parse(call.arguments, {})
     const parsedResult = result ? parse(result, null) : null
@@ -142,7 +144,20 @@ export function ToolActivity({ call, result }) {
                 <Icon size={12} className="shrink-0 opacity-40" />
                 <span className="shrink-0 opacity-40 font-mono text-[11px]">{LABELS[call.name] || call.name}</span>
 
-                <span className="font-mono text-[12px] opacity-75 truncate min-w-0">{subject(call.name, args)}</span>
+                <button
+                    onMouseDown={(e) => {
+                        e.preventDefault()
+                        e.stopPropagation()
+                        if (args.path) panel.openFile(args.path)
+                    }}
+                    disabled={!args.path}
+                    title={args.path ? `Open ${args.path}` : undefined}
+                    className={`font-mono text-[12px] truncate min-w-0 text-left ${
+                        args.path ? "hover:underline underline-offset-2 cursor-pointer" : "opacity-75 cursor-default"
+                    }`}
+                >
+                    {subject(call.name, args)}
+                </button>
 
                 {running && <span className="shrink-0 text-[11px] opacity-40 animate-pulse">running…</span>}
 
@@ -159,7 +174,25 @@ export function ToolActivity({ call, result }) {
                 <span className="flex-1" />
 
                 {!failed && args.path && ["write_file", "edit_file", "delete_path"].includes(call.name) && (
-                    <DiffButton path={args.path} />
+                    <button
+                        onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); panel.showChanges(args.path) }}
+                        title={`Open the diff for ${args.path}`}
+                        className="shrink-0 flex items-center gap-1.5 text-[12px] font-medium px-2.5 h-7 rounded-md bg-[#6b8e23] text-white hover:bg-[#7ba32c] transition-colors"
+                    >
+                        <FileDiff size={12} />
+                        View diff
+                    </button>
+                )}
+
+                {!failed && args.path && call.name === "read_file" && (
+                    <button
+                        onMouseDown={(e) => { e.preventDefault(); e.stopPropagation(); panel.openFile(args.path) }}
+                        title={`Open ${args.path} in the editor`}
+                        className="shrink-0 flex items-center gap-1.5 text-[12px] px-2.5 h-7 rounded-md bg-white/8 hover:bg-white/16 text-white/70 transition-colors"
+                    >
+                        <FileCode2 size={12} />
+                        Open
+                    </button>
                 )}
 
                 {canExpand && (

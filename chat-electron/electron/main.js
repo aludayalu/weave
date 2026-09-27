@@ -1,8 +1,10 @@
 const { app, BrowserWindow, ipcMain, dialog, shell } = require("electron")
 const path = require("node:path")
+const pathModule = path
 const fs = require("node:fs")
 const { spawn } = require("node:child_process")
 const { runTool, setRoot, getRoot, setSinks, setConfirming, trusted, MODEL_TOOLS } = require("./tools")
+const undo = require("./undo")
 
 const PORT = Number(process.env.CHAT_PORT || 4311)
 const isDev = !app.isPackaged
@@ -19,6 +21,10 @@ function send(channel, payload) {
     mainWindow.webContents.send(channel, payload)
   }
 }
+
+undo.onChanged(() => {
+  send("changes:updated", { at: Date.now() })
+})
 
 setSinks({
   onOutput: ({ callId, chunk }) => send("command:output", { callId, chunk }),
@@ -99,7 +105,9 @@ ipcMain.handle("workspace:choose", async () => {
 ipcMain.handle("workspace:set", (_event, root) => {
   if (typeof root !== "string" || !root) return { root: getRoot() }
   try {
-    return { root: setRoot(root) }
+    const next = setRoot(root)
+    undo.activate(next)
+    return { root: next }
   } catch {
     return { root: getRoot() }
   }
@@ -128,7 +136,60 @@ ipcMain.handle("tools:approval-response", (_event, { id, verdict }) => {
   return { ok: true }
 })
 
+ipcMain.handle("files:read", async (_event, { path: relative }) => {
+  const target = pathModule.join(getRoot(), relative)
+  try {
+    const contents = await require("node:fs/promises").readFile(target, "utf8")
+    return { ok: true, contents, name: pathModule.basename(target) }
+  } catch (error) {
+    return { ok: false, output: String(error.message ?? error) }
+  }
+})
+
+ipcMain.handle("files:write", async (_event, { path: relative, contents }) => {
+  // an edit made in the panel is a real change, so snapshot it like any other
+  await undo.record(relative, "modified")
+  const result = await runTool("write_file", { path: relative, content: contents })
+  return result
+})
+
+ipcMain.handle("changes:list", async () => {
+  // never push from here: the renderer calls this in response to
+  // changes:updated, so emitting would loop forever
+  const changes = await undo.changesWithStats()
+  return { changes }
+})
+
+ipcMain.handle("changes:versions", async (_event, { path: relative }) => {
+  const result = await runTool("file_versions", { path: relative })
+  return result
+})
+
+ipcMain.handle("changes:revert", async (_event, { path: relative }) => {
+  const result = await undo.revert(relative)
+  const changes = await undo.changesWithStats()
+  send("changes:updated", { count: changes.filter((c) => !c.unchanged).length })
+  return result
+})
+
+ipcMain.handle("changes:revert-all", async () => {
+  const result = await undo.revertAll()
+  return result
+})
+
+ipcMain.handle("changes:keep-all", async () => {
+  const kept = undo.keepAll()
+  return { kept }
+})
+
+app.on("before-quit", () => {
+  undo.flush()
+})
+
 app.whenReady().then(async () => {
+  // snapshots live in userData so they survive a crash or a quit
+  undo.setStorage(path.join(app.getPath("userData"), "undo-store.json"))
+
   setRoot(process.env.CHAT_WORKSPACE || app.getAppPath())
   try {
     await startServer()

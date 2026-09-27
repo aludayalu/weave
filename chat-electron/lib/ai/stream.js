@@ -86,6 +86,16 @@ export async function generate_stream(user_given_messages, chat_id, continue_ref
     var client = new OpenRouter({ apiKey: JSON.parse(localStorage.getItem("api_keys")).openrouter })
     var system = SYSTEM_PROMPT + await desktopContext()
     var messages = [{ role: "system", content: system }, ...user_given_messages]
+
+    // anything the user did outside a turn, such as reverting one of our edits,
+    // is stated plainly so the model is never working from a stale file
+    const notices = takeNotices()
+    if (notices.length > 0) {
+        messages.push({
+            role: "user",
+            content: notices.map((n) => ({ type: "text", text: n }))
+        })
+    }
     var started = false
     var toEndTotal = false
 

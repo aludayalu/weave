@@ -3,9 +3,30 @@ const fsp = require("node:fs/promises")
 const path = require("node:path")
 const os = require("node:os")
 const { spawn } = require("node:child_process")
+const undo = require("./undo")
 
 /** Every path the model touches is resolved inside this root. */
 let root = process.cwd()
+
+/**
+ * The shell's working directory, kept between calls so a `cd` in one command
+ * still applies to the next one, the way a real terminal behaves.
+ */
+let shellCwd = null
+
+function shellDirectory() {
+  if (shellCwd) return shellCwd
+  try {
+    shellCwd = require("node:fs").realpathSync(root)
+  } catch {
+    shellCwd = root
+  }
+  return shellCwd
+}
+
+function resetCwd() {
+  shellCwd = null
+}
 
 /** Injected by the main process so tools can stream and ask for permission. */
 let sinks = { onOutput: null, onApproval: null }
@@ -114,7 +135,15 @@ const REFUSED = (what) => ({
 })
 
 function setRoot(next) {
-  root = path.resolve(next)
+  // store the real path, otherwise every containment check breaks the moment
+  // the workspace itself sits behind a symlink, such as /tmp on macOS
+  const resolved = path.resolve(next)
+  try {
+    root = fs.realpathSync(resolved)
+  } catch {
+    root = resolved
+  }
+  resetCwd()
   return root
 }
 
@@ -124,13 +153,92 @@ function getRoot() {
 
 class JailError extends Error {}
 
-function resolveInside(relative) {
+/**
+ * Resolve a path and prove it really lives inside the workspace.
+ *
+ * A purely lexical check is not enough: a symlink sitting in the workspace can
+ * point anywhere on the disk, so `ln -s ~/Desktop/secret ./link` would walk
+ * straight out. The nearest existing ancestor is resolved for real, the
+ * remainder is rejoined, and the result is checked again.
+ */
+async function resolveInside(relative) {
   const target = path.resolve(root, relative ?? ".")
   const rel = path.relative(root, target)
   if (rel.startsWith("..") || path.isAbsolute(rel)) {
     throw new JailError(`${relative} is outside the workspace (${root})`)
   }
-  return target
+
+  const realRoot = await fsp.realpath(root).catch(() => root)
+
+  let dir = target
+  const tail = []
+
+  for (;;) {
+    try {
+      const realDir = await fsp.realpath(dir)
+      const resolved = path.join(realDir, ...tail)
+      const realRel = path.relative(realRoot, resolved)
+      if (realRel.startsWith("..") || path.isAbsolute(realRel)) {
+        throw new JailError(
+          `${relative} resolves outside the workspace through a link (${resolved})`
+        )
+      }
+      return resolved
+    } catch (error) {
+      if (error instanceof JailError) throw error
+      const parent = path.dirname(dir)
+      if (parent === dir) throw error
+      tail.unshift(path.basename(dir))
+      dir = parent
+    }
+  }
+}
+
+/** Resolve a path against the shell's current directory, as a real shell would. */
+async function resolveInShell(target) {
+  const from = shellDirectory()
+  const candidate = path.isAbsolute(target) ? target : path.join(from, target)
+  const rel = path.relative(root, path.resolve(candidate))
+  if (rel.startsWith("..") || path.isAbsolute(rel)) {
+    throw new JailError(`${target} is outside the workspace (${root})`)
+  }
+  return await resolveInside(rel)
+}
+
+/**
+ * Notice a leading `cd` so the next call starts where this one left off.
+ * Only a cd at the very front is treated as changing the session directory.
+ */
+async function trackCwd(command, from) {
+  const match = String(command).match(/^\s*cd\s+(?:-\s+|--\s+)?("[^"]*"|'[^']*'|\S+)/)
+  if (!match) return from
+
+  let target = match[1].replace(/^["']|["']$/g, "")
+  if (target === "~") return from
+
+  const next = path.isAbsolute(target) ? target : path.join(from, target)
+  try {
+    const stats = await fsp.stat(next)
+    if (stats.isDirectory()) {
+      const real = await fsp.realpath(next)
+      const rel = path.relative(root, real)
+      if (!rel.startsWith("..") && !path.isAbsolute(rel)) shellCwd = real
+    }
+  } catch {}
+
+  return shellCwd
+}
+
+/** True when a real path lies inside the workspace. Used to vet symlinks. */
+async function insideWorkspace(candidate) {
+  try {
+    const realRoot = await fsp.realpath(root).catch(() => root)
+    const real = await fsp.realpath(candidate)
+    const rel = path.relative(realRoot, real)
+    return !(rel.startsWith("..") || path.isAbsolute(rel))
+  } catch {
+    return false
+  }
 }
 
 const MAX_READ_BYTES = 2 * 1024 * 1024
@@ -318,7 +426,7 @@ async function readIfPresent(target) {
 
 const tools = {
   async list_dir({ dir = ".", depth = 1 }) {
-    const target = resolveInside(dir)
+    const target = await resolveInside(dir)
     const stats = await fsp.stat(target)
     if (!stats.isDirectory()) throw new Error(`${dir} is not a directory`)
     const lines = []
@@ -330,13 +438,18 @@ const tools = {
         if (entry.name === ".git" || entry.name === "node_modules" || entry.name === ".next") continue
         const full = path.join(current, entry.name)
         const rel = path.relative(target, full)
+        if (entry.isSymbolicLink() && !(await insideWorkspace(full))) {
+          lines.push(`${rel}@ -> (outside the workspace, not followed)`)
+          continue
+        }
         if (entry.isDirectory()) {
           lines.push(`${rel}/`)
           if (level > 0) await walk(full, level - 1)
         } else {
           let size = ""
           try {
-            size = `  ${humanSize((await fsp.stat(full)).size)}`
+            const stats = await fsp.stat(full)
+            size = stats.isFile() ? `  ${humanSize(stats.size)}` : ""
           } catch {}
           lines.push(`${rel}${size}`)
         }
@@ -348,7 +461,7 @@ const tools = {
   },
 
   async read_file({ path: relative, start_line = 1, end_line = 400 }) {
-    const target = resolveInside(relative)
+    const target = await resolveInside(relative)
     const stats = await fsp.stat(target)
 
     const media = sniff(await fsp.readFile(target))
@@ -380,10 +493,12 @@ const tools = {
   },
 
   async write_file({ path: relative, content = "" }) {
-    const target = resolveInside(relative)
+    const target = await resolveInside(relative)
     const existed = fs.existsSync(target)
     const verb = existed ? "Overwrite" : "Create"
     const lines = String(content).split("\n").length
+    // snapshot first, so the user can always put this back
+    await undo.record(relative, existed ? "modified" : "created")
     await fsp.mkdir(path.dirname(target), { recursive: true })
     await fsp.writeFile(target, content, "utf8")
     const bytes = Buffer.byteLength(content, "utf8")
@@ -400,12 +515,14 @@ const tools = {
   },
 
   async edit_file({ path: relative, old_string, new_string, replace_all = false }) {
-    const target = resolveInside(relative)
+    const target = await resolveInside(relative)
     const content = await fsp.readFile(target, "utf8")
     if (!content.includes(old_string)) {
       throw new Error(`old_string not found in ${relative}. Read the file again before editing.`)
     }
     const before = content
+    // snapshot before touching the file
+    await undo.record(relative, "modified")
     const occurrences = content.split(old_string).length - 1
     if (occurrences > 1 && !replace_all) {
       throw new Error(`old_string appears ${occurrences} times in ${relative}; add more context or pass replace_all`)
@@ -432,16 +549,19 @@ const tools = {
   },
 
   async delete_path({ path: relative, recursive = false }) {
-    const target = resolveInside(relative)
+    const target = await resolveInside(relative)
     if (!(await approved("delete_path", `Delete ${relative}${recursive ? " and everything inside it" : ""}`))) {
       return REFUSED(`deleting ${relative}`)
     }
+    // keep every file under the directory so the whole thing can come back
+    if (recursive) await undo.recordTree(relative)
+    else await undo.record(relative, "deleted")
     await fsp.rm(target, { recursive: Boolean(recursive), force: true })
     return { ok: true, output: `deleted ${target}`, meta: {} }
   },
 
   async make_dir({ path: relative }) {
-    const target = resolveInside(relative)
+    const target = await resolveInside(relative)
     if (!(await approved("make_dir", `Create the directory ${relative}`))) {
       return REFUSED(`creating ${relative}`)
     }
@@ -450,7 +570,7 @@ const tools = {
   },
 
   async search({ query, dir = ".", glob = null, limit = 60 }) {
-    const target = resolveInside(dir)
+    const target = await resolveInside(dir)
     const hits = []
     const pattern = new RegExp(String(query).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "i")
     const matcher = glob ? new RegExp(`^${glob.replace(/[.+^${}()|[\]\\]/g, "\\$&").replace(/\*\*/g, ".*").replace(/\*/g, "[^/]*").replace(/\?/g, ".")}$`) : null
@@ -465,6 +585,10 @@ const tools = {
       for (const entry of entries) {
         if (entry.name === ".git" || entry.name === "node_modules" || entry.name === ".next") continue
         const full = path.join(current, entry.name)
+        if (entry.isSymbolicLink() && !(await insideWorkspace(full))) {
+          skipped++
+          continue
+        }
         if (entry.isDirectory()) {
           await walk(full)
           continue
@@ -497,7 +621,7 @@ const tools = {
   },
 
   async read_media({ path: relative, question = null }) {
-    const target = resolveInside(relative)
+    const target = await resolveInside(relative)
     const stats = await fsp.stat(target)
     if (!stats.isFile()) throw new Error(`${relative} is not a file`)
 
@@ -547,7 +671,7 @@ const tools = {
   },
 
   async diff({ path: relative = null, stat_only = false }) {
-    const target = relative ? resolveInside(relative) : getRoot()
+    const target = relative ? await resolveInside(relative) : getRoot()
     const inRepo = Boolean(await git(["rev-parse", "--is-inside-work-tree"], getRoot()))
 
     if (!inRepo) {
@@ -617,9 +741,45 @@ const tools = {
     }
   },
 
+  /** The on disk and pre change versions, for the diff viewer. */
+  async file_versions({ path: relative }) {
+    const target = await resolveInside(relative)
+    if (!(await fsp.stat(target).catch(() => null))) {
+      throw new Error(`${relative} does not exist`)
+    }
+    const { before, after, tracked } = await undo.versions(relative)
+    return {
+      ok: true,
+      output: `${relative}: ${tracked ? "changed this session" : "unchanged this session"}`,
+      meta: { tracked },
+      versions: { before: before ?? "", after: after ?? "", name: path.basename(relative), path: relative },
+    }
+  },
+
+  /** What the agent has changed and can still put back. */
+  async list_changes({}) {
+    const changes = await undo.changesWithStats()
+    const live = changes.filter((c) => !c.unchanged)
+    if (live.length === 0) {
+      return { ok: true, output: "no changes on disk from this session", meta: { count: 0 } }
+    }
+    return {
+      ok: true,
+      output: live
+        .map((c) => `${c.kind.padEnd(8)} ${c.path}  +${c.additions} -${c.deletions}`)
+        .join("\n"),
+      meta: { count: live.length },
+    }
+  },
+
+  /** Put a change back the way it was. */
+  async revert_file({ path: relative }) {
+    return await undo.revert(relative)
+  },
+
   /** A data URL for the UI to preview, without the model paying for it. */
   async preview_data_url({ path: relative }) {
-    const target = resolveInside(relative)
+    const target = await resolveInside(relative)
     const stats = await fsp.stat(target)
     if (stats.size > PREVIEW_MAX_BYTES) {
       throw new Error(`${relative} is ${humanSize(stats.size)}, too large to preview`)
@@ -635,11 +795,13 @@ const tools = {
     }
   },
 
-  async run_command({ command, cwd = ".", timeout_ms = 30000, __callId = null }) {
-    const directory = resolveInside(cwd)
+  async run_command({ command, cwd = null, timeout_ms = 30000, __callId = null }) {
+    // no explicit directory means carry on from where the last command left off
+    const directory = cwd ? await resolveInShell(cwd) : shellDirectory()
     await fsp.access(directory).catch(() => {
       throw new Error(`${cwd} is not a directory`)
     })
+    await trackCwd(command, directory)
 
     // An agent runs hundreds of commands, so only the ones that can destroy
     // work or exfiltrate data stop for a decision. The rest just run.
@@ -694,7 +856,7 @@ const tools = {
         `workspace: ${root}`,
         `platform:   ${os.platform()} ${os.release()}`,
         `node:       ${process.version}`,
-        `cwd:        ${process.cwd()}`,
+        `cwd:        ${shellDirectory()}`,
         `home:       ${os.homedir()}`,
       ].join("\n"),
       meta: { root },
@@ -719,11 +881,13 @@ async function runTool(name, args) {
 const MODEL_TOOLS = [
   "list_dir", "read_file", "write_file", "edit_file", "delete_path", "make_dir",
   "search", "read_media", "diff", "run_command", "environment",
+  "list_changes", "revert_file",
 ]
 
 module.exports = {
   tools,
   MODEL_TOOLS,
+  shellDirectory,
   runTool,
   setRoot,
   getRoot,

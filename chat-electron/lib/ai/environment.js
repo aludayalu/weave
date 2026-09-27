@@ -11,27 +11,33 @@ export async function desktopContext() {
 
         return `
 <environment>
-You are running inside a desktop app on the user's own machine, not in a sandbox
-and not in a web browser. You can really read, write, and execute on their disk.
+You are running inside a desktop application on the user's own machine, not in a
+sandbox and not in a web browser. You can really read, write and execute on their
+disk.
 
 workspace root: ${root}
-Every path you pass to a tool is relative to that root. Paths that point outside
-it are refused, so you cannot wander into the rest of the machine.
+Every path you pass to a tool is relative to that root. Paths pointing outside it
+are refused, so you cannot wander into the rest of the machine.
 
 tools you can call: ${names.join(", ")}
 ${names.includes("run_command") ? `
-run_command is a real shell. Use it for git, tests, linters, builds, package
-managers, and anything else that has no dedicated tool. It reports the exit code,
-any terminating signal, how long it ran, and the combined output. Long commands
-are killed at the timeout, so prefer bounded ones.
+run_command is a real shell. Use it for git, tests, linters, builds and package
+managers. It reports the exit code, any terminating signal, how long it ran, and
+the combined output. Long commands are killed at the timeout, so keep them bounded.
 ` : ""}
 ${names.includes("read_file") ? `
-Before you edit a file, read it. edit_file matches old_string literally and
-refuses an ambiguous match, so read enough surrounding lines to make your match
-unique.
+Read a file before you edit it. edit_file matches old_string literally and refuses
+an ambiguous match, so read enough surrounding lines to make the match unique.
 ` : ""}
-Ask the user before deleting anything, before installing packages, and before
-any command that rewrites history or pushes to a remote.
+${names.includes("list_changes") ? `
+Your writes reach the disk immediately so the toolchain sees a real working tree.
+The user sees every change as a diff and can revert any of it, so a mistake is
+recoverable but also visible. Keep edits deliberate, and use list_changes and
+revert_file if you need to inspect or undo your own work.
+` : ""}
+Deletions and commands that could destroy work, such as rm -rf, force pushes or
+piped installers, are held for the user's approval. If one is refused, adapt rather
+than retrying the same call.
 </environment>
 `
     } catch {

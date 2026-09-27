@@ -29,6 +29,26 @@ contextBridge.exposeInMainWorld("desktop", {
    * Called when the agent wants to change something. The returned promise settles
    * with "allow", "deny" or "always".
    */
+  /** Everything the agent changed this session, and the ability to put it back. */
+  changes: {
+    list: () => ipcRenderer.invoke("changes:list"),
+    versions: (path) => ipcRenderer.invoke("changes:versions", { path }),
+    revert: (path) => ipcRenderer.invoke("changes:revert", { path }),
+    revertAll: () => ipcRenderer.invoke("changes:revert-all"),
+    keepAll: () => ipcRenderer.invoke("changes:keep-all"),
+    onUpdate: (callback) => {
+      const listener = (_event, payload) => callback(payload)
+      ipcRenderer.on("changes:updated", listener)
+      return () => ipcRenderer.removeListener("changes:updated", listener)
+    },
+  },
+
+  /** Opening a file in the editor panel. */
+  files: {
+    read: (path) => ipcRenderer.invoke("files:read", { path }),
+    write: (path, contents) => ipcRenderer.invoke("files:write", { path, contents }),
+  },
+
   approvals: {
     setMode: (confirming) => ipcRenderer.invoke("tools:approval-mode", confirming),
     onRequest: (callback) => {

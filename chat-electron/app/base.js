@@ -12,6 +12,9 @@ import { useEffect, useState } from "react";
 import { sendMessage } from "@/lib/messages";
 import { startCommandStream } from "@/lib/ai/commandStream";
 import { startApprovalBridge } from "@/lib/ai/approvals";
+import { startChangesBridge } from "@/lib/ai/pendingChanges";
+import { PanelProvider, usePanel } from "@/components/panels/panelState";
+import { SidePanel } from "@/components/panels/SidePanel";
 import { ReadFiles } from "@/lib/helpers";
 
 function BaseApp({children}) {
@@ -24,6 +27,7 @@ function BaseApp({children}) {
     useEffect(() => {
         startCommandStream()
         startApprovalBridge()
+        startChangesBridge()
     }, [])
 
     useEffect(() => {
@@ -105,6 +109,8 @@ function BaseApp({children}) {
                         <div className="mt-2">Drop Files here</div>
                     </div>
                 </div>
+
+                <DockedPanel />
             </div>
         </>
     )
@@ -126,11 +132,22 @@ function useChats() {
     return chats
 }
 
+/** Reads the panel state, so it only mounts when something is open. */
+function DockedPanel() {
+    const { isOpen } = usePanel()
+    if (!isOpen) return null
+    return <SidePanel />
+}
+
 export default function Base({children}) {
     const [mounted, setMounted] = useState(false);
     useEffect(() => {
         setMounted(true);
     }, [])
     if (!mounted) return null;
-    return <BaseApp children={children} />;
+    return (
+        <PanelProvider>
+            <BaseApp children={children} />
+        </PanelProvider>
+    );
 }

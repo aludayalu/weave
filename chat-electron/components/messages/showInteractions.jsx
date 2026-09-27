@@ -4,7 +4,7 @@ import { UserInteraction } from "./userInteraction"
 
 export function Interactions({interactions, showSpinner, container_ref}) {
     return (
-        <div className="flex flex-col gap-5 pt-4 pb-[300px] min-w-0 w-full" ref={container_ref}>
+        <div className="flex flex-col gap-5 pt-4 pb-[220px] min-w-0 w-full" ref={container_ref}>
             {interactions.map((interaction, i) => {
                 if (interaction.side == "user") {
                     return <UserInteraction key={interaction.id} interaction={interaction} />
