@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "e03-6392054",
+          "uuid": "e03-37191029",
           "filename": "e03-support-report.pdf",
           "path": "raw/attachments/jira/reports/e03-support-report.pdf",
           "bytes": 71696,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "e03-88925421",
+          "uuid": "e03-3860633",
           "filename": "e03-sse-log.log",
           "path": "raw/attachments/jira/logs/e03-sse-log.log",
           "bytes": 331,

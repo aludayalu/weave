@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t12-76143227",
+          "uuid": "t12-94986212",
           "filename": "t12-finance-report.pdf",
           "path": "raw/attachments/jira/reports/t12-finance-report.pdf",
           "bytes": 71179,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t12-29042770",
+          "uuid": "t12-56192862",
           "filename": "t12-workbook-screenshot.png",
           "path": "raw/attachments/discord/images/t12-workbook-screenshot.png",
           "bytes": 20790,

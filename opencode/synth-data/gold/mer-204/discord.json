@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "e04-62620744",
+          "uuid": "e04-44485794",
           "filename": "e04-finance-report.pdf",
           "path": "raw/attachments/jira/reports/e04-finance-report.pdf",
           "bytes": 71496,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "e04-5815207",
+          "uuid": "e04-15764708",
           "filename": "e04-preview-screenshot.png",
           "path": "raw/attachments/discord/images/e04-preview-screenshot.png",
           "bytes": 22477,

@@ -3,3 +3,4 @@ dctoken.txt
 __pycache__/
 data_store/
 backup/
+.sparkvenv/

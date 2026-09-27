@@ -4,7 +4,7 @@
     "path": "raw/attachments/jira/reports/e01-finance-report.pdf",
     "filename": "e01-finance-report.pdf",
     "bytes": 72888,
-    "sha256": "ea8c58e2791e669b",
+    "sha256": "2dafda43c11e6b84",
     "doc_type": "application/octet-stream",
     "linked_issue_key": "MER-201",
     "linked_channel": null,
@@ -12,7 +12,7 @@
     "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
   },
   {
-    "doc_id": "e01-26344296",
+    "doc_id": "e01-81065120",
     "path": "raw/attachments/discord/images/e01-csv-sample.png",
     "filename": "e01-csv-sample.png",
     "bytes": 21340,

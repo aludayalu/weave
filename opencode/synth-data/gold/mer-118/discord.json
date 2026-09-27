@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t17-7450221",
+          "uuid": "t17-75944068",
           "filename": "t17-client-report.pdf",
           "path": "raw/attachments/jira/reports/t17-client-report.pdf",
           "bytes": 72485,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t17-95484413",
+          "uuid": "t17-64384813",
           "filename": "t17-cache-log.log",
           "path": "raw/attachments/jira/logs/t17-cache-log.log",
           "bytes": 333,

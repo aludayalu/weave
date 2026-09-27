@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t21-24662966",
+          "uuid": "t21-99865426",
           "filename": "t21-client-report.pdf",
           "path": "raw/attachments/jira/reports/t21-client-report.pdf",
           "bytes": 70695,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t21-25992782",
+          "uuid": "t21-62315550",
           "filename": "t21-validation-log.log",
           "path": "raw/attachments/jira/logs/t21-validation-log.log",
           "bytes": 331,

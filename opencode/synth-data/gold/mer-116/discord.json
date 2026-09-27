@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t15-74294786",
+          "uuid": "t15-57732424",
           "filename": "t15-incident-log.log",
           "path": "raw/attachments/jira/logs/t15-incident-log.log",
           "bytes": 333,
           "content_type": "text/plain"
         },
         {
-          "uuid": "t15-74275456",
+          "uuid": "t15-62559386",
           "filename": "t15-nginx-log.log",
           "path": "raw/attachments/jira/logs/t15-nginx-log.log",
           "bytes": 346,

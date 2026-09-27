@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t24-13343004",
+          "uuid": "t24-90536178",
           "filename": "t24-security-report.pdf",
           "path": "raw/attachments/jira/reports/t24-security-report.pdf",
           "bytes": 71721,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t24-71574206",
+          "uuid": "t24-37230856",
           "filename": "t24-build-log.log",
           "path": "raw/attachments/jira/logs/t24-build-log.log",
           "bytes": 333,

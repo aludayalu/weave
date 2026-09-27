@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t04-86112597",
+          "uuid": "t04-92838134",
           "filename": "t04-incident-log.log",
           "path": "raw/attachments/jira/logs/t04-incident-log.log",
           "bytes": 331,
           "content_type": "text/plain"
         },
         {
-          "uuid": "t04-23396526",
+          "uuid": "t04-76226226",
           "filename": "t04-deployment-screenshot.png",
           "path": "raw/attachments/discord/images/t04-deployment-screenshot.png",
           "bytes": 20363,

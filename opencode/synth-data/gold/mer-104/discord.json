@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t18-12255203",
+          "uuid": "t18-19600732",
           "filename": "t18-client-report.pdf",
           "path": "raw/attachments/jira/reports/t18-client-report.pdf",
           "bytes": 69897,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t18-30842454",
+          "uuid": "t18-35113860",
           "filename": "t18-tenant-switch-screenshot.png",
           "path": "raw/attachments/discord/images/t18-tenant-switch-screenshot.png",
           "bytes": 21285,

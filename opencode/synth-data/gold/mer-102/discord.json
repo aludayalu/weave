@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t02-76712642",
+          "uuid": "t02-5881215",
           "filename": "t02-flag-debug.pdf",
           "path": "raw/attachments/jira/reports/t02-flag-debug.pdf",
           "bytes": 68766,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t02-78464618",
+          "uuid": "t02-22270748",
           "filename": "t02-tenant-snapshot.pdf",
           "path": "raw/attachments/jira/reports/t02-tenant-snapshot.pdf",
           "bytes": 68766,

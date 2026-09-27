@@ -12,7 +12,7 @@
     "extracted_text": "2026-01-01T00:00:00Z INFO  meridian-api booting (commit $main)\n2026-01-01T00:00:01Z WARN  request slow: GET /api/audit/export 1240ms\n2026-01-01T00:00:02Z ERROR upstream failure: context deadline exceeded\n2026-01-01T00:00:02Z ERROR at internal/handler.dispatch (/srv/meridian)\n2026-01-01T00:00:03Z INFO  ticket MER-106 acknowledged\n"
   },
   {
-    "doc_id": "t04-23396526",
+    "doc_id": "t04-76226226",
     "path": "raw/attachments/discord/images/t04-deployment-screenshot.png",
     "filename": "t04-deployment-screenshot.png",
     "bytes": 20363,

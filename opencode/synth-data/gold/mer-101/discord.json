@@ -57,14 +57,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t01-52969131",
+          "uuid": "t01-37327472",
           "filename": "t01-client-report.pdf",
           "path": "raw/attachments/jira/reports/t01-client-report.pdf",
           "bytes": 68817,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t01-50361968",
+          "uuid": "t01-72476994",
           "filename": "t01-gateway-log.log",
           "path": "raw/attachments/jira/logs/t01-gateway-log.log",
           "bytes": 331,

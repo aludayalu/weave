@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t06-98009137",
+          "uuid": "t06-86558608",
           "filename": "t06-replay-log.log",
           "path": "raw/attachments/jira/logs/t06-replay-log.log",
           "bytes": 346,
           "content_type": "text/plain"
         },
         {
-          "uuid": "t06-13369183",
+          "uuid": "t06-18754117",
           "filename": "t06-event-sample.png",
           "path": "raw/attachments/discord/images/t06-event-sample.png",
           "bytes": 20260,

@@ -4,7 +4,7 @@
     "path": "raw/attachments/jira/reports/t07-client-report.pdf",
     "filename": "t07-client-report.pdf",
     "bytes": 67548,
-    "sha256": "fea374cb41e7c942",
+    "sha256": "a1007c106462a532",
     "doc_type": "application/pdf",
     "linked_issue_key": "MER-109",
     "linked_channel": null,
@@ -12,7 +12,7 @@
     "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
   },
   {
-    "doc_id": "t07-56510107",
+    "doc_id": "t07-36267357",
     "path": "raw/attachments/discord/images/t07-worker-trace.png",
     "filename": "t07-worker-trace.png",
     "bytes": 21413,

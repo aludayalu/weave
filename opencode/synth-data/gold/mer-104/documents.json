@@ -4,7 +4,7 @@
     "path": "raw/attachments/jira/reports/t18-client-report.pdf",
     "filename": "t18-client-report.pdf",
     "bytes": 69897,
-    "sha256": "ae1ce93f3465b79e",
+    "sha256": "27e059c972ee925b",
     "doc_type": "application/pdf",
     "linked_issue_key": "MER-104",
     "linked_channel": null,
@@ -12,7 +12,7 @@
     "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
   },
   {
-    "doc_id": "t18-30842454",
+    "doc_id": "t18-35113860",
     "path": "raw/attachments/discord/images/t18-tenant-switch-screenshot.png",
     "filename": "t18-tenant-switch-screenshot.png",
     "bytes": 21285,

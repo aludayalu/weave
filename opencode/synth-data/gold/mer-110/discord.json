@@ -25,14 +25,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t08-68025171",
+          "uuid": "t08-37227072",
           "filename": "t08-client-report.pdf",
           "path": "raw/attachments/jira/reports/t08-client-report.pdf",
           "bytes": 69943,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t08-67948535",
+          "uuid": "t08-46769119",
           "filename": "t08-release-log.log",
           "path": "raw/attachments/jira/logs/t08-release-log.log",
           "bytes": 333,

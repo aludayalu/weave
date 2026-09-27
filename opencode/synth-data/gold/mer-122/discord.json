@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t23-95954709",
+          "uuid": "t23-16613007",
           "filename": "t23-client-report.pdf",
           "path": "raw/attachments/jira/reports/t23-client-report.pdf",
           "bytes": 71404,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t23-59416067",
+          "uuid": "t23-8541497",
           "filename": "t23-locale-log.log",
           "path": "raw/attachments/jira/logs/t23-locale-log.log",
           "bytes": 333,

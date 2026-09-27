@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t25-23793416",
+          "uuid": "t25-1642713",
           "filename": "t25-client-report.pdf",
           "path": "raw/attachments/jira/reports/t25-client-report.pdf",
           "bytes": 70550,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t25-62686158",
+          "uuid": "t25-97632624",
           "filename": "t25-hydration-log.log",
           "path": "raw/attachments/jira/logs/t25-hydration-log.log",
           "bytes": 333,

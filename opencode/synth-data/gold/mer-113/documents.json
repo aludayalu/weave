@@ -4,7 +4,7 @@
     "path": "raw/attachments/jira/reports/t12-finance-report.pdf",
     "filename": "t12-finance-report.pdf",
     "bytes": 71179,
-    "sha256": "161220a91c802b1d",
+    "sha256": "e95d3b3cfcb4a4a9",
     "doc_type": "application/pdf",
     "linked_issue_key": "MER-113",
     "linked_channel": null,
@@ -12,7 +12,7 @@
     "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
   },
   {
-    "doc_id": "t12-29042770",
+    "doc_id": "t12-56192862",
     "path": "raw/attachments/discord/images/t12-workbook-screenshot.png",
     "filename": "t12-workbook-screenshot.png",
     "bytes": 20790,

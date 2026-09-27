@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "e05-72339623",
+          "uuid": "e05-96676191",
           "filename": "e05-client-report.pdf",
           "path": "raw/attachments/jira/reports/e05-client-report.pdf",
           "bytes": 71763,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "e05-71519670",
+          "uuid": "e05-79766358",
           "filename": "e05-timezone-log.log",
           "path": "raw/attachments/jira/logs/e05-timezone-log.log",
           "bytes": 333,

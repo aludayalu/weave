@@ -4,7 +4,7 @@
     "path": "raw/attachments/jira/reports/t05-support-report.pdf",
     "filename": "t05-support-report.pdf",
     "bytes": 71515,
-    "sha256": "fc5b9531e18402fa",
+    "sha256": "576e79c2e76b86c6",
     "doc_type": "application/pdf",
     "linked_issue_key": "MER-107",
     "linked_channel": null,
@@ -12,7 +12,7 @@
     "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
   },
   {
-    "doc_id": "t05-92337948",
+    "doc_id": "t05-71673682",
     "path": "raw/attachments/discord/images/t05-config-diff.png",
     "filename": "t05-config-diff.png",
     "bytes": 22705,

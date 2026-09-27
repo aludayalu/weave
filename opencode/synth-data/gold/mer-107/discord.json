@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t05-71801092",
+          "uuid": "t05-89304083",
           "filename": "t05-support-report.pdf",
           "path": "raw/attachments/jira/reports/t05-support-report.pdf",
           "bytes": 71515,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t05-92337948",
+          "uuid": "t05-71673682",
           "filename": "t05-config-diff.png",
           "path": "raw/attachments/discord/images/t05-config-diff.png",
           "bytes": 22705,

@@ -4,7 +4,7 @@
     "path": "raw/attachments/jira/reports/t22-support-report.pdf",
     "filename": "t22-support-report.pdf",
     "bytes": 68857,
-    "sha256": "5fad2ad65319cf8d",
+    "sha256": "b47eb9b3f452331c",
     "doc_type": "application/pdf",
     "linked_issue_key": "MER-121",
     "linked_channel": null,
@@ -12,7 +12,7 @@
     "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
   },
   {
-    "doc_id": "t22-6867693",
+    "doc_id": "t22-12080718",
     "path": "raw/attachments/discord/images/t22-browser-screenshot.png",
     "filename": "t22-browser-screenshot.png",
     "bytes": 20553,

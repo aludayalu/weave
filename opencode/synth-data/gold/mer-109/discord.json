@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t07-53218696",
+          "uuid": "t07-53276612",
           "filename": "t07-client-report.pdf",
           "path": "raw/attachments/jira/reports/t07-client-report.pdf",
           "bytes": 67548,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t07-56510107",
+          "uuid": "t07-36267357",
           "filename": "t07-worker-trace.png",
           "path": "raw/attachments/discord/images/t07-worker-trace.png",
           "bytes": 21413,

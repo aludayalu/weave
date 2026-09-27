@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t10-21992541",
+          "uuid": "t10-73045360",
           "filename": "t10-release-report.pdf",
           "path": "raw/attachments/jira/reports/t10-release-report.pdf",
           "bytes": 71095,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t10-47641865",
+          "uuid": "t10-38269749",
           "filename": "t10-bundle-log.log",
           "path": "raw/attachments/jira/logs/t10-bundle-log.log",
           "bytes": 346,

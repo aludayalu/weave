@@ -59,14 +59,14 @@
       "mentions_pr": [],
       "attachments": [
         {
-          "uuid": "t20-11952175",
+          "uuid": "t20-5038821",
           "filename": "t20-pentest-report.pdf",
           "path": "raw/attachments/jira/reports/t20-pentest-report.pdf",
           "bytes": 72423,
           "content_type": "application/pdf"
         },
         {
-          "uuid": "t20-55628697",
+          "uuid": "t20-25578951",
           "filename": "t20-curl-log.log",
           "path": "raw/attachments/jira/logs/t20-curl-log.log",
           "bytes": 331,
