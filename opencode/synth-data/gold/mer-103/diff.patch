@@ -1,0 +1,83 @@
+diff --git a/internal/store/store.go b/internal/store/store.go
+index 9e38f1a..4900e14 100644
+--- a/internal/store/store.go
++++ b/internal/store/store.go
+@@ -49,5 +49,14 @@ func escape(s string) string {
+ // migrations/0002_seed_tenants.sql — check that file before changing how
+ // keys are normalized here.
+ func OverrideKey(key string) string {
+-	return strings.ToLower(key)
++	k := strings.ToLower(strings.TrimSpace(key))
++	// Legacy import files used one underscore between namespace and field
++	// (BILLING_Grace_Period_Days). Underscores inside the field name are
++	// significant: only the first separator becomes a dot.
++	if !strings.Contains(k, ".") {
++		if i := strings.IndexByte(k, '_'); i >= 0 {
++			k = k[:i] + "." + k[i+1:]
++		}
++	}
++	return k
+ }
+diff --git a/internal/store/task103_override_keys_test.go b/internal/store/task103_override_keys_test.go
+new file mode 100644
+index 0000000..6138c86
+--- /dev/null
++++ b/internal/store/task103_override_keys_test.go
+@@ -0,0 +1,57 @@
++package store
++
++import (
++	"testing"
++
++	"github.com/meridian-erp/meridian/internal/flags"
++)
++
++// MER-103: import jobs accept the historical underscore form, while the
++// tenant_overrides table is seeded in dotted lowercase form. A fallback
++// to the tenant default changes invoice due dates for specific customers.
++func TestOverrideKeyCanonicalForms(t *testing.T) {
++	cases := map[string]string{
++		"billing.grace_period_days":      "billing.grace_period_days",
++		"BILLING.GRACE_PERIOD_DAYS":      "billing.grace_period_days",
++		"BILLING_Grace_Period_Days":      "billing.grace_period_days",
++		" Billing.grace_period_days ":    "billing.grace_period_days",
++	}
++	for input, want := range cases {
++		if got := OverrideKey(input); got != want {
++			t.Errorf("OverrideKey(%q) = %q, want %q", input, got, want)
++		}
++	}
++}
++
++func TestSeededOverrideResolvesLegacyImport(t *testing.T) {
++	seed := map[string]string{"billing.grace_period_days": "7"}
++	legacyImportKey := "BILLING_Grace_Period_Days"
++	if got := seed[OverrideKey(legacyImportKey)]; got != "7" {
++		t.Errorf("legacy import resolved to %q; expected seeded seven-day override", got)
++	}
++}
++
++func TestOverrideLookupDoesNotRewritePropertyUnderscores(t *testing.T) {
++	got := OverrideKey("billing.grace_period_days")
++	if got != "billing.grace_period_days" {
++		t.Fatalf("property separator was altered: %q", got)
++	}
++}
++
++func TestOverrideKeyIsIdempotent(t *testing.T) {
++	first := OverrideKey("BILLING_Grace_Period_Days")
++	if second := OverrideKey(first); second != first {
++		t.Errorf("normalization is not idempotent: %q -> %q", first, second)
++	}
++}
++
++func TestFlagAndTenantOverrideDialectsRemainDistinct(t *testing.T) {
++	// Cross-task contract: feature flags normalize all separators to dots,
++	// while tenant override aliases only map the legacy first separator.
++	if got := flags.New(flags.MapStore{"compliance.export.gate": "on"}).Get(flags.FlagComplianceExportGate); got != "on" {
++		t.Fatalf("flag lookup regression: %q", got)
++	}
++	if got := OverrideKey("billing.grace_period_days"); got != "billing.grace_period_days" {
++		t.Fatalf("override dialect changed: %q", got)
++	}
++}

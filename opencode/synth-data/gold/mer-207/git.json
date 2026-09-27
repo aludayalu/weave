@@ -1,0 +1,43 @@
+{
+  "task_id": "mer-207",
+  "pull_request": {
+    "pr_number": 34,
+    "title": "fix(audit): decode pre-expansion rows through the v1 shim (MER-207)",
+    "state": "closed",
+    "merged": true,
+    "author": "Marcus Lee",
+    "branch": "feature/MER-207-audit-v1",
+    "merge_sha": "7cda3e9560f221d6c08ec6efb3034d96128bf4ff",
+    "opened_ts_utc": "2027-02-17T16:00:00Z",
+    "merged_ts_utc": "2027-02-19T20:00:00Z",
+    "closed_ts_utc": "2027-02-19T20:00:00Z"
+  },
+  "merge_sha": "7cda3e9560f221d6c08ec6efb3034d96128bf4ff",
+  "base_sha": "93c99fe65568325d2395525518284f59a9100a23",
+  "head_sha": "6f9208f59216751494daba0d8c43ee569dc71571",
+  "commit_count": 1,
+  "commits": [
+    {
+      "sha": "6f9208f59216751494daba0d8c43ee569dc71571",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2027-02-17T16:00:00Z",
+      "committed_ts_utc": "2027-02-17T16:00:00Z",
+      "message": "fix(audit): decode pre-expansion rows through the v1 shim (MER-207)",
+      "is_merge": false,
+      "parent_shas": [
+        "93c99fe65568325d2395525518284f59a9100a23"
+      ],
+      "additions": 62,
+      "deletions": 10,
+      "changed_files": [
+        "internal/audit/decode.go",
+        "internal/audit/eval207_test.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/audit/decode.go",
+    "internal/audit/eval207_test.go"
+  ]
+}

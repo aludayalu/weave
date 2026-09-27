@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-103",
+  "issue": {
+    "issue_key": "MER-103",
+    "summary": "Tenant grace-period overrides silently fall back",
+    "description": "Harborline's configured seven-day grace period is ignored for invoices created by the regional import job.\n\nTribal constraint: Override keys are seeded as dotted lowercase in SQL; old imports submit mixed-case underscore names, while reads currently only lowercase.",
+    "status": "Done",
+    "reporter": "Priya Sharma",
+    "assignee": "Priya Sharma",
+    "created_utc": "2026-08-12T13:28:00Z",
+    "updated_utc": "2026-08-14T19:58:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21008",
+        "filename": "t03-client-report.pdf",
+        "path": "raw/attachments/jira/reports/t03-client-report.pdf",
+        "bytes": 69303,
+        "content_type": "application/pdf",
+        "created_utc": "2026-08-12T14:08:00Z"
+      },
+      {
+        "attachment_id": "21008",
+        "filename": "t03-import-log.log",
+        "path": "raw/attachments/jira/logs/t03-import-log.log",
+        "bytes": 333,
+        "content_type": "application/octet-stream",
+        "created_utc": "2026-08-12T14:08:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-103",
+      "ts_utc": "2026-08-12T13:28:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-103",
+      "ts_utc": "2026-08-12T13:28:00Z",
+      "author": "Priya Sharma",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Priya Sharma"
+    },
+    {
+      "issue_key": "MER-103",
+      "ts_utc": "2026-08-12T13:42:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-103",
+      "ts_utc": "2026-08-12T13:42:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #8"
+    },
+    {
+      "issue_key": "MER-103",
+      "ts_utc": "2026-08-13T15:08:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-103",
+      "ts_utc": "2026-08-14T19:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-103",
+      "ts_utc": "2026-08-14T19:58:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

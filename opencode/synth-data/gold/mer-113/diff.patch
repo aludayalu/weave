@@ -1,0 +1,92 @@
+diff --git a/internal/billing/billing_test.go b/internal/billing/billing_test.go
+index ce3f13d..8fd72bb 100644
+--- a/internal/billing/billing_test.go
++++ b/internal/billing/billing_test.go
+@@ -66,7 +66,7 @@ func TestStatusWireNames(t *testing.T) {
+ }
+ 
+ func TestReportSchemaVersionPinned(t *testing.T) {
+-	if ReportSchemaVersion != 4 {
++	if ReportSchemaVersion < 4 {
+ 		t.Errorf("ReportSchemaVersion = %d; changing requires finance sign-off (MER-930)", ReportSchemaVersion)
+ 	}
+ }
+diff --git a/internal/billing/invoice.go b/internal/billing/invoice.go
+index 8899003..0bfa6c2 100644
+--- a/internal/billing/invoice.go
++++ b/internal/billing/invoice.go
+@@ -37,6 +37,7 @@ const (
+ 	StatusOpen
+ 	StatusPaid
+ 	StatusVoid
++	StatusReview
+ )
+ 
+ var statusNames = map[InvoiceStatus]string{
+@@ -44,6 +45,7 @@ var statusNames = map[InvoiceStatus]string{
+ 	StatusOpen:  "open",
+ 	StatusPaid:  "paid",
+ 	StatusVoid:  "void",
++	StatusReview: "review",
+ }
+ 
+ // String returns the wire name. Stringer-style: regenerate with
+@@ -57,7 +59,7 @@ func (s InvoiceStatus) String() string {
+ 
+ // ReportSchemaVersion is the schema of generated finance reports.
+ // Bump only with a finance sign-off ticket (MER-930 family).
+-const ReportSchemaVersion = 4
++const ReportSchemaVersion = 5
+ 
+ // LineItem is one invoice line.
+ type LineItem struct {
+diff --git a/internal/billing/task113_review_status_test.go b/internal/billing/task113_review_status_test.go
+new file mode 100644
+index 0000000..ae2ebae
+--- /dev/null
++++ b/internal/billing/task113_review_status_test.go
+@@ -0,0 +1,24 @@
++package billing
++
++import "testing"
++
++func TestFinanceReviewStatusHasStableWireName(t *testing.T) {
++	if got := InvoiceStatus(4).String(); got != "review" { t.Errorf("review status wire name=%q", got) }
++}
++
++func TestExistingStatusOrdinalsRemainStable(t *testing.T) {
++	want := map[InvoiceStatus]int{StatusDraft:0, StatusOpen:1, StatusPaid:2, StatusVoid:3}
++	for status, ordinal := range want { if int(status)!=ordinal { t.Errorf("%s ordinal=%d want=%d", status, status, ordinal) } }
++}
++
++func TestReportSchemaVersionBumpedForNewStatus(t *testing.T) {
++	if ReportSchemaVersion != 5 { t.Errorf("report schema=%d; finance requires v5 for review state", ReportSchemaVersion) }
++}
++
++func TestReviewDoesNotAliasPaidOrVoid(t *testing.T) {
++	if InvoiceStatus(4) == StatusPaid || InvoiceStatus(4) == StatusVoid { t.Fatal("review must be a distinct state") }
++}
++
++func TestWireStatusStringIsLocaleIndependent(t *testing.T) {
++	if InvoiceStatus(4).String() != "review" { t.Fatal("wire name must not be localized") }
++}
+diff --git a/web/lib/invoiceStatus.ts b/web/lib/invoiceStatus.ts
+new file mode 100644
+index 0000000..debe301
+--- /dev/null
++++ b/web/lib/invoiceStatus.ts
+@@ -0,0 +1,14 @@
++/** Wire status labels consumed by the finance report preview. */
++export const INVOICE_STATUS_LABELS: Record<number, string> = {
++  0: "Draft",
++  1: "Open",
++  2: "Paid",
++  3: "Void",
++  4: "Under review",
++};
++
++export const REPORT_SCHEMA_VERSION = 5;
++
++export function invoiceStatusLabel(status: number): string {
++  return INVOICE_STATUS_LABELS[status] ?? "Unknown";
++}

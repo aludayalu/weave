@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-207",
+  "channel": "eng-platform",
+  "window": {
+    "start": "2027-02-17T13:48:00Z",
+    "end": "2027-02-19T20:18:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1605586617630720000",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-17T13:48:00Z",
+      "ts_raw": "1802872080",
+      "ts_epoch": 1802872080,
+      "content": "@priya A partner's historical audit export cannot be replayed after a new optional actor field was introduced. Opening MER-207 to track it. ok this is the third report on this, starting now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-207"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1605588882554880001",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-17T13:57:00Z",
+      "ts_raw": "2027-02-17T13:57:00+00:00",
+      "ts_epoch": 1802872620,
+      "content": "ack. looking now. filing evidence on the ticket (partner-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1605609266872320002",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-17T15:18:00Z",
+      "ts_raw": "2027-02-17T15:18:00+00:00",
+      "ts_epoch": 1802877480,
+      "content": "fyi partner-report is attached to MER-207 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-207"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "e07-88100986",
+          "filename": "e07-partner-report.pdf",
+          "path": "raw/attachments/jira/reports/e07-partner-report.pdf",
+          "bytes": 72577,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "e07-93818168",
+          "filename": "e07-replay-log.log",
+          "path": "raw/attachments/jira/logs/e07-replay-log.log",
+          "bytes": 333,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1605631916113920011",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2027-02-17T16:48:00Z",
+      "ts_raw": "1802882880",
+      "ts_epoch": 1802882880,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1605707413585920012",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-17T21:48:00Z",
+      "ts_raw": "2027-02-17T21:48:00+00:00",
+      "ts_epoch": 1802900880,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1605782911057920013",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-18T02:48:00Z",
+      "ts_raw": "2027-02-18T02:48:00+00:00",
+      "ts_epoch": 1802918880,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1605974171320320003",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-18T15:28:00Z",
+      "ts_raw": "2027-02-18T15:28:00+00:00",
+      "ts_epoch": 1802964480,
+      "content": "spec-first per team rule — tests for MER-207 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-207"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1606040860753920004",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-18T19:53:00Z",
+      "ts_raw": "2027-02-18T19:53:00+00:00",
+      "ts_epoch": 1802980380,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1606053443665920005",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-18T20:43:00Z",
+      "ts_raw": "1802983380",
+      "ts_epoch": 1802983380,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1606060993413120006",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-18T21:13:00Z",
+      "ts_raw": "2027-02-18T21:13:00+00:00",
+      "ts_epoch": 1802985180,
+      "content": "PR #34 is up: `feature/MER-207-audit-v1`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-207"
+      ],
+      "mentions_pr": [
+        34
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1606072318033920007",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Deleted User",
+      "ts_utc": "2027-02-18T21:58:00Z",
+      "ts_raw": "2027-02-18T21:58:00+00:00",
+      "ts_epoch": 1802987880,
+      "content": "reviewed #34 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1606081126072320008",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-18T22:33:00Z",
+      "ts_raw": "2027-02-18T22:33:00+00:00",
+      "ts_epoch": 1802989980,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1606404003594240009",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-19T19:56:00Z",
+      "ts_raw": "2027-02-19T19:56:00+00:00",
+      "ts_epoch": 1803066960,
+      "content": "deploy is green, MER-207 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-207"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1606409540075520010",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-19T20:18:00Z",
+      "ts_raw": "2027-02-19T20:18:00+00:00",
+      "ts_epoch": 1803068280,
+      "content": "MER-207 closed — PR #34 merged. done, PR is up and CI is green",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-207"
+      ],
+      "mentions_pr": [
+        34
+      ],
+      "attachments": []
+    }
+  ]
+}

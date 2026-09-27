@@ -1,0 +1,248 @@
+{
+  "task_id": "mer-121",
+  "channel": "eng-frontend",
+  "window": {
+    "start": "2026-12-02T13:18:00Z",
+    "end": "2026-12-04T19:48:00Z"
+  },
+  "message_count": 13,
+  "messages": [
+    {
+      "message_id": "1577675202232320000",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-02T13:18:00Z",
+      "ts_raw": "1796217480",
+      "ts_epoch": 1796217480,
+      "content": "@marcus A finance analyst filters audit events, opens a record, then returns to an unfiltered table with stale cached results. Opening MER-121 to track it. picking this up now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-121"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1577677467156480001",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-02T13:27:00Z",
+      "ts_raw": "2026-12-02T13:27:00+00:00",
+      "ts_epoch": 1796218020,
+      "content": "ack. looking now. filing evidence on the ticket (support-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1577697851473920002",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-12-02T14:48:00Z",
+      "ts_raw": "2026-12-02T14:48:00+00:00",
+      "ts_epoch": 1796222880,
+      "content": "fyi support-report is attached to MER-121 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-121"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t22-27494594",
+          "filename": "t22-support-report.pdf",
+          "path": "raw/attachments/jira/reports/t22-support-report.pdf",
+          "bytes": 68857,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t22-6867693",
+          "filename": "t22-browser-screenshot.png",
+          "path": "raw/attachments/discord/images/t22-browser-screenshot.png",
+          "bytes": 20553,
+          "content_type": "image/png"
+        }
+      ]
+    },
+    {
+      "message_id": "1577720500715520011",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-02T16:18:00Z",
+      "ts_raw": "2026-12-02T16:18:00+00:00",
+      "ts_epoch": 1796228280,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1577795998187520012",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-02T21:18:00Z",
+      "ts_raw": "2026-12-02T21:18:00+00:00",
+      "ts_epoch": 1796246280,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1577871495659520013",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-03T02:18:00Z",
+      "ts_raw": "2026-12-03T02:18:00+00:00",
+      "ts_epoch": 1796264280,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1578062755921920003",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-03T14:58:00Z",
+      "ts_raw": "2026-12-03T14:58:00+00:00",
+      "ts_epoch": 1796309880,
+      "content": "garbage from the export",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1578142028267520005",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-12-03T20:13:00Z",
+      "ts_raw": "2026-12-03T20:13:00",
+      "ts_epoch": 1796328780,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1578149578014720006",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-03T20:43:00Z",
+      "ts_raw": "2026-12-03T20:43:00+00:00",
+      "ts_epoch": 1796330580,
+      "content": "PR #24 is up: `feature/MER-121-audit-filter-url`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-121"
+      ],
+      "mentions_pr": [
+        24
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1578160902635520007",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-03T21:28:00Z",
+      "ts_raw": "2026-12-03T21:28:00+00:00",
+      "ts_epoch": 1796333280,
+      "content": "reviewed #24 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1578169710673920008",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-03T22:03:00Z",
+      "ts_raw": "2026-12-03T22:03:00+00:00",
+      "ts_epoch": 1796335380,
+      "content": "https://discord.com/channels/9901/1101/0 (deleted message placeholder)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1578492588195840009",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-12-04T19:26:00Z",
+      "ts_raw": "2026-12-04T19:26:00+00:00",
+      "ts_epoch": 1796412360,
+      "content": "deploy is green, MER-121 is ready to close.",
+      "edited": "2026-12-04T19:26:00Z",
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-121"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1578498124677120010",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-04T19:48:00Z",
+      "ts_raw": "2026-12-04T19:48:00+00:00",
+      "ts_epoch": 1796413680,
+      "content": "MER-121 closed — PR #24 merged. fix is merged, thanks for the quick turnaround",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-121"
+      ],
+      "mentions_pr": [
+        24
+      ],
+      "attachments": []
+    }
+  ]
+}

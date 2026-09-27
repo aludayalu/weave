@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21024",
+    "path": "raw/attachments/jira/reports/t22-support-report.pdf",
+    "filename": "t22-support-report.pdf",
+    "bytes": 68857,
+    "sha256": "5fad2ad65319cf8d",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-121",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-12-02T13:58:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "t22-6867693",
+    "path": "raw/attachments/discord/images/t22-browser-screenshot.png",
+    "filename": "t22-browser-screenshot.png",
+    "bytes": 20553,
+    "sha256": "903706360c2e617e",
+    "doc_type": "image/png",
+    "linked_issue_key": null,
+    "linked_channel": "eng-frontend",
+    "linked_ts_utc": "2026-12-02T14:48:00Z",
+    "extracted_text": "[image captured; OCR text unavailable in this build]"
+  }
+]

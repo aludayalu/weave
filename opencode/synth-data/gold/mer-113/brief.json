@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-113",
+  "jira": "MER-113",
+  "pr": 16,
+  "repository": "meridian-erp",
+  "repo_revision": "ae18d00840 (task branch tip)",
+  "title": "New invoice status breaks finance's workbook mapping",
+  "summary": "MER-113 raised in #billing, shipped in PR #16",
+  "start_ts_utc": "2026-10-07T13:18:00Z",
+  "end_ts_utc": "2026-10-09T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya Finance's monthly workbook imports the new review state as a paid invoice, distorting cash forecasts. Opening MER-113 to track it. took first pass at this, thoughts below.",
+      "ack. looking now. filing evidence on the ticket (finance-report).",
+      "fyi finance-report is attached to MER-113 if you want the raw capture.",
+      "anyone seen the staging pg bump? unrelated",
+      "reminder: freeze starts friday for the payments repo",
+      "```\n{\"partial\": tru",
+      "the interesting part is that the obvious fix passes locally and still ships broken",
+      "cross-team contract involved here, so I opened a ticket before touching anything",
+      "PR #16 is up: `feature/MER-113-review-status`. review when you can.",
+      "reviewed #16 — left two comments, nothing structural.",
+      "addressed both, pushing.",
+      "MER-113 closed — PR #16 merged. fix is merged, thanks for the quick turnaround"
+    ],
+    "ticket": "Finance's monthly workbook imports the new review state as a paid invoice, distorting cash forecasts.\n\nTribal constraint: Status strings and ordinal positions are an external report contract; report_schema_version must be bumped and the generated string mapping refreshed.",
+    "documents": [
+      "t12-finance-report.pdf",
+      "t12-workbook-screenshot.png"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 12,
+    "jira_events": 7,
+    "commits": 4,
+    "patch_bytes": 3123,
+    "documents": 2
+  }
+}

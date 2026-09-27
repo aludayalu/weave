@@ -1,0 +1,63 @@
+{
+  "task_id": "mer-119",
+  "pull_request": {
+    "pr_number": 22,
+    "title": "test: MER-119 tenant and page cache key contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-119-pagination-key",
+    "merge_sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74",
+    "opened_ts_utc": "2026-11-18T18:00:00Z",
+    "merged_ts_utc": "2026-11-20T19:30:00Z",
+    "closed_ts_utc": "2026-11-20T19:30:00Z"
+  },
+  "merge_sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74",
+  "base_sha": "229352c267bcd1cbcdc22951a2ed35bf882d78f1",
+  "head_sha": "55f663f53e3a6c27b5a9a2a88573c5d24b7dc70f",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "b0670f3a18159d7a732cb629a05a5c8fa4f35a88",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-11-17T16:00:00Z",
+      "committed_ts_utc": "2026-11-17T16:00:00Z",
+      "message": "test: MER-119 tenant and page cache key contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "229352c267bcd1cbcdc22951a2ed35bf882d78f1"
+      ],
+      "additions": 30,
+      "deletions": 0,
+      "changed_files": [
+        "web/lib/task119_pagination_key.test.ts"
+      ]
+    },
+    {
+      "sha": "55f663f53e3a6c27b5a9a2a88573c5d24b7dc70f",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-11-18T18:00:00Z",
+      "committed_ts_utc": "2026-11-18T18:00:00Z",
+      "message": "fix(console): generate invoice cache keys with tenant and page (MER-119)",
+      "is_merge": false,
+      "parent_shas": [
+        "b0670f3a18159d7a732cb629a05a5c8fa4f35a88"
+      ],
+      "additions": 6,
+      "deletions": 5,
+      "changed_files": [
+        "web/lib/swrKeys.ts",
+        "web/pages/invoices.tsx",
+        "web/routes.yaml"
+      ]
+    }
+  ],
+  "files": [
+    "web/lib/swrKeys.ts",
+    "web/lib/task119_pagination_key.test.ts",
+    "web/pages/invoices.tsx",
+    "web/routes.yaml"
+  ]
+}

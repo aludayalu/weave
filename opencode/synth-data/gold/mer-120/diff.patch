@@ -1,0 +1,111 @@
+diff --git a/internal/validation/purchase_order.go b/internal/validation/purchase_order.go
+index 504c462..b5d6b08 100644
+--- a/internal/validation/purchase_order.go
++++ b/internal/validation/purchase_order.go
+@@ -9,9 +9,14 @@ type PurchaseOrder struct {
+ 	Memo     string `json:"memo"`
+ }
+ 
+-// ValidateDraft backs autosave. The current shared validator applies the
+-// submit-time required tags here as well, so partial drafts are rejected.
+-func ValidateDraft(po PurchaseOrder) error {
++// ValidateDraft backs autosave. Required tags guide the final submission
++// form, but a draft is intentionally allowed to be incomplete (MER-120).
++func ValidateDraft(_ PurchaseOrder) error {
++	return nil
++}
++
++// ValidateSubmit enforces the full submit contract.
++func ValidateSubmit(po PurchaseOrder) error {
+ 	if po.VendorID == "" {
+ 		return fmt.Errorf("vendor_id is required")
+ 	}
+@@ -20,8 +25,3 @@ func ValidateDraft(po PurchaseOrder) error {
+ 	}
+ 	return nil
+ }
+-
+-// ValidateSubmit enforces the full submit contract.
+-func ValidateSubmit(po PurchaseOrder) error {
+-	return ValidateDraft(po)
+-}
+diff --git a/internal/validation/task120_draft_validation_test.go b/internal/validation/task120_draft_validation_test.go
+new file mode 100644
+index 0000000..3e8ff24
+--- /dev/null
++++ b/internal/validation/task120_draft_validation_test.go
+@@ -0,0 +1,30 @@
++package validation
++
++import (
++	"strings"
++	"testing"
++)
++
++func TestEmptyDraftCanAutosave(t *testing.T) {
++	if err:=ValidateDraft(PurchaseOrder{}); err!=nil { t.Errorf("incomplete draft rejected by autosave: %v",err) }
++}
++
++func TestDraftCanSaveWithOnlyVendor(t *testing.T) {
++	if err:=ValidateDraft(PurchaseOrder{VendorID:"v-12"}); err!=nil { t.Errorf("draft missing due date rejected: %v",err) }
++}
++
++func TestSubmitStillRequiresVendorAndDate(t *testing.T) {
++	for _,po:=range []PurchaseOrder{{},{VendorID:"v-12"},{DueDate:"2026-12-01"}} {
++		if err:=ValidateSubmit(po); err==nil { t.Errorf("invalid submit accepted: %+v",po) }
++	}
++}
++
++func TestValidSubmitPasses(t *testing.T) {
++	if err:=ValidateSubmit(PurchaseOrder{VendorID:"v-12",DueDate:"2026-12-01",Memo:"annual supplies"});err!=nil { t.Fatal(err) }
++}
++
++func TestDraftAndSubmitReturnFieldSpecificErrorsOnlyAtSubmit(t *testing.T) {
++	err:=ValidateSubmit(PurchaseOrder{})
++	if err==nil || !strings.Contains(err.Error(),"vendor_id") { t.Errorf("submit error=%v",err) }
++	if ValidateDraft(PurchaseOrder{})!=nil { t.Error("autosave should not surface submit-time field errors") }
++}
+diff --git a/web/lib/schemas.ts b/web/lib/schemas.ts
+index b21c1bd..1f1328e 100644
+--- a/web/lib/schemas.ts
++++ b/web/lib/schemas.ts
+@@ -10,11 +10,12 @@ export interface ValidationIssue {
+   message: string;
+ }
+ 
+-// The client currently applies submit requirements to autosave as well.
+ export function validatePurchaseOrder(input: PurchaseOrderInput, mode: "draft" | "submit"): ValidationIssue[] {
+   const issues: ValidationIssue[] = [];
+-  if (!input.vendor_id) issues.push({ field: "vendor_id", message: "Choose a vendor" });
+-  if (!input.due_date) issues.push({ field: "due_date", message: "Choose a due date" });
+-  if (mode === "submit" && !input.memo) issues.push({ field: "memo", message: "Add a purchase note" });
++  if (mode === "submit") {
++    if (!input.vendor_id) issues.push({ field: "vendor_id", message: "Choose a vendor" });
++    if (!input.due_date) issues.push({ field: "due_date", message: "Choose a due date" });
++    if (!input.memo) issues.push({ field: "memo", message: "Add a purchase note" });
++  }
+   return issues;
+ }
+diff --git a/web/lib/task120_schema_mode.test.ts b/web/lib/task120_schema_mode.test.ts
+new file mode 100644
+index 0000000..78b0065
+--- /dev/null
++++ b/web/lib/task120_schema_mode.test.ts
+@@ -0,0 +1,17 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { validatePurchaseOrder } from "./schemas.ts";
++
++test("client autosave accepts incomplete draft", () => {
++  assert.deepEqual(validatePurchaseOrder({}, "draft"), []);
++});
++test("client submit requires vendor and date", () => {
++  const issues=validatePurchaseOrder({},"submit");
++  assert.deepEqual(issues.map(x=>x.field).sort(),["due_date","memo","vendor_id"]);
++});
++test("draft mode does not require submit-only memo", () => {
++  assert.deepEqual(validatePurchaseOrder({vendor_id:"v-1"},"draft"),[]);
++});
++test("valid submit passes client validation", () => {
++  assert.deepEqual(validatePurchaseOrder({vendor_id:"v-1",due_date:"2026-12-01",memo:"stock"},"submit"),[]);
++});

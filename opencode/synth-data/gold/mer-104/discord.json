@@ -1,0 +1,250 @@
+{
+  "task_id": "mer-104",
+  "channel": "eng-frontend",
+  "window": {
+    "start": "2026-07-29T13:43:00Z",
+    "end": "2026-07-31T20:13:00Z"
+  },
+  "message_count": 13,
+  "messages": [
+    {
+      "message_id": "1532020622622720000",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-29T13:43:00Z",
+      "ts_raw": "2026-07-29T13:43:00+00:00",
+      "ts_epoch": 1785332580,
+      "content": "@priya Vantage Foods users see Harborline invoice counts after switching workspaces until a full page reload. Opening MER-104 to track it. took first pass at this, thoughts below.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-104"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532022887546880001",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-29T13:52:00Z",
+      "ts_raw": "2026-07-29T13:52:00+00:00",
+      "ts_epoch": 1785333120,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532043271864320002",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-29T15:13:00Z",
+      "ts_raw": "2026-07-29T15:13:00+00:00",
+      "ts_epoch": 1785337980,
+      "content": "fyi client-report is attached to MER-104 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-104"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t18-12255203",
+          "filename": "t18-client-report.pdf",
+          "path": "raw/attachments/jira/reports/t18-client-report.pdf",
+          "bytes": 69897,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t18-30842454",
+          "filename": "t18-tenant-switch-screenshot.png",
+          "path": "raw/attachments/discord/images/t18-tenant-switch-screenshot.png",
+          "bytes": 21285,
+          "content_type": "image/png"
+        }
+      ]
+    },
+    {
+      "message_id": "1532065921105920011",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-29T16:43:00Z",
+      "ts_raw": "2026-07-29T16:43:00+00:00",
+      "ts_epoch": 1785343380,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532216916049920013",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-30T02:43:00Z",
+      "ts_raw": "2026-07-30T02:43:00+00:00",
+      "ts_epoch": 1785379380,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532408176312320003",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-30T15:23:00Z",
+      "ts_raw": "2026-07-30T15:23:00+00:00",
+      "ts_epoch": 1785424980,
+      "content": "spec-first per team rule — tests for MER-104 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-104"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532474865745920004",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-30T19:48:00Z",
+      "ts_raw": "2026-07-30T19:48:00+00:00",
+      "ts_epoch": 1785440880,
+      "content": "<@301002> can you?",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532487448657920005",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Deleted User",
+      "ts_utc": "2026-07-30T20:38:00Z",
+      "ts_raw": "1785443880",
+      "ts_epoch": 1785443880,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532494998405120006",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-30T21:08:00Z",
+      "ts_raw": "2026-07-30T21:08:00+00:00",
+      "ts_epoch": 1785445680,
+      "content": "PR #5 is up: `feature/MER-104-tenant-switch`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-104"
+      ],
+      "mentions_pr": [
+        5
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1532506323025920007",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-30T21:53:00Z",
+      "ts_raw": "2026-07-30T21:53:00+00:00",
+      "ts_epoch": 1785448380,
+      "content": "reviewed #5 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532515131064320008",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-30T22:28:00Z",
+      "ts_raw": "2026-07-30T22:28:00+00:00",
+      "ts_epoch": 1785450480,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532838008586240009",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-31T19:51:00Z",
+      "ts_raw": "2026-07-31T19:51:00+00:00",
+      "ts_epoch": 1785527460,
+      "content": "deploy is green, MER-104 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-104"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1532843545067520010",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-31T20:13:00Z",
+      "ts_raw": "2026-07-31T20:13:00+00:00",
+      "ts_epoch": 1785528780,
+      "content": "MER-104 closed — PR #5 merged. shipped — flag is live in staging, will confirm after the nightly job",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-104"
+      ],
+      "mentions_pr": [
+        5
+      ],
+      "attachments": []
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "task_id": "mer-206",
+  "issue": {
+    "issue_key": "MER-206",
+    "summary": "Concurrent payment retries can charge the same attempt twice",
+    "description": "A gateway timeout triggers overlapping retry workers and the ledger records two charges for a single payment attempt.\n\nTribal constraint: Idempotency keys are per attempt because the ledger reconciler groups on that value; retries within an attempt must reuse it, while a new attempt advances the attempt sequence.",
+    "status": "Done",
+    "reporter": "Priya Sharma",
+    "assignee": "Priya Sharma",
+    "created_utc": "2027-02-10T13:48:00Z",
+    "updated_utc": "2027-02-12T20:21:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21033",
+        "filename": "e06-client-report.pdf",
+        "path": "raw/attachments/jira/reports/e06-client-report.pdf",
+        "bytes": 72569,
+        "content_type": "application/octet-stream",
+        "created_utc": "2027-02-10T14:28:00Z"
+      },
+      {
+        "attachment_id": "21033",
+        "filename": "e06-payment-log.log",
+        "path": "raw/attachments/jira/logs/e06-payment-log.log",
+        "bytes": 346,
+        "content_type": "text/plain",
+        "created_utc": "2027-02-10T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-10T13:48:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-10T13:48:00Z",
+      "author": "Priya Sharma",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Priya Sharma"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-10T13:48:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-10T13:48:00Z",
+      "author": "Priya Sharma",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Priya Sharma"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-11T15:28:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-11T15:28:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-11T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-11T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #33"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-11T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-11T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #33"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-12T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-12T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-12T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-206",
+      "ts_utc": "2027-02-12T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

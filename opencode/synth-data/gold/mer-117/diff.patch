@@ -1,0 +1,77 @@
+diff --git a/internal/billing/lineitems.go b/internal/billing/lineitems.go
+index 8d973e6..0bb6ee8 100644
+--- a/internal/billing/lineitems.go
++++ b/internal/billing/lineitems.go
+@@ -29,16 +29,17 @@ func NewLineItemWriter(v VersionStore, b EventPublisher) *LineItemWriter {
+ 	return &LineItemWriter{versions: v, bus: b}
+ }
+ 
+-// Update checks optimistic concurrency and publishes the next version.
+-// The current implementation advances the local version before the
+-// durable publish completes; MER-117 corrects this ordering.
++// Update checks optimistic concurrency, durably publishes the next version,
++// then advances the local projection. The outbox consumer remains writer
++// of record for line items (MER-117); producer-side state must not move
++// ahead of an event that failed to persist.
+ func (w *LineItemWriter) Update(invoice string, expected int64, payload []byte) error {
+ 	current := w.versions.Current(invoice)
+ 	if current != expected {
+ 		return ErrStaleVersion
+ 	}
+-	if err := w.versions.Set(invoice, current+1); err != nil {
++	if err := w.bus.Publish(LineEvent{InvoiceID: invoice, Version: current + 1, Payload: payload}); err != nil {
+ 		return err
+ 	}
+-	return w.bus.Publish(LineEvent{InvoiceID: invoice, Version: current + 1, Payload: payload})
++	return w.versions.Set(invoice, current+1)
+ }
+diff --git a/internal/billing/task117_line_version_test.go b/internal/billing/task117_line_version_test.go
+new file mode 100644
+index 0000000..1406104
+--- /dev/null
++++ b/internal/billing/task117_line_version_test.go
+@@ -0,0 +1,44 @@
++package billing
++
++import (
++	"errors"
++	"testing"
++)
++
++type memVersion struct { v map[string]int64; setCalls int }
++func (m *memVersion) Current(id string) int64 { return m.v[id] }
++func (m *memVersion) Set(id string,v int64) error { m.setCalls++;m.v[id]=v;return nil }
++type fakePublisher struct { err error; calls int; seen int64; current func() int64 }
++func (p *fakePublisher) Publish(e LineEvent) error { p.calls++;p.seen=p.current();return p.err }
++
++func TestFailedDurablePublishDoesNotAdvanceVersion(t *testing.T) {
++	v:=&memVersion{v:map[string]int64{"inv-7":4}}
++	p:=&fakePublisher{err:errors.New("broker unavailable"),current:func()int64{return v.Current("inv-7")}}
++	w:=NewLineItemWriter(v,p)
++	if err:=w.Update("inv-7",4,[]byte("line"));err==nil { t.Fatal("expected publish error") }
++	if got:=v.Current("inv-7");got!=4 { t.Errorf("version advanced to %d before durable event",got) }
++}
++
++func TestDurablePublishPrecedesVersionAdvance(t *testing.T) {
++	v:=&memVersion{v:map[string]int64{"inv-7":4}}
++	p:=&fakePublisher{current:func()int64{return v.Current("inv-7")}}
++	w:=NewLineItemWriter(v,p)
++	if err:=w.Update("inv-7",4,[]byte("line"));err!=nil { t.Fatal(err) }
++	if p.calls!=1 || p.seen!=4 { t.Errorf("publish saw version=%d calls=%d",p.seen,p.calls) }
++	if v.Current("inv-7")!=5 { t.Errorf("version after durable publish=%d",v.Current("inv-7")) }
++}
++
++func TestStaleVersionDoesNotPublishOrWrite(t *testing.T) {
++	v:=&memVersion{v:map[string]int64{"inv-7":5}}
++	p:=&fakePublisher{current:func()int64{return v.Current("inv-7")}}
++	if err:=NewLineItemWriter(v,p).Update("inv-7",4,nil);!errors.Is(err,ErrStaleVersion) { t.Fatalf("err=%v",err) }
++	if p.calls!=0 || v.setCalls!=0 { t.Errorf("stale request side effects: publish=%d set=%d",p.calls,v.setCalls) }
++}
++
++func TestVersionIsPerInvoice(t *testing.T) {
++	v:=&memVersion{v:map[string]int64{"a":1,"b":8}}
++	p:=&fakePublisher{current:func()int64{return 0}}
++	w:=NewLineItemWriter(v,p)
++	if err:=w.Update("a",1,nil);err!=nil { t.Fatal(err) }
++	if v.Current("a")!=2 || v.Current("b")!=8 { t.Errorf("versions=%v",v.v) }
++}

@@ -1,0 +1,895 @@
+{
+  "tasks": [
+    {
+      "task_id": "mer-101",
+      "jira": "MER-101",
+      "pr": 1,
+      "title": "Partner payment timeouts are misclassified",
+      "channel": "billing",
+      "tribal_constraint": "Payment codes are append-only per module; partner integrations use numeric ranges and api/errors.yaml generates both Go messages and TypeScript mappings.",
+      "split": "train",
+      "window": {
+        "start": "2026-07-08T15:00:00Z",
+        "end": "2026-07-10T21:12:00Z"
+      },
+      "duration_minutes": 3252,
+      "document_files": [
+        "t01-client-report.pdf",
+        "t01-gateway-log.log"
+      ],
+      "files": [
+        "api/errors.yaml",
+        "pkg/errs/code.go",
+        "pkg/errs/messages_gen.go",
+        "pkg/errs/task101_gateway_timeout_test.go",
+        "web/lib/errcodes_gen.ts"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 5424,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-102",
+      "jira": "MER-102",
+      "pr": 2,
+      "title": "Compliance export gate differs by tenant",
+      "channel": "eng-platform",
+      "tribal_constraint": "The SQL seed's dotted lowercase spelling is canonical; Go uses kebab case, Kubernetes uses uppercase underscores, and cache invalidation has a separate registry.",
+      "split": "train",
+      "window": {
+        "start": "2026-07-15T14:19:00Z",
+        "end": "2026-07-17T20:49:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t02-flag-debug.pdf",
+        "t02-tenant-snapshot.pdf"
+      ],
+      "files": [
+        "internal/flags/flags.go",
+        "internal/flags/task102_flag_keys_test.go",
+        "migrations/0003_seed_flags.sql"
+      ],
+      "discord_messages": 12,
+      "jira_events": 7,
+      "commits": 3,
+      "patch_bytes": 4682,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-851",
+      "jira": "MER-851",
+      "pr": 4,
+      "title": "GDPR audit export exposes personal data",
+      "channel": "incidents",
+      "tribal_constraint": "The hand-written marshaler and generated easyjson path differ; all serialization boundaries, including the fast export path, must use the redaction policy and the compliance flag.",
+      "split": "train",
+      "window": {
+        "start": "2026-07-22T13:08:00Z",
+        "end": "2026-07-24T19:38:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t09-gdpr-report.pdf",
+        "t09-audit-export-log.log"
+      ],
+      "files": [
+        "api/errors.yaml",
+        "internal/audit/export.go",
+        "internal/audit/helpers_test.go",
+        "internal/audit/record.go",
+        "internal/audit/task851_export_spec_test.go",
+        "internal/httpapi/router.go",
+        "internal/httpapi/task851_export_spec_test.go",
+        "pkg/errs/code.go",
+        "pkg/errs/messages_gen.go",
+        "web/lib/errcodes_gen.ts"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 3,
+      "patch_bytes": 10343,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-104",
+      "jira": "MER-104",
+      "pr": 5,
+      "title": "Workspace switch shows stale tenant invoice data",
+      "channel": "eng-frontend",
+      "tribal_constraint": "Tenant store is an SSR snapshot; useSyncExternalStore is the subscription contract and tenant-derived caches must be invalidated on switch.",
+      "split": "train",
+      "window": {
+        "start": "2026-07-29T13:43:00Z",
+        "end": "2026-07-31T20:13:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t18-client-report.pdf",
+        "t18-tenant-switch-screenshot.png"
+      ],
+      "files": [
+        "web/hooks/useTenant.ts",
+        "web/lib/task104_tenant_switch.test.ts",
+        "web/lib/tenantStore.ts"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 4090,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-105",
+      "jira": "MER-105",
+      "pr": 7,
+      "title": "Billing API is reachable without a session in app-router profile",
+      "channel": "incidents",
+      "tribal_constraint": "Legacy and v2 middleware coexist behind a deployment profile; matcher coverage must be equivalent even though both files compile and old profile tests pass.",
+      "split": "train",
+      "window": {
+        "start": "2026-08-05T14:28:00Z",
+        "end": "2026-08-07T20:58:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t20-pentest-report.pdf",
+        "t20-curl-log.log"
+      ],
+      "files": [
+        "web/lib/matcher.ts",
+        "web/lib/task880_billing_auth.test.ts"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 2396,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-103",
+      "jira": "MER-103",
+      "pr": 8,
+      "title": "Tenant grace-period overrides silently fall back",
+      "channel": "billing",
+      "tribal_constraint": "Override keys are seeded as dotted lowercase in SQL; old imports submit mixed-case underscore names, while reads currently only lowercase.",
+      "split": "train",
+      "window": {
+        "start": "2026-08-12T13:28:00Z",
+        "end": "2026-08-14T19:58:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t03-client-report.pdf",
+        "t03-import-log.log"
+      ],
+      "files": [
+        "internal/store/store.go",
+        "internal/store/task103_override_keys_test.go"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 3150,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-106",
+      "jira": "MER-106",
+      "pr": 9,
+      "title": "Container pool setting is ignored in production",
+      "channel": "deploys",
+      "tribal_constraint": "Compose and Go use different historical environment prefixes; generated defaults run during build, and the deployment uses a separate env alias.",
+      "split": "train",
+      "window": {
+        "start": "2026-08-19T13:48:00Z",
+        "end": "2026-08-21T20:00:00Z"
+      },
+      "duration_minutes": 3252,
+      "document_files": [
+        "t04-incident-log.log",
+        "t04-deployment-screenshot.png"
+      ],
+      "files": [
+        "docker-compose.yml",
+        "internal/config/task106_compose_test.go"
+      ],
+      "discord_messages": 12,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 2032,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-107",
+      "jira": "MER-107",
+      "pr": 10,
+      "title": "Optional partner URL is indistinguishable from an empty value",
+      "channel": "eng-platform",
+      "tribal_constraint": "Value-vs-unset follows migration guarantees; confdiff interprets pointers as runtime-optional and zero values as guaranteed defaults.",
+      "split": "train",
+      "window": {
+        "start": "2026-08-26T13:48:00Z",
+        "end": "2026-08-28T20:00:00Z"
+      },
+      "duration_minutes": 3252,
+      "document_files": [
+        "t05-support-report.pdf",
+        "t05-config-diff.png"
+      ],
+      "files": [
+        "internal/config/config.go",
+        "internal/config/config_test.go",
+        "internal/config/task107_optional_config_test.go"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 3125,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-108",
+      "jira": "MER-108",
+      "pr": 11,
+      "title": "Historical invoice events fail replay after a field rename",
+      "channel": "billing",
+      "tribal_constraint": "Event payloads are append-only and decoded through both JSON and mapstructure; stored tag names are a compatibility contract, not cosmetic struct labels.",
+      "split": "train",
+      "window": {
+        "start": "2026-09-02T13:18:00Z",
+        "end": "2026-09-04T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t06-replay-log.log",
+        "t06-event-sample.png"
+      ],
+      "files": [
+        "internal/events/bus.go",
+        "internal/events/task108_event_tags_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 2384,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-109",
+      "jira": "MER-109",
+      "pr": 12,
+      "title": "Async invoice export loses tenant context",
+      "channel": "eng-platform",
+      "tribal_constraint": "Workers replay handlers without HTTP middleware; tenant identity must be carried in the route-created context/envelope, not reconstructed from headers.",
+      "split": "train",
+      "window": {
+        "start": "2026-09-09T13:33:00Z",
+        "end": "2026-09-11T20:03:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t07-client-report.pdf",
+        "t07-worker-trace.png"
+      ],
+      "files": [
+        "internal/jobs/task109_tenant_context_test.go",
+        "internal/jobs/tenant.go"
+      ],
+      "discord_messages": 13,
+      "jira_events": 14,
+      "commits": 2,
+      "patch_bytes": 1900,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-110",
+      "jira": "MER-110",
+      "pr": 13,
+      "title": "Generated error catalogs drift between services",
+      "channel": "eng-platform",
+      "tribal_constraint": "api/errors.yaml is the only source of truth; generated Go and TypeScript files must be regenerated together, and reserved module blocks are not allocated by alphabetical order.",
+      "split": "train",
+      "window": {
+        "start": "2026-09-16T15:18:00Z",
+        "end": "2026-09-18T20:18:00Z"
+      },
+      "duration_minutes": 3180,
+      "document_files": [
+        "t08-client-report.pdf",
+        "t08-release-log.log"
+      ],
+      "files": [
+        "tools/gendocs/catalog_test.go",
+        "web/lib/errcodes_gen.ts"
+      ],
+      "discord_messages": 12,
+      "jira_events": 10,
+      "commits": 2,
+      "patch_bytes": 2337,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-111",
+      "jira": "MER-111",
+      "pr": 14,
+      "title": "Released binary serves yesterday's console bundle",
+      "channel": "deploys",
+      "tribal_constraint": "The Go binary embeds web/dist at compile time; Docker's build context can contain a stale bundle unless the frontend build stage precedes Go compilation.",
+      "split": "train",
+      "window": {
+        "start": "2026-09-23T13:33:00Z",
+        "end": "2026-09-25T20:03:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t10-release-report.pdf",
+        "t10-bundle-log.log"
+      ],
+      "files": [
+        "Dockerfile",
+        "web/embed_contract_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 2003,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-112",
+      "jira": "MER-112",
+      "pr": 15,
+      "title": "Fresh environments start before schema migrations",
+      "channel": "deploys",
+      "tribal_constraint": "make run generates code but does not apply migrations; onboarding expects a distinct migration prerequisite and migration ordering is filename-based.",
+      "split": "train",
+      "window": {
+        "start": "2026-09-30T13:18:00Z",
+        "end": "2026-10-02T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t11-staging-incident.pdf",
+        "t11-startup-log.log"
+      ],
+      "files": [
+        "Makefile",
+        "internal/config/task112_bootstrap_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 3,
+      "patch_bytes": 2287,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-113",
+      "jira": "MER-113",
+      "pr": 16,
+      "title": "New invoice status breaks finance's workbook mapping",
+      "channel": "billing",
+      "tribal_constraint": "Status strings and ordinal positions are an external report contract; report_schema_version must be bumped and the generated string mapping refreshed.",
+      "split": "train",
+      "window": {
+        "start": "2026-10-07T13:18:00Z",
+        "end": "2026-10-09T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t12-finance-report.pdf",
+        "t12-workbook-screenshot.png"
+      ],
+      "files": [
+        "internal/billing/billing_test.go",
+        "internal/billing/invoice.go",
+        "internal/billing/task113_review_status_test.go",
+        "web/lib/invoiceStatus.ts"
+      ],
+      "discord_messages": 12,
+      "jira_events": 7,
+      "commits": 4,
+      "patch_bytes": 3123,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-114",
+      "jira": "MER-114",
+      "pr": 17,
+      "title": "Webhook subscription from another subsidiary is selected",
+      "channel": "incidents",
+      "tribal_constraint": "Subscriptions have both a static fallback registry and a DB-loaded registry; tenant scoping was added to the database path later, leaving the fallback lookup keyed only by name.",
+      "split": "train",
+      "window": {
+        "start": "2026-10-14T13:28:00Z",
+        "end": "2026-10-16T19:58:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t13-client-report.pdf",
+        "t13-webhook-log.log"
+      ],
+      "files": [
+        "internal/webhooks/registry.go",
+        "internal/webhooks/registry_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 3444,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-115",
+      "jira": "MER-115",
+      "pr": 18,
+      "title": "Invoice preview cancellation leaves billable work running",
+      "channel": "eng-platform",
+      "tribal_constraint": "Jobs intentionally outlive HTTP request contexts; the supported cancellation path is Runner.Cancel(jobID), and preview jobs must retain their stable job ID across retries.",
+      "split": "train",
+      "window": {
+        "start": "2026-10-21T13:18:00Z",
+        "end": "2026-10-23T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t14-capacity-report.pdf",
+        "t14-worker-log.log"
+      ],
+      "files": [
+        "internal/jobs/preview.go",
+        "internal/jobs/task115_preview_cancel_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 3,
+      "patch_bytes": 2345,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-116",
+      "jira": "MER-116",
+      "pr": 19,
+      "title": "Tenant export throttles disagree between edge and API",
+      "channel": "deploys",
+      "tribal_constraint": "configs/ratelimits.yaml is shared with the nginx generated snippet; scope names and values must match, and tenant export uses a separate bucket from global API traffic.",
+      "split": "train",
+      "window": {
+        "start": "2026-10-28T13:18:00Z",
+        "end": "2026-10-30T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t15-incident-log.log",
+        "t15-nginx-log.log"
+      ],
+      "files": [
+        "deploy/nginx.conf",
+        "internal/ratelimit/limiter.go",
+        "internal/ratelimit/limiter_test.go",
+        "internal/ratelimit/task116_tenant_limit_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 3,
+      "patch_bytes": 3955,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-117",
+      "jira": "MER-117",
+      "pr": 20,
+      "title": "Invoice line versions advance before the event is durable",
+      "channel": "billing",
+      "tribal_constraint": "The outbox consumer is writer of record; version advancement happens only after durable publish/consumer application, not when the HTTP producer assembles the event.",
+      "split": "train",
+      "window": {
+        "start": "2026-11-04T13:18:00Z",
+        "end": "2026-11-06T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t16-reconciliation-report.pdf",
+        "t16-outbox-log.log"
+      ],
+      "files": [
+        "internal/billing/lineitems.go",
+        "internal/billing/task117_line_version_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 3646,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-118",
+      "jira": "MER-118",
+      "pr": 21,
+      "title": "Totals cache returns another tenant's cached summary",
+      "channel": "incidents",
+      "tribal_constraint": "Legacy keys have two segments; current keys require a tenant segment. Both formats parse, so the cache layer must use the shared CacheKey helper and isolate legacy invalidation.",
+      "split": "train",
+      "window": {
+        "start": "2026-11-11T13:18:00Z",
+        "end": "2026-11-13T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t17-client-report.pdf",
+        "t17-cache-log.log"
+      ],
+      "files": [
+        "internal/billing/cache.go",
+        "internal/billing/task118_cache_scope_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 2168,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-119",
+      "jira": "MER-119",
+      "pr": 22,
+      "title": "Pagination returns stale invoices after navigation",
+      "channel": "eng-frontend",
+      "tribal_constraint": "Most SWR keys are generated from routes.yaml; the invoice page has a local historical literal that must preserve both tenant and page dimensions when its contract changes.",
+      "split": "train",
+      "window": {
+        "start": "2026-11-18T13:18:00Z",
+        "end": "2026-11-20T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t19-support-report.pdf",
+        "t19-network-log.log"
+      ],
+      "files": [
+        "web/lib/swrKeys.ts",
+        "web/lib/task119_pagination_key.test.ts",
+        "web/pages/invoices.tsx",
+        "web/routes.yaml"
+      ],
+      "discord_messages": 12,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 3544,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-120",
+      "jira": "MER-120",
+      "pr": 23,
+      "title": "Autosave rejects an intentionally incomplete draft",
+      "channel": "eng-frontend",
+      "tribal_constraint": "Frontend required means user guidance; backend validation allows missing values during draft autosave and enforces the full schema only on submit.",
+      "split": "train",
+      "window": {
+        "start": "2026-11-25T13:18:00Z",
+        "end": "2026-11-27T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t21-client-report.pdf",
+        "t21-validation-log.log"
+      ],
+      "files": [
+        "internal/validation/purchase_order.go",
+        "internal/validation/task120_draft_validation_test.go",
+        "web/lib/schemas.ts",
+        "web/lib/task120_schema_mode.test.ts"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 4512,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-121",
+      "jira": "MER-121",
+      "pr": 24,
+      "title": "Audit filters disappear on browser back navigation",
+      "channel": "eng-frontend",
+      "tribal_constraint": "Filter state belongs in URL search parameters and the cache key; useFilteredTable serializes filters in fixed field order for stable keys.",
+      "split": "train",
+      "window": {
+        "start": "2026-12-02T13:18:00Z",
+        "end": "2026-12-04T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t22-support-report.pdf",
+        "t22-browser-screenshot.png"
+      ],
+      "files": [
+        "web/lib/filterURL.ts",
+        "web/lib/task121_filter_url.test.ts"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 2379,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-122",
+      "jira": "MER-122",
+      "pr": 25,
+      "title": "New backend error has no localized console message",
+      "channel": "eng-frontend",
+      "tribal_constraint": "errcodes_gen.ts provides generated English fallback; hand-maintained locale tables are intentionally incomplete and must fall back through the generated message map.",
+      "split": "train",
+      "window": {
+        "start": "2026-12-09T13:18:00Z",
+        "end": "2026-12-11T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t23-client-report.pdf",
+        "t23-locale-log.log"
+      ],
+      "files": [
+        "web/lib/errMessages.ts",
+        "web/lib/task122_error_fallback.test.ts"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 2,
+      "patch_bytes": 2157,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-123",
+      "jira": "MER-123",
+      "pr": 26,
+      "title": "Frontend build leaks a server-only integration setting",
+      "channel": "deploys",
+      "tribal_constraint": "Only NEXT_PUBLIC_* variables may enter the bundle; server values come from the 1Password environment item and CI's scanner must inspect build inputs as well as source literals.",
+      "split": "train",
+      "window": {
+        "start": "2026-12-16T13:18:00Z",
+        "end": "2026-12-18T19:48:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t24-security-report.pdf",
+        "t24-build-log.log"
+      ],
+      "files": [
+        "web/lib/publicConfig.ts",
+        "web/lib/task123_public_config.test.ts"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 3,
+      "patch_bytes": 2351,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-124",
+      "jira": "MER-124",
+      "pr": 27,
+      "title": "Feature flag flickers during authenticated hydration",
+      "channel": "eng-frontend",
+      "tribal_constraint": "Authenticated rendering must use window.__MERIDIAN__ from the server; localStorage is only a logged-out fallback and reading it during render violates hydration parity.",
+      "split": "train",
+      "window": {
+        "start": "2026-12-21T13:48:00Z",
+        "end": "2026-12-23T20:18:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "t25-client-report.pdf",
+        "t25-hydration-log.log"
+      ],
+      "files": [
+        "web/lib/task124_bootstrap_auth.test.ts",
+        "web/pages/_app.tsx"
+      ],
+      "discord_messages": 14,
+      "jira_events": 14,
+      "commits": 5,
+      "patch_bytes": 3868,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-201",
+      "jira": "MER-201",
+      "pr": 28,
+      "title": "Payroll export inserts a component in the wrong spreadsheet column",
+      "channel": "billing",
+      "tribal_constraint": "Column position is contractual across the Go export and frontend labels; new components append only after reserved positions and schema versions identify the layout.",
+      "split": "eval",
+      "window": {
+        "start": "2027-01-06T13:48:00Z",
+        "end": "2027-01-08T20:18:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "e01-finance-report.pdf",
+        "e01-csv-sample.png"
+      ],
+      "files": [
+        "internal/payroll/eval201_test.go",
+        "internal/payroll/export.go",
+        "internal/payroll/export_test.go",
+        "internal/payroll/schema.go",
+        "web/lib/payComponents.ts"
+      ],
+      "discord_messages": 14,
+      "jira_events": 14,
+      "commits": 2,
+      "patch_bytes": 4611,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-202",
+      "jira": "MER-202",
+      "pr": 29,
+      "title": "Bulk procurement removal omits required audit context",
+      "channel": "eng-platform",
+      "tribal_constraint": "Single-record helper is retained for compatibility; bulk removal must use the separate transactional helper and persist a non-empty audit note for every affected id.",
+      "split": "eval",
+      "window": {
+        "start": "2027-01-14T15:28:00Z",
+        "end": "2027-01-15T20:18:00Z"
+      },
+      "duration_minutes": 1730,
+      "document_files": [
+        "e02-compliance-report.pdf",
+        "e02-delete-log.log"
+      ],
+      "files": [
+        "internal/store/bulk_delete.go",
+        "internal/store/eval202_test.go",
+        "internal/store/soft_delete.go"
+      ],
+      "discord_messages": 8,
+      "jira_events": 8,
+      "commits": 1,
+      "patch_bytes": 2119,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-203",
+      "jira": "MER-203",
+      "pr": 30,
+      "title": "Legacy event stream rejects valid signed-in browser sessions",
+      "channel": "incidents",
+      "tribal_constraint": "Only the legacy SSE endpoint permits a short-lived query token; the app-router handler must continue requiring the normal session cookie.",
+      "split": "eval",
+      "window": {
+        "start": "2027-01-20T13:48:00Z",
+        "end": "2027-01-22T20:18:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "e03-support-report.pdf",
+        "e03-sse-log.log"
+      ],
+      "files": [
+        "web/lib/eval203_sse.test.ts",
+        "web/lib/sseAuth.ts"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 1,
+      "patch_bytes": 2060,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-204",
+      "jira": "MER-204",
+      "pr": 31,
+      "title": "Payroll labels no longer line up with exported pay columns",
+      "channel": "billing",
+      "tribal_constraint": "The Go column registry and TypeScript positional array are mirrors; the payroll schema version and explicit order check are the cross-language contract.",
+      "split": "eval",
+      "window": {
+        "start": "2027-01-27T13:48:00Z",
+        "end": "2027-01-29T20:18:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "e04-finance-report.pdf",
+        "e04-preview-screenshot.png"
+      ],
+      "files": [
+        "web/lib/eval204_paylabels.test.ts"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 1,
+      "patch_bytes": 1418,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-205",
+      "jira": "MER-205",
+      "pr": 32,
+      "title": "Overdue badge differs from the tenant's local business date",
+      "channel": "billing",
+      "tribal_constraint": "Overdue is defined by tenant-local calendar date; the denormalized field is refreshed by a backfill job that must receive tenant timezone, not host timezone.",
+      "split": "eval",
+      "window": {
+        "start": "2027-02-03T13:48:00Z",
+        "end": "2027-02-05T20:00:00Z"
+      },
+      "duration_minutes": 3252,
+      "document_files": [
+        "e05-client-report.pdf",
+        "e05-timezone-log.log"
+      ],
+      "files": [
+        "internal/billing/eval205_test.go",
+        "internal/billing/overdue.go",
+        "internal/jobs/overdue.go"
+      ],
+      "discord_messages": 13,
+      "jira_events": 7,
+      "commits": 1,
+      "patch_bytes": 3347,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-206",
+      "jira": "MER-206",
+      "pr": 33,
+      "title": "Concurrent payment retries can charge the same attempt twice",
+      "channel": "incidents",
+      "tribal_constraint": "Idempotency keys are per attempt because the ledger reconciler groups on that value; retries within an attempt must reuse it, while a new attempt advances the attempt sequence.",
+      "split": "eval",
+      "window": {
+        "start": "2027-02-10T13:48:00Z",
+        "end": "2027-02-12T20:18:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "e06-client-report.pdf",
+        "e06-payment-log.log"
+      ],
+      "files": [
+        "internal/payments/eval206_test.go",
+        "internal/payments/idempotency.go",
+        "internal/payments/ledger.go"
+      ],
+      "discord_messages": 13,
+      "jira_events": 14,
+      "commits": 1,
+      "patch_bytes": 3158,
+      "documents": 2
+    },
+    {
+      "task_id": "mer-207",
+      "jira": "MER-207",
+      "pr": 34,
+      "title": "Audit replay fails on records written before the schema expansion",
+      "channel": "eng-platform",
+      "tribal_constraint": "Old rows pass through the version-1 decoder shim; new fields require an explicit opt-in/default in that shim because stored snapshots predate the field.",
+      "split": "eval",
+      "window": {
+        "start": "2027-02-17T13:48:00Z",
+        "end": "2027-02-19T20:18:00Z"
+      },
+      "duration_minutes": 3270,
+      "document_files": [
+        "e07-partner-report.pdf",
+        "e07-replay-log.log"
+      ],
+      "files": [
+        "internal/audit/decode.go",
+        "internal/audit/eval207_test.go"
+      ],
+      "discord_messages": 14,
+      "jira_events": 7,
+      "commits": 1,
+      "patch_bytes": 3399,
+      "documents": 2
+    }
+  ]
+}

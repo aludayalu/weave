@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-117",
+  "jira": "MER-117",
+  "pr": 20,
+  "repository": "meridian-erp",
+  "repo_revision": "299005aa06 (task branch tip)",
+  "title": "Invoice line versions advance before the event is durable",
+  "summary": "MER-117 raised in #billing, shipped in PR #20",
+  "start_ts_utc": "2026-11-04T13:18:00Z",
+  "end_ts_utc": "2026-11-06T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya A retry after a broker interruption is rejected as stale even though downstream consumers never received the prior line-item update. Opening MER-117 to track it. took first pass at this, thoughts below.",
+      "ack. looking now. filing evidence on the ticket (reconciliation-report).",
+      "fyi reconciliation-report is attached to MER-117 if you want the raw capture.",
+      "anyone seen the staging pg bump? unrelated",
+      "standup in 5, billing standup moved to 10:30",
+      "rotating the read replica creds tonight, no action needed",
+      "spec-first per team rule — tests for MER-117 are red on main now, pushing as I go.",
+      "the generated artifacts are the source of truth, not the file you're editing",
+      "cross-team contract involved here, so I opened a ticket before touching anything",
+      "PR #20 is up: `feature/MER-117-line-version-order`. review when you can.",
+      "reviewed #20 — left two comments, nothing structural.",
+      "https://discord.com/channels/9901/1101/0 (deleted message placeholder)"
+    ],
+    "ticket": "A retry after a broker interruption is rejected as stale even though downstream consumers never received the prior line-item update.\n\nTribal constraint: The outbox consumer is writer of record; version advancement happens only after durable publish/consumer application, not when the HTTP producer assembles the event.",
+    "documents": [
+      "t16-reconciliation-report.pdf",
+      "t16-outbox-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 3646,
+    "documents": 2
+  }
+}

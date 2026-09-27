@@ -1,0 +1,67 @@
+{
+  "task_id": "mer-201",
+  "pull_request": {
+    "pr_number": 28,
+    "title": "feat(payroll): add shift differential pay component (MER-201)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-201-payroll-columns",
+    "merge_sha": "80402dba9eb1da7a0625fff1104dee32643223f2",
+    "opened_ts_utc": "2027-01-07T18:00:00Z",
+    "merged_ts_utc": "2027-01-08T20:00:00Z",
+    "closed_ts_utc": "2027-01-08T20:00:00Z"
+  },
+  "merge_sha": "80402dba9eb1da7a0625fff1104dee32643223f2",
+  "base_sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c",
+  "head_sha": "3ff9f6d7b110391499cc04a24cb436cc83319cc0",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "e3aba53f77926ce8ef89c63352805b37898ff777",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2027-01-06T16:00:00Z",
+      "committed_ts_utc": "2027-01-06T16:00:00Z",
+      "message": "feat(payroll): add shift differential pay component (MER-201)",
+      "is_merge": false,
+      "parent_shas": [
+        "4715436c3906ac17ecfdc7470e00fdd8cdf1699c"
+      ],
+      "additions": 44,
+      "deletions": 1,
+      "changed_files": [
+        "internal/payroll/eval201_test.go",
+        "internal/payroll/export.go",
+        "web/lib/payComponents.ts"
+      ]
+    },
+    {
+      "sha": "3ff9f6d7b110391499cc04a24cb436cc83319cc0",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2027-01-07T18:00:00Z",
+      "committed_ts_utc": "2027-01-07T18:00:00Z",
+      "message": "fix(payroll): append shift differential and bump workbook schema (MER-201)",
+      "is_merge": false,
+      "parent_shas": [
+        "e3aba53f77926ce8ef89c63352805b37898ff777"
+      ],
+      "additions": 11,
+      "deletions": 8,
+      "changed_files": [
+        "internal/payroll/export.go",
+        "internal/payroll/export_test.go",
+        "internal/payroll/schema.go",
+        "web/lib/payComponents.ts"
+      ]
+    }
+  ],
+  "files": [
+    "internal/payroll/eval201_test.go",
+    "internal/payroll/export.go",
+    "internal/payroll/export_test.go",
+    "internal/payroll/schema.go",
+    "web/lib/payComponents.ts"
+  ]
+}

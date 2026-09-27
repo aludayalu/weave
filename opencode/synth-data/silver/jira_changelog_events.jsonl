@@ -1,0 +1,268 @@
+{"issue_key": "MER-101", "ts_utc": "2026-07-08T15:00:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-101", "ts_utc": "2026-07-08T15:00:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-101", "ts_utc": "2026-07-08T15:21:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-101", "ts_utc": "2026-07-08T15:21:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-101", "ts_utc": "2026-07-09T16:40:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-101", "ts_utc": "2026-07-09T23:10:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-101", "ts_utc": "2026-07-09T23:10:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #1"}
+{"issue_key": "MER-102", "ts_utc": "2026-07-15T14:19:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-102", "ts_utc": "2026-07-15T14:19:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-102", "ts_utc": "2026-07-16T15:59:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-102", "ts_utc": "2026-07-16T22:29:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-102", "ts_utc": "2026-07-16T22:29:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #2"}
+{"issue_key": "MER-102", "ts_utc": "2026-07-17T20:49:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-102", "ts_utc": "2026-07-17T20:49:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-103", "ts_utc": "2026-08-12T13:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-103", "ts_utc": "2026-08-12T13:28:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-103", "ts_utc": "2026-08-12T13:42:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-103", "ts_utc": "2026-08-12T13:42:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #8"}
+{"issue_key": "MER-103", "ts_utc": "2026-08-13T15:08:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-103", "ts_utc": "2026-08-14T19:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-103", "ts_utc": "2026-08-14T19:58:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-104", "ts_utc": "2026-07-29T13:43:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-104", "ts_utc": "2026-07-29T13:43:00Z", "author": "Sofia Almeida", "field": "assignee", "from_value": null, "to_value": "Sofia Almeida"}
+{"issue_key": "MER-104", "ts_utc": "2026-07-30T15:23:00Z", "author": "Sofia Almeida", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-104", "ts_utc": "2026-07-30T21:53:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-104", "ts_utc": "2026-07-30T21:53:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #5"}
+{"issue_key": "MER-104", "ts_utc": "2026-07-31T20:13:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-104", "ts_utc": "2026-07-31T20:13:00Z", "author": "Sofia Almeida", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-105", "ts_utc": "2026-08-05T14:28:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-105", "ts_utc": "2026-08-05T14:28:00Z", "author": "Sofia Almeida", "field": "assignee", "from_value": null, "to_value": "Sofia Almeida"}
+{"issue_key": "MER-105", "ts_utc": "2026-08-05T14:35:00Z", "author": "Sofia Almeida", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-105", "ts_utc": "2026-08-06T22:38:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-105", "ts_utc": "2026-08-06T22:38:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #7"}
+{"issue_key": "MER-105", "ts_utc": "2026-08-07T20:58:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-105", "ts_utc": "2026-08-07T20:58:00Z", "author": "Sofia Almeida", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-106", "ts_utc": "2026-08-19T13:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-106", "ts_utc": "2026-08-19T13:48:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-106", "ts_utc": "2026-08-19T14:09:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-106", "ts_utc": "2026-08-19T14:09:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-106", "ts_utc": "2026-08-20T15:28:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-106", "ts_utc": "2026-08-20T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-106", "ts_utc": "2026-08-20T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #9"}
+{"issue_key": "MER-107", "ts_utc": "2026-08-26T13:48:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-107", "ts_utc": "2026-08-26T13:48:00Z", "author": "Sofia Almeida", "field": "assignee", "from_value": null, "to_value": "Sofia Almeida"}
+{"issue_key": "MER-107", "ts_utc": "2026-08-26T14:09:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-107", "ts_utc": "2026-08-26T14:09:00Z", "author": "Sofia Almeida", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-107", "ts_utc": "2026-08-27T15:28:00Z", "author": "Sofia Almeida", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-107", "ts_utc": "2026-08-27T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-107", "ts_utc": "2026-08-27T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #10"}
+{"issue_key": "MER-108", "ts_utc": "2026-09-02T13:18:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-108", "ts_utc": "2026-09-02T13:18:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-108", "ts_utc": "2026-09-03T14:58:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-108", "ts_utc": "2026-09-03T21:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-108", "ts_utc": "2026-09-03T21:28:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #11"}
+{"issue_key": "MER-108", "ts_utc": "2026-09-04T19:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-108", "ts_utc": "2026-09-04T19:48:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-09T13:33:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-09T13:33:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-09T13:33:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-09T13:33:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-10T15:13:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-10T15:13:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-10T21:43:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-10T21:43:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #12"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-10T21:43:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-10T21:43:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #12"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-11T20:03:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-11T20:03:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-11T20:03:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-109", "ts_utc": "2026-09-11T20:03:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-16T13:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-16T13:48:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-16T13:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-16T13:48:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-17T15:28:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-17T15:28:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-17T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-17T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #13"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-17T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-17T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #13"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-18T20:18:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-18T20:18:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-18T20:18:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-110", "ts_utc": "2026-09-18T20:18:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-111", "ts_utc": "2026-09-23T13:33:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-111", "ts_utc": "2026-09-23T13:33:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-111", "ts_utc": "2026-09-24T15:13:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-111", "ts_utc": "2026-09-24T21:43:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-111", "ts_utc": "2026-09-24T21:43:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #14"}
+{"issue_key": "MER-111", "ts_utc": "2026-09-25T20:03:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-111", "ts_utc": "2026-09-25T20:03:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-112", "ts_utc": "2026-09-30T13:18:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-112", "ts_utc": "2026-09-30T13:18:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-112", "ts_utc": "2026-10-01T14:58:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-112", "ts_utc": "2026-10-01T21:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-112", "ts_utc": "2026-10-01T21:28:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #15"}
+{"issue_key": "MER-112", "ts_utc": "2026-10-02T19:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-112", "ts_utc": "2026-10-02T19:48:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-113", "ts_utc": "2026-10-07T13:18:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-113", "ts_utc": "2026-10-07T13:18:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-113", "ts_utc": "2026-10-08T14:58:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-113", "ts_utc": "2026-10-08T21:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-113", "ts_utc": "2026-10-08T21:28:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #16"}
+{"issue_key": "MER-113", "ts_utc": "2026-10-09T19:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-113", "ts_utc": "2026-10-09T19:48:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-114", "ts_utc": "2026-10-14T13:28:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-114", "ts_utc": "2026-10-14T13:28:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-114", "ts_utc": "2026-10-15T15:08:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-114", "ts_utc": "2026-10-15T21:38:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-114", "ts_utc": "2026-10-15T21:38:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #17"}
+{"issue_key": "MER-114", "ts_utc": "2026-10-16T19:58:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-114", "ts_utc": "2026-10-16T19:58:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-115", "ts_utc": "2026-10-21T13:18:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-115", "ts_utc": "2026-10-21T13:18:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-115", "ts_utc": "2026-10-22T14:58:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-115", "ts_utc": "2026-10-22T21:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-115", "ts_utc": "2026-10-22T21:28:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #18"}
+{"issue_key": "MER-115", "ts_utc": "2026-10-23T19:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-115", "ts_utc": "2026-10-23T19:48:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-116", "ts_utc": "2026-10-28T13:18:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-116", "ts_utc": "2026-10-28T13:18:00Z", "author": "Sofia Almeida", "field": "assignee", "from_value": null, "to_value": "Sofia Almeida"}
+{"issue_key": "MER-116", "ts_utc": "2026-10-28T13:25:00Z", "author": "Sofia Almeida", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-116", "ts_utc": "2026-10-29T21:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-116", "ts_utc": "2026-10-29T21:28:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #19"}
+{"issue_key": "MER-116", "ts_utc": "2026-10-30T19:48:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-116", "ts_utc": "2026-10-30T19:48:00Z", "author": "Sofia Almeida", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-117", "ts_utc": "2026-11-04T13:18:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-117", "ts_utc": "2026-11-04T13:18:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-117", "ts_utc": "2026-11-05T14:58:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-117", "ts_utc": "2026-11-05T21:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-117", "ts_utc": "2026-11-05T21:28:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #20"}
+{"issue_key": "MER-117", "ts_utc": "2026-11-06T19:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-117", "ts_utc": "2026-11-06T19:48:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-118", "ts_utc": "2026-11-11T13:18:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-118", "ts_utc": "2026-11-11T13:18:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-118", "ts_utc": "2026-11-12T14:58:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-118", "ts_utc": "2026-11-12T21:28:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-118", "ts_utc": "2026-11-12T21:28:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #21"}
+{"issue_key": "MER-118", "ts_utc": "2026-11-13T19:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-118", "ts_utc": "2026-11-13T19:48:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-119", "ts_utc": "2026-11-18T13:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-119", "ts_utc": "2026-11-18T13:18:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-119", "ts_utc": "2026-11-19T14:58:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-119", "ts_utc": "2026-11-19T21:28:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-119", "ts_utc": "2026-11-19T21:28:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #22"}
+{"issue_key": "MER-119", "ts_utc": "2026-11-20T19:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-119", "ts_utc": "2026-11-20T19:48:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-120", "ts_utc": "2026-11-25T13:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-120", "ts_utc": "2026-11-25T13:18:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-120", "ts_utc": "2026-11-26T14:58:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-120", "ts_utc": "2026-11-26T21:28:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-120", "ts_utc": "2026-11-26T21:28:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #23"}
+{"issue_key": "MER-120", "ts_utc": "2026-11-27T19:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-120", "ts_utc": "2026-11-27T19:48:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-121", "ts_utc": "2026-12-02T13:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-121", "ts_utc": "2026-12-02T13:18:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-121", "ts_utc": "2026-12-03T14:58:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-121", "ts_utc": "2026-12-03T21:28:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-121", "ts_utc": "2026-12-03T21:28:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #24"}
+{"issue_key": "MER-121", "ts_utc": "2026-12-04T19:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-121", "ts_utc": "2026-12-04T19:48:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-122", "ts_utc": "2026-12-09T13:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-122", "ts_utc": "2026-12-09T13:18:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-122", "ts_utc": "2026-12-10T14:58:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-122", "ts_utc": "2026-12-10T21:28:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-122", "ts_utc": "2026-12-10T21:28:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #25"}
+{"issue_key": "MER-122", "ts_utc": "2026-12-11T19:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-122", "ts_utc": "2026-12-11T19:48:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-123", "ts_utc": "2026-12-16T13:18:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-123", "ts_utc": "2026-12-16T13:18:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-123", "ts_utc": "2026-12-16T13:32:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-123", "ts_utc": "2026-12-16T13:32:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #26"}
+{"issue_key": "MER-123", "ts_utc": "2026-12-17T14:58:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-123", "ts_utc": "2026-12-18T19:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-123", "ts_utc": "2026-12-18T19:48:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-21T13:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-21T13:48:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-21T13:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-21T13:48:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-21T14:09:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-21T14:09:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-22T15:28:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-22T15:28:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-22T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-22T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #27"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-22T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-22T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #27"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-23T20:18:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-124", "ts_utc": "2026-12-23T20:18:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-06T13:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-06T13:48:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-06T13:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-06T13:48:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-06T13:55:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-07T15:28:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-07T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-07T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #28"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-07T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-07T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #28"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-08T20:18:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-08T20:18:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-08T20:18:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-201", "ts_utc": "2027-01-08T20:18:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-13T13:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-13T13:48:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-13T13:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-13T13:48:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-13T14:02:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-13T14:02:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #29"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-14T15:28:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-14T15:28:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-14T21:58:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-14T21:58:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #29"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-15T20:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-15T20:18:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-15T20:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-202", "ts_utc": "2027-01-15T20:18:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-203", "ts_utc": "2027-01-20T13:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-203", "ts_utc": "2027-01-20T13:48:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-203", "ts_utc": "2027-01-21T15:28:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-203", "ts_utc": "2027-01-21T21:58:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-203", "ts_utc": "2027-01-21T21:58:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #30"}
+{"issue_key": "MER-203", "ts_utc": "2027-01-22T20:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-203", "ts_utc": "2027-01-22T20:18:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-204", "ts_utc": "2027-01-27T13:48:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-204", "ts_utc": "2027-01-27T13:48:00Z", "author": "Dan Levin", "field": "assignee", "from_value": null, "to_value": "Dan Levin"}
+{"issue_key": "MER-204", "ts_utc": "2027-01-28T15:28:00Z", "author": "Dan Levin", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-204", "ts_utc": "2027-01-28T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-204", "ts_utc": "2027-01-28T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #31"}
+{"issue_key": "MER-204", "ts_utc": "2027-01-29T20:18:00Z", "author": "Dan Levin", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-204", "ts_utc": "2027-01-29T20:18:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-205", "ts_utc": "2027-02-03T13:48:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-205", "ts_utc": "2027-02-03T13:48:00Z", "author": "Sofia Almeida", "field": "assignee", "from_value": null, "to_value": "Sofia Almeida"}
+{"issue_key": "MER-205", "ts_utc": "2027-02-03T14:09:00Z", "author": "Sofia Almeida", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-205", "ts_utc": "2027-02-03T14:09:00Z", "author": "Sofia Almeida", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-205", "ts_utc": "2027-02-04T15:28:00Z", "author": "Sofia Almeida", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-205", "ts_utc": "2027-02-04T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-205", "ts_utc": "2027-02-04T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #32"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-10T13:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-10T13:48:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-10T13:48:00Z", "author": "Priya Sharma", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-10T13:48:00Z", "author": "Priya Sharma", "field": "assignee", "from_value": null, "to_value": "Priya Sharma"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-11T15:28:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-11T15:28:00Z", "author": "Priya Sharma", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-11T21:58:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-11T21:58:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #33"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-11T21:58:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-11T21:58:00Z", "author": "Marcus Lee", "field": "Link", "from_value": null, "to_value": "PR #33"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-12T20:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-12T20:18:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-12T20:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-206", "ts_utc": "2027-02-12T20:18:00Z", "author": "Priya Sharma", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-207", "ts_utc": "2027-02-17T13:48:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-207", "ts_utc": "2027-02-17T13:48:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-207", "ts_utc": "2027-02-18T15:28:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-207", "ts_utc": "2027-02-18T21:58:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-207", "ts_utc": "2027-02-18T21:58:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #34"}
+{"issue_key": "MER-207", "ts_utc": "2027-02-19T20:18:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-207", "ts_utc": "2027-02-19T20:18:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-851", "ts_utc": "2026-07-22T13:08:00Z", "author": "Marcus Lee", "field": "status", "from_value": "To Do", "to_value": "In Progress"}
+{"issue_key": "MER-851", "ts_utc": "2026-07-22T13:08:00Z", "author": "Marcus Lee", "field": "assignee", "from_value": null, "to_value": "Marcus Lee"}
+{"issue_key": "MER-851", "ts_utc": "2026-07-23T14:48:00Z", "author": "Marcus Lee", "field": "labels", "from_value": null, "to_value": "spec-first"}
+{"issue_key": "MER-851", "ts_utc": "2026-07-23T21:18:00Z", "author": "Priya Sharma", "field": "status", "from_value": "In Progress", "to_value": "In Review"}
+{"issue_key": "MER-851", "ts_utc": "2026-07-23T21:18:00Z", "author": "Priya Sharma", "field": "Link", "from_value": null, "to_value": "PR #4"}
+{"issue_key": "MER-851", "ts_utc": "2026-07-24T19:38:00Z", "author": "Marcus Lee", "field": "status", "from_value": "In Review", "to_value": "Done"}
+{"issue_key": "MER-851", "ts_utc": "2026-07-24T19:38:00Z", "author": "Marcus Lee", "field": "resolution", "from_value": null, "to_value": "Fixed"}
+{"issue_key": "MER-998", "ts_utc": "2026-09-15T13:00:00Z", "author": "Dan Levin", "field": "status", "from_value": "To Do", "to_value": "Done"}
+{"issue_key": "MER-998", "ts_utc": "2026-09-15T13:20:00Z", "author": "Dan Levin", "field": "resolution", "from_value": null, "to_value": "Fixed"}

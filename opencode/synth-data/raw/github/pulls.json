@@ -1,0 +1,1087 @@
+[
+  {
+    "number": 1,
+    "state": "closed",
+    "title": "test: MER-101 gateway timeout spec (red)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2026-07-09T19:15:00Z",
+    "updated_at": "2026-07-10T21:12:00Z",
+    "merged_at": "2026-07-10T21:12:00Z",
+    "closed_at": "2026-07-10T21:12:00Z",
+    "merge_commit_sha": "798a23ef4fa0321fce53581b80c6b5eea39bdc6d",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-101-gateway-timeout",
+      "sha": "47df74617ad6dfc8e8298a855aeb2bf51121aa7f",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/1",
+    "body": "feat(meridian): add payment gateway timeout error code (MER-101)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 5
+  },
+  {
+    "number": 102,
+    "state": "closed",
+    "title": "spike: redis lock ttl exploration (wip)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2026-07-15T11:30:00Z",
+    "updated_at": "2026-07-15T11:30:00Z",
+    "merged_at": null,
+    "closed_at": "2026-07-15T11:30:00Z",
+    "merge_commit_sha": null,
+    "merged": false,
+    "head": {
+      "ref": "spike/redis-lock-ttl",
+      "sha": "3248ff50c402fda3a3e5b92c3dbfee3d0d49be9d",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/102",
+    "body": "Spike, parked without merge.",
+    "commits": 1,
+    "changed_files": 1
+  },
+  {
+    "number": 2,
+    "state": "closed",
+    "title": "test: MER-102 flag key resolution spec (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-07-16T15:50:00Z",
+    "updated_at": "2026-07-17T20:31:00Z",
+    "merged_at": "2026-07-17T20:31:00Z",
+    "closed_at": "2026-07-17T20:31:00Z",
+    "merge_commit_sha": "65d25a33c70fd702999b5b611f10654498f83c39",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-102-flag-keys",
+      "sha": "761f40be1cf2d0d1d50ec04912f2e05a3d967f5a",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/2",
+    "body": "docs(migrations): declare dotted flag keys canonical (MER-102)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 3,
+    "changed_files": 3
+  },
+  {
+    "number": 4,
+    "state": "closed",
+    "title": "test: MER-851 audit export redaction spec (red)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2026-07-23T14:00:00Z",
+    "updated_at": "2026-07-24T19:20:00Z",
+    "merged_at": "2026-07-24T19:20:00Z",
+    "closed_at": "2026-07-24T19:20:00Z",
+    "merge_commit_sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-851-audit-redaction",
+      "sha": "7df88dd913528fe4f7f1a73d8b694a680b5df320",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/4",
+    "body": "feat(meridian): enforce compliance export gate with core.forbidden (MER-851)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 3,
+    "changed_files": 10
+  },
+  {
+    "number": 5,
+    "state": "closed",
+    "title": "test: MER-104 tenant switch staleness spec (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-07-29T18:45:00Z",
+    "updated_at": "2026-07-31T19:55:00Z",
+    "merged_at": "2026-07-31T19:55:00Z",
+    "closed_at": "2026-07-31T19:55:00Z",
+    "merge_commit_sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-104-tenant-switch",
+      "sha": "e18c22e64fdb0799efc7a6d276e9db70c7b6ee23",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/5",
+    "body": "fix(console): drop derived caches on tenant switch; subscribe the hook (MER-104)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 3
+  },
+  {
+    "number": 101,
+    "state": "closed",
+    "title": "spike: route-level chunk splitting measurements (not for merge)",
+    "user": {
+      "login": "Dan Levin"
+    },
+    "created_at": "2026-07-30T20:15:00Z",
+    "updated_at": "2026-07-30T20:15:00Z",
+    "merged_at": null,
+    "closed_at": "2026-07-30T20:15:00Z",
+    "merge_commit_sha": null,
+    "merged": false,
+    "head": {
+      "ref": "spike/bundle-perf",
+      "sha": "67a6b8e45c816580a8ea09449fdfdfdefd16472a",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/101",
+    "body": "Spike, parked without merge.",
+    "commits": 1,
+    "changed_files": 1
+  },
+  {
+    "number": 7,
+    "state": "closed",
+    "title": "test: MER-105 billing auth coverage spec (red)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2026-08-05T18:20:00Z",
+    "updated_at": "2026-08-07T20:40:00Z",
+    "merged_at": "2026-08-07T20:40:00Z",
+    "closed_at": "2026-08-07T20:40:00Z",
+    "merge_commit_sha": "9c62969dba955433e7663cecf18347cadb31b305",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-105-billing-auth",
+      "sha": "7f2b7e04ee0445fc2a2b22286b18aa590bb16f0f",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/7",
+    "body": "fix(console): restore billing auth coverage in app-router profile (MER-105)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 8,
+    "state": "closed",
+    "title": "test: MER-103 tenant grace-period import contract (red)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2026-08-12T18:05:00Z",
+    "updated_at": "2026-08-14T19:40:00Z",
+    "merged_at": "2026-08-14T19:40:00Z",
+    "closed_at": "2026-08-14T19:40:00Z",
+    "merge_commit_sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-103-override-keys",
+      "sha": "862ae3997a8b50fff6cbfa33ecf210a3746a2d12",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/8",
+    "body": "fix(store): normalize legacy tenant override imports to seeded keys (MER-103)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 9,
+    "state": "closed",
+    "title": "test: MER-106 production config parity contract (red)",
+    "user": {
+      "login": "Dan Levin"
+    },
+    "created_at": "2026-08-19T18:20:00Z",
+    "updated_at": "2026-08-21T20:00:00Z",
+    "merged_at": "2026-08-21T20:00:00Z",
+    "closed_at": "2026-08-21T20:00:00Z",
+    "merge_commit_sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-106-config-env",
+      "sha": "0567b58aa44bba7c5ca27f2c06e1a1d147704abc",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/9",
+    "body": "fix(deploy): align compose environment with config loader (MER-106)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 10,
+    "state": "closed",
+    "title": "test: MER-107 optional config presence contract (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-08-26T18:25:00Z",
+    "updated_at": "2026-08-28T20:00:00Z",
+    "merged_at": "2026-08-28T20:00:00Z",
+    "closed_at": "2026-08-28T20:00:00Z",
+    "merge_commit_sha": "bafdf50d7e8e24a71d74dad63f508408860fedcc",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-107-optional-config",
+      "sha": "f5275532f1be03f52c591cbd9c31e4ac4008fc7b",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/10",
+    "body": "fix(config): represent optional partner URL with pointer (MER-107)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 3
+  },
+  {
+    "number": 11,
+    "state": "closed",
+    "title": "test: MER-108 persisted event decoder compatibility (red)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2026-09-02T18:05:00Z",
+    "updated_at": "2026-09-04T19:30:00Z",
+    "merged_at": "2026-09-04T19:30:00Z",
+    "closed_at": "2026-09-04T19:30:00Z",
+    "merge_commit_sha": "890ab774ddedacc0c28dd72297e093cf4f0fcd82",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-108-event-tags",
+      "sha": "1e4fd499c522c6120be2a478dfa38f0b449105df",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/11",
+    "body": "fix(events): align correlation id tags for replay (MER-108)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 12,
+    "state": "closed",
+    "title": "test: MER-109 tenant context propagation into async exports (red)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2026-09-09T18:00:00Z",
+    "updated_at": "2026-09-11T19:45:00Z",
+    "merged_at": "2026-09-11T19:45:00Z",
+    "closed_at": "2026-09-11T19:45:00Z",
+    "merge_commit_sha": "68c3f717f27a4696d7da792d74c8aa8c231a45c4",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-109-tenant-job",
+      "sha": "80d8732d94af478e941df153529cc20d61e27ce5",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/12",
+    "body": "fix(jobs): carry tenant identity into async worker context (MER-109)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 13,
+    "state": "closed",
+    "title": "test: MER-110 generated error catalog parity contract (red)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2026-09-16T18:10:00Z",
+    "updated_at": "2026-09-18T20:00:00Z",
+    "merged_at": "2026-09-18T20:00:00Z",
+    "closed_at": "2026-09-18T20:00:00Z",
+    "merge_commit_sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-110-generated-catalog",
+      "sha": "b17a1a67722ea91deda38c9189de9685e604d644",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/13",
+    "body": "fix(errors): regenerate catalogs from api source of truth (MER-110)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 14,
+    "state": "closed",
+    "title": "test: MER-111 ensure Docker embeds current console build (red)",
+    "user": {
+      "login": "Dan Levin"
+    },
+    "created_at": "2026-09-23T18:10:00Z",
+    "updated_at": "2026-09-25T19:45:00Z",
+    "merged_at": "2026-09-25T19:45:00Z",
+    "closed_at": "2026-09-25T19:45:00Z",
+    "merge_commit_sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-111-frontend-build",
+      "sha": "b14057d9bd00fbc1710a0d4921cfaeb20a552388",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/14",
+    "body": "fix(build): compile Next bundle before embedding it in server image (MER-111)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 15,
+    "state": "closed",
+    "title": "test: MER-112 new-region bootstrap sequence contract (red)",
+    "user": {
+      "login": "Dan Levin"
+    },
+    "created_at": "2026-09-30T18:00:00Z",
+    "updated_at": "2026-10-02T19:30:00Z",
+    "merged_at": "2026-10-02T19:30:00Z",
+    "closed_at": "2026-10-02T19:30:00Z",
+    "merge_commit_sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-112-fresh-bootstrap",
+      "sha": "c2cf3b0d76b3e51204a5cca4222bd3c63c1eb902",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/15",
+    "body": "fix(dev): require schema migrations before server run (MER-112)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 3,
+    "changed_files": 2
+  },
+  {
+    "number": 16,
+    "state": "closed",
+    "title": "test: MER-113 finance review status schema contract (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-10-07T18:10:00Z",
+    "updated_at": "2026-10-09T19:30:00Z",
+    "merged_at": "2026-10-09T19:30:00Z",
+    "closed_at": "2026-10-09T19:30:00Z",
+    "merge_commit_sha": "bde5a9354e5e97225802773809cee0efa6f9afec",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-113-review-status",
+      "sha": "4767bb1aebd386c53c105fcbd2683a402a5a2cda",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/16",
+    "body": "feat(billing): add finance review status and schema v5 (MER-113)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 4,
+    "changed_files": 4
+  },
+  {
+    "number": 17,
+    "state": "closed",
+    "title": "test: MER-114 tenant isolation for webhook fallback registry (red)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2026-10-14T18:20:00Z",
+    "updated_at": "2026-10-16T19:40:00Z",
+    "merged_at": "2026-10-16T19:40:00Z",
+    "closed_at": "2026-10-16T19:40:00Z",
+    "merge_commit_sha": "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-114-tenant-webhooks",
+      "sha": "44bd00c212cf9c999965426a4e1dcf7265d26070",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/17",
+    "body": "fix(webhooks): tenant-scope static fallback subscriptions (MER-114)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 18,
+    "state": "closed",
+    "title": "test: MER-115 tenant-specific preview cancellation contract (red)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2026-10-21T18:00:00Z",
+    "updated_at": "2026-10-23T19:30:00Z",
+    "merged_at": "2026-10-23T19:30:00Z",
+    "closed_at": "2026-10-23T19:30:00Z",
+    "merge_commit_sha": "4289bc34c25a6aef5ae0757b7dee24f8254471ab",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-115-preview-cancel",
+      "sha": "ad1fb17250bc280224471cfe435c06e25a9223c7",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/18",
+    "body": "fix(jobs): tenant-scope preview ids for safe cancellation (MER-115)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 3,
+    "changed_files": 2
+  },
+  {
+    "number": 19,
+    "state": "closed",
+    "title": "test: MER-116 edge/API tenant export limit parity (red)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2026-10-28T18:00:00Z",
+    "updated_at": "2026-10-30T19:30:00Z",
+    "merged_at": "2026-10-30T19:30:00Z",
+    "closed_at": "2026-10-30T19:30:00Z",
+    "merge_commit_sha": "ffa824482c775efb8b0ab6602307841dd7fe5358",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-116-tenant-limit",
+      "sha": "193215da88f5426709709f1e878ba8857ec20615",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/19",
+    "body": "fix(limits): mirror tenant export bucket across Go and nginx (MER-116)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 3,
+    "changed_files": 4
+  },
+  {
+    "number": 20,
+    "state": "closed",
+    "title": "test: MER-117 outbox durability and invoice version order (red)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2026-11-04T18:10:00Z",
+    "updated_at": "2026-11-06T19:30:00Z",
+    "merged_at": "2026-11-06T19:30:00Z",
+    "closed_at": "2026-11-06T19:30:00Z",
+    "merge_commit_sha": "3553a93b7d015a20ec13ff7ccab76af501427bb1",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-117-line-version-order",
+      "sha": "6981ed543101d375429d1e8b103e30afed495f1d",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/20",
+    "body": "fix(billing): advance line-item version only after durable publish (MER-117)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 21,
+    "state": "closed",
+    "title": "test: MER-118 tenant totals cache isolation contract (red)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2026-11-11T18:00:00Z",
+    "updated_at": "2026-11-13T19:30:00Z",
+    "merged_at": "2026-11-13T19:30:00Z",
+    "closed_at": "2026-11-13T19:30:00Z",
+    "merge_commit_sha": "229352c267bcd1cbcdc22951a2ed35bf882d78f1",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-118-tenant-cache",
+      "sha": "32a7eef7115c0b00e0a0fbf29cc5d4280ac440b7",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/21",
+    "body": "fix(cache): write invoice totals under tenant-scoped key (MER-118)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 22,
+    "state": "closed",
+    "title": "test: MER-119 tenant and page cache key contract (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-11-18T18:00:00Z",
+    "updated_at": "2026-11-20T19:30:00Z",
+    "merged_at": "2026-11-20T19:30:00Z",
+    "closed_at": "2026-11-20T19:30:00Z",
+    "merge_commit_sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-119-pagination-key",
+      "sha": "b0670f3a18159d7a732cb629a05a5c8fa4f35a88",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/22",
+    "body": "fix(console): generate invoice cache keys with tenant and page (MER-119)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 4
+  },
+  {
+    "number": 23,
+    "state": "closed",
+    "title": "test: MER-120 partial purchase order autosave contract (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-11-25T18:10:00Z",
+    "updated_at": "2026-11-27T19:30:00Z",
+    "merged_at": "2026-11-27T19:30:00Z",
+    "closed_at": "2026-11-27T19:30:00Z",
+    "merge_commit_sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-120-draft-validation",
+      "sha": "849b2ad4cec5f390ccfd2b3ad5717342c9d8c939",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/23",
+    "body": "fix(procurement): keep draft autosave lenient, submit strict (MER-120)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 4
+  },
+  {
+    "number": 24,
+    "state": "closed",
+    "title": "test: MER-121 audit table URL/cache filter contract (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-12-02T18:00:00Z",
+    "updated_at": "2026-12-04T19:30:00Z",
+    "merged_at": "2026-12-04T19:30:00Z",
+    "closed_at": "2026-12-04T19:30:00Z",
+    "merge_commit_sha": "c6e1111a98eaa58eba918cc241beabd889482b73",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-121-audit-filter-url",
+      "sha": "1a4760b6dd68eef998740e704171e8a37c3ba1af",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/24",
+    "body": "fix(console): restore sort and direction from audit URL state (MER-121)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 25,
+    "state": "closed",
+    "title": "test: MER-122 localized generated error fallback contract (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-12-09T18:00:00Z",
+    "updated_at": "2026-12-11T19:30:00Z",
+    "merged_at": "2026-12-11T19:30:00Z",
+    "closed_at": "2026-12-11T19:30:00Z",
+    "merge_commit_sha": "f073401fd44c3a0df7bd936369718c206e60527b",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-122-localized-error-fallback",
+      "sha": "c419377f105c3b3762cf9d637a75c3a1471d2844",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/25",
+    "body": "fix(i18n): fall back to generated English error catalog (MER-122)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 2
+  },
+  {
+    "number": 26,
+    "state": "closed",
+    "title": "test: MER-123 public bundle environment boundary (red)",
+    "user": {
+      "login": "Dan Levin"
+    },
+    "created_at": "2026-12-16T18:00:00Z",
+    "updated_at": "2026-12-18T19:30:00Z",
+    "merged_at": "2026-12-18T19:30:00Z",
+    "closed_at": "2026-12-18T19:30:00Z",
+    "merge_commit_sha": "958b5e6096c2b0be94440fc1a23732a8afef2858",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-123-public-api-config",
+      "sha": "339fb94a9902687ed39ad83e0e471d828e24e7a2",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/26",
+    "body": "fix(web): expose only public API origin to client bundle (MER-123)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 3,
+    "changed_files": 2
+  },
+  {
+    "number": 27,
+    "state": "closed",
+    "title": "test: MER-124 authenticated hydration flag source contract (red)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2026-12-23T18:00:00Z",
+    "updated_at": "2026-12-23T20:00:00Z",
+    "merged_at": "2026-12-23T20:00:00Z",
+    "closed_at": "2026-12-23T20:00:00Z",
+    "merge_commit_sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-124-bootstrap-auth",
+      "sha": "1d941403488386339199032041a4d7df71315794",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/27",
+    "body": "fix(console): apply tenant policy during first render (MER-124)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 5,
+    "changed_files": 2
+  },
+  {
+    "number": 28,
+    "state": "closed",
+    "title": "feat(payroll): add shift differential pay component (MER-201)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2027-01-07T18:00:00Z",
+    "updated_at": "2027-01-08T20:00:00Z",
+    "merged_at": "2027-01-08T20:00:00Z",
+    "closed_at": "2027-01-08T20:00:00Z",
+    "merge_commit_sha": "80402dba9eb1da7a0625fff1104dee32643223f2",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-201-payroll-columns",
+      "sha": "e3aba53f77926ce8ef89c63352805b37898ff777",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/28",
+    "body": "fix(payroll): append shift differential and bump workbook schema (MER-201)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 2,
+    "changed_files": 5
+  },
+  {
+    "number": 29,
+    "state": "closed",
+    "title": "feat(store): add transactional bulk soft-delete with retention note (MER-202)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2027-01-13T16:00:00Z",
+    "updated_at": "2027-01-15T20:00:00Z",
+    "merged_at": "2027-01-15T20:00:00Z",
+    "closed_at": "2027-01-15T20:00:00Z",
+    "merge_commit_sha": "8be4ff72fca539620280d4982731e92d78031fbb",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-202-bulk-delete",
+      "sha": "c70c8faa2b83df68f8b253e2673be3b5acdbdd74",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/29",
+    "body": "feat(store): add transactional bulk soft-delete with retention note (MER-202)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 1,
+    "changed_files": 3
+  },
+  {
+    "number": 30,
+    "state": "closed",
+    "title": "fix(web): restore query-token auth for legacy event stream (MER-203)",
+    "user": {
+      "login": "Dan Levin"
+    },
+    "created_at": "2027-01-20T16:00:00Z",
+    "updated_at": "2027-01-22T20:00:00Z",
+    "merged_at": "2027-01-22T20:00:00Z",
+    "closed_at": "2027-01-22T20:00:00Z",
+    "merge_commit_sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-203-sse-auth",
+      "sha": "f8c30ef0504af33ea4163baf52100a22be698cff",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/30",
+    "body": "fix(web): restore query-token auth for legacy event stream (MER-203)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 1,
+    "changed_files": 2
+  },
+  {
+    "number": 31,
+    "state": "closed",
+    "title": "test: pin pay component mirror alignment across Go and TypeScript (MER-204)",
+    "user": {
+      "login": "Sofia Almeida"
+    },
+    "created_at": "2027-01-27T16:00:00Z",
+    "updated_at": "2027-01-29T20:00:00Z",
+    "merged_at": "2027-01-29T20:00:00Z",
+    "closed_at": "2027-01-29T20:00:00Z",
+    "merge_commit_sha": "490fc4188b5f8d1caf2f97815d534ba6537fec30",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-204-pay-labels",
+      "sha": "6c4dcbeea8957f14e97d87223815d47ee0780435",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/31",
+    "body": "test: pin pay component mirror alignment across Go and TypeScript (MER-204)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 1,
+    "changed_files": 1
+  },
+  {
+    "number": 32,
+    "state": "closed",
+    "title": "fix(billing): evaluate overdue against tenant-local business date (MER-205)",
+    "user": {
+      "login": "Priya Sharma"
+    },
+    "created_at": "2027-02-03T16:00:00Z",
+    "updated_at": "2027-02-05T20:00:00Z",
+    "merged_at": "2027-02-05T20:00:00Z",
+    "closed_at": "2027-02-05T20:00:00Z",
+    "merge_commit_sha": "4df408a65d33865f5d6f3061844abc08cbb5f664",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-205-overdue-tz",
+      "sha": "88dae0af3fe5aff631f13d0a374b3aae5e757ff8",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/32",
+    "body": "fix(billing): evaluate overdue against tenant-local business date (MER-205)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 1,
+    "changed_files": 3
+  },
+  {
+    "number": 33,
+    "state": "closed",
+    "title": "fix(payments): derive idempotency key from attempt, not retry number (MER-206)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2027-02-10T16:00:00Z",
+    "updated_at": "2027-02-12T20:00:00Z",
+    "merged_at": "2027-02-12T20:00:00Z",
+    "closed_at": "2027-02-12T20:00:00Z",
+    "merge_commit_sha": "93c99fe65568325d2395525518284f59a9100a23",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-206-idempotency",
+      "sha": "3ac96f41c0ae331c43c4fd06e9d6060fdf966a30",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/33",
+    "body": "fix(payments): derive idempotency key from attempt, not retry number (MER-206)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 1,
+    "changed_files": 3
+  },
+  {
+    "number": 34,
+    "state": "closed",
+    "title": "fix(audit): decode pre-expansion rows through the v1 shim (MER-207)",
+    "user": {
+      "login": "Marcus Lee"
+    },
+    "created_at": "2027-02-17T16:00:00Z",
+    "updated_at": "2027-02-19T20:00:00Z",
+    "merged_at": "2027-02-19T20:00:00Z",
+    "closed_at": "2027-02-19T20:00:00Z",
+    "merge_commit_sha": "7cda3e9560f221d6c08ec6efb3034d96128bf4ff",
+    "merged": true,
+    "head": {
+      "ref": "feature/MER-207-audit-v1",
+      "sha": "6f9208f59216751494daba0d8c43ee569dc71571",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/34",
+    "body": "fix(audit): decode pre-expansion rows through the v1 shim (MER-207)\n\nJira: see discussion in Discord for the task window.",
+    "commits": 1,
+    "changed_files": 2
+  },
+  {
+    "number": 199,
+    "state": "open",
+    "title": "chore: bump go toolchain to 1.28",
+    "user": {
+      "login": "dan-levin"
+    },
+    "created_at": "2026-10-09T12:00:00+00:00",
+    "updated_at": "2026-10-09T12:00:00+00:00",
+    "merged_at": null,
+    "closed_at": null,
+    "merge_commit_sha": null,
+    "merged": false,
+    "head": {
+      "ref": "chore/toolchain",
+      "sha": "deadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "base": {
+      "ref": "main",
+      "repo": {
+        "full_name": "meridian/meridian-erp"
+      }
+    },
+    "html_url": "https://github.com/meridian/meridian-erp/pull/199",
+    "body": "",
+    "commits": 1,
+    "changed_files": 1
+  }
+]

@@ -1,0 +1,81 @@
+{
+  "task_id": "mer-107",
+  "issue": {
+    "issue_key": "MER-107",
+    "summary": "Optional partner URL is indistinguishable from an empty value",
+    "description": "Self-hosted customers with no partner webhook configured are being treated as if they explicitly configured an empty endpoint.\n\nTribal constraint: Value-vs-unset follows migration guarantees; confdiff interprets pointers as runtime-optional and zero values as guaranteed defaults.",
+    "status": "Done",
+    "reporter": "Sofia Almeida",
+    "assignee": "Sofia Almeida",
+    "created_utc": "2026-08-26T13:48:00Z",
+    "updated_utc": "2026-08-28T20:18:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21010",
+        "filename": "t05-support-report.pdf",
+        "path": "raw/attachments/jira/reports/t05-support-report.pdf",
+        "bytes": 71515,
+        "content_type": "application/pdf",
+        "created_utc": "2026-08-26T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-107",
+      "ts_utc": "2026-08-26T13:48:00Z",
+      "author": "Sofia Almeida",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-107",
+      "ts_utc": "2026-08-26T13:48:00Z",
+      "author": "Sofia Almeida",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Sofia Almeida"
+    },
+    {
+      "issue_key": "MER-107",
+      "ts_utc": "2026-08-26T14:09:00Z",
+      "author": "Sofia Almeida",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-107",
+      "ts_utc": "2026-08-26T14:09:00Z",
+      "author": "Sofia Almeida",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    },
+    {
+      "issue_key": "MER-107",
+      "ts_utc": "2026-08-27T15:28:00Z",
+      "author": "Sofia Almeida",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-107",
+      "ts_utc": "2026-08-27T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-107",
+      "ts_utc": "2026-08-27T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #10"
+    }
+  ]
+}

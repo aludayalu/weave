@@ -1,0 +1,45 @@
+{
+  "task_id": "mer-205",
+  "pull_request": {
+    "pr_number": 32,
+    "title": "fix(billing): evaluate overdue against tenant-local business date (MER-205)",
+    "state": "closed",
+    "merged": true,
+    "author": "Priya Sharma",
+    "branch": "feature/MER-205-overdue-tz",
+    "merge_sha": "4df408a65d33865f5d6f3061844abc08cbb5f664",
+    "opened_ts_utc": "2027-02-03T16:00:00Z",
+    "merged_ts_utc": "2027-02-05T20:00:00Z",
+    "closed_ts_utc": "2027-02-05T20:00:00Z"
+  },
+  "merge_sha": "4df408a65d33865f5d6f3061844abc08cbb5f664",
+  "base_sha": "490fc4188b5f8d1caf2f97815d534ba6537fec30",
+  "head_sha": "88dae0af3fe5aff631f13d0a374b3aae5e757ff8",
+  "commit_count": 1,
+  "commits": [
+    {
+      "sha": "88dae0af3fe5aff631f13d0a374b3aae5e757ff8",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2027-02-03T16:00:00Z",
+      "committed_ts_utc": "2027-02-03T16:00:00Z",
+      "message": "fix(billing): evaluate overdue against tenant-local business date (MER-205)",
+      "is_merge": false,
+      "parent_shas": [
+        "490fc4188b5f8d1caf2f97815d534ba6537fec30"
+      ],
+      "additions": 70,
+      "deletions": 2,
+      "changed_files": [
+        "internal/billing/eval205_test.go",
+        "internal/billing/overdue.go",
+        "internal/jobs/overdue.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/billing/eval205_test.go",
+    "internal/billing/overdue.go",
+    "internal/jobs/overdue.go"
+  ]
+}

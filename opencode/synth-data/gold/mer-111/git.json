@@ -1,0 +1,59 @@
+{
+  "task_id": "mer-111",
+  "pull_request": {
+    "pr_number": 14,
+    "title": "test: MER-111 ensure Docker embeds current console build (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Dan Levin",
+    "branch": "feature/MER-111-frontend-build",
+    "merge_sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d",
+    "opened_ts_utc": "2026-09-23T18:10:00Z",
+    "merged_ts_utc": "2026-09-25T19:45:00Z",
+    "closed_ts_utc": "2026-09-25T19:45:00Z"
+  },
+  "merge_sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d",
+  "base_sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9",
+  "head_sha": "04683487fcc18e7422677aae07c5d0f3b9bc89ea",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "b14057d9bd00fbc1710a0d4921cfaeb20a552388",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-22T16:00:00Z",
+      "committed_ts_utc": "2026-09-22T16:00:00Z",
+      "message": "test: MER-111 ensure Docker embeds current console build (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "9e519f8d1f54444509296d39a2f786d3e52a47c9"
+      ],
+      "additions": 35,
+      "deletions": 0,
+      "changed_files": [
+        "web/embed_contract_test.go"
+      ]
+    },
+    {
+      "sha": "04683487fcc18e7422677aae07c5d0f3b9bc89ea",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-23T18:10:00Z",
+      "committed_ts_utc": "2026-09-23T18:10:00Z",
+      "message": "fix(build): compile Next bundle before embedding it in server image (MER-111)",
+      "is_merge": false,
+      "parent_shas": [
+        "b14057d9bd00fbc1710a0d4921cfaeb20a552388"
+      ],
+      "additions": 8,
+      "deletions": 0,
+      "changed_files": [
+        "Dockerfile"
+      ]
+    }
+  ],
+  "files": [
+    "Dockerfile",
+    "web/embed_contract_test.go"
+  ]
+}

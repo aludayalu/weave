@@ -1,0 +1,65 @@
+{
+  "task_id": "mer-101",
+  "pull_request": {
+    "pr_number": 1,
+    "title": "test: MER-101 gateway timeout spec (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Priya Sharma",
+    "branch": "feature/MER-101-gateway-timeout",
+    "merge_sha": "798a23ef4fa0321fce53581b80c6b5eea39bdc6d",
+    "opened_ts_utc": "2026-07-09T19:15:00Z",
+    "merged_ts_utc": "2026-07-10T21:12:00Z",
+    "closed_ts_utc": "2026-07-10T21:12:00Z"
+  },
+  "merge_sha": "798a23ef4fa0321fce53581b80c6b5eea39bdc6d",
+  "base_sha": "9136ef0a8538d3d4188bf62c379b59c6f8542131",
+  "head_sha": "5d355ad6670c67fd5672178caae60078af28690d",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "47df74617ad6dfc8e8298a855aeb2bf51121aa7f",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-08T16:40:00Z",
+      "committed_ts_utc": "2026-07-08T16:40:00Z",
+      "message": "test: MER-101 gateway timeout spec (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "9136ef0a8538d3d4188bf62c379b59c6f8542131"
+      ],
+      "additions": 79,
+      "deletions": 0,
+      "changed_files": [
+        "pkg/errs/task101_gateway_timeout_test.go"
+      ]
+    },
+    {
+      "sha": "5d355ad6670c67fd5672178caae60078af28690d",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-09T19:15:00Z",
+      "committed_ts_utc": "2026-07-09T19:15:00Z",
+      "message": "feat(meridian): add payment gateway timeout error code (MER-101)",
+      "is_merge": false,
+      "parent_shas": [
+        "47df74617ad6dfc8e8298a855aeb2bf51121aa7f"
+      ],
+      "additions": 11,
+      "deletions": 1,
+      "changed_files": [
+        "api/errors.yaml",
+        "pkg/errs/code.go",
+        "pkg/errs/messages_gen.go",
+        "web/lib/errcodes_gen.ts"
+      ]
+    }
+  ],
+  "files": [
+    "api/errors.yaml",
+    "pkg/errs/code.go",
+    "pkg/errs/messages_gen.go",
+    "pkg/errs/task101_gateway_timeout_test.go",
+    "web/lib/errcodes_gen.ts"
+  ]
+}

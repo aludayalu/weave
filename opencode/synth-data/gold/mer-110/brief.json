@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-110",
+  "jira": "MER-110",
+  "pr": 13,
+  "repository": "meridian-erp",
+  "repo_revision": "104421c579 (task branch tip)",
+  "title": "Generated error catalogs drift between services",
+  "summary": "MER-110 raised in #eng-platform, shipped in PR #13",
+  "start_ts_utc": "2026-09-16T15:18:00Z",
+  "end_ts_utc": "2026-09-18T20:18:00Z",
+  "duration_minutes": 3180,
+  "participants": [
+    "Dan Levin",
+    "Marcus Lee"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "fyi client-report is attached to MER-110 if you want the raw capture.",
+      "standup in 5, billing standup moved to 10:30",
+      "the coffee machine is fixed (somehow)",
+      "reminder: freeze starts friday for the payments repo",
+      "spec-first per team rule — tests for MER-110 are red on main now, pushing as I go.",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "PR #13 is up: `feature/MER-110-generated-catalog`. review when you can.",
+      "reviewed #13 — left two comments, nothing structural.",
+      "addressed both, pushing.",
+      "deploy is green, MER-110 is ready to close.",
+      "MER-110 closed — PR #13 merged. done, PR is up and CI is green"
+    ],
+    "ticket": "The console shows raw error codes for a partner-facing error while Go logs show a friendly message for the same response.\n\nTribal constraint: api/errors.yaml is the only source of truth; generated Go and TypeScript files must be regenerated together, and reserved module blocks are not allocated by alphabetical order.",
+    "documents": [
+      "t08-client-report.pdf",
+      "t08-release-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 12,
+    "jira_events": 10,
+    "commits": 2,
+    "patch_bytes": 2337,
+    "documents": 2
+  }
+}

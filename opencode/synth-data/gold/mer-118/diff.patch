@@ -1,0 +1,54 @@
+diff --git a/internal/billing/cache.go b/internal/billing/cache.go
+index 71880ad..e04004a 100644
+--- a/internal/billing/cache.go
++++ b/internal/billing/cache.go
+@@ -2,10 +2,9 @@ package billing
+ 
+ import "github.com/meridian-erp/meridian/internal/store"
+ 
+-// SummaryCacheKey is used by the dashboard summary cache. Legacy keys
+-// are still readable during the migration, but writes must be tenant
+-// scoped. This call site predates CacheKey and still writes a two-part key.
++// SummaryCacheKey is used by the dashboard summary cache. Legacy two-part
++// keys remain readable during migration; all new writes use the shared
++// tenant-scoped form.
+ func SummaryCacheKey(tenant string) string {
+-	_ = tenant
+-	return store.LegacyKey("inv", "totals")
++	return store.CacheKey("inv", "totals", tenant)
+ }
+diff --git a/internal/billing/task118_cache_scope_test.go b/internal/billing/task118_cache_scope_test.go
+new file mode 100644
+index 0000000..fd1ef8c
+--- /dev/null
++++ b/internal/billing/task118_cache_scope_test.go
+@@ -0,0 +1,29 @@
++package billing
++
++import (
++	"testing"
++	"github.com/meridian-erp/meridian/internal/store"
++)
++
++func TestSummaryCacheKeyContainsTenant(t *testing.T) {
++	got:=SummaryCacheKey("harborline")
++	if got!="inv:totals:harborline" { t.Errorf("summary key=%q",got) }
++}
++
++func TestTwoTenantsCannotShareSummaryKey(t *testing.T) {
++	a:=SummaryCacheKey("harborline"); b:=SummaryCacheKey("vantage")
++	if a==b { t.Fatalf("cross-tenant cache collision on %q",a) }
++}
++
++func TestSummaryKeyUsesSharedStoreConvention(t *testing.T) {
++	if got:=SummaryCacheKey("crestwood");got!=store.CacheKey("inv","totals","crestwood") { t.Errorf("key=%q",got) }
++}
++
++func TestLegacyKeyIsStillReadableButNotWritten(t *testing.T) {
++	if SummaryCacheKey("harborline")==store.LegacyKey("inv","totals") { t.Fatal("new writes must not use two-segment legacy key") }
++	if store.IsLegacyKey(store.LegacyKey("inv","totals"))=="" { t.Fatal("legacy decoder must still recognize old key") }
++}
++
++func TestEmptyTenantDoesNotAliasLegacySummary(t *testing.T) {
++	if SummaryCacheKey("")==store.LegacyKey("inv","totals") { t.Fatal("empty tenant must not map to legacy key") }
++}

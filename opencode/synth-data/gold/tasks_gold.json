@@ -1,0 +1,875 @@
+{
+  "repo": "meridian-erp",
+  "generated_from": "git history",
+  "tasks": [
+    {
+      "task_id": "t01",
+      "jira": "MER-101",
+      "pr": 1,
+      "branch": "feature/MER-101-gateway-timeout",
+      "split": "train",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2026-07-08T15:00:00+00:00",
+        "end": "2026-07-10T21:30:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1524429855129600000",
+        "discord_last_message": "1525252777574400010",
+        "jira_key": "MER-101",
+        "github_merge_sha": "798a23ef4fa0321fce53581b80c6b5eea39bdc6d"
+      },
+      "commits": [
+        "5d355ad6670c67fd5672178caae60078af28690d|Priya Sharma|2026-07-09T19:15:00Z|feat(meridian): add payment gateway timeout error code (MER-101)",
+        "47df74617ad6dfc8e8298a855aeb2bf51121aa7f|Priya Sharma|2026-07-08T16:40:00Z|test: MER-101 gateway timeout spec (red)"
+      ],
+      "tribal_constraint": "Payment codes are append-only per module; partner integrations use numeric ranges and api/errors.yaml generates both Go messages and TypeScript mappings.",
+      "documents": [
+        "t01-client-report.pdf",
+        "t01-gateway-log.log"
+      ]
+    },
+    {
+      "task_id": "t02",
+      "jira": "MER-102",
+      "pr": 2,
+      "branch": "feature/MER-102-flag-keys",
+      "split": "train",
+      "channel": "eng-platform",
+      "window": {
+        "start": "2026-07-15T14:19:00+00:00",
+        "end": "2026-07-17T20:49:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1526956252200960000",
+        "discord_last_message": "1527779174645760010",
+        "jira_key": "MER-102",
+        "github_merge_sha": "65d25a33c70fd702999b5b611f10654498f83c39"
+      },
+      "commits": [
+        "eaae05daa91816785467d7b317f251cc9d6a5a32|Dan Levin|2026-07-16T15:50:00Z|docs(migrations): declare dotted flag keys canonical (MER-102)",
+        "3b6da66e42ca76dffeb9cc1997f3c0fd4d1b8e75|Sofia Almeida|2026-07-15T18:30:00Z|fix(meridian): resolve flag keys across all three spellings (MER-102)",
+        "761f40be1cf2d0d1d50ec04912f2e05a3d967f5a|Sofia Almeida|2026-07-14T17:05:00Z|test: MER-102 flag key resolution spec (red)"
+      ],
+      "tribal_constraint": "The SQL seed's dotted lowercase spelling is canonical; Go uses kebab case, Kubernetes uses uppercase underscores, and cache invalidation has a separate registry.",
+      "documents": [
+        "t02-flag-debug.pdf",
+        "t02-tenant-snapshot.pdf"
+      ]
+    },
+    {
+      "task_id": "t09",
+      "jira": "MER-851",
+      "pr": 4,
+      "branch": "feature/MER-851-audit-redaction",
+      "split": "train",
+      "channel": "incidents",
+      "window": {
+        "start": "2026-07-22T13:08:00+00:00",
+        "end": "2026-07-24T19:38:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1529475099525120000",
+        "discord_last_message": "1530298021969920010",
+        "jira_key": "MER-851",
+        "github_merge_sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27"
+      },
+      "commits": [
+        "04b0f35ecbdcfc529d0f86c0062467fc320efe24|Marcus Lee|2026-07-23T14:00:00Z|feat(meridian): enforce compliance export gate with core.forbidden (MER-851)",
+        "2be2e9a3f398748b9093a7b71ff7b6a5c6a249b4|Priya Sharma|2026-07-22T19:05:00Z|fix(meridian): redact ip_address on every serialization boundary (MER-851)",
+        "7df88dd913528fe4f7f1a73d8b694a680b5df320|Marcus Lee|2026-07-21T17:25:00Z|test: MER-851 audit export redaction spec (red)"
+      ],
+      "tribal_constraint": "The hand-written marshaler and generated easyjson path differ; all serialization boundaries, including the fast export path, must use the redaction policy and the compliance flag.",
+      "documents": [
+        "t09-gdpr-report.pdf",
+        "t09-audit-export-log.log"
+      ]
+    },
+    {
+      "task_id": "t18",
+      "jira": "MER-104",
+      "pr": 5,
+      "branch": "feature/MER-104-tenant-switch",
+      "split": "train",
+      "channel": "eng-frontend",
+      "window": {
+        "start": "2026-07-29T13:43:00+00:00",
+        "end": "2026-07-31T20:13:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1532020622622720000",
+        "discord_last_message": "1532843545067520010",
+        "jira_key": "MER-104",
+        "github_merge_sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022"
+      },
+      "commits": [
+        "4087b30e3df64658ef8c2b4bbccb55161bb6eb63|Sofia Almeida|2026-07-29T18:45:00Z|fix(console): drop derived caches on tenant switch; subscribe the hook (MER-104)",
+        "e18c22e64fdb0799efc7a6d276e9db70c7b6ee23|Sofia Almeida|2026-07-28T16:20:00Z|test: MER-104 tenant switch staleness spec (red)"
+      ],
+      "tribal_constraint": "Tenant store is an SSR snapshot; useSyncExternalStore is the subscription contract and tenant-derived caches must be invalidated on switch.",
+      "documents": [
+        "t18-client-report.pdf",
+        "t18-tenant-switch-screenshot.png"
+      ]
+    },
+    {
+      "task_id": "t20",
+      "jira": "MER-105",
+      "pr": 7,
+      "branch": "feature/MER-105-billing-auth",
+      "split": "train",
+      "channel": "incidents",
+      "window": {
+        "start": "2026-08-05T14:28:00+00:00",
+        "end": "2026-08-07T20:58:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1534568662302720000",
+        "discord_last_message": "1535391584747520010",
+        "jira_key": "MER-105",
+        "github_merge_sha": "9c62969dba955433e7663cecf18347cadb31b305"
+      },
+      "commits": [
+        "d58102bd36515b5d63e9c36851ec418605030fc4|Marcus Lee|2026-08-05T18:20:00Z|fix(console): restore billing auth coverage in app-router profile (MER-105)",
+        "7f2b7e04ee0445fc2a2b22286b18aa590bb16f0f|Priya Sharma|2026-08-04T17:10:00Z|test: MER-105 billing auth coverage spec (red)"
+      ],
+      "tribal_constraint": "Legacy and v2 middleware coexist behind a deployment profile; matcher coverage must be equivalent even though both files compile and old profile tests pass.",
+      "documents": [
+        "t20-pentest-report.pdf",
+        "t20-curl-log.log"
+      ]
+    },
+    {
+      "task_id": "t03",
+      "jira": "MER-103",
+      "pr": 8,
+      "branch": "feature/MER-103-override-keys",
+      "split": "train",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2026-08-12T13:28:00+00:00",
+        "end": "2026-08-14T19:58:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1537090277867520000",
+        "discord_last_message": "1537913200312320010",
+        "jira_key": "MER-103",
+        "github_merge_sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc"
+      },
+      "commits": [
+        "809e3612d9511d8c607407f30fc79778f7e38899|Priya Sharma|2026-08-12T18:05:00Z|fix(store): normalize legacy tenant override imports to seeded keys (MER-103)",
+        "862ae3997a8b50fff6cbfa33ecf210a3746a2d12|Priya Sharma|2026-08-11T16:30:00Z|test: MER-103 tenant grace-period import contract (red)"
+      ],
+      "tribal_constraint": "Override keys are seeded as dotted lowercase in SQL; old imports submit mixed-case underscore names, while reads currently only lowercase.",
+      "documents": [
+        "t03-client-report.pdf",
+        "t03-import-log.log"
+      ]
+    },
+    {
+      "task_id": "t04",
+      "jira": "MER-106",
+      "pr": 9,
+      "branch": "feature/MER-106-config-env",
+      "split": "train",
+      "channel": "deploys",
+      "window": {
+        "start": "2026-08-19T13:48:00+00:00",
+        "end": "2026-08-21T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1539632026091520000",
+        "discord_last_message": "1540454948536320010",
+        "jira_key": "MER-106",
+        "github_merge_sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5"
+      },
+      "commits": [
+        "9cd410dfac35200c94b32069c11f98baab03d85c|Dan Levin|2026-08-19T18:20:00Z|fix(deploy): align compose environment with config loader (MER-106)",
+        "0567b58aa44bba7c5ca27f2c06e1a1d147704abc|Dan Levin|2026-08-18T16:00:00Z|test: MER-106 production config parity contract (red)"
+      ],
+      "tribal_constraint": "Compose and Go use different historical environment prefixes; generated defaults run during build, and the deployment uses a separate env alias.",
+      "documents": [
+        "t04-incident-log.log",
+        "t04-deployment-screenshot.png"
+      ]
+    },
+    {
+      "task_id": "t05",
+      "jira": "MER-107",
+      "pr": 10,
+      "branch": "feature/MER-107-optional-config",
+      "split": "train",
+      "channel": "eng-platform",
+      "window": {
+        "start": "2026-08-26T13:48:00+00:00",
+        "end": "2026-08-28T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1542168741150720000",
+        "discord_last_message": "1542991663595520010",
+        "jira_key": "MER-107",
+        "github_merge_sha": "bafdf50d7e8e24a71d74dad63f508408860fedcc"
+      },
+      "commits": [
+        "cb209cfa7172b201ab7af6ab95163f0a1e505c89|Sofia Almeida|2026-08-26T18:25:00Z|fix(config): represent optional partner URL with pointer (MER-107)",
+        "f5275532f1be03f52c591cbd9c31e4ac4008fc7b|Sofia Almeida|2026-08-25T16:00:00Z|test: MER-107 optional config presence contract (red)"
+      ],
+      "tribal_constraint": "Value-vs-unset follows migration guarantees; confdiff interprets pointers as runtime-optional and zero values as guaranteed defaults.",
+      "documents": [
+        "t05-support-report.pdf",
+        "t05-config-diff.png"
+      ]
+    },
+    {
+      "task_id": "t06",
+      "jira": "MER-108",
+      "pr": 11,
+      "branch": "feature/MER-108-event-tags",
+      "split": "train",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2026-09-02T13:18:00+00:00",
+        "end": "2026-09-04T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1544697906462720000",
+        "discord_last_message": "1545520828907520010",
+        "jira_key": "MER-108",
+        "github_merge_sha": "890ab774ddedacc0c28dd72297e093cf4f0fcd82"
+      },
+      "commits": [
+        "17f13565ceaf36237b3c9ffb41bcb6e024c23cfc|Priya Sharma|2026-09-02T18:05:00Z|fix(events): align correlation id tags for replay (MER-108)",
+        "1e4fd499c522c6120be2a478dfa38f0b449105df|Priya Sharma|2026-09-01T16:10:00Z|test: MER-108 persisted event decoder compatibility (red)"
+      ],
+      "tribal_constraint": "Event payloads are append-only and decoded through both JSON and mapstructure; stored tag names are a compatibility contract, not cosmetic struct labels.",
+      "documents": [
+        "t06-replay-log.log",
+        "t06-event-sample.png"
+      ]
+    },
+    {
+      "task_id": "t07",
+      "jira": "MER-109",
+      "pr": 12,
+      "branch": "feature/MER-109-tenant-job",
+      "split": "train",
+      "channel": "eng-platform",
+      "window": {
+        "start": "2026-09-09T13:33:00+00:00",
+        "end": "2026-09-11T20:03:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1547238396395520000",
+        "discord_last_message": "1548061318840320010",
+        "jira_key": "MER-109",
+        "github_merge_sha": "68c3f717f27a4696d7da792d74c8aa8c231a45c4"
+      },
+      "commits": [
+        "d2d467e09a21bfff284624feaecb261583b120c1|Priya Sharma|2026-09-09T18:00:00Z|fix(jobs): carry tenant identity into async worker context (MER-109)",
+        "80d8732d94af478e941df153529cc20d61e27ce5|Priya Sharma|2026-09-08T16:00:00Z|test: MER-109 tenant context propagation into async exports (red)"
+      ],
+      "tribal_constraint": "Workers replay handlers without HTTP middleware; tenant identity must be carried in the route-created context/envelope, not reconstructed from headers.",
+      "documents": [
+        "t07-client-report.pdf",
+        "t07-worker-trace.png"
+      ]
+    },
+    {
+      "task_id": "t08",
+      "jira": "MER-110",
+      "pr": 13,
+      "branch": "feature/MER-110-generated-catalog",
+      "split": "train",
+      "channel": "eng-platform",
+      "window": {
+        "start": "2026-09-16T13:48:00+00:00",
+        "end": "2026-09-18T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1549778886328320000",
+        "discord_last_message": "1550601808773120010",
+        "jira_key": "MER-110",
+        "github_merge_sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9"
+      },
+      "commits": [
+        "104421c579069e505112d8011629643b5224231a|Marcus Lee|2026-09-16T18:10:00Z|fix(errors): regenerate catalogs from api source of truth (MER-110)",
+        "b17a1a67722ea91deda38c9189de9685e604d644|Marcus Lee|2026-09-15T16:00:00Z|test: MER-110 generated error catalog parity contract (red)"
+      ],
+      "tribal_constraint": "api/errors.yaml is the only source of truth; generated Go and TypeScript files must be regenerated together, and reserved module blocks are not allocated by alphabetical order.",
+      "documents": [
+        "t08-client-report.pdf",
+        "t08-release-log.log"
+      ]
+    },
+    {
+      "task_id": "t10",
+      "jira": "MER-111",
+      "pr": 14,
+      "branch": "feature/MER-111-frontend-build",
+      "split": "train",
+      "channel": "deploys",
+      "window": {
+        "start": "2026-09-23T13:33:00+00:00",
+        "end": "2026-09-25T20:03:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1552311826513920000",
+        "discord_last_message": "1553134748958720010",
+        "jira_key": "MER-111",
+        "github_merge_sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d"
+      },
+      "commits": [
+        "04683487fcc18e7422677aae07c5d0f3b9bc89ea|Dan Levin|2026-09-23T18:10:00Z|fix(build): compile Next bundle before embedding it in server image (MER-111)",
+        "b14057d9bd00fbc1710a0d4921cfaeb20a552388|Dan Levin|2026-09-22T16:00:00Z|test: MER-111 ensure Docker embeds current console build (red)"
+      ],
+      "tribal_constraint": "The Go binary embeds web/dist at compile time; Docker's build context can contain a stale bundle unless the frontend build stage precedes Go compilation.",
+      "documents": [
+        "t10-release-report.pdf",
+        "t10-bundle-log.log"
+      ]
+    },
+    {
+      "task_id": "t11",
+      "jira": "MER-112",
+      "pr": 15,
+      "branch": "feature/MER-112-fresh-bootstrap",
+      "split": "train",
+      "channel": "deploys",
+      "window": {
+        "start": "2026-09-30T13:18:00+00:00",
+        "end": "2026-10-02T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1554844766699520000",
+        "discord_last_message": "1555667689144320010",
+        "jira_key": "MER-112",
+        "github_merge_sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71"
+      },
+      "commits": [
+        "a6a4c7af0a55ffbc8e7c97c45cc3adcb2a4b9220|Dan Levin|2026-09-30T18:00:00Z|fix(dev): require schema migrations before server run (MER-112)",
+        "47167f41534e3a73c333af57ab6b2a1ef45a368b|Dan Levin|2026-09-29T16:30:00Z|test: correct bootstrap target scan in MER-112 spec",
+        "c2cf3b0d76b3e51204a5cca4222bd3c63c1eb902|Dan Levin|2026-09-29T16:00:00Z|test: MER-112 new-region bootstrap sequence contract (red)"
+      ],
+      "tribal_constraint": "make run generates code but does not apply migrations; onboarding expects a distinct migration prerequisite and migration ordering is filename-based.",
+      "documents": [
+        "t11-staging-incident.pdf",
+        "t11-startup-log.log"
+      ]
+    },
+    {
+      "task_id": "t12",
+      "jira": "MER-113",
+      "pr": 16,
+      "branch": "feature/MER-113-review-status",
+      "split": "train",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2026-10-07T13:18:00+00:00",
+        "end": "2026-10-09T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1557381481758720000",
+        "discord_last_message": "1558204404203520010",
+        "jira_key": "MER-113",
+        "github_merge_sha": "bde5a9354e5e97225802773809cee0efa6f9afec"
+      },
+      "commits": [
+        "ae18d008407057184b14e4cf1c997ae62f24454a|Sofia Almeida|2026-10-07T18:10:00Z|feat(billing): add finance review status and schema v5 (MER-113)",
+        "21383ba8e8d61bd4139a348a87a09864735ea8e1|Sofia Almeida|2026-10-06T16:20:00Z|test: allow additive finance schema version bumps",
+        "04be15f507f8ebce9866dc223c4c31562b35f5f1|Sofia Almeida|2026-10-06T16:10:00Z|test: keep MER-113 red checks executable before enum addition",
+        "4767bb1aebd386c53c105fcbd2683a402a5a2cda|Sofia Almeida|2026-10-06T16:00:00Z|test: MER-113 finance review status schema contract (red)"
+      ],
+      "tribal_constraint": "Status strings and ordinal positions are an external report contract; report_schema_version must be bumped and the generated string mapping refreshed.",
+      "documents": [
+        "t12-finance-report.pdf",
+        "t12-workbook-screenshot.png"
+      ]
+    },
+    {
+      "task_id": "t13",
+      "jira": "MER-114",
+      "pr": 17,
+      "branch": "feature/MER-114-tenant-webhooks",
+      "split": "train",
+      "channel": "incidents",
+      "window": {
+        "start": "2026-10-14T13:28:00+00:00",
+        "end": "2026-10-16T19:58:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1559920713400320000",
+        "discord_last_message": "1560743635845120010",
+        "jira_key": "MER-114",
+        "github_merge_sha": "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027"
+      },
+      "commits": [
+        "a5c878e04552cec2766d16e8eb413d1897be6464|Marcus Lee|2026-10-14T18:20:00Z|fix(webhooks): tenant-scope static fallback subscriptions (MER-114)",
+        "44bd00c212cf9c999965426a4e1dcf7265d26070|Marcus Lee|2026-10-13T16:00:00Z|test: MER-114 tenant isolation for webhook fallback registry (red)"
+      ],
+      "tribal_constraint": "Subscriptions have both a static fallback registry and a DB-loaded registry; tenant scoping was added to the database path later, leaving the fallback lookup keyed only by name.",
+      "documents": [
+        "t13-client-report.pdf",
+        "t13-webhook-log.log"
+      ]
+    },
+    {
+      "task_id": "t14",
+      "jira": "MER-115",
+      "pr": 18,
+      "branch": "feature/MER-115-preview-cancel",
+      "split": "train",
+      "channel": "eng-platform",
+      "window": {
+        "start": "2026-10-21T13:18:00+00:00",
+        "end": "2026-10-23T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1562454911877120000",
+        "discord_last_message": "1563277834321920010",
+        "jira_key": "MER-115",
+        "github_merge_sha": "4289bc34c25a6aef5ae0757b7dee24f8254471ab"
+      },
+      "commits": [
+        "6a57d0377b37b9508a9479ffb43bedb464ec15a9|Priya Sharma|2026-10-21T18:00:00Z|fix(jobs): tenant-scope preview ids for safe cancellation (MER-115)",
+        "29346cbb6d708801068e0a40cc6a1cc722efc059|Priya Sharma|2026-10-21T17:20:00Z|test: wait for targeted preview cancellation before checking queue",
+        "ad1fb17250bc280224471cfe435c06e25a9223c7|Priya Sharma|2026-10-20T16:00:00Z|test: MER-115 tenant-specific preview cancellation contract (red)"
+      ],
+      "tribal_constraint": "Jobs intentionally outlive HTTP request contexts; the supported cancellation path is Runner.Cancel(jobID), and preview jobs must retain their stable job ID across retries.",
+      "documents": [
+        "t14-capacity-report.pdf",
+        "t14-worker-log.log"
+      ]
+    },
+    {
+      "task_id": "t15",
+      "jira": "MER-116",
+      "pr": 19,
+      "branch": "feature/MER-116-tenant-limit",
+      "split": "train",
+      "channel": "deploys",
+      "window": {
+        "start": "2026-10-28T13:18:00+00:00",
+        "end": "2026-10-30T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1564991626936320000",
+        "discord_last_message": "1565814549381120010",
+        "jira_key": "MER-116",
+        "github_merge_sha": "ffa824482c775efb8b0ab6602307841dd7fe5358"
+      },
+      "commits": [
+        "3c77d2a1cc64a7a452c5af6987a9fef6268ffb09|Marcus Lee|2026-10-28T18:00:00Z|fix(limits): mirror tenant export bucket across Go and nginx (MER-116)",
+        "537924e998db02658740a8e7c7eab97ac9db8469|Marcus Lee|2026-10-28T17:00:00Z|test: extend rate limit mirror fixture for tenant bucket",
+        "193215da88f5426709709f1e878ba8857ec20615|Marcus Lee|2026-10-27T16:00:00Z|test: MER-116 edge/API tenant export limit parity (red)"
+      ],
+      "tribal_constraint": "configs/ratelimits.yaml is shared with the nginx generated snippet; scope names and values must match, and tenant export uses a separate bucket from global API traffic.",
+      "documents": [
+        "t15-incident-log.log",
+        "t15-nginx-log.log"
+      ]
+    },
+    {
+      "task_id": "t16",
+      "jira": "MER-117",
+      "pr": 20,
+      "branch": "feature/MER-117-line-version-order",
+      "split": "train",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2026-11-04T13:18:00+00:00",
+        "end": "2026-11-06T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1567528341995520000",
+        "discord_last_message": "1568351264440320010",
+        "jira_key": "MER-117",
+        "github_merge_sha": "3553a93b7d015a20ec13ff7ccab76af501427bb1"
+      },
+      "commits": [
+        "299005aa0656e826bbdfdcd5a4f9a495d95bce10|Priya Sharma|2026-11-04T18:10:00Z|fix(billing): advance line-item version only after durable publish (MER-117)",
+        "6981ed543101d375429d1e8b103e30afed495f1d|Priya Sharma|2026-11-03T16:00:00Z|test: MER-117 outbox durability and invoice version order (red)"
+      ],
+      "tribal_constraint": "The outbox consumer is writer of record; version advancement happens only after durable publish/consumer application, not when the HTTP producer assembles the event.",
+      "documents": [
+        "t16-reconciliation-report.pdf",
+        "t16-outbox-log.log"
+      ]
+    },
+    {
+      "task_id": "t17",
+      "jira": "MER-118",
+      "pr": 21,
+      "branch": "feature/MER-118-tenant-cache",
+      "split": "train",
+      "channel": "incidents",
+      "window": {
+        "start": "2026-11-11T13:18:00+00:00",
+        "end": "2026-11-13T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1570065057054720000",
+        "discord_last_message": "1570887979499520010",
+        "jira_key": "MER-118",
+        "github_merge_sha": "229352c267bcd1cbcdc22951a2ed35bf882d78f1"
+      },
+      "commits": [
+        "82dfa7ef0802f1777b3282bbcc638e2a043b790e|Marcus Lee|2026-11-11T18:00:00Z|fix(cache): write invoice totals under tenant-scoped key (MER-118)",
+        "32a7eef7115c0b00e0a0fbf29cc5d4280ac440b7|Marcus Lee|2026-11-10T16:00:00Z|test: MER-118 tenant totals cache isolation contract (red)"
+      ],
+      "tribal_constraint": "Legacy keys have two segments; current keys require a tenant segment. Both formats parse, so the cache layer must use the shared CacheKey helper and isolate legacy invalidation.",
+      "documents": [
+        "t17-client-report.pdf",
+        "t17-cache-log.log"
+      ]
+    },
+    {
+      "task_id": "t19",
+      "jira": "MER-119",
+      "pr": 22,
+      "branch": "feature/MER-119-pagination-key",
+      "split": "train",
+      "channel": "eng-frontend",
+      "window": {
+        "start": "2026-11-18T13:18:00+00:00",
+        "end": "2026-11-20T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1572601772113920000",
+        "discord_last_message": "1573424694558720010",
+        "jira_key": "MER-119",
+        "github_merge_sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74"
+      },
+      "commits": [
+        "55f663f53e3a6c27b5a9a2a88573c5d24b7dc70f|Sofia Almeida|2026-11-18T18:00:00Z|fix(console): generate invoice cache keys with tenant and page (MER-119)",
+        "b0670f3a18159d7a732cb629a05a5c8fa4f35a88|Sofia Almeida|2026-11-17T16:00:00Z|test: MER-119 tenant and page cache key contract (red)"
+      ],
+      "tribal_constraint": "Most SWR keys are generated from routes.yaml; the invoice page has a local historical literal that must preserve both tenant and page dimensions when its contract changes.",
+      "documents": [
+        "t19-support-report.pdf",
+        "t19-network-log.log"
+      ]
+    },
+    {
+      "task_id": "t21",
+      "jira": "MER-120",
+      "pr": 23,
+      "branch": "feature/MER-120-draft-validation",
+      "split": "train",
+      "channel": "eng-frontend",
+      "window": {
+        "start": "2026-11-25T13:18:00+00:00",
+        "end": "2026-11-27T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1575138487173120000",
+        "discord_last_message": "1575961409617920010",
+        "jira_key": "MER-120",
+        "github_merge_sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07"
+      },
+      "commits": [
+        "1bf4e9af46e7ecafdd33db7a50982ca0a0b9f11c|Sofia Almeida|2026-11-25T18:10:00Z|fix(procurement): keep draft autosave lenient, submit strict (MER-120)",
+        "849b2ad4cec5f390ccfd2b3ad5717342c9d8c939|Sofia Almeida|2026-11-24T16:00:00Z|test: MER-120 partial purchase order autosave contract (red)"
+      ],
+      "tribal_constraint": "Frontend required means user guidance; backend validation allows missing values during draft autosave and enforces the full schema only on submit.",
+      "documents": [
+        "t21-client-report.pdf",
+        "t21-validation-log.log"
+      ]
+    },
+    {
+      "task_id": "t22",
+      "jira": "MER-121",
+      "pr": 24,
+      "branch": "feature/MER-121-audit-filter-url",
+      "split": "train",
+      "channel": "eng-frontend",
+      "window": {
+        "start": "2026-12-02T13:18:00+00:00",
+        "end": "2026-12-04T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1577675202232320000",
+        "discord_last_message": "1578498124677120010",
+        "jira_key": "MER-121",
+        "github_merge_sha": "c6e1111a98eaa58eba918cc241beabd889482b73"
+      },
+      "commits": [
+        "e04c9106f67a6c71de6a7ae3e59e2bc5e36a84e7|Sofia Almeida|2026-12-02T18:00:00Z|fix(console): restore sort and direction from audit URL state (MER-121)",
+        "1a4760b6dd68eef998740e704171e8a37c3ba1af|Sofia Almeida|2026-12-01T16:00:00Z|test: MER-121 audit table URL/cache filter contract (red)"
+      ],
+      "tribal_constraint": "Filter state belongs in URL search parameters and the cache key; useFilteredTable serializes filters in fixed field order for stable keys.",
+      "documents": [
+        "t22-support-report.pdf",
+        "t22-browser-screenshot.png"
+      ]
+    },
+    {
+      "task_id": "t23",
+      "jira": "MER-122",
+      "pr": 25,
+      "branch": "feature/MER-122-localized-error-fallback",
+      "split": "train",
+      "channel": "eng-frontend",
+      "window": {
+        "start": "2026-12-09T13:18:00+00:00",
+        "end": "2026-12-11T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1580211917291520000",
+        "discord_last_message": "1581034839736320010",
+        "jira_key": "MER-122",
+        "github_merge_sha": "f073401fd44c3a0df7bd936369718c206e60527b"
+      },
+      "commits": [
+        "fa3938c1e3504609078496c8a75b0c31026ae8b9|Sofia Almeida|2026-12-09T18:00:00Z|fix(i18n): fall back to generated English error catalog (MER-122)",
+        "c419377f105c3b3762cf9d637a75c3a1471d2844|Sofia Almeida|2026-12-08T16:00:00Z|test: MER-122 localized generated error fallback contract (red)"
+      ],
+      "tribal_constraint": "errcodes_gen.ts provides generated English fallback; hand-maintained locale tables are intentionally incomplete and must fall back through the generated message map.",
+      "documents": [
+        "t23-client-report.pdf",
+        "t23-locale-log.log"
+      ]
+    },
+    {
+      "task_id": "t24",
+      "jira": "MER-123",
+      "pr": 26,
+      "branch": "feature/MER-123-public-api-config",
+      "split": "train",
+      "channel": "deploys",
+      "window": {
+        "start": "2026-12-16T13:18:00+00:00",
+        "end": "2026-12-18T19:48:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1582748632350720000",
+        "discord_last_message": "1583571554795520010",
+        "jira_key": "MER-123",
+        "github_merge_sha": "958b5e6096c2b0be94440fc1a23732a8afef2858"
+      },
+      "commits": [
+        "2cc10dc37882a70b0a2789128f39ce728f14c861|Dan Levin|2026-12-16T18:00:00Z|fix(web): expose only public API origin to client bundle (MER-123)",
+        "9d9a389d87596caacb14bab41edfc8f2b09ccc83|Dan Levin|2026-12-15T16:10:00Z|test: keep public config checks executable before fix",
+        "339fb94a9902687ed39ad83e0e471d828e24e7a2|Dan Levin|2026-12-15T16:00:00Z|test: MER-123 public bundle environment boundary (red)"
+      ],
+      "tribal_constraint": "Only NEXT_PUBLIC_* variables may enter the bundle; server values come from the 1Password environment item and CI's scanner must inspect build inputs as well as source literals.",
+      "documents": [
+        "t24-security-report.pdf",
+        "t24-build-log.log"
+      ]
+    },
+    {
+      "task_id": "t25",
+      "jira": "MER-124",
+      "pr": 27,
+      "branch": "feature/MER-124-bootstrap-auth",
+      "split": "train",
+      "channel": "eng-frontend",
+      "window": {
+        "start": "2026-12-21T13:48:00+00:00",
+        "end": "2026-12-23T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1584568121425920000",
+        "discord_last_message": "1585391043870720010",
+        "jira_key": "MER-124",
+        "github_merge_sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c"
+      },
+      "commits": [
+        "7cf2c938a6a857cfb7c57ae98262c74761b06555|Sofia Almeida|2026-12-23T18:00:00Z|fix(console): apply tenant policy during first render (MER-124)",
+        "48952f7ea889504ca33f970001e4bac8edf3b14e|Sofia Almeida|2026-12-22T16:30:00Z|test: pin authenticated policy hydration source (red)",
+        "382184ac9233c841bab815cfb768c3ebbf99dc8a|Sofia Sharma|2026-12-22T16:20:00Z|feat(console): gate tenant policy after mount to avoid first-paint flicker",
+        "c22bf396eb6bce18f967f3b3afa69f5a4175117d|Sofia Almeida|2026-12-22T16:10:00Z|test: target authenticated-session local storage leak in MER-124 spec",
+        "1d941403488386339199032041a4d7df71315794|Sofia Almeida|2026-12-22T16:00:00Z|test: MER-124 authenticated hydration flag source contract (red)"
+      ],
+      "tribal_constraint": "Authenticated rendering must use window.__MERIDIAN__ from the server; localStorage is only a logged-out fallback and reading it during render violates hydration parity.",
+      "documents": [
+        "t25-client-report.pdf",
+        "t25-hydration-log.log"
+      ]
+    },
+    {
+      "task_id": "e01",
+      "jira": "MER-201",
+      "pr": 28,
+      "branch": "feature/MER-201-payroll-columns",
+      "split": "eval",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2027-01-06T13:48:00+00:00",
+        "end": "2027-01-08T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1590366327275520000",
+        "discord_last_message": "1591189249720320010",
+        "jira_key": "MER-201",
+        "github_merge_sha": "80402dba9eb1da7a0625fff1104dee32643223f2"
+      },
+      "commits": [
+        "3ff9f6d7b110391499cc04a24cb436cc83319cc0|Sofia Almeida|2027-01-07T18:00:00Z|fix(payroll): append shift differential and bump workbook schema (MER-201)",
+        "e3aba53f77926ce8ef89c63352805b37898ff777|Sofia Almeida|2027-01-06T16:00:00Z|feat(payroll): add shift differential pay component (MER-201)"
+      ],
+      "tribal_constraint": "Column position is contractual across the Go export and frontend labels; new components append only after reserved positions and schema versions identify the layout.",
+      "documents": [
+        "e01-finance-report.pdf",
+        "e01-csv-sample.png"
+      ]
+    },
+    {
+      "task_id": "e02",
+      "jira": "MER-202",
+      "pr": 29,
+      "branch": "feature/MER-202-bulk-delete",
+      "split": "eval",
+      "channel": "eng-platform",
+      "window": {
+        "start": "2027-01-13T13:48:00+00:00",
+        "end": "2027-01-15T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1592903042334720000",
+        "discord_last_message": "1593725964779520010",
+        "jira_key": "MER-202",
+        "github_merge_sha": "8be4ff72fca539620280d4982731e92d78031fbb"
+      },
+      "commits": [
+        "c70c8faa2b83df68f8b253e2673be3b5acdbdd74|Priya Sharma|2027-01-13T16:00:00Z|feat(store): add transactional bulk soft-delete with retention note (MER-202)"
+      ],
+      "tribal_constraint": "Single-record helper is retained for compatibility; bulk removal must use the separate transactional helper and persist a non-empty audit note for every affected id.",
+      "documents": [
+        "e02-compliance-report.pdf",
+        "e02-delete-log.log"
+      ]
+    },
+    {
+      "task_id": "e03",
+      "jira": "MER-203",
+      "pr": 30,
+      "branch": "feature/MER-203-sse-auth",
+      "split": "eval",
+      "channel": "incidents",
+      "window": {
+        "start": "2027-01-20T13:48:00+00:00",
+        "end": "2027-01-22T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1595439757393920000",
+        "discord_last_message": "1596262679838720010",
+        "jira_key": "MER-203",
+        "github_merge_sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c"
+      },
+      "commits": [
+        "f8c30ef0504af33ea4163baf52100a22be698cff|Dan Levin|2027-01-20T16:00:00Z|fix(web): restore query-token auth for legacy event stream (MER-203)"
+      ],
+      "tribal_constraint": "Only the legacy SSE endpoint permits a short-lived query token; the app-router handler must continue requiring the normal session cookie.",
+      "documents": [
+        "e03-support-report.pdf",
+        "e03-sse-log.log"
+      ]
+    },
+    {
+      "task_id": "e04",
+      "jira": "MER-204",
+      "pr": 31,
+      "branch": "feature/MER-204-pay-labels",
+      "split": "eval",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2027-01-27T13:48:00+00:00",
+        "end": "2027-01-29T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1597976472453120000",
+        "discord_last_message": "1598799394897920010",
+        "jira_key": "MER-204",
+        "github_merge_sha": "490fc4188b5f8d1caf2f97815d534ba6537fec30"
+      },
+      "commits": [
+        "6c4dcbeea8957f14e97d87223815d47ee0780435|Sofia Almeida|2027-01-27T16:00:00Z|test: pin pay component mirror alignment across Go and TypeScript (MER-204)"
+      ],
+      "tribal_constraint": "The Go column registry and TypeScript positional array are mirrors; the payroll schema version and explicit order check are the cross-language contract.",
+      "documents": [
+        "e04-finance-report.pdf",
+        "e04-preview-screenshot.png"
+      ]
+    },
+    {
+      "task_id": "e05",
+      "jira": "MER-205",
+      "pr": 32,
+      "branch": "feature/MER-205-overdue-tz",
+      "split": "eval",
+      "channel": "eng-billing",
+      "window": {
+        "start": "2027-02-03T13:48:00+00:00",
+        "end": "2027-02-05T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1600513187512320000",
+        "discord_last_message": "1601336109957120010",
+        "jira_key": "MER-205",
+        "github_merge_sha": "4df408a65d33865f5d6f3061844abc08cbb5f664"
+      },
+      "commits": [
+        "88dae0af3fe5aff631f13d0a374b3aae5e757ff8|Priya Sharma|2027-02-03T16:00:00Z|fix(billing): evaluate overdue against tenant-local business date (MER-205)"
+      ],
+      "tribal_constraint": "Overdue is defined by tenant-local calendar date; the denormalized field is refreshed by a backfill job that must receive tenant timezone, not host timezone.",
+      "documents": [
+        "e05-client-report.pdf",
+        "e05-timezone-log.log"
+      ]
+    },
+    {
+      "task_id": "e06",
+      "jira": "MER-206",
+      "pr": 33,
+      "branch": "feature/MER-206-idempotency",
+      "split": "eval",
+      "channel": "incidents",
+      "window": {
+        "start": "2027-02-10T13:48:00+00:00",
+        "end": "2027-02-12T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1603049902571520000",
+        "discord_last_message": "1603872825016320010",
+        "jira_key": "MER-206",
+        "github_merge_sha": "93c99fe65568325d2395525518284f59a9100a23"
+      },
+      "commits": [
+        "3ac96f41c0ae331c43c4fd06e9d6060fdf966a30|Marcus Lee|2027-02-10T16:00:00Z|fix(payments): derive idempotency key from attempt, not retry number (MER-206)"
+      ],
+      "tribal_constraint": "Idempotency keys are per attempt because the ledger reconciler groups on that value; retries within an attempt must reuse it, while a new attempt advances the attempt sequence.",
+      "documents": [
+        "e06-client-report.pdf",
+        "e06-payment-log.log"
+      ]
+    },
+    {
+      "task_id": "e07",
+      "jira": "MER-207",
+      "pr": 34,
+      "branch": "feature/MER-207-audit-v1",
+      "split": "eval",
+      "channel": "eng-platform",
+      "window": {
+        "start": "2027-02-17T13:48:00+00:00",
+        "end": "2027-02-19T20:18:00+00:00"
+      },
+      "evidence": {
+        "discord_first_message": "1605586617630720000",
+        "discord_last_message": "1606409540075520010",
+        "jira_key": "MER-207",
+        "github_merge_sha": "7cda3e9560f221d6c08ec6efb3034d96128bf4ff"
+      },
+      "commits": [
+        "6f9208f59216751494daba0d8c43ee569dc71571|Marcus Lee|2027-02-17T16:00:00Z|fix(audit): decode pre-expansion rows through the v1 shim (MER-207)"
+      ],
+      "tribal_constraint": "Old rows pass through the version-1 decoder shim; new fields require an explicit opt-in/default in that shim because stored snapshots predate the field.",
+      "documents": [
+        "e07-partner-report.pdf",
+        "e07-replay-log.log"
+      ]
+    }
+  ]
+}

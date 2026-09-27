@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21030",
+    "path": "raw/attachments/jira/reports/e03-support-report.pdf",
+    "filename": "e03-support-report.pdf",
+    "bytes": 71696,
+    "sha256": "79fef1dbdcb1cb6c",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-203",
+    "linked_channel": null,
+    "linked_ts_utc": "2027-01-20T14:28:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "21030",
+    "path": "raw/attachments/jira/logs/e03-sse-log.log",
+    "filename": "e03-sse-log.log",
+    "bytes": 331,
+    "sha256": "0d8cf3a77d014f57",
+    "doc_type": "text/plain",
+    "linked_issue_key": "MER-203",
+    "linked_channel": null,
+    "linked_ts_utc": "2027-01-20T14:28:00Z",
+    "extracted_text": "2026-01-01T00:00:00Z INFO  meridian-api booting (commit $main)\n2026-01-01T00:00:01Z WARN  request slow: GET /api/audit/export 1240ms\n2026-01-01T00:00:02Z ERROR upstream failure: context deadline exceeded\n2026-01-01T00:00:02Z ERROR at internal/handler.dispatch (/srv/meridian)\n2026-01-01T00:00:03Z INFO  ticket MER-203 acknowledged\n"
+  }
+]

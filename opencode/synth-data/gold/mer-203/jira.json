@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-203",
+  "issue": {
+    "issue_key": "MER-203",
+    "summary": "Legacy event stream rejects valid signed-in browser sessions",
+    "description": "The old pages server's event stream drops authenticated users because EventSource cannot attach the standard authorization header.\n\nTribal constraint: Only the legacy SSE endpoint permits a short-lived query token; the app-router handler must continue requiring the normal session cookie.",
+    "status": "Done",
+    "reporter": "Priya Sharma",
+    "assignee": "Priya Sharma",
+    "created_utc": "2027-01-20T13:48:00Z",
+    "updated_utc": "2027-01-22T20:18:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21030",
+        "filename": "e03-support-report.pdf",
+        "path": "raw/attachments/jira/reports/e03-support-report.pdf",
+        "bytes": 71696,
+        "content_type": "application/pdf",
+        "created_utc": "2027-01-20T14:28:00Z"
+      },
+      {
+        "attachment_id": "21030",
+        "filename": "e03-sse-log.log",
+        "path": "raw/attachments/jira/logs/e03-sse-log.log",
+        "bytes": 331,
+        "content_type": "text/plain",
+        "created_utc": "2027-01-20T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-203",
+      "ts_utc": "2027-01-20T13:48:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-203",
+      "ts_utc": "2027-01-20T13:48:00Z",
+      "author": "Priya Sharma",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Priya Sharma"
+    },
+    {
+      "issue_key": "MER-203",
+      "ts_utc": "2027-01-21T15:28:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-203",
+      "ts_utc": "2027-01-21T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-203",
+      "ts_utc": "2027-01-21T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #30"
+    },
+    {
+      "issue_key": "MER-203",
+      "ts_utc": "2027-01-22T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-203",
+      "ts_utc": "2027-01-22T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

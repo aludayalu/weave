@@ -1,0 +1,230 @@
+{
+  "task_id": "mer-113",
+  "channel": "billing",
+  "window": {
+    "start": "2026-10-07T13:18:00Z",
+    "end": "2026-10-09T19:48:00Z"
+  },
+  "message_count": 12,
+  "messages": [
+    {
+      "message_id": "1557381481758720000",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-10-07T13:18:00Z",
+      "ts_raw": "2026-10-07T13:18:00+00:00",
+      "ts_epoch": 1791379080,
+      "content": "@priya Finance's monthly workbook imports the new review state as a paid invoice, distorting cash forecasts. Opening MER-113 to track it. took first pass at this, thoughts below.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-113"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557383746682880001",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-10-07T13:27:00Z",
+      "ts_raw": "2026-10-07T13:27:00+00:00",
+      "ts_epoch": 1791379620,
+      "content": "ack. looking now. filing evidence on the ticket (finance-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557404131000320002",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-10-07T14:48:00Z",
+      "ts_raw": "2026-10-07T14:48:00",
+      "ts_epoch": 1791384480,
+      "content": "fyi finance-report is attached to MER-113 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-113"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t12-76143227",
+          "filename": "t12-finance-report.pdf",
+          "path": "raw/attachments/jira/reports/t12-finance-report.pdf",
+          "bytes": 71179,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t12-29042770",
+          "filename": "t12-workbook-screenshot.png",
+          "path": "raw/attachments/discord/images/t12-workbook-screenshot.png",
+          "bytes": 20790,
+          "content_type": "image/png"
+        }
+      ]
+    },
+    {
+      "message_id": "1557502277713920012",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-10-07T21:18:00Z",
+      "ts_raw": "2026-10-07T15:18:00-06:00",
+      "ts_epoch": 1791407880,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557577775185920013",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-10-08T02:18:00Z",
+      "ts_raw": "2026-10-08T02:18:00+00:00",
+      "ts_epoch": 1791425880,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557769035448320003",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-10-08T14:58:00Z",
+      "ts_raw": "2026-10-08T14:58:00+00:00",
+      "ts_epoch": 1791471480,
+      "content": "```\n{\"partial\": tru",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557835724881920004",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-10-08T19:23:00Z",
+      "ts_raw": "2026-10-08T19:23:00+00:00",
+      "ts_epoch": 1791487380,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557848307793920005",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-10-08T20:13:00Z",
+      "ts_raw": "2026-10-08T20:13:00+00:00",
+      "ts_epoch": 1791490380,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557855857541120006",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-10-08T20:43:00Z",
+      "ts_raw": "2026-10-08T20:43:00+00:00",
+      "ts_epoch": 1791492180,
+      "content": "PR #16 is up: `feature/MER-113-review-status`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-113"
+      ],
+      "mentions_pr": [
+        16
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1557867182161920007",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-10-08T21:28:00Z",
+      "ts_raw": "2026-10-08T21:28:00",
+      "ts_epoch": 1791494880,
+      "content": "reviewed #16 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1557875990200320008",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-10-08T22:03:00Z",
+      "ts_raw": "2026-10-08T22:03:00+00:00",
+      "ts_epoch": 1791496980,
+      "content": "addressed both, pushing.",
+      "edited": "2026-10-08T22:03:00Z",
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1558204404203520010",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-10-09T19:48:00Z",
+      "ts_raw": "2026-10-09T19:48:00+00:00",
+      "ts_epoch": 1791575280,
+      "content": "MER-113 closed — PR #16 merged. fix is merged, thanks for the quick turnaround",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-113"
+      ],
+      "mentions_pr": [
+        16
+      ],
+      "attachments": []
+    }
+  ]
+}

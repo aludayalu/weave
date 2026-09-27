@@ -1,0 +1,13 @@
+{
+  "discord_duplicates": 15,
+  "discord_messages": 435,
+  "jira_naive_timestamps_recovered": 14,
+  "jira_issues": 39,
+  "jira_changelog_events": 268,
+  "github_commits": 128,
+  "github_pull_requests": 35,
+  "documents": 64,
+  "links": 65,
+  "timestamps_repaired_as_utc": 8,
+  "quarantined": 72
+}

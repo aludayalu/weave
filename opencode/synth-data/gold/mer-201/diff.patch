@@ -1,0 +1,122 @@
+diff --git a/internal/payroll/eval201_test.go b/internal/payroll/eval201_test.go
+new file mode 100644
+index 0000000..3c6c92c
+--- /dev/null
++++ b/internal/payroll/eval201_test.go
+@@ -0,0 +1,42 @@
++package payroll
++
++import (
++	"os"
++	"reflect"
++	"strings"
++	"testing"
++)
++
++func TestReservedComponentPositionsUnchanged(t *testing.T) {
++	// MER-201: finance's workbook binds positions 4-11. The new shift
++	// differential must be APPENDED, not inserted.
++	want := []string{"BASE", "OT", "BONUS", "COMM", "HEALTH", "RETIRE", "MEAL", "UNIFORM"}
++	for i, code := range want {
++		if PAY_COMPONENT_ORDER[i] != code {
++			t.Fatalf("position %d is %q, finance template binds %q", i, PAY_COMPONENT_ORDER[i], code)
++		}
++	}
++}
++
++func TestNewComponentIsAppendedAndSchemaBumped(t *testing.T) {
++	if got := PAY_COMPONENT_ORDER[len(PAY_COMPONENT_ORDER)-1]; got != "SHIFT_DIFF" {
++		t.Errorf("new component must append, tail is %q", got)
++	}
++	if SchemaVersion < 5 {
++		t.Errorf("schema version = %d; workbook importer needs 5", SchemaVersion)
++	}
++}
++
++func TestFrontendOrderMirrorsGoRegistry(t *testing.T) {
++	src, err := os.ReadFile("../../web/lib/payComponents.ts")
++	if err != nil { t.Fatal(err) }
++	for i, code := range ComponentOrder() {
++		needle := `code: "` + code + `"`
++		if !strings.Contains(string(src), needle) {
++			t.Errorf("frontend mirror missing %q at position %d", code, i)
++		}
++	}
++	if !reflect.DeepEqual(ComponentOrder(), PAY_COMPONENT_ORDER) {
++		t.Error("ComponentOrder must return the live registry")
++	}
++}
+diff --git a/internal/payroll/export.go b/internal/payroll/export.go
+index ce7be19..1987290 100644
+--- a/internal/payroll/export.go
++++ b/internal/payroll/export.go
+@@ -13,7 +13,7 @@ import (
+ 
+ // PAY_COMPONENT_ORDER is append-only. See package doc.
+ var PAY_COMPONENT_ORDER = []string{
+-	"BASE", "OT", "BONUS", "COMM", "HEALTH", "RETIRE", "MEAL", "UNIFORM",
++	"BASE", "OT", "BONUS", "COMM", "HEALTH", "RETIRE", "MEAL", "UNIFORM", "SHIFT_DIFF",
+ }
+ 
+ // Header returns the CSV header row (fixed columns + component columns).
+diff --git a/internal/payroll/export_test.go b/internal/payroll/export_test.go
+index 5dacef5..d01e073 100644
+--- a/internal/payroll/export_test.go
++++ b/internal/payroll/export_test.go
+@@ -8,7 +8,7 @@ import (
+ func TestHeaderMatchesFinanceTemplate(t *testing.T) {
+ 	h := Header()
+ 	want := []string{"employee_id", "name", "period", "currency",
+-		"BASE", "OT", "BONUS", "COMM", "HEALTH", "RETIRE", "MEAL", "UNIFORM"}
++		"BASE", "OT", "BONUS", "COMM", "HEALTH", "RETIRE", "MEAL", "UNIFORM", "SHIFT_DIFF"}
+ 	if len(h) != len(want) {
+ 		t.Fatalf("header width %d, finance template binds %d", len(h), len(want))
+ 	}
+@@ -20,17 +20,20 @@ func TestHeaderMatchesFinanceTemplate(t *testing.T) {
+ }
+ 
+ func TestComponentOrderIsAppendOnly(t *testing.T) {
+-	if PAY_COMPONENT_ORDER[0] != "BASE" || PAY_COMPONENT_ORDER[len(PAY_COMPONENT_ORDER)-1] != "UNIFORM" {
++	if PAY_COMPONENT_ORDER[0] != "BASE" {
+ 		t.Error("component order drifted — finance's workbook binds positions")
+ 	}
+-	if len(PAY_COMPONENT_ORDER) != 8 {
+-		t.Errorf("expected 8 components, got %d", len(PAY_COMPONENT_ORDER))
++	if PAY_COMPONENT_ORDER[4] != "HEALTH" {
++		t.Errorf("position 5 drifted to %q; reserved positions are fixed", PAY_COMPONENT_ORDER[4])
++	}
++	if len(PAY_COMPONENT_ORDER) < 8 {
++		t.Errorf("expected at least 8 components, got %d", len(PAY_COMPONENT_ORDER))
+ 	}
+ }
+ 
+ func TestRenderWritesRows(t *testing.T) {
+ 	out, err := Render("2026-06", [][]string{
+-		{"e-1", "Priya Sharma", "2026-06", "USD", "500000", "0", "0", "0", "0", "0", "0", "0"},
++		{"e-1", "Priya Sharma", "2026-06", "USD", "500000", "0", "0", "0", "0", "0", "0", "0", "0"},
+ 	})
+ 	if err != nil {
+ 		t.Fatal(err)
+diff --git a/internal/payroll/schema.go b/internal/payroll/schema.go
+index 82f5749..09a43f1 100644
+--- a/internal/payroll/schema.go
++++ b/internal/payroll/schema.go
+@@ -1,7 +1,7 @@
+ package payroll
+ 
+ // SchemaVersion is consumed by finance's workbook importer.
+-const SchemaVersion = 4
++const SchemaVersion = 5
+ 
+ // ComponentOrder returns a copy of the positional export contract.
+ func ComponentOrder() []string {
+diff --git a/web/lib/payComponents.ts b/web/lib/payComponents.ts
+index 5341a40..04f27a2 100644
+--- a/web/lib/payComponents.ts
++++ b/web/lib/payComponents.ts
+@@ -22,4 +22,5 @@ export const PAY_COMPONENTS: PayComponent[] = [
+   { code: "RETIRE", label: "Retirement match", taxable: false },
+   { code: "MEAL", label: "Meal allowance", taxable: false },
+   { code: "UNIFORM", label: "Uniform allowance", taxable: false },
++  { code: "SHIFT_DIFF", label: "Shift differential", taxable: true },
+ ];

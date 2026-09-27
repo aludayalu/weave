@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-101",
+  "jira": "MER-101",
+  "pr": 1,
+  "repository": "meridian-erp",
+  "repo_revision": "5d355ad667 (task branch tip)",
+  "title": "Partner payment timeouts are misclassified",
+  "summary": "MER-101 raised in #billing, shipped in PR #1",
+  "start_ts_utc": "2026-07-08T15:00:00Z",
+  "end_ts_utc": "2026-07-10T21:12:00Z",
+  "duration_minutes": 3252,
+  "participants": [
+    "Dan Levin",
+    "Marcus Lee"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya Harborline Logistics' warehouse retries are treating an upstream timeout as a hard card decline, delaying order fulfillment. Opening MER-101 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "```\n{\"partial\": tru",
+      "reminder: freeze starts friday for the payments repo",
+      "reminder: freeze starts friday for the payments repo",
+      "standup in 5, billing standup moved to 10:30",
+      "spec-first per team rule — tests for MER-101 are red on main now, pushing as I go.",
+      "the generated artifacts are the source of truth, not the file you're editing",
+      "cross-team contract involved here, so I opened a ticket before touching anything",
+      "PR #1 is up: `feature/MER-101-gateway-timeout`. review when you can.",
+      "reviewed #1 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "Harborline Logistics' warehouse retries are treating an upstream timeout as a hard card decline, delaying order fulfillment.\n\nTribal constraint: Payment codes are append-only per module; partner integrations use numeric ranges and api/errors.yaml generates both Go messages and TypeScript mappings.",
+    "documents": [
+      "t01-client-report.pdf",
+      "t01-gateway-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 13,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 5424,
+    "documents": 2
+  }
+}

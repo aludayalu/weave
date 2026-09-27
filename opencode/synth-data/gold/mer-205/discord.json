@@ -1,0 +1,246 @@
+{
+  "task_id": "mer-205",
+  "channel": "billing",
+  "window": {
+    "start": "2027-02-03T13:48:00Z",
+    "end": "2027-02-05T20:00:00Z"
+  },
+  "message_count": 13,
+  "messages": [
+    {
+      "message_id": "1600513187512320000",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-03T13:48:00Z",
+      "ts_raw": "2027-02-03T13:48:00+00:00",
+      "ts_epoch": 1801662480,
+      "content": "@priya A Denver tenant sees an invoice marked overdue the evening before its local due date, while UTC reports say it is still current. Opening MER-205 to track it. picking this up now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-205"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600515452436480001",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-03T13:57:00Z",
+      "ts_raw": "2027-02-03T07:57:00-06:00",
+      "ts_epoch": 1801663020,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600535836753920002",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-03T15:18:00Z",
+      "ts_raw": "2027-02-03T15:18:00+00:00",
+      "ts_epoch": 1801667880,
+      "content": "fyi client-report is attached to MER-205 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-205"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "e05-72339623",
+          "filename": "e05-client-report.pdf",
+          "path": "raw/attachments/jira/reports/e05-client-report.pdf",
+          "bytes": 71763,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "e05-71519670",
+          "filename": "e05-timezone-log.log",
+          "path": "raw/attachments/jira/logs/e05-timezone-log.log",
+          "bytes": 333,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1600558485995520011",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2027-02-03T16:48:00Z",
+      "ts_raw": "2027-02-03T16:48:00+00:00",
+      "ts_epoch": 1801673280,
+      "content": "rotating the read replica creds tonight, no action needed",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600633983467520012",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-03T21:48:00Z",
+      "ts_raw": "2027-02-03T21:48:00+00:00",
+      "ts_epoch": 1801691280,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600709480939520013",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2027-02-04T02:48:00Z",
+      "ts_raw": "2027-02-04T02:48:00+00:00",
+      "ts_epoch": 1801709280,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600900741201920003",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-04T15:28:00Z",
+      "ts_raw": "2027-02-04T15:28:00+00:00",
+      "ts_epoch": 1801754880,
+      "content": "spec-first per team rule — tests for MER-205 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-205"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600967430635520004",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-04T19:53:00Z",
+      "ts_raw": "2027-02-04T19:53:00+00:00",
+      "ts_epoch": 1801770780,
+      "content": "reverted my first attempt, it broke the partner integration",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600980013547520005",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-04T20:43:00Z",
+      "ts_raw": "2027-02-04T20:43:00+00:00",
+      "ts_epoch": 1801773780,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1600987563294720006",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-04T21:13:00Z",
+      "ts_raw": "2027-02-04T15:13:00-06:00",
+      "ts_epoch": 1801775580,
+      "content": "PR #32 is up: `feature/MER-205-overdue-tz`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-205"
+      ],
+      "mentions_pr": [
+        32
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1600998887915520007",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-04T21:58:00Z",
+      "ts_raw": "2027-02-04T21:58:00+00:00",
+      "ts_epoch": 1801778280,
+      "content": "reviewed #32 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1601007695953920008",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-04T22:33:00Z",
+      "ts_raw": "2027-02-04T22:33:00+00:00",
+      "ts_epoch": 1801780380,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1601330573475840009",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-05T19:56:00Z",
+      "ts_raw": "2027-02-05T19:56:00+00:00",
+      "ts_epoch": 1801857360,
+      "content": "deploy is green, MER-205 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-205"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    }
+  ]
+}

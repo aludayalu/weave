@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-105",
+  "jira": "MER-105",
+  "pr": 7,
+  "repository": "meridian-erp",
+  "repo_revision": "d58102bd36 (task branch tip)",
+  "title": "Billing API is reachable without a session in app-router profile",
+  "summary": "MER-105 raised in #incidents, shipped in PR #7",
+  "start_ts_utc": "2026-08-05T14:28:00Z",
+  "end_ts_utc": "2026-08-07T20:58:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya A security review found anonymous requests can reach billing endpoints after production enabled the app-router middleware profile. Opening MER-105 to track it. picking this up now.",
+      "ack. looking now. filing evidence on the ticket (pentest-report).",
+      "fyi pentest-report is attached to MER-105 if you want the raw capture.",
+      "rotating the read replica creds tonight, no action needed",
+      "the coffee machine is fixed (somehow)",
+      "the coffee machine is fixed (somehow)",
+      "spec-first per team rule — tests for MER-105 are red on main now, pushing as I go.",
+      "reverted my first attempt, it broke the partner integration",
+      "&amp;&lt;legacy&gt;",
+      "PR #7 is up: `feature/MER-105-billing-auth`. review when you can.",
+      "reviewed #7 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "A security review found anonymous requests can reach billing endpoints after production enabled the app-router middleware profile.\n\nTribal constraint: Legacy and v2 middleware coexist behind a deployment profile; matcher coverage must be equivalent even though both files compile and old profile tests pass.",
+    "documents": [
+      "t20-pentest-report.pdf",
+      "t20-curl-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 2396,
+    "documents": 2
+  }
+}

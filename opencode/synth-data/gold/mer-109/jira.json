@@ -1,0 +1,137 @@
+{
+  "task_id": "mer-109",
+  "issue": {
+    "issue_key": "MER-109",
+    "summary": "Async invoice export loses tenant context",
+    "description": "A queued export occasionally reads the default tenant after being launched from a tenant-specific invoice route.\n\nTribal constraint: Workers replay handlers without HTTP middleware; tenant identity must be carried in the route-created context/envelope, not reconstructed from headers.",
+    "status": "Done",
+    "reporter": "Dan Levin",
+    "assignee": "Dan Levin",
+    "created_utc": "2026-09-09T13:33:00Z",
+    "updated_utc": "2026-09-11T20:06:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21012",
+        "filename": "t07-client-report.pdf",
+        "path": "raw/attachments/jira/reports/t07-client-report.pdf",
+        "bytes": 67548,
+        "content_type": "application/pdf",
+        "created_utc": "2026-09-09T14:13:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-09T13:33:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-09T13:33:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-09T13:33:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-09T13:33:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-10T15:13:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-10T15:13:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-10T21:43:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-10T21:43:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #12"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-10T21:43:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-10T21:43:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #12"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-11T20:03:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-11T20:03:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-11T20:03:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-109",
+      "ts_utc": "2026-09-11T20:03:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

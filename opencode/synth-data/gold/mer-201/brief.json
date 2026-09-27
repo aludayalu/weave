@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-201",
+  "jira": "MER-201",
+  "pr": 28,
+  "repository": "meridian-erp",
+  "repo_revision": "3ff9f6d7b1 (task branch tip)",
+  "title": "Payroll export inserts a component in the wrong spreadsheet column",
+  "summary": "MER-201 raised in #billing, shipped in PR #28",
+  "start_ts_utc": "2027-01-06T13:48:00Z",
+  "end_ts_utc": "2027-01-08T20:18:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya Finance's January workbook maps a new shift differential into the retirement column because component ordering changed. Opening MER-201 to track it. reproduced it locally, it's real.",
+      "ack. looking now. filing evidence on the ticket (finance-report).",
+      "fyi finance-report is attached to MER-201 if you want the raw capture.",
+      "rotating the read replica creds tonight, no action needed",
+      "standup in 5, billing standup moved to 10:30",
+      "garbage from the export",
+      "spec-first per team rule — tests for MER-201 are red on main now, pushing as I go.",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "PR #28 is up: `feature/MER-201-payroll-columns`. review when you can.",
+      "reviewed #28 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "Finance's January workbook maps a new shift differential into the retirement column because component ordering changed.\n\nTribal constraint: Column position is contractual across the Go export and frontend labels; new components append only after reserved positions and schema versions identify the layout.",
+    "documents": [
+      "e01-finance-report.pdf",
+      "e01-csv-sample.png"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 14,
+    "commits": 2,
+    "patch_bytes": 4611,
+    "documents": 2
+  }
+}

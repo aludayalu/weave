@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21002",
+    "path": "raw/attachments/jira/reports/t02-flag-debug.pdf",
+    "filename": "t02-flag-debug.pdf",
+    "bytes": 68766,
+    "sha256": "85b809aa9588539b",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-102",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-07-15T14:59:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "21002",
+    "path": "raw/attachments/jira/reports/t02-tenant-snapshot.pdf",
+    "filename": "t02-tenant-snapshot.pdf",
+    "bytes": 68766,
+    "sha256": "85b809aa9588539b",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-102",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-07-15T14:59:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  }
+]

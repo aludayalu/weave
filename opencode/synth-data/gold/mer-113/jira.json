@@ -1,0 +1,81 @@
+{
+  "task_id": "mer-113",
+  "issue": {
+    "issue_key": "MER-113",
+    "summary": "New invoice status breaks finance's workbook mapping",
+    "description": "Finance's monthly workbook imports the new review state as a paid invoice, distorting cash forecasts.\n\nTribal constraint: Status strings and ordinal positions are an external report contract; report_schema_version must be bumped and the generated string mapping refreshed.",
+    "status": "Done",
+    "reporter": "Marcus Lee",
+    "assignee": "Marcus Lee",
+    "created_utc": "2026-10-07T13:18:00Z",
+    "updated_utc": "2026-10-09T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21016",
+        "filename": "t12-finance-report.pdf",
+        "path": "raw/attachments/jira/reports/t12-finance-report.pdf",
+        "bytes": 71179,
+        "content_type": "application/pdf",
+        "created_utc": "2026-10-07T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-113",
+      "ts_utc": "2026-10-07T13:18:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-113",
+      "ts_utc": "2026-10-07T13:18:00Z",
+      "author": "Marcus Lee",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Marcus Lee"
+    },
+    {
+      "issue_key": "MER-113",
+      "ts_utc": "2026-10-08T14:58:00Z",
+      "author": "Marcus Lee",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-113",
+      "ts_utc": "2026-10-08T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-113",
+      "ts_utc": "2026-10-08T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #16"
+    },
+    {
+      "issue_key": "MER-113",
+      "ts_utc": "2026-10-09T19:48:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-113",
+      "ts_utc": "2026-10-09T19:48:00Z",
+      "author": "Marcus Lee",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

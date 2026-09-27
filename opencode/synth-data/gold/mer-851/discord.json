@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-851",
+  "channel": "incidents",
+  "window": {
+    "start": "2026-07-22T13:08:00Z",
+    "end": "2026-07-24T19:38:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1529475099525120000",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-22T13:08:00Z",
+      "ts_raw": "2026-07-22T13:08:00+00:00",
+      "ts_epoch": 1784725680,
+      "content": "@priya Crestwood Dental's erasure review found personal identifiers in the admin audit export despite the ordinary event endpoint masking them. Opening MER-851 to track it. ok this is the third report on this, starting now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-851"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529477364449280001",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-22T13:17:00Z",
+      "ts_raw": "2026-07-22T13:17:00+00:00",
+      "ts_epoch": 1784726220,
+      "content": "ack. looking now. filing evidence on the ticket (gdpr-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529497748766720002",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-22T14:38:00Z",
+      "ts_raw": "2026-07-22T14:38:00+00:00",
+      "ts_epoch": 1784731080,
+      "content": "fyi gdpr-report is attached to MER-851 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-851"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t09-53389071",
+          "filename": "t09-gdpr-report.pdf",
+          "path": "raw/attachments/jira/reports/t09-gdpr-report.pdf",
+          "bytes": 70129,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t09-29807212",
+          "filename": "t09-audit-export-log.log",
+          "path": "raw/attachments/jira/logs/t09-audit-export-log.log",
+          "bytes": 333,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1529520398008320011",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-07-22T16:08:00Z",
+      "ts_raw": "1784736480",
+      "ts_epoch": 1784736480,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529595895480320012",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-22T21:08:00Z",
+      "ts_raw": "2026-07-22T21:08:00+00:00",
+      "ts_epoch": 1784754480,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529671392952320013",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-07-23T02:08:00Z",
+      "ts_raw": "1784772480",
+      "ts_epoch": 1784772480,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529862653214720003",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-23T14:48:00Z",
+      "ts_raw": "2026-07-23T14:48:00+00:00",
+      "ts_epoch": 1784818080,
+      "content": "spec-first per team rule — tests for MER-851 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-851"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529929342648320004",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-23T19:13:00Z",
+      "ts_raw": "2026-07-23T19:13:00+00:00",
+      "ts_epoch": 1784833980,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529941925560320005",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-23T20:03:00Z",
+      "ts_raw": "2026-07-23T20:03:00+00:00",
+      "ts_epoch": 1784836980,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529949475307520006",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-23T20:33:00Z",
+      "ts_raw": "2026-07-23T20:33:00+00:00",
+      "ts_epoch": 1784838780,
+      "content": "PR #4 is up: `feature/MER-851-audit-redaction`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-851"
+      ],
+      "mentions_pr": [
+        4
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1529960799928320007",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-23T21:18:00Z",
+      "ts_raw": "2026-07-23T21:18:00+00:00",
+      "ts_epoch": 1784841480,
+      "content": "reviewed #4 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1529969607966720008",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-23T21:53:00Z",
+      "ts_raw": "2026-07-23T21:53:00+00:00",
+      "ts_epoch": 1784843580,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1530292485488640009",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-07-24T19:16:00Z",
+      "ts_raw": "2026-07-24T19:16:00+00:00",
+      "ts_epoch": 1784920560,
+      "content": "deploy is green, MER-851 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-851"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1530298021969920010",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-24T19:38:00Z",
+      "ts_raw": "2026-07-24T19:38:00+00:00",
+      "ts_epoch": 1784921880,
+      "content": "MER-851 closed — PR #4 merged. shipped — flag is live in staging, will confirm after the nightly job",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-851"
+      ],
+      "mentions_pr": [
+        4
+      ],
+      "attachments": []
+    }
+  ]
+}

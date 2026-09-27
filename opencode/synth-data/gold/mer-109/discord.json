@@ -1,0 +1,250 @@
+{
+  "task_id": "mer-109",
+  "channel": "eng-platform",
+  "window": {
+    "start": "2026-09-09T13:33:00Z",
+    "end": "2026-09-11T20:03:00Z"
+  },
+  "message_count": 13,
+  "messages": [
+    {
+      "message_id": "1547238396395520000",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-09T13:33:00Z",
+      "ts_raw": "2026-09-09T13:33:00+00:00",
+      "ts_epoch": 1788960780,
+      "content": "@priya A queued export occasionally reads the default tenant after being launched from a tenant-specific invoice route. Opening MER-109 to track it. picking this up now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-109"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547240661319680001",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-09T13:42:00Z",
+      "ts_raw": "2026-09-09T13:42:00+00:00",
+      "ts_epoch": 1788961320,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547261045637120002",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-09T15:03:00Z",
+      "ts_raw": "2026-09-09T15:03:00+00:00",
+      "ts_epoch": 1788966180,
+      "content": "fyi client-report is attached to MER-109 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-109"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t07-53218696",
+          "filename": "t07-client-report.pdf",
+          "path": "raw/attachments/jira/reports/t07-client-report.pdf",
+          "bytes": 67548,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t07-56510107",
+          "filename": "t07-worker-trace.png",
+          "path": "raw/attachments/discord/images/t07-worker-trace.png",
+          "bytes": 21413,
+          "content_type": "image/png"
+        }
+      ]
+    },
+    {
+      "message_id": "1547359192350720012",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-09T21:33:00Z",
+      "ts_raw": "2026-09-09T21:33:00+00:00",
+      "ts_epoch": 1788989580,
+      "content": "rotating the read replica creds tonight, no action needed",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547434689822720013",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Deleted User",
+      "ts_utc": "2026-09-10T02:33:00Z",
+      "ts_raw": "2026-09-10T02:33:00+00:00",
+      "ts_epoch": 1789007580,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547625950085120003",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-10T15:13:00Z",
+      "ts_raw": "2026-09-10T15:13:00+00:00",
+      "ts_epoch": 1789053180,
+      "content": "spec-first per team rule — tests for MER-109 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-109"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547692639518720004",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-10T19:38:00Z",
+      "ts_raw": "2026-09-10T19:38:00+00:00",
+      "ts_epoch": 1789069080,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547705222430720005",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-10T20:28:00Z",
+      "ts_raw": "2026-09-10T20:28:00+00:00",
+      "ts_epoch": 1789072080,
+      "content": "reverted my first attempt, it broke the partner integration",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547712772177920006",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-10T20:58:00Z",
+      "ts_raw": "2026-09-10T20:58:00+00:00",
+      "ts_epoch": 1789073880,
+      "content": "PR #12 is up: `feature/MER-109-tenant-job`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-109"
+      ],
+      "mentions_pr": [
+        12
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1547724096798720007",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-10T21:43:00Z",
+      "ts_raw": "2026-09-10T15:43:00-06:00",
+      "ts_epoch": 1789076580,
+      "content": "reviewed #12 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1547732904837120008",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-10T22:18:00Z",
+      "ts_raw": "2026-09-10T22:18:00+00:00",
+      "ts_epoch": 1789078680,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1548055782359040009",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-11T19:41:00Z",
+      "ts_raw": "2026-09-11T19:41:00+00:00",
+      "ts_epoch": 1789155660,
+      "content": "deploy is green, MER-109 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-109"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1548061318840320010",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-11T20:03:00Z",
+      "ts_raw": "2026-09-11T14:03:00-06:00",
+      "ts_epoch": 1789156980,
+      "content": "MER-109 closed — PR #12 merged. shipped — flag is live in staging, will confirm after the nightly job",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-109"
+      ],
+      "mentions_pr": [
+        12
+      ],
+      "attachments": []
+    }
+  ]
+}

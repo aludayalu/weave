@@ -1,0 +1,91 @@
+{
+  "task_id": "mer-851",
+  "pull_request": {
+    "pr_number": 4,
+    "title": "test: MER-851 audit export redaction spec (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Marcus Lee",
+    "branch": "feature/MER-851-audit-redaction",
+    "merge_sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27",
+    "opened_ts_utc": "2026-07-23T14:00:00Z",
+    "merged_ts_utc": "2026-07-24T19:20:00Z",
+    "closed_ts_utc": "2026-07-24T19:20:00Z"
+  },
+  "merge_sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27",
+  "base_sha": "65d25a33c70fd702999b5b611f10654498f83c39",
+  "head_sha": "04b0f35ecbdcfc529d0f86c0062467fc320efe24",
+  "commit_count": 3,
+  "commits": [
+    {
+      "sha": "7df88dd913528fe4f7f1a73d8b694a680b5df320",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-21T17:25:00Z",
+      "committed_ts_utc": "2026-07-21T17:25:00Z",
+      "message": "test: MER-851 audit export redaction spec (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "65d25a33c70fd702999b5b611f10654498f83c39"
+      ],
+      "additions": 158,
+      "deletions": 0,
+      "changed_files": [
+        "internal/audit/helpers_test.go",
+        "internal/audit/task851_export_spec_test.go",
+        "internal/httpapi/task851_export_spec_test.go"
+      ]
+    },
+    {
+      "sha": "2be2e9a3f398748b9093a7b71ff7b6a5c6a249b4",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-22T19:05:00Z",
+      "committed_ts_utc": "2026-07-22T19:05:00Z",
+      "message": "fix(meridian): redact ip_address on every serialization boundary (MER-851)",
+      "is_merge": false,
+      "parent_shas": [
+        "7df88dd913528fe4f7f1a73d8b694a680b5df320"
+      ],
+      "additions": 5,
+      "deletions": 3,
+      "changed_files": [
+        "internal/audit/export.go",
+        "internal/audit/record.go"
+      ]
+    },
+    {
+      "sha": "04b0f35ecbdcfc529d0f86c0062467fc320efe24",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-23T14:00:00Z",
+      "committed_ts_utc": "2026-07-23T14:00:00Z",
+      "message": "feat(meridian): enforce compliance export gate with core.forbidden (MER-851)",
+      "is_merge": false,
+      "parent_shas": [
+        "2be2e9a3f398748b9093a7b71ff7b6a5c6a249b4"
+      ],
+      "additions": 18,
+      "deletions": 1,
+      "changed_files": [
+        "api/errors.yaml",
+        "internal/httpapi/router.go",
+        "pkg/errs/code.go",
+        "pkg/errs/messages_gen.go",
+        "web/lib/errcodes_gen.ts"
+      ]
+    }
+  ],
+  "files": [
+    "api/errors.yaml",
+    "internal/audit/export.go",
+    "internal/audit/helpers_test.go",
+    "internal/audit/record.go",
+    "internal/audit/task851_export_spec_test.go",
+    "internal/httpapi/router.go",
+    "internal/httpapi/task851_export_spec_test.go",
+    "pkg/errs/code.go",
+    "pkg/errs/messages_gen.go",
+    "web/lib/errcodes_gen.ts"
+  ]
+}

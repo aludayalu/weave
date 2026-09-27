@@ -1,0 +1,59 @@
+{
+  "task_id": "mer-103",
+  "pull_request": {
+    "pr_number": 8,
+    "title": "test: MER-103 tenant grace-period import contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Priya Sharma",
+    "branch": "feature/MER-103-override-keys",
+    "merge_sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc",
+    "opened_ts_utc": "2026-08-12T18:05:00Z",
+    "merged_ts_utc": "2026-08-14T19:40:00Z",
+    "closed_ts_utc": "2026-08-14T19:40:00Z"
+  },
+  "merge_sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc",
+  "base_sha": "f783d43e0a5d392e4fc6c86b279a6f777337a6b8",
+  "head_sha": "809e3612d9511d8c607407f30fc79778f7e38899",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "862ae3997a8b50fff6cbfa33ecf210a3746a2d12",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-11T16:30:00Z",
+      "committed_ts_utc": "2026-08-11T16:30:00Z",
+      "message": "test: MER-103 tenant grace-period import contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "f783d43e0a5d392e4fc6c86b279a6f777337a6b8"
+      ],
+      "additions": 57,
+      "deletions": 0,
+      "changed_files": [
+        "internal/store/task103_override_keys_test.go"
+      ]
+    },
+    {
+      "sha": "809e3612d9511d8c607407f30fc79778f7e38899",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-12T18:05:00Z",
+      "committed_ts_utc": "2026-08-12T18:05:00Z",
+      "message": "fix(store): normalize legacy tenant override imports to seeded keys (MER-103)",
+      "is_merge": false,
+      "parent_shas": [
+        "862ae3997a8b50fff6cbfa33ecf210a3746a2d12"
+      ],
+      "additions": 10,
+      "deletions": 1,
+      "changed_files": [
+        "internal/store/store.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/store/store.go",
+    "internal/store/task103_override_keys_test.go"
+  ]
+}

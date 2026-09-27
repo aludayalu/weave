@@ -1,0 +1,81 @@
+{
+  "task_id": "mer-108",
+  "issue": {
+    "issue_key": "MER-108",
+    "summary": "Historical invoice events fail replay after a field rename",
+    "description": "Finance's reconciliation replay rejects persisted invoice events written by older server versions.\n\nTribal constraint: Event payloads are append-only and decoded through both JSON and mapstructure; stored tag names are a compatibility contract, not cosmetic struct labels.",
+    "status": "Done",
+    "reporter": "Dan Levin",
+    "assignee": "Dan Levin",
+    "created_utc": "2026-09-02T13:18:00Z",
+    "updated_utc": "2026-09-04T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21011",
+        "filename": "t06-replay-log.log",
+        "path": "raw/attachments/jira/logs/t06-replay-log.log",
+        "bytes": 346,
+        "content_type": "text/plain",
+        "created_utc": "2026-09-02T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-108",
+      "ts_utc": "2026-09-02T13:18:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-108",
+      "ts_utc": "2026-09-02T13:18:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-108",
+      "ts_utc": "2026-09-03T14:58:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-108",
+      "ts_utc": "2026-09-03T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-108",
+      "ts_utc": "2026-09-03T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #11"
+    },
+    {
+      "issue_key": "MER-108",
+      "ts_utc": "2026-09-04T19:48:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-108",
+      "ts_utc": "2026-09-04T19:48:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

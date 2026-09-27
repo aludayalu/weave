@@ -1,0 +1,54 @@
+diff --git a/docker-compose.yml b/docker-compose.yml
+index 54d1574..1144467 100644
+--- a/docker-compose.yml
++++ b/docker-compose.yml
+@@ -5,8 +5,8 @@ services:
+       - "8080:8080"
+     environment:
+       # NOTE: names here must match internal/config applyEnv (MERIDIAN_*).
+-      DB_POOL: "40"
+-      HTTP_TIMEOUT: "15s"
++      MERIDIAN_DB_POOL: "40"
++      MERIDIAN_HTTP_TIMEOUT: "15s"
+     depends_on:
+       - postgres
+   postgres:
+diff --git a/internal/config/task106_compose_test.go b/internal/config/task106_compose_test.go
+new file mode 100644
+index 0000000..5aa2f57
+--- /dev/null
++++ b/internal/config/task106_compose_test.go
+@@ -0,0 +1,33 @@
++package config
++
++import (
++	"os"
++	"strings"
++	"testing"
++)
++
++func TestComposePassesCanonicalPoolVariable(t *testing.T) {
++	raw, err := os.ReadFile("../../docker-compose.yml")
++	if err != nil { t.Fatal(err) }
++	s := string(raw)
++	if !strings.Contains(s, "MERIDIAN_DB_POOL:") { t.Error("compose must pass MERIDIAN_DB_POOL, the name consumed by config.applyEnv") }
++	if strings.Contains(s, "DB_POOL:") && !strings.Contains(s, "MERIDIAN_DB_POOL:") { t.Error("legacy DB_POOL alias is not consumed by the server") }
++}
++
++func TestComposeTimeoutUsesServerPrefix(t *testing.T) {
++	raw, err := os.ReadFile("../../docker-compose.yml")
++	if err != nil { t.Fatal(err) }
++	if !strings.Contains(string(raw), "MERIDIAN_HTTP_TIMEOUT:") { t.Error("compose timeout does not match applyEnv") }
++}
++
++func TestKubernetesAndComposePoolNamesAgree(t *testing.T) {
++	k8s, err := os.ReadFile("../../deploy/k8s.yaml"); if err != nil { t.Fatal(err) }
++	compose, err := os.ReadFile("../../docker-compose.yml"); if err != nil { t.Fatal(err) }
++	if !strings.Contains(string(k8s), "MERIDIAN_DB_POOL") || !strings.Contains(string(compose), "MERIDIAN_DB_POOL") {
++		t.Error("dev and production must use the same pool environment key")
++	}
++}
++
++func TestGeneratedDefaultRemainsFallback(t *testing.T) {
++	if c := Load(); c.DBPoolSize != defaultDBPoolSize { t.Errorf("default fallback = %d", c.DBPoolSize) }
++}

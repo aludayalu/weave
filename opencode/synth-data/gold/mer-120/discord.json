@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-120",
+  "channel": "eng-frontend",
+  "window": {
+    "start": "2026-11-25T13:18:00Z",
+    "end": "2026-11-27T19:48:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1575138487173120000",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-25T13:18:00Z",
+      "ts_raw": "2026-11-25T13:18:00+00:00",
+      "ts_epoch": 1795612680,
+      "content": "@marcus Users cannot save a partially completed purchase order while working through the required fields, though final submission must remain strict. Opening MER-120 to track it. ok this is the third report on this, starting now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-120"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575140752097280001",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-25T13:27:00Z",
+      "ts_raw": "2026-11-25T13:27:00+00:00",
+      "ts_epoch": 1795613220,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575161136414720002",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-11-25T14:48:00Z",
+      "ts_raw": "2026-11-25T14:48:00+00:00",
+      "ts_epoch": 1795618080,
+      "content": "fyi client-report is attached to MER-120 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-120"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t21-24662966",
+          "filename": "t21-client-report.pdf",
+          "path": "raw/attachments/jira/reports/t21-client-report.pdf",
+          "bytes": 70695,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t21-25992782",
+          "filename": "t21-validation-log.log",
+          "path": "raw/attachments/jira/logs/t21-validation-log.log",
+          "bytes": 331,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1575183785656320011",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-11-25T16:18:00Z",
+      "ts_raw": "2026-11-25T16:18:00+00:00",
+      "ts_epoch": 1795623480,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575259283128320012",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-25T21:18:00Z",
+      "ts_raw": "2026-11-25T21:18:00+00:00",
+      "ts_epoch": 1795641480,
+      "content": "<@301002> can you?",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575334780600320013",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-26T02:18:00Z",
+      "ts_raw": "2026-11-26T02:18:00+00:00",
+      "ts_epoch": 1795659480,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575526040862720003",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-26T14:58:00Z",
+      "ts_raw": "2026-11-26T08:58:00-06:00",
+      "ts_epoch": 1795705080,
+      "content": "spec-first per team rule — tests for MER-120 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-120"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575592730296320004",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-26T19:23:00Z",
+      "ts_raw": "2026-11-26T19:23:00+00:00",
+      "ts_epoch": 1795720980,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575605313208320005",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-11-26T20:13:00Z",
+      "ts_raw": "2026-11-26T20:13:00+00:00",
+      "ts_epoch": 1795723980,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575612862955520006",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-26T20:43:00Z",
+      "ts_raw": "2026-11-26T20:43:00+00:00",
+      "ts_epoch": 1795725780,
+      "content": "PR #23 is up: `feature/MER-120-draft-validation`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-120"
+      ],
+      "mentions_pr": [
+        23
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1575624187576320007",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-26T21:28:00Z",
+      "ts_raw": "2026-11-26T15:28:00-06:00",
+      "ts_epoch": 1795728480,
+      "content": "reviewed #23 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575632995614720008",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-26T22:03:00Z",
+      "ts_raw": "2026-11-26T22:03:00+00:00",
+      "ts_epoch": 1795730580,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575955873136640009",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-11-27T19:26:00Z",
+      "ts_raw": "2026-11-27T19:26:00+00:00",
+      "ts_epoch": 1795807560,
+      "content": "deploy is green, MER-120 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-120"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1575961409617920010",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-27T19:48:00Z",
+      "ts_raw": "2026-11-27T19:48:00+00:00",
+      "ts_epoch": 1795808880,
+      "content": "MER-120 closed — PR #23 merged. closing this out, follow-up filed for the remaining edge case",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-120"
+      ],
+      "mentions_pr": [
+        23
+      ],
+      "attachments": []
+    }
+  ]
+}

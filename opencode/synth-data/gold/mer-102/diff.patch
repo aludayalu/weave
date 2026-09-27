@@ -1,0 +1,125 @@
+diff --git a/internal/flags/flags.go b/internal/flags/flags.go
+index 71d8552..d5e61d5 100644
+--- a/internal/flags/flags.go
++++ b/internal/flags/flags.go
+@@ -27,10 +27,12 @@ var Registry = []string{
+ 	FlagTenantSwitchV2,
+ }
+ 
+-// canonicalKey normalizes a flag key for cache bookkeeping.
+-// Baseline: case-folds only.
++// canonicalKey normalizes a flag key to the canonical form written by
++// migrations/0003_seed_flags.sql: lowercase, dots as separators. The seed
++// rows are canonical (MER-102) — Go registry names and ops-console
++// exports are dialects that must fold into this form.
+ func canonicalKey(k string) string {
+-	return strings.ToLower(k)
++	return strings.ToLower(strings.NewReplacer("-", ".", "_", ".").Replace(k))
+ }
+ 
+ // Store resolves flag values from persistent storage (DB table flags).
+@@ -60,7 +62,7 @@ func New(store Store) *Flags {
+ 	return &Flags{
+ 		store:   store,
+ 		cache:   map[string]string{},
+-		watched: []string{FlagNewInvoicePipeline, FlagAuditStreamV2, FlagTenantSwitchV2},
++		watched: []string{FlagComplianceExportGate, FlagNewInvoicePipeline, FlagAuditStreamV2, FlagTenantSwitchV2},
+ 	}
+ }
+ 
+@@ -75,6 +77,14 @@ func (f *Flags) Get(key string) string {
+ 		f.cache[ck] = v
+ 		return v
+ 	}
++	// Seeded rows use the canonical (dotted) spelling; the constant we were
++	// handed may be the kebab registry dialect.
++	if ck != key {
++		if v, ok := f.store.Lookup(ck); ok {
++			f.cache[ck] = v
++			return v
++		}
++	}
+ 	if v, ok := lookupEnv(key); ok {
+ 		f.cache[ck] = v
+ 		return v
+diff --git a/internal/flags/task102_flag_keys_test.go b/internal/flags/task102_flag_keys_test.go
+new file mode 100644
+index 0000000..080b384
+--- /dev/null
++++ b/internal/flags/task102_flag_keys_test.go
+@@ -0,0 +1,55 @@
++package flags
++
++import "testing"
++
++// MER-102: the compliance export flag silently no-ops for tenants whose
++// row was seeded by ops (migrations/0003 writes dotted keys; the Go
++// registry reads kebab-case). Three spellings exist in the wild — the
++// canonical form is whatever the seed script wrote.
++
++func TestSeededDottedFlagResolves(t *testing.T) {
++	f := New(MapStore{"compliance.export.gate": "on"})
++	if got := f.Get(FlagComplianceExportGate); got != "on" {
++		t.Errorf("Get(%q) = %q, want %q — seeded row must resolve", FlagComplianceExportGate, got, "on")
++	}
++}
++
++func TestCanonicalKeyUnifiesSpellings(t *testing.T) {
++	a := canonicalKey("compliance-export-gate") // Go registry
++	b := canonicalKey("compliance.export.gate")  // SQL seed (canonical)
++	c := canonicalKey("Compliance_Export_Gate")  // ops console export
++	if a != b || b != c {
++		t.Errorf("spellings disagree: %q vs %q vs %q", a, b, c)
++	}
++}
++
++func TestWatchListCoversComplianceFlag(t *testing.T) {
++	f := New(MapStore{})
++	for _, w := range f.watched {
++		if w == FlagComplianceExportGate {
++			return
++		}
++	}
++	t.Error("compliance-export-gate missing from watch list — Set() will leave a stale cache")
++}
++
++func TestSetInvalidatesCachedComplianceFlag(t *testing.T) {
++	f := New(MapStore{"compliance.export.gate": "on"})
++	f.Get(FlagComplianceExportGate) // warm the cache with the seeded row
++	f.Set("compliance.export.gate", "off")
++	if got := f.Get(FlagComplianceExportGate); got != "off" {
++		t.Errorf("after Set, Get = %q, want %q (stale cache)", got, "off")
++	}
++}
++
++func TestEnvOverrideStillWorksForComplianceFlag(t *testing.T) {
++	restore := osGetenv
++	t.Cleanup(func() { osGetenv = restore })
++	vals := map[string]string{"FLAGS_COMPLIANCE_EXPORT_GATE": "staging"}
++	osGetenv = func(n string) string { return vals[n] }
++
++	f := New(MapStore{})
++	if got := f.Get(FlagComplianceExportGate); got != "staging" {
++		t.Errorf("Get = %q, want staging", got)
++	}
++}
+diff --git a/migrations/0003_seed_flags.sql b/migrations/0003_seed_flags.sql
+index 4a12d86..d36eeea 100644
+--- a/migrations/0003_seed_flags.sql
++++ b/migrations/0003_seed_flags.sql
+@@ -1,9 +1,12 @@
+ -- 0003_seed_flags.sql — flag rows seeded by ops (source of truth for
+ -- which flags EXIST in an environment).
+ --
+--- NOTE: keys here are dotted (legacy ops convention from the pre-Go
+--- console). Application code reads kebab-case constants. Ops has been
+--- told twice to stop adding new spellings (#eng-platform pinned note).
++-- CANONICAL KEY FORM: keys in this file ARE canonical (dotted,
++-- lowercase). The Go registry (internal/flags) and the k8s env overrides
++-- are dialects that must fold INTO this form — see canonicalKey in
++-- internal/flags (MER-102). New seeds: dotted, lowercase, no exceptions.
++-- (Ops has been told twice. The pinned note in #eng-platform has the
++-- full spelling table.)
+ 
+ INSERT INTO flags (key, value) VALUES
+     ('compliance.export.gate', 'on'),

@@ -1,0 +1,45 @@
+{
+  "task_id": "mer-114",
+  "jira": "MER-114",
+  "pr": 17,
+  "repository": "meridian-erp",
+  "repo_revision": "a5c878e045 (task branch tip)",
+  "title": "Webhook subscription from another subsidiary is selected",
+  "summary": "MER-114 raised in #incidents, shipped in PR #17",
+  "start_ts_utc": "2026-10-14T13:28:00Z",
+  "end_ts_utc": "2026-10-16T19:58:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Deleted User",
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya A subsidiary received an invoice notification intended for a similarly named account in another organization. Opening MER-114 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "fyi client-report is attached to MER-114 if you want the raw capture.",
+      "anyone seen the staging pg bump? unrelated",
+      "&amp;&lt;legacy&gt;",
+      "reminder: freeze starts friday for the payments repo",
+      "spec-first per team rule — tests for MER-114 are red on main now, pushing as I go.",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "reverted my first attempt, it broke the partner integration",
+      "PR #17 is up: `feature/MER-114-tenant-webhooks`. review when you can.",
+      "reviewed #17 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "A subsidiary received an invoice notification intended for a similarly named account in another organization.\n\nTribal constraint: Subscriptions have both a static fallback registry and a DB-loaded registry; tenant scoping was added to the database path later, leaving the fallback lookup keyed only by name.",
+    "documents": [
+      "t13-client-report.pdf",
+      "t13-webhook-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 3444,
+    "documents": 2
+  }
+}

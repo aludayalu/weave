@@ -1,0 +1,87 @@
+diff --git a/web/lib/swrKeys.ts b/web/lib/swrKeys.ts
+index af1d495..a47c42f 100644
+--- a/web/lib/swrKeys.ts
++++ b/web/lib/swrKeys.ts
+@@ -7,7 +7,7 @@
+  * stays documented in one place. Keys are `namespace:resource[:variant]`.
+  */
+ export const swrKeys = {
+-  invoices: (page) => `billing:invoices:p${page}`,
++  invoices: (tenant, page) => `billing:invoices:${tenant}:p${page}`,
+   invoice: (id) => `billing:invoice:${id}`,
+   events: (page) => `audit:events:p${page}`,
+   tenant: () => `flags:tenant`,
+diff --git a/web/lib/task119_pagination_key.test.ts b/web/lib/task119_pagination_key.test.ts
+new file mode 100644
+index 0000000..ed7d564
+--- /dev/null
++++ b/web/lib/task119_pagination_key.test.ts
+@@ -0,0 +1,30 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { readFileSync } from "node:fs";
++import { fileURLToPath } from "node:url";
++import { swrKeys } from "./swrKeys.ts";
++
++const invoiceKey = swrKeys.invoices as unknown as (tenant: string, page: number) => string;
++
++test("invoice list key includes tenant and page", () => {
++  assert.equal(invoiceKey("harborline", 2), "billing:invoices:harborline:p2");
++});
++
++test("same page for two tenants never shares cache key", () => {
++  assert.notEqual(invoiceKey("harborline", 1), invoiceKey("vantage", 1));
++});
++
++test("same tenant pages have distinct keys", () => {
++  assert.notEqual(invoiceKey("crestwood", 1), invoiceKey("crestwood", 2));
++});
++
++test("invoice page consumes generated key instead of local literal", () => {
++  const src = readFileSync(fileURLToPath(new URL("../pages/invoices.tsx", import.meta.url)), "utf8");
++  assert.match(src, /swrKeys\.invoices\(tenant\.id,\s*page\)/);
++  assert.doesNotMatch(src, /const listKey = `billing:invoices:/);
++});
++
++test("generated key source declares tenant and page dimensions", () => {
++  const routes = readFileSync(fileURLToPath(new URL("../routes.yaml", import.meta.url)), "utf8");
++  assert.match(routes, /billing:invoices:\{tenant\}:p\{page\}/);
++});
+diff --git a/web/pages/invoices.tsx b/web/pages/invoices.tsx
+index ef29717..14f7545 100644
+--- a/web/pages/invoices.tsx
++++ b/web/pages/invoices.tsx
+@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
+ import { cachedFor, getTenant } from "../lib/tenantStore";
+ import { useTenant } from "../hooks/useTenant";
+ import { messageFor } from "../lib/errMessages";
++import { swrKeys } from "../lib/swrKeys";
+ 
+ // Module-scope capture: valid ONLY because the key embeds the tenant id.
+ const initialTenant = getTenant();
+@@ -24,9 +25,9 @@ export default function Invoices() {
+   const [rows, setRows] = useState<{ id: string; total: string }[]>([]);
+   const [errCode, setErrCode] = useState<number | null>(null);
+ 
+-  // Pagination key is inlined (NOT swrKeys.invoices) because this screen
+-  // predates the generated keys and still adds a tenant segment itself.
+-  const listKey = `billing:invoices:${tenant.id}:p${page}`;
++  // Generated route contract includes both tenant and page to isolate the
++  // response cache across workspace switches and browser history.
++  const listKey = swrKeys.invoices(tenant.id, page);
+ 
+   useEffect(() => {
+     let cancelled = false;
+diff --git a/web/routes.yaml b/web/routes.yaml
+index 30159c2..0c92dd0 100644
+--- a/web/routes.yaml
++++ b/web/routes.yaml
+@@ -3,7 +3,7 @@
+ routes:
+   - namespace: billing
+     resource: invoices
+-    key: "billing:invoices:p{page}"
++    key: "billing:invoices:{tenant}:p{page}"
+   - namespace: billing
+     resource: invoice
+     key: "billing:invoice:{id}"

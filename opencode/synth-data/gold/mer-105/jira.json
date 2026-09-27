@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-105",
+  "issue": {
+    "issue_key": "MER-105",
+    "summary": "Billing API is reachable without a session in app-router profile",
+    "description": "A security review found anonymous requests can reach billing endpoints after production enabled the app-router middleware profile.\n\nTribal constraint: Legacy and v2 middleware coexist behind a deployment profile; matcher coverage must be equivalent even though both files compile and old profile tests pass.",
+    "status": "Done",
+    "reporter": "Sofia Almeida",
+    "assignee": "Sofia Almeida",
+    "created_utc": "2026-08-05T14:28:00Z",
+    "updated_utc": "2026-08-07T20:58:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21007",
+        "filename": "t20-pentest-report.pdf",
+        "path": "raw/attachments/jira/reports/t20-pentest-report.pdf",
+        "bytes": 72423,
+        "content_type": "application/pdf",
+        "created_utc": "2026-08-05T15:08:00Z"
+      },
+      {
+        "attachment_id": "21007",
+        "filename": "t20-curl-log.log",
+        "path": "raw/attachments/jira/logs/t20-curl-log.log",
+        "bytes": 331,
+        "content_type": "text/plain",
+        "created_utc": "2026-08-05T15:08:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-105",
+      "ts_utc": "2026-08-05T14:28:00Z",
+      "author": "Sofia Almeida",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-105",
+      "ts_utc": "2026-08-05T14:28:00Z",
+      "author": "Sofia Almeida",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Sofia Almeida"
+    },
+    {
+      "issue_key": "MER-105",
+      "ts_utc": "2026-08-05T14:35:00Z",
+      "author": "Sofia Almeida",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-105",
+      "ts_utc": "2026-08-06T22:38:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-105",
+      "ts_utc": "2026-08-06T22:38:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #7"
+    },
+    {
+      "issue_key": "MER-105",
+      "ts_utc": "2026-08-07T20:58:00Z",
+      "author": "Sofia Almeida",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-105",
+      "ts_utc": "2026-08-07T20:58:00Z",
+      "author": "Sofia Almeida",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

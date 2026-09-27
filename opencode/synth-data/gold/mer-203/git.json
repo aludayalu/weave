@@ -1,0 +1,43 @@
+{
+  "task_id": "mer-203",
+  "pull_request": {
+    "pr_number": 30,
+    "title": "fix(web): restore query-token auth for legacy event stream (MER-203)",
+    "state": "closed",
+    "merged": true,
+    "author": "Dan Levin",
+    "branch": "feature/MER-203-sse-auth",
+    "merge_sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c",
+    "opened_ts_utc": "2027-01-20T16:00:00Z",
+    "merged_ts_utc": "2027-01-22T20:00:00Z",
+    "closed_ts_utc": "2027-01-22T20:00:00Z"
+  },
+  "merge_sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c",
+  "base_sha": "8be4ff72fca539620280d4982731e92d78031fbb",
+  "head_sha": "f8c30ef0504af33ea4163baf52100a22be698cff",
+  "commit_count": 1,
+  "commits": [
+    {
+      "sha": "f8c30ef0504af33ea4163baf52100a22be698cff",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2027-01-20T16:00:00Z",
+      "committed_ts_utc": "2027-01-20T16:00:00Z",
+      "message": "fix(web): restore query-token auth for legacy event stream (MER-203)",
+      "is_merge": false,
+      "parent_shas": [
+        "8be4ff72fca539620280d4982731e92d78031fbb"
+      ],
+      "additions": 37,
+      "deletions": 1,
+      "changed_files": [
+        "web/lib/eval203_sse.test.ts",
+        "web/lib/sseAuth.ts"
+      ]
+    }
+  ],
+  "files": [
+    "web/lib/eval203_sse.test.ts",
+    "web/lib/sseAuth.ts"
+  ]
+}

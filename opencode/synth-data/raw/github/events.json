@@ -1,0 +1,734 @@
+[
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 1,
+    "created_at": "2026-07-09T19:15:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 1,
+    "created_at": "2026-07-10T21:12:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 1,
+    "created_at": "2026-07-10T21:12:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "798a23ef4fa0321fce53581b80c6b5eea39bdc6d"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 102,
+    "created_at": "2026-07-15T11:30:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 102,
+    "created_at": "2026-07-15T11:30:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 2,
+    "created_at": "2026-07-16T15:50:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 2,
+    "created_at": "2026-07-17T20:31:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 2,
+    "created_at": "2026-07-17T20:31:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "65d25a33c70fd702999b5b611f10654498f83c39"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 4,
+    "created_at": "2026-07-23T14:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 4,
+    "created_at": "2026-07-24T19:20:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 4,
+    "created_at": "2026-07-24T19:20:00Z",
+    "actor": "Marcus Lee",
+    "merge_commit_sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 5,
+    "created_at": "2026-07-29T18:45:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 101,
+    "created_at": "2026-07-30T20:15:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 101,
+    "created_at": "2026-07-30T20:15:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 5,
+    "created_at": "2026-07-31T19:55:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 5,
+    "created_at": "2026-07-31T19:55:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 7,
+    "created_at": "2026-08-05T18:20:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 7,
+    "created_at": "2026-08-07T20:40:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 7,
+    "created_at": "2026-08-07T20:40:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "9c62969dba955433e7663cecf18347cadb31b305"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 8,
+    "created_at": "2026-08-12T18:05:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 8,
+    "created_at": "2026-08-14T19:40:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 8,
+    "created_at": "2026-08-14T19:40:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 9,
+    "created_at": "2026-08-19T18:20:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 9,
+    "created_at": "2026-08-21T20:00:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 9,
+    "created_at": "2026-08-21T20:00:00Z",
+    "actor": "Dan Levin",
+    "merge_commit_sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 10,
+    "created_at": "2026-08-26T18:25:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 10,
+    "created_at": "2026-08-28T20:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 10,
+    "created_at": "2026-08-28T20:00:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "bafdf50d7e8e24a71d74dad63f508408860fedcc"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 11,
+    "created_at": "2026-09-02T18:05:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 11,
+    "created_at": "2026-09-04T19:30:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 11,
+    "created_at": "2026-09-04T19:30:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "890ab774ddedacc0c28dd72297e093cf4f0fcd82"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 12,
+    "created_at": "2026-09-09T18:00:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 12,
+    "created_at": "2026-09-11T19:45:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 12,
+    "created_at": "2026-09-11T19:45:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "68c3f717f27a4696d7da792d74c8aa8c231a45c4"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 13,
+    "created_at": "2026-09-16T18:10:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 13,
+    "created_at": "2026-09-18T20:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 13,
+    "created_at": "2026-09-18T20:00:00Z",
+    "actor": "Marcus Lee",
+    "merge_commit_sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 14,
+    "created_at": "2026-09-23T18:10:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 14,
+    "created_at": "2026-09-25T19:45:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 14,
+    "created_at": "2026-09-25T19:45:00Z",
+    "actor": "Dan Levin",
+    "merge_commit_sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 15,
+    "created_at": "2026-09-30T18:00:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 15,
+    "created_at": "2026-10-02T19:30:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 15,
+    "created_at": "2026-10-02T19:30:00Z",
+    "actor": "Dan Levin",
+    "merge_commit_sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 16,
+    "created_at": "2026-10-07T18:10:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 16,
+    "created_at": "2026-10-09T19:30:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 16,
+    "created_at": "2026-10-09T19:30:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "bde5a9354e5e97225802773809cee0efa6f9afec"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 17,
+    "created_at": "2026-10-14T18:20:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 17,
+    "created_at": "2026-10-16T19:40:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 17,
+    "created_at": "2026-10-16T19:40:00Z",
+    "actor": "Marcus Lee",
+    "merge_commit_sha": "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 18,
+    "created_at": "2026-10-21T18:00:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 18,
+    "created_at": "2026-10-23T19:30:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 18,
+    "created_at": "2026-10-23T19:30:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "4289bc34c25a6aef5ae0757b7dee24f8254471ab"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 19,
+    "created_at": "2026-10-28T18:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 19,
+    "created_at": "2026-10-30T19:30:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 19,
+    "created_at": "2026-10-30T19:30:00Z",
+    "actor": "Marcus Lee",
+    "merge_commit_sha": "ffa824482c775efb8b0ab6602307841dd7fe5358"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 20,
+    "created_at": "2026-11-04T18:10:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 20,
+    "created_at": "2026-11-06T19:30:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 20,
+    "created_at": "2026-11-06T19:30:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "3553a93b7d015a20ec13ff7ccab76af501427bb1"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 21,
+    "created_at": "2026-11-11T18:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 21,
+    "created_at": "2026-11-13T19:30:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 21,
+    "created_at": "2026-11-13T19:30:00Z",
+    "actor": "Marcus Lee",
+    "merge_commit_sha": "229352c267bcd1cbcdc22951a2ed35bf882d78f1"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 22,
+    "created_at": "2026-11-18T18:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 22,
+    "created_at": "2026-11-20T19:30:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 22,
+    "created_at": "2026-11-20T19:30:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 23,
+    "created_at": "2026-11-25T18:10:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 23,
+    "created_at": "2026-11-27T19:30:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 23,
+    "created_at": "2026-11-27T19:30:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 24,
+    "created_at": "2026-12-02T18:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 24,
+    "created_at": "2026-12-04T19:30:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 24,
+    "created_at": "2026-12-04T19:30:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "c6e1111a98eaa58eba918cc241beabd889482b73"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 25,
+    "created_at": "2026-12-09T18:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 25,
+    "created_at": "2026-12-11T19:30:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 25,
+    "created_at": "2026-12-11T19:30:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "f073401fd44c3a0df7bd936369718c206e60527b"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 26,
+    "created_at": "2026-12-16T18:00:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 26,
+    "created_at": "2026-12-18T19:30:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 26,
+    "created_at": "2026-12-18T19:30:00Z",
+    "actor": "Dan Levin",
+    "merge_commit_sha": "958b5e6096c2b0be94440fc1a23732a8afef2858"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 27,
+    "created_at": "2026-12-23T18:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 27,
+    "created_at": "2026-12-23T20:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 27,
+    "created_at": "2026-12-23T20:00:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 28,
+    "created_at": "2027-01-07T18:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 28,
+    "created_at": "2027-01-08T20:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 28,
+    "created_at": "2027-01-08T20:00:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "80402dba9eb1da7a0625fff1104dee32643223f2"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 29,
+    "created_at": "2027-01-13T16:00:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 29,
+    "created_at": "2027-01-15T20:00:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 29,
+    "created_at": "2027-01-15T20:00:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "8be4ff72fca539620280d4982731e92d78031fbb"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 30,
+    "created_at": "2027-01-20T16:00:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 30,
+    "created_at": "2027-01-22T20:00:00Z",
+    "actor": "Dan Levin"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 30,
+    "created_at": "2027-01-22T20:00:00Z",
+    "actor": "Dan Levin",
+    "merge_commit_sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 31,
+    "created_at": "2027-01-27T16:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 31,
+    "created_at": "2027-01-29T20:00:00Z",
+    "actor": "Sofia Almeida"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 31,
+    "created_at": "2027-01-29T20:00:00Z",
+    "actor": "Sofia Almeida",
+    "merge_commit_sha": "490fc4188b5f8d1caf2f97815d534ba6537fec30"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 32,
+    "created_at": "2027-02-03T16:00:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 32,
+    "created_at": "2027-02-05T20:00:00Z",
+    "actor": "Priya Sharma"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 32,
+    "created_at": "2027-02-05T20:00:00Z",
+    "actor": "Priya Sharma",
+    "merge_commit_sha": "4df408a65d33865f5d6f3061844abc08cbb5f664"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 33,
+    "created_at": "2027-02-10T16:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 33,
+    "created_at": "2027-02-12T20:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 33,
+    "created_at": "2027-02-12T20:00:00Z",
+    "actor": "Marcus Lee",
+    "merge_commit_sha": "93c99fe65568325d2395525518284f59a9100a23"
+  },
+  {
+    "type": "pull_request",
+    "action": "opened",
+    "number": 34,
+    "created_at": "2027-02-17T16:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "closed",
+    "number": 34,
+    "created_at": "2027-02-19T20:00:00Z",
+    "actor": "Marcus Lee"
+  },
+  {
+    "type": "pull_request",
+    "action": "merged",
+    "number": 34,
+    "created_at": "2027-02-19T20:00:00Z",
+    "actor": "Marcus Lee",
+    "merge_commit_sha": "7cda3e9560f221d6c08ec6efb3034d96128bf4ff"
+  }
+]

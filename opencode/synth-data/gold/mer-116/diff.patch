@@ -1,0 +1,87 @@
+diff --git a/deploy/nginx.conf b/deploy/nginx.conf
+index 702440c..aaa1ff0 100644
+--- a/deploy/nginx.conf
++++ b/deploy/nginx.conf
+@@ -6,6 +6,7 @@ limit_req_zone $binary_remote_addr zone=api_billing:10m rate=10r/s burst=20 node
+ limit_req_zone $binary_remote_addr zone=api_auth:10m rate=5r/s burst=10 nodelay;
+ limit_req_zone $tenant_id zone=tenant_global:10m rate=100r/s burst=200 nodelay;
+ limit_req_zone $binary_remote_addr zone=export_audit:10m rate=1r/s burst=3 nodelay;
++limit_req_zone $tenant_id zone=export_tenant:10m rate=2r/s burst=4 nodelay;
+ 
+ server {
+     listen 443 ssl;
+@@ -23,6 +24,10 @@ server {
+         limit_req zone=export_audit;
+         proxy_pass http://meridian-api:8080;
+     }
++    location ~ ^/api/tenants/[^/]+/audit/export {
++        limit_req zone=export_tenant;
++        proxy_pass http://meridian-api:8080;
++    }
+     location /api/ {
+         limit_req zone=api_global;
+         proxy_pass http://meridian-api:8080;
+diff --git a/internal/ratelimit/limiter.go b/internal/ratelimit/limiter.go
+index 7704761..9e6566e 100644
+--- a/internal/ratelimit/limiter.go
++++ b/internal/ratelimit/limiter.go
+@@ -27,6 +27,7 @@ var DefaultLimits = map[string]Limit{
+ 	"api.auth":         {PerSecond: 5, Burst: 10},
+ 	"tenant.global":    {PerSecond: 100, Burst: 200},
+ 	"export.audit":     {PerSecond: 1, Burst: 3},
++	"export.tenant":    {PerSecond: 2, Burst: 4},
+ }
+ 
+ // Limiter is a token bucket keyed by "scope:key".
+diff --git a/internal/ratelimit/limiter_test.go b/internal/ratelimit/limiter_test.go
+index 2c2e818..75b0f01 100644
+--- a/internal/ratelimit/limiter_test.go
++++ b/internal/ratelimit/limiter_test.go
+@@ -66,7 +66,7 @@ func TestUnscopedPathsPass(t *testing.T) {
+ // configs/ratelimits.yaml: scopes referenced by deploy/nginx.conf must
+ // exist in-process (and vice versa).
+ func TestDefaultLimitsMatchYAMLShape(t *testing.T) {
+-	want := []string{"api.global", "api.billing", "api.auth", "tenant.global", "export.audit"}
++	want := []string{"api.global", "api.billing", "api.auth", "tenant.global", "export.audit", "export.tenant"}
+ 	for _, k := range want {
+ 		if _, ok := DefaultLimits[k]; !ok {
+ 			t.Errorf("DefaultLimits missing %q (present in configs/ratelimits.yaml + nginx.conf)", k)
+diff --git a/internal/ratelimit/task116_tenant_limit_test.go b/internal/ratelimit/task116_tenant_limit_test.go
+new file mode 100644
+index 0000000..59258b6
+--- /dev/null
++++ b/internal/ratelimit/task116_tenant_limit_test.go
+@@ -0,0 +1,33 @@
++package ratelimit
++
++import (
++	"os"
++	"strings"
++	"testing"
++
++	"github.com/meridian-erp/meridian/internal/store"
++)
++
++func TestTenantExportPolicyExistsInAllEnforcers(t *testing.T) {
++	if _, ok := DefaultLimits["export.tenant"]; !ok { t.Error("Go limiter missing export.tenant") }
++	yaml, err := os.ReadFile("../../configs/ratelimits.yaml"); if err != nil { t.Fatal(err) }
++	nginx, err := os.ReadFile("../../deploy/nginx.conf"); if err != nil { t.Fatal(err) }
++	if !strings.Contains(string(yaml), "export.tenant") { t.Error("policy YAML missing export.tenant") }
++	if !strings.Contains(string(nginx), "export_tenant") { t.Error("nginx has no tenant export bucket") }
++}
++
++func TestTenantExportRateMatchesAcrossLayers(t *testing.T) {
++	lim, ok := DefaultLimits["export.tenant"]
++	if !ok { t.Fatal("policy not in Go") }
++	if lim.PerSecond != 2 || lim.Burst != 4 { t.Errorf("Go policy=%+v, want 2/s burst4",lim) }
++	nginx, _ := os.ReadFile("../../deploy/nginx.conf")
++	if !strings.Contains(string(nginx), "rate=2r/s burst=4") { t.Error("nginx rate differs from tenant export policy") }
++}
++
++func TestTenantExportCacheKeysRemainIsolated(t *testing.T) {
++	if store.CacheKey("audit","export","harborline")==store.CacheKey("audit","export","vantage") { t.Fatal("tenant export cache keys collide") }
++}
++
++func TestLegacyAuditExportLimitUnaffected(t *testing.T) {
++	if got:=DefaultLimits["export.audit"]; got!=(Limit{PerSecond:1,Burst:3}) { t.Errorf("legacy audit policy changed: %+v",got) }
++}

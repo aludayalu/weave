@@ -1,0 +1,145 @@
+{
+  "task_id": "mer-124",
+  "issue": {
+    "issue_key": "MER-124",
+    "summary": "Feature flag flickers during authenticated hydration",
+    "description": "Signed-in users briefly see a feature-enabled screen that disappears after the server-provided tenant policy loads.\n\nTribal constraint: Authenticated rendering must use window.__MERIDIAN__ from the server; localStorage is only a logged-out fallback and reading it during render violates hydration parity.",
+    "status": "Done",
+    "reporter": "Dan Levin",
+    "assignee": "Dan Levin",
+    "created_utc": "2026-12-21T13:48:00Z",
+    "updated_utc": "2026-12-23T20:21:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21027",
+        "filename": "t25-client-report.pdf",
+        "path": "raw/attachments/jira/reports/t25-client-report.pdf",
+        "bytes": 70550,
+        "content_type": "application/octet-stream",
+        "created_utc": "2026-12-21T14:28:00Z"
+      },
+      {
+        "attachment_id": "21027",
+        "filename": "t25-hydration-log.log",
+        "path": "raw/attachments/jira/logs/t25-hydration-log.log",
+        "bytes": 333,
+        "content_type": "text/plain",
+        "created_utc": "2026-12-21T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-21T13:48:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-21T13:48:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-21T13:48:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-21T13:48:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-21T14:09:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-21T14:09:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-22T15:28:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-22T15:28:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-22T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-22T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #27"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-22T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-22T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #27"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-23T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-124",
+      "ts_utc": "2026-12-23T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

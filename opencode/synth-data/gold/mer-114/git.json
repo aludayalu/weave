@@ -1,0 +1,59 @@
+{
+  "task_id": "mer-114",
+  "pull_request": {
+    "pr_number": 17,
+    "title": "test: MER-114 tenant isolation for webhook fallback registry (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Marcus Lee",
+    "branch": "feature/MER-114-tenant-webhooks",
+    "merge_sha": "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027",
+    "opened_ts_utc": "2026-10-14T18:20:00Z",
+    "merged_ts_utc": "2026-10-16T19:40:00Z",
+    "closed_ts_utc": "2026-10-16T19:40:00Z"
+  },
+  "merge_sha": "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027",
+  "base_sha": "bde5a9354e5e97225802773809cee0efa6f9afec",
+  "head_sha": "a5c878e04552cec2766d16e8eb413d1897be6464",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "44bd00c212cf9c999965426a4e1dcf7265d26070",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-13T16:00:00Z",
+      "committed_ts_utc": "2026-10-13T16:00:00Z",
+      "message": "test: MER-114 tenant isolation for webhook fallback registry (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "bde5a9354e5e97225802773809cee0efa6f9afec"
+      ],
+      "additions": 37,
+      "deletions": 0,
+      "changed_files": [
+        "internal/webhooks/registry_test.go"
+      ]
+    },
+    {
+      "sha": "a5c878e04552cec2766d16e8eb413d1897be6464",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-14T18:20:00Z",
+      "committed_ts_utc": "2026-10-14T18:20:00Z",
+      "message": "fix(webhooks): tenant-scope static fallback subscriptions (MER-114)",
+      "is_merge": false,
+      "parent_shas": [
+        "44bd00c212cf9c999965426a4e1dcf7265d26070"
+      ],
+      "additions": 5,
+      "deletions": 3,
+      "changed_files": [
+        "internal/webhooks/registry.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/webhooks/registry.go",
+    "internal/webhooks/registry_test.go"
+  ]
+}

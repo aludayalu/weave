@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-851",
+  "issue": {
+    "issue_key": "MER-851",
+    "summary": "GDPR audit export exposes personal data",
+    "description": "Crestwood Dental's erasure review found personal identifiers in the admin audit export despite the ordinary event endpoint masking them.\n\nTribal constraint: The hand-written marshaler and generated easyjson path differ; all serialization boundaries, including the fast export path, must use the redaction policy and the compliance flag.",
+    "status": "Done",
+    "reporter": "Marcus Lee",
+    "assignee": "Marcus Lee",
+    "created_utc": "2026-07-22T13:08:00Z",
+    "updated_utc": "2026-07-24T19:38:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21004",
+        "filename": "t09-gdpr-report.pdf",
+        "path": "raw/attachments/jira/reports/t09-gdpr-report.pdf",
+        "bytes": 70129,
+        "content_type": "application/pdf",
+        "created_utc": "2026-07-22T13:48:00Z"
+      },
+      {
+        "attachment_id": "21004",
+        "filename": "t09-audit-export-log.log",
+        "path": "raw/attachments/jira/logs/t09-audit-export-log.log",
+        "bytes": 333,
+        "content_type": "text/plain",
+        "created_utc": "2026-07-22T13:48:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-851",
+      "ts_utc": "2026-07-22T13:08:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-851",
+      "ts_utc": "2026-07-22T13:08:00Z",
+      "author": "Marcus Lee",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Marcus Lee"
+    },
+    {
+      "issue_key": "MER-851",
+      "ts_utc": "2026-07-23T14:48:00Z",
+      "author": "Marcus Lee",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-851",
+      "ts_utc": "2026-07-23T21:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-851",
+      "ts_utc": "2026-07-23T21:18:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #4"
+    },
+    {
+      "issue_key": "MER-851",
+      "ts_utc": "2026-07-24T19:38:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-851",
+      "ts_utc": "2026-07-24T19:38:00Z",
+      "author": "Marcus Lee",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

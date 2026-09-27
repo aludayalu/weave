@@ -1,0 +1,158 @@
+diff --git a/api/errors.yaml b/api/errors.yaml
+index 7a04aff..b43dbca 100644
+--- a/api/errors.yaml
++++ b/api/errors.yaml
+@@ -43,6 +43,8 @@ modules:
+         message: payment method expired
+       - name: rate_limited
+         message: payment rate limited
++      - name: gateway_timeout
++        message: payment gateway timeout
+ 
+   - name: partner
+     base: 4000
+diff --git a/pkg/errs/code.go b/pkg/errs/code.go
+index 2021428..294d300 100644
+--- a/pkg/errs/code.go
++++ b/pkg/errs/code.go
+@@ -42,6 +42,10 @@ const (
+ 	CodePaymentDeclined Code = RangePayment + iota
+ 	CodePaymentExpired
+ 	CodePaymentRateLimited
++	// CodePaymentGatewayTimeout: upstream PSP timed out. Distinct from
++	// declined — Harborline's integration retries these automatically
++	// (MER-101). APPEND-ONLY; never renumber the codes above it.
++	CodePaymentGatewayTimeout
+ )
+ 
+ // Workflow module codes.
+diff --git a/pkg/errs/messages_gen.go b/pkg/errs/messages_gen.go
+index 84aa4c9..8cd0ec9 100644
+--- a/pkg/errs/messages_gen.go
++++ b/pkg/errs/messages_gen.go
+@@ -14,6 +14,7 @@ var messages = map[Code]string{
+ 	3000: "payment declined", // payment.declined
+ 	3001: "payment method expired", // payment.expired
+ 	3002: "payment rate limited", // payment.rate_limited
++	3003: "payment gateway timeout", // payment.gateway_timeout
+ 	5000: "workflow in bad state", // workflow.bad_state
+ 	5001: "workflow dependency failed", // workflow.dependency_failed
+ }
+@@ -30,6 +31,7 @@ var codeNames = map[string]Code{
+ 	"payment.declined": 3000, // payment declined
+ 	"payment.expired": 3001, // payment method expired
+ 	"payment.rate_limited": 3002, // payment rate limited
++	"payment.gateway_timeout": 3003, // payment gateway timeout
+ 	"workflow.bad_state": 5000, // workflow in bad state
+ 	"workflow.dependency_failed": 5001, // workflow dependency failed
+ }
+diff --git a/pkg/errs/task101_gateway_timeout_test.go b/pkg/errs/task101_gateway_timeout_test.go
+new file mode 100644
+index 0000000..bc2a8c6
+--- /dev/null
++++ b/pkg/errs/task101_gateway_timeout_test.go
+@@ -0,0 +1,79 @@
++package errs
++
++import (
++	"os"
++	"strings"
++	"testing"
++)
++
++// MER-101: Harborline Logistics maps our payment errors by numeric code in
++// their WMS integration. They need a distinct code for upstream PSP
++// timeouts so their retry logic can tell "retry later" from "declined".
++// Per the pinned note, new codes are APPEND-ONLY inside the module block.
++
++func TestGatewayTimeoutCodeResolvesByName(t *testing.T) {
++	c, ok := CodeByName("payment.gateway_timeout")
++	if !ok {
++		t.Fatal("payment.gateway_timeout not registered — add it to api/errors.yaml and run `make gen`")
++	}
++	if int(c) != 3003 {
++		t.Errorf("payment.gateway_timeout = %d, want 3003 (append after rate_limited)", int(c))
++	}
++}
++
++func TestGatewayTimeoutMessage(t *testing.T) {
++	got := Message(Code(3003))
++	if got != "payment gateway timeout" {
++		t.Errorf("Message(3003) = %q, want %q", got, "payment gateway timeout")
++	}
++}
++
++func TestGatewayTimeoutAppendedAfterExistingPaymentCodes(t *testing.T) {
++	raw, err := os.ReadFile("../../api/errors.yaml")
++	if err != nil {
++		t.Fatal(err)
++	}
++	s := string(raw)
++	iRate := strings.Index(s, "- name: rate_limited")
++	iGW := strings.Index(s, "- name: gateway_timeout")
++	if iGW < 0 {
++		t.Fatal("api/errors.yaml missing payment.gateway_timeout")
++	}
++	if iRate < 0 || iGW < iRate {
++		t.Error("gateway_timeout must be appended AFTER rate_limited (append-only rule)")
++	}
++}
++
++func TestGatewayTimeoutInGeneratedTS(t *testing.T) {
++	raw, err := os.ReadFile("../../web/lib/errcodes_gen.ts")
++	if err != nil {
++		t.Fatal(err)
++	}
++	if !strings.Contains(string(raw), `"gateway_timeout": 3003`) {
++		t.Error("web/lib/errcodes_gen.ts stale - run make gen")
++	}
++}
++
++func TestGatewayTimeoutNamedConstant(t *testing.T) {
++	raw, err := os.ReadFile("code.go")
++	if err != nil {
++		t.Fatal(err)
++	}
++	if !strings.Contains(string(raw), "CodePaymentGatewayTimeout") {
++		t.Error("code.go must expose a named constant CodePaymentGatewayTimeout")
++	}
++}
++
++func TestExistingPaymentCodesUnchanged(t *testing.T) {
++	// Guard: whatever you did, the codes Harborline already ships must not move.
++	for name, want := range map[string]int{
++		"payment.declined":     3000,
++		"payment.expired":      3001,
++		"payment.rate_limited": 3002,
++	} {
++		c, ok := CodeByName(name)
++		if !ok || int(c) != want {
++			t.Errorf("%s = %d (ok=%v), want %d", name, c, ok, want)
++		}
++	}
++}
+diff --git a/web/lib/errcodes_gen.ts b/web/lib/errcodes_gen.ts
+index 4593495..3540844 100644
+--- a/web/lib/errcodes_gen.ts
++++ b/web/lib/errcodes_gen.ts
+@@ -20,10 +20,11 @@ export const ERR_MODULES: ErrModule[] = [
+     "invoice_locked": 2001,
+     "totals_mismatch": 2002,
+   } },
+-  { name: "payment", base: 3000, size: 3, description: "Payment processing errors", codes: {
++  { name: "payment", base: 3000, size: 4, description: "Payment processing errors", codes: {
+     "declined": 3000,
+     "expired": 3001,
+     "rate_limited": 3002,
++    "gateway_timeout": 3003,
+   } },
+   { name: "partner", base: 4000, size: 0, description: "Reserved block for partner integrations (MER-912). Do not use.", codes: {
+   } },
+@@ -44,6 +45,7 @@ export const ERR_MESSAGES: Record<number, string> = {
+   3000: "payment declined",
+   3001: "payment method expired",
+   3002: "payment rate limited",
++  3003: "payment gateway timeout",
+   5000: "workflow in bad state",
+   5001: "workflow dependency failed",
+ };

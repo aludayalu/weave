@@ -1,0 +1,79 @@
+{
+  "task_id": "mer-116",
+  "pull_request": {
+    "pr_number": 19,
+    "title": "test: MER-116 edge/API tenant export limit parity (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Marcus Lee",
+    "branch": "feature/MER-116-tenant-limit",
+    "merge_sha": "ffa824482c775efb8b0ab6602307841dd7fe5358",
+    "opened_ts_utc": "2026-10-28T18:00:00Z",
+    "merged_ts_utc": "2026-10-30T19:30:00Z",
+    "closed_ts_utc": "2026-10-30T19:30:00Z"
+  },
+  "merge_sha": "ffa824482c775efb8b0ab6602307841dd7fe5358",
+  "base_sha": "c885ccd8ee87b693c91226e43e42863b29fe2754",
+  "head_sha": "3c77d2a1cc64a7a452c5af6987a9fef6268ffb09",
+  "commit_count": 3,
+  "commits": [
+    {
+      "sha": "193215da88f5426709709f1e878ba8857ec20615",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-27T16:00:00Z",
+      "committed_ts_utc": "2026-10-27T16:00:00Z",
+      "message": "test: MER-116 edge/API tenant export limit parity (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "c885ccd8ee87b693c91226e43e42863b29fe2754"
+      ],
+      "additions": 33,
+      "deletions": 0,
+      "changed_files": [
+        "internal/ratelimit/task116_tenant_limit_test.go"
+      ]
+    },
+    {
+      "sha": "537924e998db02658740a8e7c7eab97ac9db8469",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-28T17:00:00Z",
+      "committed_ts_utc": "2026-10-28T17:00:00Z",
+      "message": "test: extend rate limit mirror fixture for tenant bucket",
+      "is_merge": false,
+      "parent_shas": [
+        "193215da88f5426709709f1e878ba8857ec20615"
+      ],
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": [
+        "internal/ratelimit/limiter_test.go"
+      ]
+    },
+    {
+      "sha": "3c77d2a1cc64a7a452c5af6987a9fef6268ffb09",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-28T18:00:00Z",
+      "committed_ts_utc": "2026-10-28T18:00:00Z",
+      "message": "fix(limits): mirror tenant export bucket across Go and nginx (MER-116)",
+      "is_merge": false,
+      "parent_shas": [
+        "537924e998db02658740a8e7c7eab97ac9db8469"
+      ],
+      "additions": 6,
+      "deletions": 0,
+      "changed_files": [
+        "deploy/nginx.conf",
+        "internal/ratelimit/limiter.go"
+      ]
+    }
+  ],
+  "files": [
+    "deploy/nginx.conf",
+    "internal/ratelimit/limiter.go",
+    "internal/ratelimit/limiter_test.go",
+    "internal/ratelimit/task116_tenant_limit_test.go"
+  ]
+}

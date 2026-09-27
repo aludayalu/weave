@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-123",
+  "issue": {
+    "issue_key": "MER-123",
+    "summary": "Frontend build leaks a server-only integration setting",
+    "description": "A deployment audit flags an integration credential in the web build environment; the browser needs only the public API origin.\n\nTribal constraint: Only NEXT_PUBLIC_* variables may enter the bundle; server values come from the 1Password environment item and CI's scanner must inspect build inputs as well as source literals.",
+    "status": "Done",
+    "reporter": "Dan Levin",
+    "assignee": "Dan Levin",
+    "created_utc": "2026-12-16T13:18:00Z",
+    "updated_utc": "2026-12-18T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21026",
+        "filename": "t24-security-report.pdf",
+        "path": "raw/attachments/jira/reports/t24-security-report.pdf",
+        "bytes": 71721,
+        "content_type": "application/pdf",
+        "created_utc": "2026-12-16T13:58:00Z"
+      },
+      {
+        "attachment_id": "21026",
+        "filename": "t24-build-log.log",
+        "path": "raw/attachments/jira/logs/t24-build-log.log",
+        "bytes": 333,
+        "content_type": "text/plain",
+        "created_utc": "2026-12-16T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-123",
+      "ts_utc": "2026-12-16T13:18:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-123",
+      "ts_utc": "2026-12-16T13:18:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-123",
+      "ts_utc": "2026-12-16T13:32:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-123",
+      "ts_utc": "2026-12-16T13:32:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #26"
+    },
+    {
+      "issue_key": "MER-123",
+      "ts_utc": "2026-12-17T14:58:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-123",
+      "ts_utc": "2026-12-18T19:48:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-123",
+      "ts_utc": "2026-12-18T19:48:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

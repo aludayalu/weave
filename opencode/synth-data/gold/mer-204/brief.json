@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-204",
+  "jira": "MER-204",
+  "pr": 31,
+  "repository": "meridian-erp",
+  "repo_revision": "6c4dcbeea8 (task branch tip)",
+  "title": "Payroll labels no longer line up with exported pay columns",
+  "summary": "MER-204 raised in #billing, shipped in PR #31",
+  "start_ts_utc": "2027-01-27T13:48:00Z",
+  "end_ts_utc": "2027-01-29T20:18:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Dan Levin",
+    "Marcus Lee"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya A new payroll component shifts labels for downstream columns in the CSV preview and finance's workbook. Opening MER-204 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (finance-report).",
+      "fyi finance-report is attached to MER-204 if you want the raw capture.",
+      "anyone seen the staging pg bump? unrelated",
+      "standup in 5, billing standup moved to 10:30",
+      "standup in 5, billing standup moved to 10:30",
+      "spec-first per team rule — tests for MER-204 are red on main now, pushing as I go.",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "PR #31 is up: `feature/MER-204-pay-labels`. review when you can.",
+      "reviewed #31 — left two comments, nothing structural.",
+      "addressed both, pushing.",
+      "deploy is green, MER-204 is ready to close."
+    ],
+    "ticket": "A new payroll component shifts labels for downstream columns in the CSV preview and finance's workbook.\n\nTribal constraint: The Go column registry and TypeScript positional array are mirrors; the payroll schema version and explicit order check are the cross-language contract.",
+    "documents": [
+      "e04-finance-report.pdf",
+      "e04-preview-screenshot.png"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 13,
+    "jira_events": 7,
+    "commits": 1,
+    "patch_bytes": 1418,
+    "documents": 2
+  }
+}

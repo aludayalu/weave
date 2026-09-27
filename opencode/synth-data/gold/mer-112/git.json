@@ -1,0 +1,76 @@
+{
+  "task_id": "mer-112",
+  "pull_request": {
+    "pr_number": 15,
+    "title": "test: MER-112 new-region bootstrap sequence contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Dan Levin",
+    "branch": "feature/MER-112-fresh-bootstrap",
+    "merge_sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71",
+    "opened_ts_utc": "2026-09-30T18:00:00Z",
+    "merged_ts_utc": "2026-10-02T19:30:00Z",
+    "closed_ts_utc": "2026-10-02T19:30:00Z"
+  },
+  "merge_sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71",
+  "base_sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d",
+  "head_sha": "a6a4c7af0a55ffbc8e7c97c45cc3adcb2a4b9220",
+  "commit_count": 3,
+  "commits": [
+    {
+      "sha": "c2cf3b0d76b3e51204a5cca4222bd3c63c1eb902",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-29T16:00:00Z",
+      "committed_ts_utc": "2026-09-29T16:00:00Z",
+      "message": "test: MER-112 new-region bootstrap sequence contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d"
+      ],
+      "additions": 41,
+      "deletions": 0,
+      "changed_files": [
+        "internal/config/task112_bootstrap_test.go"
+      ]
+    },
+    {
+      "sha": "47167f41534e3a73c333af57ab6b2a1ef45a368b",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-29T16:30:00Z",
+      "committed_ts_utc": "2026-09-29T16:30:00Z",
+      "message": "test: correct bootstrap target scan in MER-112 spec",
+      "is_merge": false,
+      "parent_shas": [
+        "c2cf3b0d76b3e51204a5cca4222bd3c63c1eb902"
+      ],
+      "additions": 7,
+      "deletions": 4,
+      "changed_files": [
+        "internal/config/task112_bootstrap_test.go"
+      ]
+    },
+    {
+      "sha": "a6a4c7af0a55ffbc8e7c97c45cc3adcb2a4b9220",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-30T18:00:00Z",
+      "committed_ts_utc": "2026-09-30T18:00:00Z",
+      "message": "fix(dev): require schema migrations before server run (MER-112)",
+      "is_merge": false,
+      "parent_shas": [
+        "47167f41534e3a73c333af57ab6b2a1ef45a368b"
+      ],
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": [
+        "Makefile"
+      ]
+    }
+  ],
+  "files": [
+    "Makefile",
+    "internal/config/task112_bootstrap_test.go"
+  ]
+}

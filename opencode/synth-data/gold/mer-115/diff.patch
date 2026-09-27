@@ -1,0 +1,57 @@
+diff --git a/internal/jobs/preview.go b/internal/jobs/preview.go
+index 10319b7..7452959 100644
+--- a/internal/jobs/preview.go
++++ b/internal/jobs/preview.go
+@@ -10,10 +10,7 @@ type PreviewManager struct {
+ 
+ func NewPreviewManager(r *Runner) *PreviewManager { return &PreviewManager{runner: r} }
+ 
+-func previewID(tenant, invoice string) string {
+-	_ = tenant // legacy queue keys predate tenant-qualified previews
+-	return "preview:" + invoice
+-}
++func previewID(tenant, invoice string) string { return "preview:" + tenant + ":" + invoice }
+ 
+ func (m *PreviewManager) Start(tenant, invoice string, fn JobFunc) (<-chan error, error) {
+ 	return m.runner.Start(previewID(tenant, invoice), fn)
+diff --git a/internal/jobs/task115_preview_cancel_test.go b/internal/jobs/task115_preview_cancel_test.go
+new file mode 100644
+index 0000000..9ab0ad2
+--- /dev/null
++++ b/internal/jobs/task115_preview_cancel_test.go
+@@ -0,0 +1,35 @@
++package jobs
++
++import (
++	"testing"
++)
++
++func TestPreviewJobIdentityIncludesTenant(t *testing.T) {
++	a := previewID("harborline","inv-9")
++	b := previewID("vantage","inv-9")
++	if a==b { t.Errorf("two tenants share preview job id %q",a) }
++}
++
++func TestSameInvoiceCanPreviewForTwoTenants(t *testing.T) {
++	r:=NewRunner(); m:=NewPreviewManager(r)
++	block:=func(cancel <-chan struct{}) error { <-cancel; return nil }
++	if _,err:=m.Start("harborline","inv-9",block); err!=nil { t.Fatal(err) }
++	if _,err:=m.Start("vantage","inv-9",block); err!=nil { t.Fatalf("second tenant collided with first job id: %v",err) }
++	_ = m.Cancel("harborline","inv-9"); _ = m.Cancel("vantage","inv-9"); r.Wait()
++}
++
++func TestCancelTargetsOnlyTheRequestedTenant(t *testing.T) {
++	r:=NewRunner(); m:=NewPreviewManager(r)
++	block:=func(cancel <-chan struct{}) error { <-cancel; return nil }
++	doneA,_ := m.Start("harborline","inv-9",block)
++	doneB,_ := m.Start("vantage","inv-9",block)
++	if err:=m.Cancel("harborline","inv-9"); err!=nil { t.Fatal(err) }
++	<-doneA
++	ids:=r.Running()
++	if len(ids)!=1 || ids[0]!=previewID("vantage","inv-9") { t.Errorf("running after targeted cancel=%v",ids) }
++	_ = m.Cancel("vantage","inv-9"); <-doneB; r.Wait()
++}
++
++func TestCancelUnknownPreviewReturnsError(t *testing.T) {
++	if err:=NewPreviewManager(NewRunner()).Cancel("harborline","missing"); err==nil { t.Fatal("unknown preview must be reported") }
++}

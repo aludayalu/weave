@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21016",
+    "path": "raw/attachments/jira/reports/t12-finance-report.pdf",
+    "filename": "t12-finance-report.pdf",
+    "bytes": 71179,
+    "sha256": "161220a91c802b1d",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-113",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-10-07T13:58:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "t12-29042770",
+    "path": "raw/attachments/discord/images/t12-workbook-screenshot.png",
+    "filename": "t12-workbook-screenshot.png",
+    "bytes": 20790,
+    "sha256": "3c4ac7c18af36927",
+    "doc_type": "image/png",
+    "linked_issue_key": null,
+    "linked_channel": "billing",
+    "linked_ts_utc": "2026-10-07T14:48:00Z",
+    "extracted_text": "[image captured; OCR text unavailable in this build]"
+  }
+]

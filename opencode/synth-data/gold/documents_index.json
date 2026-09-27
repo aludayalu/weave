@@ -1,0 +1,130 @@
+{
+  "t01": [
+    "t01-client-report.pdf",
+    "t01-gateway-log.log"
+  ],
+  "t02": [
+    "t02-flag-debug.pdf",
+    "t02-tenant-snapshot.pdf"
+  ],
+  "t03": [
+    "t03-client-report.pdf",
+    "t03-import-log.log"
+  ],
+  "t04": [
+    "t04-incident-log.log",
+    "t04-deployment-screenshot.png"
+  ],
+  "t05": [
+    "t05-support-report.pdf",
+    "t05-config-diff.png"
+  ],
+  "t06": [
+    "t06-replay-log.log",
+    "t06-event-sample.png"
+  ],
+  "t07": [
+    "t07-client-report.pdf",
+    "t07-worker-trace.png"
+  ],
+  "t08": [
+    "t08-client-report.pdf",
+    "t08-release-log.log"
+  ],
+  "t09": [
+    "t09-gdpr-report.pdf",
+    "t09-audit-export-log.log"
+  ],
+  "t10": [
+    "t10-release-report.pdf",
+    "t10-bundle-log.log"
+  ],
+  "t11": [
+    "t11-staging-incident.pdf",
+    "t11-startup-log.log"
+  ],
+  "t12": [
+    "t12-finance-report.pdf",
+    "t12-workbook-screenshot.png"
+  ],
+  "t13": [
+    "t13-client-report.pdf",
+    "t13-webhook-log.log"
+  ],
+  "t14": [
+    "t14-capacity-report.pdf",
+    "t14-worker-log.log"
+  ],
+  "t15": [
+    "t15-incident-log.log",
+    "t15-nginx-log.log"
+  ],
+  "t16": [
+    "t16-reconciliation-report.pdf",
+    "t16-outbox-log.log"
+  ],
+  "t17": [
+    "t17-client-report.pdf",
+    "t17-cache-log.log"
+  ],
+  "t18": [
+    "t18-client-report.pdf",
+    "t18-tenant-switch-screenshot.png"
+  ],
+  "t19": [
+    "t19-support-report.pdf",
+    "t19-network-log.log"
+  ],
+  "t20": [
+    "t20-pentest-report.pdf",
+    "t20-curl-log.log"
+  ],
+  "t21": [
+    "t21-client-report.pdf",
+    "t21-validation-log.log"
+  ],
+  "t22": [
+    "t22-support-report.pdf",
+    "t22-browser-screenshot.png"
+  ],
+  "t23": [
+    "t23-client-report.pdf",
+    "t23-locale-log.log"
+  ],
+  "t24": [
+    "t24-security-report.pdf",
+    "t24-build-log.log"
+  ],
+  "t25": [
+    "t25-client-report.pdf",
+    "t25-hydration-log.log"
+  ],
+  "e01": [
+    "e01-finance-report.pdf",
+    "e01-csv-sample.png"
+  ],
+  "e02": [
+    "e02-compliance-report.pdf",
+    "e02-delete-log.log"
+  ],
+  "e03": [
+    "e03-support-report.pdf",
+    "e03-sse-log.log"
+  ],
+  "e04": [
+    "e04-finance-report.pdf",
+    "e04-preview-screenshot.png"
+  ],
+  "e05": [
+    "e05-client-report.pdf",
+    "e05-timezone-log.log"
+  ],
+  "e06": [
+    "e06-client-report.pdf",
+    "e06-payment-log.log"
+  ],
+  "e07": [
+    "e07-partner-report.pdf",
+    "e07-replay-log.log"
+  ]
+}

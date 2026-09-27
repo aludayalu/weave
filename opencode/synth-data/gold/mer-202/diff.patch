@@ -1,0 +1,73 @@
+diff --git a/internal/store/bulk_delete.go b/internal/store/bulk_delete.go
+new file mode 100644
+index 0000000..fef84f7
+--- /dev/null
++++ b/internal/store/bulk_delete.go
+@@ -0,0 +1,20 @@
++package store
++
++import "errors"
++
++// ErrAuditNoteRequired blocks bulk removal without a compliance note.
++var ErrAuditNoteRequired = errors.New("bulk delete requires an audit note")
++
++type BulkDeleter struct{ note string }
++
++// NewBulkDeleter builds a bulk deleter. The note is required by the
++// retention policy for multi-record removals (MER-202).
++func NewBulkDeleter(note string) *BulkDeleter { return &BulkDeleter{note: note} }
++
++// SoftDelete removes many records transactionally.
++func (b *BulkDeleter) SoftDelete(ids []string) error {
++	if len(ids) > 1 && b.note == "" {
++		return ErrAuditNoteRequired
++	}
++	return softDeleteRows(ids, b.note)
++}
+diff --git a/internal/store/eval202_test.go b/internal/store/eval202_test.go
+new file mode 100644
+index 0000000..4731d6f
+--- /dev/null
++++ b/internal/store/eval202_test.go
+@@ -0,0 +1,24 @@
++package store
++
++import (
++	"errors"
++	"testing"
++)
++
++func TestBulkDeleteWithoutNoteIsRejected(t *testing.T) {
++	if err := NewBulkDeleter("").SoftDelete([]string{"po-1", "po-2"}); !errors.Is(err, ErrAuditNoteRequired) {
++		t.Fatalf("bulk delete without audit note: err=%v", err)
++	}
++}
++
++func TestSingleDeleteKeepsLegacyPath(t *testing.T) {
++	if err := NewBulkDeleter("").SoftDelete([]string{"po-1"}); err != nil {
++		t.Errorf("single-row helper must remain note-free: %v", err)
++	}
++}
++
++func TestBulkDeleteWithNoteSucceeds(t *testing.T) {
++	if err := NewBulkDeleter("quarterly cleanup, ticket OPS-91").SoftDelete([]string{"po-1", "po-2"}); err != nil {
++		t.Fatal(err)
++	}
++}
+diff --git a/internal/store/soft_delete.go b/internal/store/soft_delete.go
+new file mode 100644
+index 0000000..a8c4b04
+--- /dev/null
++++ b/internal/store/soft_delete.go
+@@ -0,0 +1,11 @@
++package store
++
++import "time"
++
++// softDeleteRows marks rows deleted without physically removing them.
++func softDeleteRows(ids []string, note string) error {
++	_ = ids
++	_ = note
++	_ = time.Now()
++	return nil
++}

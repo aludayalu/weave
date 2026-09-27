@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21033",
+    "path": "raw/attachments/jira/reports/e06-client-report.pdf",
+    "filename": "e06-client-report.pdf",
+    "bytes": 72569,
+    "sha256": "087b1172c3898d7e",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-206",
+    "linked_channel": null,
+    "linked_ts_utc": "2027-02-10T14:28:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "21033",
+    "path": "raw/attachments/jira/logs/e06-payment-log.log",
+    "filename": "e06-payment-log.log",
+    "bytes": 346,
+    "sha256": "7da8af9bd6ad9de0",
+    "doc_type": "application/octet-stream",
+    "linked_issue_key": "MER-206",
+    "linked_channel": null,
+    "linked_ts_utc": "2027-02-10T14:28:00Z",
+    "extracted_text": "2026-01-01T00:00:00Z INFO  meridian-api booting (commit $main)\n2026-01-01T00:00:01Z WARN  request slow: GET /api/tenants/harborline/invoices 1240ms\n2026-01-01T00:00:02Z ERROR upstream failure: context deadline exceeded\n2026-01-01T00:00:02Z ERROR at internal/handler.dispatch (/srv/meridian)\n2026-01-01T00:00:03Z INFO  ticket MER-206 acknowledged\n"
+  }
+]

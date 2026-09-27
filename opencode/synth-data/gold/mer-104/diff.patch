@@ -1,0 +1,119 @@
+diff --git a/web/hooks/useTenant.ts b/web/hooks/useTenant.ts
+index 89fcd82..0add838 100644
+--- a/web/hooks/useTenant.ts
++++ b/web/hooks/useTenant.ts
+@@ -2,13 +2,12 @@
+ /**
+  * useTenant returns the active tenant and a switcher.
+  *
+- * MUST subscribe to lib/tenantStore via useSyncExternalStore (SSR
+- * snapshot contract — see the design note in tenantStore.ts). Do not
+- * copy values into local state: cached call sites in pages/ already
+- * capture at module scope and depend on a single stable source.
++ * Subscribes to lib/tenantStore via useSyncExternalStore (SSR snapshot
++ * contract — see the design note in tenantStore.ts). The store is the
++ * single source of truth: no local state copies, no polling (MER-104).
+  */
+-import { useEffect, useState } from "react";
+-import { getTenant, switchTenant, type Tenant } from "../lib/tenantStore";
++import { useSyncExternalStore } from "react";
++import { getTenant, subscribe, switchTenant, type Tenant } from "../lib/tenantStore";
+ 
+ interface UseTenantResult {
+   tenant: Tenant;
+@@ -16,19 +15,6 @@ interface UseTenantResult {
+ }
+ 
+ export function useTenant(): UseTenantResult {
+-  const [tenant, setTenant] = useState<Tenant>(getTenant());
+-
+-  useEffect(() => {
+-    setTenant(getTenant());
+-    const check = setInterval(() => setTenant(getTenant()), 500);
+-    return () => clearInterval(check);
+-  }, []);
+-
+-  return {
+-    tenant,
+-    switchTo: (id: string) => {
+-      switchTenant(id);
+-      setTenant(getTenant());
+-    },
+-  };
++  const tenant = useSyncExternalStore(subscribe, getTenant, getTenant);
++  return { tenant, switchTo: switchTenant };
+ }
+diff --git a/web/lib/task104_tenant_switch.test.ts b/web/lib/task104_tenant_switch.test.ts
+new file mode 100644
+index 0000000..cb371e1
+--- /dev/null
++++ b/web/lib/task104_tenant_switch.test.ts
+@@ -0,0 +1,48 @@
++/**
++ * MER-104 spec: Vantage Foods saw Harborline invoice counts after
++ * switching workspaces. Derived-data caches must never outlive the
++ * tenant that produced them, and the hook must subscribe to the store
++ * (SSR snapshot contract) instead of polling local state.
++ */
++import { test, beforeEach } from "node:test";
++import assert from "node:assert/strict";
++import {
++  getTenant,
++  switchTenant,
++  cachedFor,
++  _testReset,
++} from "./tenantStore.ts";
++import { readFileSync } from "node:fs";
++import { fileURLToPath } from "node:url";
++
++beforeEach(() => _testReset());
++
++test("tenant switch invalidates derived-data caches", () => {
++  cachedFor("invoiceTotals", () => "A-TOTAL");
++  switchTenant("vantage");
++  const v = cachedFor("invoiceTotals", () => "B-TOTAL");
++  assert.equal(
++    v,
++    "B-TOTAL",
++    "stale cache from previous tenant served after switch (MER-104)"
++  );
++});
++
++test("recomputed values observe the new tenant id", () => {
++  const a = getTenant().id;
++  cachedFor(`${a}:counts`, () => "A-COUNTS");
++  switchTenant("crestwood");
++  const b = getTenant().id;
++  assert.notEqual(a, b);
++  assert.equal(cachedFor(`${b}:counts`, () => "B-COUNTS"), "B-COUNTS");
++});
++
++test("useTenant subscribes via useSyncExternalStore, never polls", () => {
++  const src = readFileSync(
++    fileURLToPath(new URL("../hooks/useTenant.ts", import.meta.url)),
++    "utf8"
++  );
++  assert.match(src, /useSyncExternalStore/);
++  assert.doesNotMatch(src, /setInterval/);
++  assert.doesNotMatch(src, /useState<Tenant>/);
++});
+diff --git a/web/lib/tenantStore.ts b/web/lib/tenantStore.ts
+index 5f14a94..71fb3d0 100644
+--- a/web/lib/tenantStore.ts
++++ b/web/lib/tenantStore.ts
+@@ -37,11 +37,14 @@ export function subscribe(fn: () => void): () => void {
+   return () => listeners.delete(fn);
+ }
+ 
+-/** switchTenant changes the active tenant and notifies subscribers. */
++/** switchTenant changes the active tenant, drops derived-data caches
++ * (they were computed for the previous tenant — MER-104) and notifies
++ * subscribers. */
+ export function switchTenant(id: string): void {
+   const t = TENANTS[id];
+   if (!t) throw new Error(`unknown tenant: ${id}`);
+   current = t;
++  dataCache.clear();
+   for (const fn of listeners) fn();
+ }
+ 

@@ -1,0 +1,233 @@
+{
+  "task_id": "mer-103",
+  "channel": "billing",
+  "window": {
+    "start": "2026-08-12T13:28:00Z",
+    "end": "2026-08-14T19:58:00Z"
+  },
+  "message_count": 13,
+  "messages": [
+    {
+      "message_id": "1537090277867520000",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-08-12T13:28:00Z",
+      "ts_raw": "2026-08-12T13:28:00+00:00",
+      "ts_epoch": 1786541280,
+      "content": "@marcus Harborline's configured seven-day grace period is ignored for invoices created by the regional import job. Opening MER-103 to track it. picking this up now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-103"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537092542791680001",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-08-12T13:37:00Z",
+      "ts_raw": "2026-08-12T13:37:00+00:00",
+      "ts_epoch": 1786541820,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537135576350720011",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-08-12T16:28:00Z",
+      "ts_raw": "2026-08-12T16:28:00+00:00",
+      "ts_epoch": 1786552080,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537211073822720012",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-08-12T21:28:00Z",
+      "ts_raw": "2026-08-12T21:28:00+00:00",
+      "ts_epoch": 1786570080,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537286571294720013",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-08-13T02:28:00Z",
+      "ts_raw": "2026-08-13T02:28:00+00:00",
+      "ts_epoch": 1786588080,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537477831557120003",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-08-13T15:08:00Z",
+      "ts_raw": "2026-08-13T15:08:00+00:00",
+      "ts_epoch": 1786633680,
+      "content": "spec-first per team rule — tests for MER-103 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-103"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537544520990720004",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-08-13T19:33:00Z",
+      "ts_raw": "2026-08-13T19:33:00+00:00",
+      "ts_epoch": 1786649580,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537557103902720005",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-08-13T20:23:00Z",
+      "ts_raw": "2026-08-13T20:23:00+00:00",
+      "ts_epoch": 1786652580,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537564653649920006",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-08-13T20:53:00Z",
+      "ts_raw": "2026-08-13T20:53:00+00:00",
+      "ts_epoch": 1786654380,
+      "content": "PR #8 is up: `feature/MER-103-override-keys`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-103"
+      ],
+      "mentions_pr": [
+        8
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1537575978270720007",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-08-13T21:38:00Z",
+      "ts_raw": "2026-08-13T21:38:00+00:00",
+      "ts_epoch": 1786657080,
+      "content": "reviewed #8 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537584786309120008",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-08-13T22:13:00Z",
+      "ts_raw": "2026-08-13T22:13:00+00:00",
+      "ts_epoch": 1786659180,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537907663831040009",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-08-14T19:36:00Z",
+      "ts_raw": "2026-08-14T19:36:00+00:00",
+      "ts_epoch": 1786736160,
+      "content": "deploy is green, MER-103 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-103"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1537913200312320010",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-08-14T19:58:00Z",
+      "ts_raw": "2026-08-14T19:58:00",
+      "ts_epoch": 1786737480,
+      "content": "MER-103 closed — PR #8 merged. shipped — flag is live in staging, will confirm after the nightly job",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-103"
+      ],
+      "mentions_pr": [
+        8
+      ],
+      "attachments": []
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+diff --git a/web/lib/matcher.ts b/web/lib/matcher.ts
+index 7b8532a..db97efc 100644
+--- a/web/lib/matcher.ts
++++ b/web/lib/matcher.ts
+@@ -22,7 +22,7 @@ const PUBLIC_PREFIXES: Record<MiddlewareProfile, string[]> = {
+  * intentionally mirrored here when new API surfaces ship (MER-880 checklist).
+  */
+ const PROTECTED_PREFIXES: Record<MiddlewareProfile, string[]> = {
+-  v2: ["/api/audit", "/api/tenants", "/console"],
++  v2: ["/api/audit", "/api/billing", "/api/tenants", "/console"],
+   legacy: ["/api/audit", "/api/billing", "/api/tenants", "/console"],
+ };
+ 
+diff --git a/web/lib/task880_billing_auth.test.ts b/web/lib/task880_billing_auth.test.ts
+new file mode 100644
+index 0000000..1a80f10
+--- /dev/null
++++ b/web/lib/task880_billing_auth.test.ts
+@@ -0,0 +1,50 @@
++/**
++ * MER-105 spec: after the app-router middleware flip (prod runs the v2
++ * profile — see MERIDIAN_MIDDLEWARE_V2 in deploy/k8s.yaml), /api/billing/*
++ * fell out of the protected list. A pentest curl without a cookie on
++ * /api/billing/totals returned 200.
++ */
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { shouldEnforceAuth } from "./matcher.ts";
++
++const BILLING_PATHS = [
++  "/api/billing/totals",
++  "/api/billing/invoices/42",
++  "/api/billing/invoices/42/void",
++];
++
++test("v2 profile (production) protects billing API", () => {
++  for (const p of BILLING_PATHS) {
++    assert.equal(
++      shouldEnforceAuth(p, "v2"),
++      true,
++      `${p} must require a session on the v2 profile`
++    );
++  }
++});
++
++test("v2 profile covers everything the legacy profile protected", () => {
++  const surfaces = [
++    ...BILLING_PATHS,
++    "/api/audit/export",
++    "/api/audit/events",
++    "/api/tenants/harborline/invoices",
++    "/console/reports",
++  ];
++  for (const p of surfaces) {
++    assert.equal(shouldEnforceAuth(p, "v2"), true, `v2 misses ${p}`);
++  }
++});
++
++test("login stays reachable on v2 (or nobody can authenticate)", () => {
++  assert.equal(shouldEnforceAuth("/api/auth/login", "v2"), false);
++});
++
++test("legacy profile is unchanged (fallback must not regress)", () => {
++  for (const p of [...BILLING_PATHS, "/api/audit/export"]) {
++    assert.equal(shouldEnforceAuth(p, "legacy"), true, `legacy misses ${p}`);
++  }
++  assert.equal(shouldEnforceAuth("/api/auth/login", "legacy"), false);
++  assert.equal(shouldEnforceAuth("/login", "legacy"), false);
++});

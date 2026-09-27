@@ -1,0 +1,61 @@
+{
+  "task_id": "mer-107",
+  "pull_request": {
+    "pr_number": 10,
+    "title": "test: MER-107 optional config presence contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-107-optional-config",
+    "merge_sha": "bafdf50d7e8e24a71d74dad63f508408860fedcc",
+    "opened_ts_utc": "2026-08-26T18:25:00Z",
+    "merged_ts_utc": "2026-08-28T20:00:00Z",
+    "closed_ts_utc": "2026-08-28T20:00:00Z"
+  },
+  "merge_sha": "bafdf50d7e8e24a71d74dad63f508408860fedcc",
+  "base_sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5",
+  "head_sha": "cb209cfa7172b201ab7af6ab95163f0a1e505c89",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "f5275532f1be03f52c591cbd9c31e4ac4008fc7b",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-25T16:00:00Z",
+      "committed_ts_utc": "2026-08-25T16:00:00Z",
+      "message": "test: MER-107 optional config presence contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5"
+      ],
+      "additions": 41,
+      "deletions": 1,
+      "changed_files": [
+        "internal/config/config_test.go",
+        "internal/config/task107_optional_config_test.go"
+      ]
+    },
+    {
+      "sha": "cb209cfa7172b201ab7af6ab95163f0a1e505c89",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-26T18:25:00Z",
+      "committed_ts_utc": "2026-08-26T18:25:00Z",
+      "message": "fix(config): represent optional partner URL with pointer (MER-107)",
+      "is_merge": false,
+      "parent_shas": [
+        "f5275532f1be03f52c591cbd9c31e4ac4008fc7b"
+      ],
+      "additions": 2,
+      "deletions": 2,
+      "changed_files": [
+        "internal/config/config.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/config/config.go",
+    "internal/config/config_test.go",
+    "internal/config/task107_optional_config_test.go"
+  ]
+}

@@ -1,0 +1,51 @@
+diff --git a/internal/jobs/task109_tenant_context_test.go b/internal/jobs/task109_tenant_context_test.go
+new file mode 100644
+index 0000000..548654b
+--- /dev/null
++++ b/internal/jobs/task109_tenant_context_test.go
+@@ -0,0 +1,31 @@
++package jobs
++
++import (
++	"context"
++	"testing"
++)
++
++func TestTenantContextRoundTrips(t *testing.T) {
++	ctx := WithTenant(context.Background(), "harborline")
++	if got := TenantFrom(ctx); got != "harborline" { t.Fatalf("tenant=%q", got) }
++}
++
++func TestAsyncExportCarriesRouteTenant(t *testing.T) {
++	r := NewRunner()
++	seen := make(chan string, 1)
++	done, err := r.StartTenant("export:harborline:inv-7", "harborline", func(ctx context.Context, cancel <-chan struct{}) error {
++		seen <- TenantFrom(ctx)
++		return nil
++	})
++	if err != nil { t.Fatal(err) }
++	if err := <-done; err != nil { t.Fatal(err) }
++	if got := <-seen; got != "harborline" { t.Errorf("worker tenant=%q; must preserve route tenant", got) }
++}
++
++func TestTenantScopedJobsDoNotShareIdentity(t *testing.T) {
++	if previewID("harborline", "inv-7") == previewID("vantage", "inv-7") { t.Fatal("tenant must be part of stable job id") }
++}
++
++func TestTenantFromMissingIsEmpty(t *testing.T) {
++	if got := TenantFrom(context.Background()); got != "" { t.Errorf("got %q", got) }
++}
+diff --git a/internal/jobs/tenant.go b/internal/jobs/tenant.go
+index 5ce71c0..5a9103e 100644
+--- a/internal/jobs/tenant.go
++++ b/internal/jobs/tenant.go
+@@ -21,8 +21,7 @@ type TenantJobFunc func(context.Context, <-chan struct{}) error
+ // drops the tenant when it constructs the background context.
+ func (r *Runner) StartTenant(id, tenant string, fn TenantJobFunc) (<-chan error, error) {
+ 	return r.Start(id, func(cancel <-chan struct{}) error {
+-		ctx := context.Background() // MER-109: should use WithTenant(ctx, tenant)
+-		_ = tenant
++		ctx := WithTenant(context.Background(), tenant)
+ 		return fn(ctx, cancel)
+ 	})
+ }

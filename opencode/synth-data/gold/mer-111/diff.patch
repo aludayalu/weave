@@ -1,0 +1,64 @@
+diff --git a/Dockerfile b/Dockerfile
+index 020aa66..7f6a869 100644
+--- a/Dockerfile
++++ b/Dockerfile
+@@ -2,10 +2,18 @@
+ # Release checklist is pinned in #deploys — the frontend bundle must be
+ # refreshed with `make web` on the host before building this image.
+ 
++FROM node:22-alpine AS webbuild
++WORKDIR /src/web
++COPY web/package.json ./package.json
++RUN npm install --package-lock=false
++COPY web/ ./
++RUN npm run build
++
+ FROM golang:1.27-alpine AS build
+ WORKDIR /src
+ COPY go.mod ./
+ COPY . .
++COPY --from=webbuild /src/web/dist ./web/dist
+ RUN CGO_ENABLED=0 go build -o /out/meridian ./cmd/server
+ 
+ FROM alpine:3.20
+diff --git a/web/embed_contract_test.go b/web/embed_contract_test.go
+new file mode 100644
+index 0000000..a878237
+--- /dev/null
++++ b/web/embed_contract_test.go
+@@ -0,0 +1,35 @@
++package web
++
++import (
++	"io"
++	"os"
++	"strings"
++	"testing"
++)
++
++func TestEmbeddedBundleContainsEntrypoint(t *testing.T) {
++	f, err := Dist.Open("dist/index.html")
++	if err != nil { t.Fatal("compiled server must embed web/dist", err) }
++	defer f.Close()
++	b, err := io.ReadAll(f); if err != nil { t.Fatal(err) }
++	if !strings.Contains(string(b), "Meridian ERP") { t.Error("embedded entrypoint is not the console") }
++}
++
++func TestDockerBuildsWebBeforeGoEmbed(t *testing.T) {
++	b, err := os.ReadFile("../Dockerfile"); if err != nil { t.Fatal(err) }
++	s := string(b)
++	webStage := strings.Index(s, "FROM node:")
++	webBuild := strings.Index(s, "npm run build")
++	goStage := strings.Index(s, "FROM golang:")
++	if webStage < 0 || webBuild < webStage || goStage < 0 || webBuild > goStage {
++		t.Error("Docker must build web/dist in a Node stage before the Go embed build")
++	}
++}
++
++func TestDockerCopiesFreshDistIntoGoBuildContext(t *testing.T) {
++	b, err := os.ReadFile("../Dockerfile"); if err != nil { t.Fatal(err) }
++	s := string(b)
++	if !strings.Contains(s, "--from=webbuild") || !strings.Contains(s, "web/dist") {
++		t.Error("Go build stage is not using the freshly built frontend bundle")
++	}
++}

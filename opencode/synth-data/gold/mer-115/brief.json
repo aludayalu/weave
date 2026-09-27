@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-115",
+  "jira": "MER-115",
+  "pr": 18,
+  "repository": "meridian-erp",
+  "repo_revision": "6a57d0377b (task branch tip)",
+  "title": "Invoice preview cancellation leaves billable work running",
+  "summary": "MER-115 raised in #eng-platform, shipped in PR #18",
+  "start_ts_utc": "2026-10-21T13:18:00Z",
+  "end_ts_utc": "2026-10-23T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya Users navigate away from expensive invoice previews, but worker capacity remains occupied until the full calculation finishes. Opening MER-115 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (capacity-report).",
+      "fyi capacity-report is attached to MER-115 if you want the raw capture.",
+      "standup in 5, billing standup moved to 10:30",
+      "standup in 5, billing standup moved to 10:30",
+      "reminder: freeze starts friday for the payments repo",
+      "spec-first per team rule — tests for MER-115 are red on main now, pushing as I go.",
+      "the generated artifacts are the source of truth, not the file you're editing",
+      "cross-team contract involved here, so I opened a ticket before touching anything",
+      "PR #18 is up: `feature/MER-115-preview-cancel`. review when you can.",
+      "reviewed #18 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "Users navigate away from expensive invoice previews, but worker capacity remains occupied until the full calculation finishes.\n\nTribal constraint: Jobs intentionally outlive HTTP request contexts; the supported cancellation path is Runner.Cancel(jobID), and preview jobs must retain their stable job ID across retries.",
+    "documents": [
+      "t14-capacity-report.pdf",
+      "t14-worker-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 3,
+    "patch_bytes": 2345,
+    "documents": 2
+  }
+}

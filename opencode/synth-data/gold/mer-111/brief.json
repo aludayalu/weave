@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-111",
+  "jira": "MER-111",
+  "pr": 14,
+  "repository": "meridian-erp",
+  "repo_revision": "04683487fc (task branch tip)",
+  "title": "Released binary serves yesterday's console bundle",
+  "summary": "MER-111 raised in #deploys, shipped in PR #14",
+  "start_ts_utc": "2026-09-23T13:33:00Z",
+  "end_ts_utc": "2026-09-25T20:03:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Priya Sharma",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@marcus The API deployment contains the new invoice screen assets in the workspace, but the compiled binary continues to serve the prior version. Opening MER-111 to track it. reproduced it locally, it's real.",
+      "ack. looking now. filing evidence on the ticket (release-report).",
+      "fyi release-report is attached to MER-111 if you want the raw capture.",
+      "anyone seen the staging pg bump? unrelated",
+      "reminder: freeze starts friday for the payments repo",
+      "standup in 5, billing standup moved to 10:30",
+      "spec-first per team rule — tests for MER-111 are red on main now, pushing as I go.",
+      "cross-team contract involved here, so I opened a ticket before touching anything",
+      "checked the pinned messages in this channel, the convention explains it",
+      "PR #14 is up: `feature/MER-111-frontend-build`. review when you can.",
+      "reviewed #14 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "The API deployment contains the new invoice screen assets in the workspace, but the compiled binary continues to serve the prior version.\n\nTribal constraint: The Go binary embeds web/dist at compile time; Docker's build context can contain a stale bundle unless the frontend build stage precedes Go compilation.",
+    "documents": [
+      "t10-release-report.pdf",
+      "t10-bundle-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 2003,
+    "documents": 2
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-201",
+  "channel": "billing",
+  "window": {
+    "start": "2027-01-06T13:48:00Z",
+    "end": "2027-01-08T20:18:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1590366327275520000",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-01-06T13:48:00Z",
+      "ts_raw": "2027-01-06T13:48:00+00:00",
+      "ts_epoch": 1799243280,
+      "content": "@priya Finance's January workbook maps a new shift differential into the retirement column because component ordering changed. Opening MER-201 to track it. reproduced it locally, it's real.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-201"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590368592199680001",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-06T13:57:00Z",
+      "ts_raw": "2027-01-06T13:57:00+00:00",
+      "ts_epoch": 1799243820,
+      "content": "ack. looking now. filing evidence on the ticket (finance-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590388976517120002",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-01-06T15:18:00Z",
+      "ts_raw": "2027-01-06T15:18:00+00:00",
+      "ts_epoch": 1799248680,
+      "content": "fyi finance-report is attached to MER-201 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-201"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "e01-74029766",
+          "filename": "e01-finance-report.pdf",
+          "path": "raw/attachments/jira/reports/e01-finance-report.pdf",
+          "bytes": 72888,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "e01-26344296",
+          "filename": "e01-csv-sample.png",
+          "path": "raw/attachments/discord/images/e01-csv-sample.png",
+          "bytes": 21340,
+          "content_type": "image/png"
+        }
+      ]
+    },
+    {
+      "message_id": "1590411625758720011",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2027-01-06T16:48:00Z",
+      "ts_raw": "2027-01-06T16:48:00+00:00",
+      "ts_epoch": 1799254080,
+      "content": "rotating the read replica creds tonight, no action needed",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590487123230720012",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-06T21:48:00Z",
+      "ts_raw": "2027-01-06T21:48:00+00:00",
+      "ts_epoch": 1799272080,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590562620702720013",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-01-07T02:48:00Z",
+      "ts_raw": "2027-01-07T02:48:00",
+      "ts_epoch": 1799290080,
+      "content": "garbage from the export",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590753880965120003",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-01-07T15:28:00Z",
+      "ts_raw": "2027-01-07T15:28:00+00:00",
+      "ts_epoch": 1799335680,
+      "content": "spec-first per team rule — tests for MER-201 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-201"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590820570398720004",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-07T19:53:00Z",
+      "ts_raw": "2027-01-07T19:53:00+00:00",
+      "ts_epoch": 1799351580,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590833153310720005",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-01-07T20:43:00Z",
+      "ts_raw": "2027-01-07T20:43:00+00:00",
+      "ts_epoch": 1799354580,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590840703057920006",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-01-07T21:13:00Z",
+      "ts_raw": "2027-01-07T21:13:00+00:00",
+      "ts_epoch": 1799356380,
+      "content": "PR #28 is up: `feature/MER-201-payroll-columns`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-201"
+      ],
+      "mentions_pr": [
+        28
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1590852027678720007",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-07T21:58:00Z",
+      "ts_raw": "2027-01-07T21:58:00+00:00",
+      "ts_epoch": 1799359080,
+      "content": "reviewed #28 — left two comments, nothing structural.",
+      "edited": "2027-01-07T21:58:00Z",
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1590860835717120008",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-01-07T22:33:00Z",
+      "ts_raw": "2027-01-07T22:33:00+00:00",
+      "ts_epoch": 1799361180,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1591183713239040009",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-01-08T19:56:00Z",
+      "ts_raw": "2027-01-08T13:56:00-06:00",
+      "ts_epoch": 1799438160,
+      "content": "deploy is green, MER-201 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-201"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1591189249720320010",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-01-08T20:18:00Z",
+      "ts_raw": "2027-01-08T20:18:00+00:00",
+      "ts_epoch": 1799439480,
+      "content": "MER-201 closed — PR #28 merged. shipped — flag is live in staging, will confirm after the nightly job",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-201"
+      ],
+      "mentions_pr": [
+        28
+      ],
+      "attachments": []
+    }
+  ]
+}

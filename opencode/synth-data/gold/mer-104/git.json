@@ -1,0 +1,61 @@
+{
+  "task_id": "mer-104",
+  "pull_request": {
+    "pr_number": 5,
+    "title": "test: MER-104 tenant switch staleness spec (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-104-tenant-switch",
+    "merge_sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022",
+    "opened_ts_utc": "2026-07-29T18:45:00Z",
+    "merged_ts_utc": "2026-07-31T19:55:00Z",
+    "closed_ts_utc": "2026-07-31T19:55:00Z"
+  },
+  "merge_sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022",
+  "base_sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27",
+  "head_sha": "4087b30e3df64658ef8c2b4bbccb55161bb6eb63",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "e18c22e64fdb0799efc7a6d276e9db70c7b6ee23",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-28T16:20:00Z",
+      "committed_ts_utc": "2026-07-28T16:20:00Z",
+      "message": "test: MER-104 tenant switch staleness spec (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "f169a128c5a9d01cfc0d7559e754c9edebad2d27"
+      ],
+      "additions": 48,
+      "deletions": 0,
+      "changed_files": [
+        "web/lib/task104_tenant_switch.test.ts"
+      ]
+    },
+    {
+      "sha": "4087b30e3df64658ef8c2b4bbccb55161bb6eb63",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-29T18:45:00Z",
+      "committed_ts_utc": "2026-07-29T18:45:00Z",
+      "message": "fix(console): drop derived caches on tenant switch; subscribe the hook (MER-104)",
+      "is_merge": false,
+      "parent_shas": [
+        "e18c22e64fdb0799efc7a6d276e9db70c7b6ee23"
+      ],
+      "additions": 11,
+      "deletions": 22,
+      "changed_files": [
+        "web/hooks/useTenant.ts",
+        "web/lib/tenantStore.ts"
+      ]
+    }
+  ],
+  "files": [
+    "web/hooks/useTenant.ts",
+    "web/lib/task104_tenant_switch.test.ts",
+    "web/lib/tenantStore.ts"
+  ]
+}

@@ -1,0 +1,63 @@
+diff --git a/Makefile b/Makefile
+index 683d7f9..1880cc7 100644
+--- a/Makefile
++++ b/Makefile
+@@ -18,7 +18,7 @@ build:
+ # NOTE (dan, 2026-06): `run` regenerates code then starts the server.
+ # Fresh environments also need `make migrate` first — see the onboarding
+ # pin in #eng-platform if you're booting a clean laptop.
+-run: gen
++run: migrate gen
+ 	go run ./cmd/server
+ 
+ migrate:
+diff --git a/internal/config/task112_bootstrap_test.go b/internal/config/task112_bootstrap_test.go
+new file mode 100644
+index 0000000..f7284f8
+--- /dev/null
++++ b/internal/config/task112_bootstrap_test.go
+@@ -0,0 +1,44 @@
++package config
++
++import (
++	"os"
++	"strings"
++	"testing"
++)
++
++func TestRunTargetRequiresMigrations(t *testing.T) {
++	b, err := os.ReadFile("../../Makefile"); if err != nil { t.Fatal(err) }
++	found := false
++	for _, line := range strings.Split(string(b), "\n") {
++		if strings.HasPrefix(line, "run:") {
++			found = true
++			if !strings.Contains(line, "migrate") {
++				t.Error("make run must include the fresh-schema prerequisite")
++			}
++		}
++	}
++	if !found { t.Fatal("Makefile has no run target") }
++}
++
++func TestFreshBootstrapAppliesSchemaBeforeServerStart(t *testing.T) {
++	b, err := os.ReadFile("../../Makefile"); if err != nil { t.Fatal(err) }
++	s := string(b)
++	run := strings.SplitN(s, "run:", 2)
++	if len(run) != 2 { t.Fatal("run target missing") }
++	body := strings.SplitN(run[1], "\n\n", 2)[0]
++	migrate := strings.Index(body, "migrate")
++	start := strings.Index(body, "go run ./cmd/server")
++	if migrate < 0 || start < 0 || migrate > start { t.Error("schema must be applied before the server starts") }
++}
++
++func TestMigrationFilesRemainOrdered(t *testing.T) {
++	entries, err := os.ReadDir("../../migrations"); if err != nil { t.Fatal(err) }
++	last := ""
++	for _, e := range entries { if strings.HasSuffix(e.Name(), ".sql") { if e.Name() < last { t.Error("migration order is not lexical") }; last=e.Name() } }
++	if len(entries) < 4 { t.Errorf("expected core migrations, got %d", len(entries)) }
++}
++
++func TestCodeGenerationRemainsExplicit(t *testing.T) {
++	b, err := os.ReadFile("../../Makefile"); if err != nil { t.Fatal(err) }
++	if !strings.Contains(string(b), "gen:\n\tgo run ./tools/gendocs") { t.Error("run should retain the code-generation prerequisite") }
++}

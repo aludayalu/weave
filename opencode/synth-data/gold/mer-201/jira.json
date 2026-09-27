@@ -1,0 +1,137 @@
+{
+  "task_id": "mer-201",
+  "issue": {
+    "issue_key": "MER-201",
+    "summary": "Payroll export inserts a component in the wrong spreadsheet column",
+    "description": "Finance's January workbook maps a new shift differential into the retirement column because component ordering changed.\n\nTribal constraint: Column position is contractual across the Go export and frontend labels; new components append only after reserved positions and schema versions identify the layout.",
+    "status": "Done",
+    "reporter": "Marcus Lee",
+    "assignee": "Marcus Lee",
+    "created_utc": "2027-01-06T13:48:00Z",
+    "updated_utc": "2027-01-08T20:21:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21028",
+        "filename": "e01-finance-report.pdf",
+        "path": "raw/attachments/jira/reports/e01-finance-report.pdf",
+        "bytes": 72888,
+        "content_type": "application/octet-stream",
+        "created_utc": "2027-01-06T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-06T13:48:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-06T13:48:00Z",
+      "author": "Marcus Lee",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Marcus Lee"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-06T13:48:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-06T13:48:00Z",
+      "author": "Marcus Lee",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Marcus Lee"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-06T13:55:00Z",
+      "author": "Marcus Lee",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-07T15:28:00Z",
+      "author": "Marcus Lee",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-07T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-07T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #28"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-07T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-07T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #28"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-08T20:18:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-08T20:18:00Z",
+      "author": "Marcus Lee",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-08T20:18:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-201",
+      "ts_utc": "2027-01-08T20:18:00Z",
+      "author": "Marcus Lee",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

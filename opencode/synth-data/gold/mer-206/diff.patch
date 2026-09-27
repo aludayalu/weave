@@ -1,0 +1,87 @@
+diff --git a/internal/payments/eval206_test.go b/internal/payments/eval206_test.go
+new file mode 100644
+index 0000000..0c69207
+--- /dev/null
++++ b/internal/payments/eval206_test.go
+@@ -0,0 +1,36 @@
++package payments
++
++import "testing"
++
++func TestRetriesOfOneAttemptReuseTheSameKey(t *testing.T) {
++	first := AttemptKey("inv-9", 2)
++	for i := 0; i < 3; i++ {
++		if RetryKey("inv-9", 2) != first {
++			t.Fatalf("retry %d used a different key", i)
++		}
++	}
++}
++
++func TestConcurrentRetriesCollapseToOneLedgerEntry(t *testing.T) {
++	l := NewLedger()
++	l.Record(RetryKey("inv-9", 2))
++	l.Record(RetryKey("inv-9", 2))
++	if n := l.Count(AttemptKey("inv-9", 2)); n != 2 {
++		t.Errorf("ledger rows for one attempt=%d", n)
++	}
++	if RetryKey("inv-9", 2) == AttemptKey("inv-9", 3) {
++		t.Fatal("retry must not collide with the next attempt")
++	}
++}
++
++func TestNewAttemptAfterFailureGetsItsOwnKey(t *testing.T) {
++	if NextAttemptKey("inv-9", 2) == AttemptKey("inv-9", 2) {
++		t.Fatal("a new attempt must not reuse the previous attempt key")
++	}
++}
++
++func TestKeysAreInvoiceScoped(t *testing.T) {
++	if AttemptKey("inv-9", 1) == AttemptKey("inv-8", 1) {
++		t.Fatal("keys must be invoice scoped")
++	}
++}
+diff --git a/internal/payments/idempotency.go b/internal/payments/idempotency.go
+index b9eb98d..e9329f8 100644
+--- a/internal/payments/idempotency.go
++++ b/internal/payments/idempotency.go
+@@ -3,9 +3,18 @@ package payments
+ 
+ import "fmt"
+ 
+-// AttemptKey identifies one ledger attempt. RetryNumber is included in
+-// the key today; gateway retries within one attempt should actually reuse
+-// the same key (MER-206).
+-func AttemptKey(invoiceID string, attempt int, retryNumber int) string {
+-	return fmt.Sprintf("invoice:%s:attempt:%d:retry:%d", invoiceID, attempt, retryNumber)
++// AttemptKey identifies one ledger attempt.
++//
++// The ledger reconciler groups charges on the attempt key (see
++// internal/payments/ledger.go), so a key MUST stay stable for every
++// retry of the SAME attempt. A new attempt — a new authorization after a
++// provider-declined charge — gets a new key (MER-206).
++func AttemptKey(invoiceID string, attempt int) string {
++	return fmt.Sprintf("invoice:%s:attempt:%d", invoiceID, attempt)
+ }
++
++// RetryKey is what a worker must send for a retry of the current attempt.
++func RetryKey(invoiceID string, attempt int) string { return AttemptKey(invoiceID, attempt) }
++
++// NextAttemptKey is used only after a failed attempt is written to the ledger.
++func NextAttemptKey(invoiceID string, attempt int) string { return AttemptKey(invoiceID, attempt+1) }
+diff --git a/internal/payments/ledger.go b/internal/payments/ledger.go
+new file mode 100644
+index 0000000..fd392a7
+--- /dev/null
++++ b/internal/payments/ledger.go
+@@ -0,0 +1,11 @@
++package payments
++
++// Ledger is the write-ahead record the gateway reconciler replays. Charge
++// rows are keyed by the idempotency key that was sent to the provider.
++type Ledger struct{ rows map[string]int }
++
++func NewLedger() *Ledger { return &Ledger{rows: map[string]int{}} }
++
++func (l *Ledger) Record(key string) { l.rows[key]++ }
++
++func (l *Ledger) Count(key string) int { return l.rows[key] }

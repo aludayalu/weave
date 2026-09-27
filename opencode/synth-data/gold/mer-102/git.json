@@ -1,0 +1,77 @@
+{
+  "task_id": "mer-102",
+  "pull_request": {
+    "pr_number": 2,
+    "title": "test: MER-102 flag key resolution spec (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-102-flag-keys",
+    "merge_sha": "65d25a33c70fd702999b5b611f10654498f83c39",
+    "opened_ts_utc": "2026-07-16T15:50:00Z",
+    "merged_ts_utc": "2026-07-17T20:31:00Z",
+    "closed_ts_utc": "2026-07-17T20:31:00Z"
+  },
+  "merge_sha": "65d25a33c70fd702999b5b611f10654498f83c39",
+  "base_sha": "ec39e5527898cdcb4579117fe0438d9b4bdd5d14",
+  "head_sha": "eaae05daa91816785467d7b317f251cc9d6a5a32",
+  "commit_count": 3,
+  "commits": [
+    {
+      "sha": "761f40be1cf2d0d1d50ec04912f2e05a3d967f5a",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-14T17:05:00Z",
+      "committed_ts_utc": "2026-07-14T17:05:00Z",
+      "message": "test: MER-102 flag key resolution spec (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "ec39e5527898cdcb4579117fe0438d9b4bdd5d14"
+      ],
+      "additions": 55,
+      "deletions": 0,
+      "changed_files": [
+        "internal/flags/task102_flag_keys_test.go"
+      ]
+    },
+    {
+      "sha": "3b6da66e42ca76dffeb9cc1997f3c0fd4d1b8e75",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-15T18:30:00Z",
+      "committed_ts_utc": "2026-07-15T18:30:00Z",
+      "message": "fix(meridian): resolve flag keys across all three spellings (MER-102)",
+      "is_merge": false,
+      "parent_shas": [
+        "761f40be1cf2d0d1d50ec04912f2e05a3d967f5a"
+      ],
+      "additions": 14,
+      "deletions": 4,
+      "changed_files": [
+        "internal/flags/flags.go"
+      ]
+    },
+    {
+      "sha": "eaae05daa91816785467d7b317f251cc9d6a5a32",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-07-16T15:50:00Z",
+      "committed_ts_utc": "2026-07-16T15:50:00Z",
+      "message": "docs(migrations): declare dotted flag keys canonical (MER-102)",
+      "is_merge": false,
+      "parent_shas": [
+        "3b6da66e42ca76dffeb9cc1997f3c0fd4d1b8e75"
+      ],
+      "additions": 6,
+      "deletions": 3,
+      "changed_files": [
+        "migrations/0003_seed_flags.sql"
+      ]
+    }
+  ],
+  "files": [
+    "internal/flags/flags.go",
+    "internal/flags/task102_flag_keys_test.go",
+    "migrations/0003_seed_flags.sql"
+  ]
+}

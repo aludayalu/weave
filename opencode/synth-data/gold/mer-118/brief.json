@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-118",
+  "jira": "MER-118",
+  "pr": 21,
+  "repository": "meridian-erp",
+  "repo_revision": "82dfa7ef08 (task branch tip)",
+  "title": "Totals cache returns another tenant's cached summary",
+  "summary": "MER-118 raised in #incidents, shipped in PR #21",
+  "start_ts_utc": "2026-11-11T13:18:00Z",
+  "end_ts_utc": "2026-11-13T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Dan Levin",
+    "Marcus Lee"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya After a tenant migration, two customers intermittently see the same cached invoice total on the dashboard. Opening MER-118 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "fyi client-report is attached to MER-118 if you want the raw capture.",
+      "rotating the read replica creds tonight, no action needed",
+      "reminder: freeze starts friday for the payments repo",
+      "standup in 5, billing standup moved to 10:30",
+      "spec-first per team rule — tests for MER-118 are red on main now, pushing as I go.",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "the interesting part is that the obvious fix passes locally and still ships broken",
+      "PR #21 is up: `feature/MER-118-tenant-cache`. review when you can.",
+      "reviewed #21 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "After a tenant migration, two customers intermittently see the same cached invoice total on the dashboard.\n\nTribal constraint: Legacy keys have two segments; current keys require a tenant segment. Both formats parse, so the cache layer must use the shared CacheKey helper and isolate legacy invalidation.",
+    "documents": [
+      "t17-client-report.pdf",
+      "t17-cache-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 2168,
+    "documents": 2
+  }
+}

@@ -1,0 +1,88 @@
+diff --git a/internal/config/config.go b/internal/config/config.go
+index 13ddf27..9177962 100644
+--- a/internal/config/config.go
++++ b/internal/config/config.go
+@@ -24,7 +24,7 @@ type Config struct {
+ 	// AuditRetainDays is guaranteed by migration 0004 (retention floor 2555).
+ 	AuditRetainDays int
+ 	// PartnerWebhookURL may be unset on self-hosted installs.
+-	PartnerWebhookURL string
++	PartnerWebhookURL *string
+ }
+ 
+ // defaults come from the generated defaults file (see tools/gendefaults).
+@@ -49,7 +49,7 @@ func applyEnv(c *Config) {
+ 		}
+ 	}
+ 	if v := os.Getenv("MERIDIAN_PARTNER_WEBHOOK_URL"); v != "" {
+-		c.PartnerWebhookURL = v
++		c.PartnerWebhookURL = &v
+ 	}
+ }
+ 
+diff --git a/internal/config/config_test.go b/internal/config/config_test.go
+index e24ac26..bba03e1 100644
+--- a/internal/config/config_test.go
++++ b/internal/config/config_test.go
+@@ -1,6 +1,7 @@
+ package config
+ 
+ import (
++	"reflect"
+ 	"testing"
+ 	"time"
+ )
+@@ -29,7 +30,8 @@ func TestEnvOverridesDefaults(t *testing.T) {
+ func TestEnvPartnerWebhook(t *testing.T) {
+ 	t.Setenv("MERIDIAN_PARTNER_WEBHOOK_URL", "https://hooks.example.test/x")
+ 	c := Load()
+-	if c.PartnerWebhookURL == "" {
++	v := reflect.ValueOf(c.PartnerWebhookURL)
++	if (v.Kind() == reflect.String && v.String() == "") || (v.Kind() == reflect.Ptr && v.IsNil()) {
+ 		t.Error("PartnerWebhookURL env override lost")
+ 	}
+ }
+diff --git a/internal/config/task107_optional_config_test.go b/internal/config/task107_optional_config_test.go
+new file mode 100644
+index 0000000..834d2e5
+--- /dev/null
++++ b/internal/config/task107_optional_config_test.go
+@@ -0,0 +1,38 @@
++package config
++
++import (
++	"reflect"
++	"testing"
++)
++
++// MER-107: self-hosted installs distinguish "not configured" from an
++// explicitly configured empty callback URL. Migration guarantees decide
++// which config fields are values and which are optional pointers.
++func TestPartnerWebhookUsesOptionalPointerConvention(t *testing.T) {
++	f, ok := reflect.TypeOf(Config{}).FieldByName("PartnerWebhookURL")
++	if !ok { t.Fatal("PartnerWebhookURL missing") }
++	if f.Type.Kind() != reflect.Ptr { t.Errorf("optional runtime setting has type %s; want pointer", f.Type) }
++}
++
++func TestPartnerWebhookUnsetIsNil(t *testing.T) {
++	c := Config{}
++	v := reflect.ValueOf(c.PartnerWebhookURL)
++	if v.Kind() != reflect.Ptr || !v.IsNil() { t.Errorf("zero config should represent unset, got %#v", c.PartnerWebhookURL) }
++}
++
++func TestGuaranteedFieldsRemainValues(t *testing.T) {
++	typ := reflect.TypeOf(Config{})
++	for _, name := range []string{"DBPoolSize", "HTTPTimeout", "AuditRetainDays"} {
++		f, _ := typ.FieldByName(name)
++		if f.Type.Kind() == reflect.Ptr { t.Errorf("migration-guaranteed %s unexpectedly optional", name) }
++	}
++}
++
++func TestEnvOverrideSetsOptionalValue(t *testing.T) {
++	t.Setenv("MERIDIAN_PARTNER_WEBHOOK_URL", "https://partner.example.test/hook")
++	c := Load()
++	v := reflect.ValueOf(c.PartnerWebhookURL)
++	if v.Kind() != reflect.Ptr || v.IsNil() || v.Elem().String() != "https://partner.example.test/hook" {
++		t.Errorf("env override not represented as set optional: %#v", c.PartnerWebhookURL)
++	}
++}

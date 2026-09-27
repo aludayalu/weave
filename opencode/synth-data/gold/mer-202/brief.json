@@ -1,0 +1,40 @@
+{
+  "task_id": "mer-202",
+  "jira": "MER-202",
+  "pr": 29,
+  "repository": "meridian-erp",
+  "repo_revision": "c70c8faa2b (task branch tip)",
+  "title": "Bulk procurement removal omits required audit context",
+  "summary": "MER-202 raised in #eng-platform, shipped in PR #29",
+  "start_ts_utc": "2027-01-14T15:28:00Z",
+  "end_ts_utc": "2027-01-15T20:18:00Z",
+  "duration_minutes": 1730,
+  "participants": [
+    "Priya Sharma",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "spec-first per team rule — tests for MER-202 are red on main now, pushing as I go.",
+      "the generated artifacts are the source of truth, not the file you're editing",
+      "checked the pinned messages in this channel, the convention explains it",
+      "PR #29 is up: `feature/MER-202-bulk-delete`. review when you can.",
+      "reviewed #29 — left two comments, nothing structural.",
+      "addressed both, pushing.",
+      "deploy is green, MER-202 is ready to close.",
+      "MER-202 closed — PR #29 merged. shipped — flag is live in staging, will confirm after the nightly job"
+    ],
+    "ticket": "A bulk cleanup request deletes purchase orders without the compliance note required for retention review.\n\nTribal constraint: Single-record helper is retained for compatibility; bulk removal must use the separate transactional helper and persist a non-empty audit note for every affected id.",
+    "documents": [
+      "e02-compliance-report.pdf",
+      "e02-delete-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 8,
+    "jira_events": 8,
+    "commits": 1,
+    "patch_bytes": 2119,
+    "documents": 2
+  }
+}

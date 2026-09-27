@@ -1,0 +1,250 @@
+{
+  "task_id": "mer-206",
+  "channel": "incidents",
+  "window": {
+    "start": "2027-02-10T13:48:00Z",
+    "end": "2027-02-12T20:18:00Z"
+  },
+  "message_count": 13,
+  "messages": [
+    {
+      "message_id": "1603049902571520000",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-10T13:48:00Z",
+      "ts_raw": "2027-02-10T07:48:00-06:00",
+      "ts_epoch": 1802267280,
+      "content": "@marcus A gateway timeout triggers overlapping retry workers and the ledger records two charges for a single payment attempt. Opening MER-206 to track it. took first pass at this, thoughts below.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-206"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603052167495680001",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-10T13:57:00Z",
+      "ts_raw": "2027-02-10T13:57:00+00:00",
+      "ts_epoch": 1802267820,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603072551813120002",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-10T15:18:00Z",
+      "ts_raw": "2027-02-10T15:18:00+00:00",
+      "ts_epoch": 1802272680,
+      "content": "fyi client-report is attached to MER-206 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-206"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "e06-25179224",
+          "filename": "e06-client-report.pdf",
+          "path": "raw/attachments/jira/reports/e06-client-report.pdf",
+          "bytes": 72569,
+          "content_type": "text/html; charset=utf-8"
+        },
+        {
+          "uuid": "e06-5466724",
+          "filename": "e06-payment-log.log",
+          "path": "raw/attachments/jira/logs/e06-payment-log.log",
+          "bytes": 346,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1603095201054720011",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-10T16:48:00Z",
+      "ts_raw": "2027-02-10T16:48:00+00:00",
+      "ts_epoch": 1802278080,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603170698526720012",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-10T21:48:00Z",
+      "ts_raw": "2027-02-10T21:48:00+00:00",
+      "ts_epoch": 1802296080,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603246195998720013",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2027-02-11T02:48:00Z",
+      "ts_raw": "2027-02-11T02:48:00+00:00",
+      "ts_epoch": 1802314080,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603437456261120003",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-11T15:28:00Z",
+      "ts_raw": "2027-02-11T15:28:00+00:00",
+      "ts_epoch": 1802359680,
+      "content": "spec-first per team rule — tests for MER-206 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-206"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603504145694720004",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-11T19:53:00Z",
+      "ts_raw": "2027-02-11T19:53:00+00:00",
+      "ts_epoch": 1802375580,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603524278353920006",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-11T21:13:00Z",
+      "ts_raw": "2027-02-11T21:13:00+00:00",
+      "ts_epoch": 1802380380,
+      "content": "PR #33 is up: `feature/MER-206-idempotency`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-206"
+      ],
+      "mentions_pr": [
+        33
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1603535602974720007",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-02-11T21:58:00Z",
+      "ts_raw": "2027-02-11T21:58:00+00:00",
+      "ts_epoch": 1802383080,
+      "content": "reviewed #33 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603544411013120008",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-11T22:33:00Z",
+      "ts_raw": "2027-02-11T22:33:00+00:00",
+      "ts_epoch": 1802385180,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603867288535040009",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-02-12T19:56:00Z",
+      "ts_raw": "2027-02-12T19:56:00+00:00",
+      "ts_epoch": 1802462160,
+      "content": "deploy is green, MER-206 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-206"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1603872825016320010",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-02-12T20:18:00Z",
+      "ts_raw": "1802463480",
+      "ts_epoch": 1802463480,
+      "content": "MER-206 closed — PR #33 merged. fix is merged, thanks for the quick turnaround",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-206"
+      ],
+      "mentions_pr": [
+        33
+      ],
+      "attachments": []
+    }
+  ]
+}

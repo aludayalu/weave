@@ -1,0 +1,113 @@
+{
+  "task_id": "mer-110",
+  "issue": {
+    "issue_key": "MER-110",
+    "summary": "Generated error catalogs drift between services",
+    "description": "The console shows raw error codes for a partner-facing error while Go logs show a friendly message for the same response.\n\nTribal constraint: api/errors.yaml is the only source of truth; generated Go and TypeScript files must be regenerated together, and reserved module blocks are not allocated by alphabetical order.",
+    "status": "Done",
+    "reporter": "Dan Levin",
+    "assignee": "Dan Levin",
+    "created_utc": "2026-09-16T13:48:00Z",
+    "updated_utc": "2026-09-18T20:21:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21013",
+        "filename": "t08-client-report.pdf",
+        "path": "raw/attachments/jira/reports/t08-client-report.pdf",
+        "bytes": 69943,
+        "content_type": "application/pdf",
+        "created_utc": "2026-09-16T14:28:00Z"
+      },
+      {
+        "attachment_id": "21013",
+        "filename": "t08-release-log.log",
+        "path": "raw/attachments/jira/logs/t08-release-log.log",
+        "bytes": 333,
+        "content_type": "text/plain",
+        "created_utc": "2026-09-16T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-17T15:28:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-17T15:28:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-17T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-17T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #13"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-17T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-17T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #13"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-18T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-18T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-18T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-110",
+      "ts_utc": "2026-09-18T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

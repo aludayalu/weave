@@ -1,0 +1,63 @@
+{
+  "task_id": "mer-120",
+  "pull_request": {
+    "pr_number": 23,
+    "title": "test: MER-120 partial purchase order autosave contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-120-draft-validation",
+    "merge_sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07",
+    "opened_ts_utc": "2026-11-25T18:10:00Z",
+    "merged_ts_utc": "2026-11-27T19:30:00Z",
+    "closed_ts_utc": "2026-11-27T19:30:00Z"
+  },
+  "merge_sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07",
+  "base_sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74",
+  "head_sha": "1bf4e9af46e7ecafdd33db7a50982ca0a0b9f11c",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "849b2ad4cec5f390ccfd2b3ad5717342c9d8c939",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-11-24T16:00:00Z",
+      "committed_ts_utc": "2026-11-24T16:00:00Z",
+      "message": "test: MER-120 partial purchase order autosave contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "32e57f1fe424fc43d5779b2b121dee3ecd987a74"
+      ],
+      "additions": 47,
+      "deletions": 0,
+      "changed_files": [
+        "internal/validation/task120_draft_validation_test.go",
+        "web/lib/task120_schema_mode.test.ts"
+      ]
+    },
+    {
+      "sha": "1bf4e9af46e7ecafdd33db7a50982ca0a0b9f11c",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-11-25T18:10:00Z",
+      "committed_ts_utc": "2026-11-25T18:10:00Z",
+      "message": "fix(procurement): keep draft autosave lenient, submit strict (MER-120)",
+      "is_merge": false,
+      "parent_shas": [
+        "849b2ad4cec5f390ccfd2b3ad5717342c9d8c939"
+      ],
+      "additions": 13,
+      "deletions": 12,
+      "changed_files": [
+        "internal/validation/purchase_order.go",
+        "web/lib/schemas.ts"
+      ]
+    }
+  ],
+  "files": [
+    "internal/validation/purchase_order.go",
+    "internal/validation/task120_draft_validation_test.go",
+    "web/lib/schemas.ts",
+    "web/lib/task120_schema_mode.test.ts"
+  ]
+}

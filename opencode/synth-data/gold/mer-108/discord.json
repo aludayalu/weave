@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-108",
+  "channel": "billing",
+  "window": {
+    "start": "2026-09-02T13:18:00Z",
+    "end": "2026-09-04T19:48:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1544697906462720000",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-02T13:18:00Z",
+      "ts_raw": "2026-09-02T13:18:00+00:00",
+      "ts_epoch": 1788355080,
+      "content": "@priya Finance's reconciliation replay rejects persisted invoice events written by older server versions. Opening MER-108 to track it. picking this up now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-108"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1544700171386880001",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-02T13:27:00Z",
+      "ts_raw": "2026-09-02T13:27:00+00:00",
+      "ts_epoch": 1788355620,
+      "content": "ack. looking now. filing evidence on the ticket (replay-log).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1544720555704320002",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-02T14:48:00Z",
+      "ts_raw": "2026-09-02T14:48:00+00:00",
+      "ts_epoch": 1788360480,
+      "content": "fyi replay-log is attached to MER-108 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-108"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t06-98009137",
+          "filename": "t06-replay-log.log",
+          "path": "raw/attachments/jira/logs/t06-replay-log.log",
+          "bytes": 346,
+          "content_type": "text/plain"
+        },
+        {
+          "uuid": "t06-13369183",
+          "filename": "t06-event-sample.png",
+          "path": "raw/attachments/discord/images/t06-event-sample.png",
+          "bytes": 20260,
+          "content_type": "image/png"
+        }
+      ]
+    },
+    {
+      "message_id": "1544743204945920011",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-02T16:18:00Z",
+      "ts_raw": "2026-09-02T16:18:00+00:00",
+      "ts_epoch": 1788365880,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1544818702417920012",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-02T21:18:00Z",
+      "ts_raw": "2026-09-02T21:18:00+00:00",
+      "ts_epoch": 1788383880,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1544894199889920013",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-03T02:18:00Z",
+      "ts_raw": "1788401880",
+      "ts_epoch": 1788401880,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1545085460152320003",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-03T14:58:00Z",
+      "ts_raw": "2026-09-03T14:58:00+00:00",
+      "ts_epoch": 1788447480,
+      "content": "spec-first per team rule — tests for MER-108 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-108"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1545152149585920004",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-03T19:23:00Z",
+      "ts_raw": "2026-09-03T19:23:00+00:00",
+      "ts_epoch": 1788463380,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1545164732497920005",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-03T20:13:00Z",
+      "ts_raw": "2026-09-03T20:13:00+00:00",
+      "ts_epoch": 1788466380,
+      "content": "reverted my first attempt, it broke the partner integration",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1545172282245120006",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-03T20:43:00Z",
+      "ts_raw": "2026-09-03T20:43:00+00:00",
+      "ts_epoch": 1788468180,
+      "content": "PR #11 is up: `feature/MER-108-event-tags`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-108"
+      ],
+      "mentions_pr": [
+        11
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1545183606865920007",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-03T21:28:00Z",
+      "ts_raw": "1788470880",
+      "ts_epoch": 1788470880,
+      "content": "reviewed #11 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1545192414904320008",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-03T22:03:00Z",
+      "ts_raw": "2026-09-03T22:03:00+00:00",
+      "ts_epoch": 1788472980,
+      "content": "https://discord.com/channels/9901/1101/0 (deleted message placeholder)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1545515292426240009",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-04T19:26:00Z",
+      "ts_raw": "2026-09-04T19:26:00+00:00",
+      "ts_epoch": 1788549960,
+      "content": "deploy is green, MER-108 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-108"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1545520828907520010",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-04T19:48:00Z",
+      "ts_raw": "2026-09-04T13:48:00-06:00",
+      "ts_epoch": 1788551280,
+      "content": "MER-108 closed — PR #11 merged. done, PR is up and CI is green",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-108"
+      ],
+      "mentions_pr": [
+        11
+      ],
+      "attachments": []
+    }
+  ]
+}

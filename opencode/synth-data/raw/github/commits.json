@@ -1,0 +1,5472 @@
+[
+  {
+    "sha": "4ef44e16054261092579e284bae9d63aeadd5e50",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/4ef44e16054261092579e284bae9d63aeadd5e50",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-06T15:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-06T15:00:00Z"
+      },
+      "message": "Initial import of meridian-erp monolith (API + console)"
+    },
+    "parents": [],
+    "stats": {
+      "additions": 3149,
+      "deletions": 0,
+      "total": 3149
+    },
+    "files": [
+      {
+        "filename": ".envrc",
+        "additions": 11,
+        "deletions": 0
+      },
+      {
+        "filename": ".gitignore",
+        "additions": 6,
+        "deletions": 0
+      },
+      {
+        "filename": "Dockerfile",
+        "additions": 19,
+        "deletions": 0
+      },
+      {
+        "filename": "Makefile",
+        "additions": 32,
+        "deletions": 0
+      },
+      {
+        "filename": "README.md",
+        "additions": 31,
+        "deletions": 0
+      },
+      {
+        "filename": "api/errors.yaml",
+        "additions": 59,
+        "deletions": 0
+      },
+      {
+        "filename": "cmd/server/main.go",
+        "additions": 64,
+        "deletions": 0
+      },
+      {
+        "filename": "configs/config.yaml",
+        "additions": 6,
+        "deletions": 0
+      },
+      {
+        "filename": "configs/defaults.yaml",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "deploy/k8s.yaml",
+        "additions": 32,
+        "deletions": 0
+      },
+      {
+        "filename": "docker-compose.yml",
+        "additions": 15,
+        "deletions": 0
+      },
+      {
+        "filename": "go.mod",
+        "additions": 3,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/audit_test.go",
+        "additions": 95,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/export.go",
+        "additions": 53,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/record.go",
+        "additions": 60,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/record_easyjson.go",
+        "additions": 56,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/billing/billing_test.go",
+        "additions": 72,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/billing/invoice.go",
+        "additions": 111,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/config/config.go",
+        "additions": 67,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/config/config_test.go",
+        "additions": 41,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/config/defaults_gen.go",
+        "additions": 9,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/events/bus.go",
+        "additions": 84,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/events/bus_test.go",
+        "additions": 100,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/flags/env.go",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/flags/flags.go",
+        "additions": 117,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/flags/flags_test.go",
+        "additions": 75,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/router.go",
+        "additions": 142,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/router_test.go",
+        "additions": 136,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/jobs/overdue.go",
+        "additions": 11,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/jobs/runner.go",
+        "additions": 84,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/jobs/runner_test.go",
+        "additions": 94,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/store/store.go",
+        "additions": 53,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/store/store_test.go",
+        "additions": 39,
+        "deletions": 0
+      },
+      {
+        "filename": "migrations/0001_init.sql",
+        "additions": 47,
+        "deletions": 0
+      },
+      {
+        "filename": "migrations/0002_seed_tenants.sql",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "filename": "migrations/0003_seed_flags.sql",
+        "additions": 13,
+        "deletions": 0
+      },
+      {
+        "filename": "migrations/0004_backfill_overdue.sql",
+        "additions": 14,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/code.go",
+        "additions": 79,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/codes_test.go",
+        "additions": 108,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages.go",
+        "additions": 18,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages_gen.go",
+        "additions": 35,
+        "deletions": 0
+      },
+      {
+        "filename": "scripts/check-secrets.sh",
+        "additions": 28,
+        "deletions": 0
+      },
+      {
+        "filename": "tools/confdiff/main.go",
+        "additions": 64,
+        "deletions": 0
+      },
+      {
+        "filename": "tools/gendefaults/main.go",
+        "additions": 54,
+        "deletions": 0
+      },
+      {
+        "filename": "tools/gendocs/main.go",
+        "additions": 190,
+        "deletions": 0
+      },
+      {
+        "filename": "web/dist/index.html",
+        "additions": 3,
+        "deletions": 0
+      },
+      {
+        "filename": "web/embed.go",
+        "additions": 12,
+        "deletions": 0
+      },
+      {
+        "filename": "web/hooks/useTenant.ts",
+        "additions": 34,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errMessages.ts",
+        "additions": 52,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 57,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/matcher.test.ts",
+        "additions": 43,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/matcher.ts",
+        "additions": 51,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/swrKeys.ts",
+        "additions": 16,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/tenantStore.test.ts",
+        "additions": 53,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/tenantStore.ts",
+        "additions": 84,
+        "deletions": 0
+      },
+      {
+        "filename": "web/middleware.ts",
+        "additions": 25,
+        "deletions": 0
+      },
+      {
+        "filename": "web/next.config.js",
+        "additions": 18,
+        "deletions": 0
+      },
+      {
+        "filename": "web/package.json",
+        "additions": 21,
+        "deletions": 0
+      },
+      {
+        "filename": "web/pages/_app.tsx",
+        "additions": 6,
+        "deletions": 0
+      },
+      {
+        "filename": "web/pages/_middleware.ts",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "filename": "web/pages/index.tsx",
+        "additions": 13,
+        "deletions": 0
+      },
+      {
+        "filename": "web/pages/invoices.tsx",
+        "additions": 66,
+        "deletions": 0
+      },
+      {
+        "filename": "web/routes.yaml",
+        "additions": 21,
+        "deletions": 0
+      },
+      {
+        "filename": "web/scripts/gen-keys.mjs",
+        "additions": 46,
+        "deletions": 0
+      },
+      {
+        "filename": "web/scripts/i18n-extract.mjs",
+        "additions": 29,
+        "deletions": 0
+      },
+      {
+        "filename": "web/tsconfig.json",
+        "additions": 14,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "5a2b91639b2991b2f67b4cb08cd28c108ef8313a",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/5a2b91639b2991b2f67b4cb08cd28c108ef8313a",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-06T17:20:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-06T17:20:00Z"
+      },
+      "message": "docs(adr): record ADR-011 (job cancellation) and ADR-007 (payload contract)"
+    },
+    "parents": [
+      {
+        "sha": "4ef44e16054261092579e284bae9d63aeadd5e50"
+      }
+    ],
+    "stats": {
+      "additions": 45,
+      "deletions": 0,
+      "total": 45
+    },
+    "files": [
+      {
+        "filename": "docs/adr/ADR-007-event-outbox.md",
+        "additions": 22,
+        "deletions": 0
+      },
+      {
+        "filename": "docs/adr/ADR-011-background-jobs.md",
+        "additions": 23,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "9136ef0a8538d3d4188bf62c379b59c6f8542131",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/9136ef0a8538d3d4188bf62c379b59c6f8542131",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-07T15:10:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-07T15:10:00Z"
+      },
+      "message": "ci: build + test both surfaces on every PR"
+    },
+    "parents": [
+      {
+        "sha": "5a2b91639b2991b2f67b4cb08cd28c108ef8313a"
+      }
+    ],
+    "stats": {
+      "additions": 30,
+      "deletions": 0,
+      "total": 30
+    },
+    "files": [
+      {
+        "filename": ".github/workflows/ci.yml",
+        "additions": 30,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "47df74617ad6dfc8e8298a855aeb2bf51121aa7f",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/47df74617ad6dfc8e8298a855aeb2bf51121aa7f",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-08T16:40:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-08T16:40:00Z"
+      },
+      "message": "test: MER-101 gateway timeout spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "9136ef0a8538d3d4188bf62c379b59c6f8542131"
+      }
+    ],
+    "stats": {
+      "additions": 79,
+      "deletions": 0,
+      "total": 79
+    },
+    "files": [
+      {
+        "filename": "pkg/errs/task101_gateway_timeout_test.go",
+        "additions": 79,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "5d355ad6670c67fd5672178caae60078af28690d",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/5d355ad6670c67fd5672178caae60078af28690d",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-09T19:15:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-09T19:15:00Z"
+      },
+      "message": "feat(meridian): add payment gateway timeout error code (MER-101)"
+    },
+    "parents": [
+      {
+        "sha": "47df74617ad6dfc8e8298a855aeb2bf51121aa7f"
+      }
+    ],
+    "stats": {
+      "additions": 11,
+      "deletions": 1,
+      "total": 12
+    },
+    "files": [
+      {
+        "filename": "api/errors.yaml",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/code.go",
+        "additions": 4,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages_gen.go",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "5b9a89cd643292130af4bd0891591ce6e427df43",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/5b9a89cd643292130af4bd0891591ce6e427df43",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-10T16:05:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-10T16:05:00Z"
+      },
+      "message": "feat(payroll): CSV export package + web pay-component labels (MER-901)"
+    },
+    "parents": [
+      {
+        "sha": "9136ef0a8538d3d4188bf62c379b59c6f8542131"
+      }
+    ],
+    "stats": {
+      "additions": 124,
+      "deletions": 0,
+      "total": 124
+    },
+    "files": [
+      {
+        "filename": "internal/payroll/export.go",
+        "additions": 48,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payroll/export_test.go",
+        "additions": 51,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/payComponents.ts",
+        "additions": 25,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "798a23ef4fa0321fce53581b80c6b5eea39bdc6d",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/798a23ef4fa0321fce53581b80c6b5eea39bdc6d",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-10T21:12:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-10T21:12:00Z"
+      },
+      "message": "Merge pull request #1 from meridian/feature/MER-101-gateway-timeout"
+    },
+    "parents": [
+      {
+        "sha": "5b9a89cd643292130af4bd0891591ce6e427df43"
+      },
+      {
+        "sha": "5d355ad6670c67fd5672178caae60078af28690d"
+      }
+    ],
+    "stats": {
+      "additions": 90,
+      "deletions": 1,
+      "total": 91
+    },
+    "files": [
+      {
+        "filename": "api/errors.yaml",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/code.go",
+        "additions": 4,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages_gen.go",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/task101_gateway_timeout_test.go",
+        "additions": 79,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "ec39e5527898cdcb4579117fe0438d9b4bdd5d14",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/ec39e5527898cdcb4579117fe0438d9b4bdd5d14",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-13T14:20:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-13T14:20:00Z"
+      },
+      "message": "feat(limits): in-process token buckets + shared limits YAML (MER-904)"
+    },
+    "parents": [
+      {
+        "sha": "798a23ef4fa0321fce53581b80c6b5eea39bdc6d"
+      }
+    ],
+    "stats": {
+      "additions": 206,
+      "deletions": 0,
+      "total": 206
+    },
+    "files": [
+      {
+        "filename": "configs/ratelimits.yaml",
+        "additions": 15,
+        "deletions": 0
+      },
+      {
+        "filename": "deploy/nginx.conf",
+        "additions": 30,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/ratelimit/limiter.go",
+        "additions": 83,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/ratelimit/limiter_test.go",
+        "additions": 78,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "761f40be1cf2d0d1d50ec04912f2e05a3d967f5a",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/761f40be1cf2d0d1d50ec04912f2e05a3d967f5a",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-14T17:05:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-14T17:05:00Z"
+      },
+      "message": "test: MER-102 flag key resolution spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "ec39e5527898cdcb4579117fe0438d9b4bdd5d14"
+      }
+    ],
+    "stats": {
+      "additions": 55,
+      "deletions": 0,
+      "total": 55
+    },
+    "files": [
+      {
+        "filename": "internal/flags/task102_flag_keys_test.go",
+        "additions": 55,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "3248ff50c402fda3a3e5b92c3dbfee3d0d49be9d",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/3248ff50c402fda3a3e5b92c3dbfee3d0d49be9d",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-15T11:30:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-15T11:30:00Z"
+      },
+      "message": "spike: redis lock ttl exploration (wip)"
+    },
+    "parents": [
+      {
+        "sha": "ec39e5527898cdcb4579117fe0438d9b4bdd5d14"
+      }
+    ],
+    "stats": {
+      "additions": 6,
+      "deletions": 0,
+      "total": 6
+    },
+    "files": [
+      {
+        "filename": "internal/flags/spike_redis_notes.md",
+        "additions": 6,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "3b6da66e42ca76dffeb9cc1997f3c0fd4d1b8e75",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/3b6da66e42ca76dffeb9cc1997f3c0fd4d1b8e75",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-15T18:30:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-15T18:30:00Z"
+      },
+      "message": "fix(meridian): resolve flag keys across all three spellings (MER-102)"
+    },
+    "parents": [
+      {
+        "sha": "761f40be1cf2d0d1d50ec04912f2e05a3d967f5a"
+      }
+    ],
+    "stats": {
+      "additions": 14,
+      "deletions": 4,
+      "total": 18
+    },
+    "files": [
+      {
+        "filename": "internal/flags/flags.go",
+        "additions": 14,
+        "deletions": 4
+      }
+    ]
+  },
+  {
+    "sha": "eaae05daa91816785467d7b317f251cc9d6a5a32",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/eaae05daa91816785467d7b317f251cc9d6a5a32",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-16T15:50:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-16T15:50:00Z"
+      },
+      "message": "docs(migrations): declare dotted flag keys canonical (MER-102)"
+    },
+    "parents": [
+      {
+        "sha": "3b6da66e42ca76dffeb9cc1997f3c0fd4d1b8e75"
+      }
+    ],
+    "stats": {
+      "additions": 6,
+      "deletions": 3,
+      "total": 9
+    },
+    "files": [
+      {
+        "filename": "migrations/0003_seed_flags.sql",
+        "additions": 6,
+        "deletions": 3
+      }
+    ]
+  },
+  {
+    "sha": "047515888266c728d2ebf9b6254bfdb4418c2a89",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/047515888266c728d2ebf9b6254bfdb4418c2a89",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-16T19:40:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-16T19:40:00Z"
+      },
+      "message": "docs(adr): record ADR-009 (tenant context contract)"
+    },
+    "parents": [
+      {
+        "sha": "ec39e5527898cdcb4579117fe0438d9b4bdd5d14"
+      }
+    ],
+    "stats": {
+      "additions": 23,
+      "deletions": 0,
+      "total": 23
+    },
+    "files": [
+      {
+        "filename": "docs/adr/ADR-009-tenant-context.md",
+        "additions": 23,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "65d25a33c70fd702999b5b611f10654498f83c39",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/65d25a33c70fd702999b5b611f10654498f83c39",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-17T20:31:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-17T20:31:00Z"
+      },
+      "message": "Merge pull request #2 from meridian/feature/MER-102-flag-keys"
+    },
+    "parents": [
+      {
+        "sha": "047515888266c728d2ebf9b6254bfdb4418c2a89"
+      },
+      {
+        "sha": "eaae05daa91816785467d7b317f251cc9d6a5a32"
+      }
+    ],
+    "stats": {
+      "additions": 75,
+      "deletions": 7,
+      "total": 82
+    },
+    "files": [
+      {
+        "filename": "internal/flags/flags.go",
+        "additions": 14,
+        "deletions": 4
+      },
+      {
+        "filename": "internal/flags/task102_flag_keys_test.go",
+        "additions": 55,
+        "deletions": 0
+      },
+      {
+        "filename": "migrations/0003_seed_flags.sql",
+        "additions": 6,
+        "deletions": 3
+      }
+    ]
+  },
+  {
+    "sha": "7df88dd913528fe4f7f1a73d8b694a680b5df320",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/7df88dd913528fe4f7f1a73d8b694a680b5df320",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-21T17:25:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-21T17:25:00Z"
+      },
+      "message": "test: MER-851 audit export redaction spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "65d25a33c70fd702999b5b611f10654498f83c39"
+      }
+    ],
+    "stats": {
+      "additions": 158,
+      "deletions": 0,
+      "total": 158
+    },
+    "files": [
+      {
+        "filename": "internal/audit/helpers_test.go",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/task851_export_spec_test.go",
+        "additions": 62,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/task851_export_spec_test.go",
+        "additions": 91,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "9e4748b6d001b189a0f25f8918d446cdd598d446",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/9e4748b6d001b189a0f25f8918d446cdd598d446",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-21T17:25:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-21T17:25:00Z"
+      },
+      "message": "test: MER-851 audit export redaction spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "1e16dd98a2aab3ccdea42910467fe16d69a9d5f2"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "internal/audit/task851_export_spec_test.go",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "1e16dd98a2aab3ccdea42910467fe16d69a9d5f2",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/1e16dd98a2aab3ccdea42910467fe16d69a9d5f2",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-21T17:25:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-21T17:25:00Z"
+      },
+      "message": "test: MER-851 audit export redaction spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "65d25a33c70fd702999b5b611f10654498f83c39"
+      }
+    ],
+    "stats": {
+      "additions": 158,
+      "deletions": 0,
+      "total": 158
+    },
+    "files": [
+      {
+        "filename": "internal/audit/helpers_test.go",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/task851_export_spec_test.go",
+        "additions": 62,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/task851_export_spec_test.go",
+        "additions": 91,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "2be2e9a3f398748b9093a7b71ff7b6a5c6a249b4",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/2be2e9a3f398748b9093a7b71ff7b6a5c6a249b4",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-22T19:05:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-22T19:05:00Z"
+      },
+      "message": "fix(meridian): redact ip_address on every serialization boundary (MER-851)"
+    },
+    "parents": [
+      {
+        "sha": "7df88dd913528fe4f7f1a73d8b694a680b5df320"
+      }
+    ],
+    "stats": {
+      "additions": 5,
+      "deletions": 3,
+      "total": 8
+    },
+    "files": [
+      {
+        "filename": "internal/audit/export.go",
+        "additions": 4,
+        "deletions": 3
+      },
+      {
+        "filename": "internal/audit/record.go",
+        "additions": 1,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "5270f89de028c249b4a7444515fdd5fc9ae4d94c",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/5270f89de028c249b4a7444515fdd5fc9ae4d94c",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-22T19:05:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-22T19:05:00Z"
+      },
+      "message": "fix(meridian): redact ip_address on every serialization boundary (MER-851)"
+    },
+    "parents": [
+      {
+        "sha": "9e4748b6d001b189a0f25f8918d446cdd598d446"
+      }
+    ],
+    "stats": {
+      "additions": 5,
+      "deletions": 3,
+      "total": 8
+    },
+    "files": [
+      {
+        "filename": "internal/audit/export.go",
+        "additions": 4,
+        "deletions": 3
+      },
+      {
+        "filename": "internal/audit/record.go",
+        "additions": 1,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "04b0f35ecbdcfc529d0f86c0062467fc320efe24",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/04b0f35ecbdcfc529d0f86c0062467fc320efe24",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-23T14:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-23T14:00:00Z"
+      },
+      "message": "feat(meridian): enforce compliance export gate with core.forbidden (MER-851)"
+    },
+    "parents": [
+      {
+        "sha": "2be2e9a3f398748b9093a7b71ff7b6a5c6a249b4"
+      }
+    ],
+    "stats": {
+      "additions": 18,
+      "deletions": 1,
+      "total": 19
+    },
+    "files": [
+      {
+        "filename": "api/errors.yaml",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/router.go",
+        "additions": 8,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/code.go",
+        "additions": 3,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages_gen.go",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "c67610d7acdc5c579dc7af353dd795e9ff6edf6e",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c67610d7acdc5c579dc7af353dd795e9ff6edf6e",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-23T14:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-23T14:00:00Z"
+      },
+      "message": "feat(meridian): enforce compliance export gate with core.forbidden (MER-851)"
+    },
+    "parents": [
+      {
+        "sha": "5270f89de028c249b4a7444515fdd5fc9ae4d94c"
+      }
+    ],
+    "stats": {
+      "additions": 18,
+      "deletions": 1,
+      "total": 19
+    },
+    "files": [
+      {
+        "filename": "api/errors.yaml",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/router.go",
+        "additions": 8,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/code.go",
+        "additions": 3,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages_gen.go",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "557bfe9ca8d1515cdeace3780eb66ea3a744dff8",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/557bfe9ca8d1515cdeace3780eb66ea3a744dff8",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-23T17:30:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-07-23T17:30:00Z"
+      },
+      "message": "feat(workflow): approval state machine with pinned transitions (MER-906)"
+    },
+    "parents": [
+      {
+        "sha": "65d25a33c70fd702999b5b611f10654498f83c39"
+      }
+    ],
+    "stats": {
+      "additions": 109,
+      "deletions": 0,
+      "total": 109
+    },
+    "files": [
+      {
+        "filename": "internal/workflow/status.go",
+        "additions": 66,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/workflow/status_test.go",
+        "additions": 43,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/f169a128c5a9d01cfc0d7559e754c9edebad2d27",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-24T19:20:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-24T19:20:00Z"
+      },
+      "message": "Merge pull request #4 from meridian/feature/MER-851-audit-redaction"
+    },
+    "parents": [
+      {
+        "sha": "557bfe9ca8d1515cdeace3780eb66ea3a744dff8"
+      },
+      {
+        "sha": "04b0f35ecbdcfc529d0f86c0062467fc320efe24"
+      }
+    ],
+    "stats": {
+      "additions": 181,
+      "deletions": 4,
+      "total": 185
+    },
+    "files": [
+      {
+        "filename": "api/errors.yaml",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/export.go",
+        "additions": 4,
+        "deletions": 3
+      },
+      {
+        "filename": "internal/audit/helpers_test.go",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/record.go",
+        "additions": 1,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/task851_export_spec_test.go",
+        "additions": 62,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/router.go",
+        "additions": 8,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/task851_export_spec_test.go",
+        "additions": 91,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/code.go",
+        "additions": 3,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages_gen.go",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "8f05438f75d66328eb4be1a0d517d3d4cb314c88",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/8f05438f75d66328eb4be1a0d517d3d4cb314c88",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-24T19:20:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-07-24T19:20:00Z"
+      },
+      "message": "Merge pull request #4 from meridian/feature/MER-851-audit-redaction"
+    },
+    "parents": [
+      {
+        "sha": "557bfe9ca8d1515cdeace3780eb66ea3a744dff8"
+      },
+      {
+        "sha": "c67610d7acdc5c579dc7af353dd795e9ff6edf6e"
+      }
+    ],
+    "stats": {
+      "additions": 181,
+      "deletions": 4,
+      "total": 185
+    },
+    "files": [
+      {
+        "filename": "api/errors.yaml",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/export.go",
+        "additions": 4,
+        "deletions": 3
+      },
+      {
+        "filename": "internal/audit/helpers_test.go",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/record.go",
+        "additions": 1,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/audit/task851_export_spec_test.go",
+        "additions": 62,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/router.go",
+        "additions": 8,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/httpapi/task851_export_spec_test.go",
+        "additions": 91,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/code.go",
+        "additions": 3,
+        "deletions": 0
+      },
+      {
+        "filename": "pkg/errs/messages_gen.go",
+        "additions": 2,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "e18c22e64fdb0799efc7a6d276e9db70c7b6ee23",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/e18c22e64fdb0799efc7a6d276e9db70c7b6ee23",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-28T16:20:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-28T16:20:00Z"
+      },
+      "message": "test: MER-104 tenant switch staleness spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27"
+      }
+    ],
+    "stats": {
+      "additions": 48,
+      "deletions": 0,
+      "total": 48
+    },
+    "files": [
+      {
+        "filename": "web/lib/task104_tenant_switch.test.ts",
+        "additions": 48,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "8a657136c2107326fae7e9a0b915a20600bf5ee8",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/8a657136c2107326fae7e9a0b915a20600bf5ee8",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-28T16:20:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-28T16:20:00Z"
+      },
+      "message": "test: MER-104 tenant switch staleness spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "8f05438f75d66328eb4be1a0d517d3d4cb314c88"
+      }
+    ],
+    "stats": {
+      "additions": 48,
+      "deletions": 0,
+      "total": 48
+    },
+    "files": [
+      {
+        "filename": "web/lib/task104_tenant_switch.test.ts",
+        "additions": 48,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "4087b30e3df64658ef8c2b4bbccb55161bb6eb63",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/4087b30e3df64658ef8c2b4bbccb55161bb6eb63",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-29T18:45:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-29T18:45:00Z"
+      },
+      "message": "fix(console): drop derived caches on tenant switch; subscribe the hook (MER-104)"
+    },
+    "parents": [
+      {
+        "sha": "e18c22e64fdb0799efc7a6d276e9db70c7b6ee23"
+      }
+    ],
+    "stats": {
+      "additions": 11,
+      "deletions": 22,
+      "total": 33
+    },
+    "files": [
+      {
+        "filename": "web/hooks/useTenant.ts",
+        "additions": 7,
+        "deletions": 21
+      },
+      {
+        "filename": "web/lib/tenantStore.ts",
+        "additions": 4,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "6faf06ca79f3b7888217c0c8185f8242687bf33f",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/6faf06ca79f3b7888217c0c8185f8242687bf33f",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-29T18:45:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-29T18:45:00Z"
+      },
+      "message": "fix(console): drop derived caches on tenant switch; subscribe the hook (MER-104)"
+    },
+    "parents": [
+      {
+        "sha": "8a657136c2107326fae7e9a0b915a20600bf5ee8"
+      }
+    ],
+    "stats": {
+      "additions": 11,
+      "deletions": 22,
+      "total": 33
+    },
+    "files": [
+      {
+        "filename": "web/hooks/useTenant.ts",
+        "additions": 7,
+        "deletions": 21
+      },
+      {
+        "filename": "web/lib/tenantStore.ts",
+        "additions": 4,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "aa6b07a3ae8645a0047be801d91532a04eed9e88",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/aa6b07a3ae8645a0047be801d91532a04eed9e88",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-30T16:10:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-30T16:10:00Z"
+      },
+      "message": "feat(console): filter state folds into cache keys via pure helper (MER-912)"
+    },
+    "parents": [
+      {
+        "sha": "f169a128c5a9d01cfc0d7559e754c9edebad2d27"
+      }
+    ],
+    "stats": {
+      "additions": 75,
+      "deletions": 0,
+      "total": 75
+    },
+    "files": [
+      {
+        "filename": "web/lib/filterKey.ts",
+        "additions": 26,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/useFilteredTable.test.ts",
+        "additions": 31,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/useFilteredTable.ts",
+        "additions": 18,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "a2082a88029ca7e502db411a89455a95f1823b43",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/a2082a88029ca7e502db411a89455a95f1823b43",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-30T16:10:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-30T16:10:00Z"
+      },
+      "message": "feat(console): filter state folds into cache keys via pure helper (MER-912)"
+    },
+    "parents": [
+      {
+        "sha": "8f05438f75d66328eb4be1a0d517d3d4cb314c88"
+      }
+    ],
+    "stats": {
+      "additions": 75,
+      "deletions": 0,
+      "total": 75
+    },
+    "files": [
+      {
+        "filename": "web/lib/filterKey.ts",
+        "additions": 26,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/useFilteredTable.test.ts",
+        "additions": 31,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/useFilteredTable.ts",
+        "additions": 18,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "67a6b8e45c816580a8ea09449fdfdfdefd16472a",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/67a6b8e45c816580a8ea09449fdfdfdefd16472a",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-30T20:15:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-30T20:15:00Z"
+      },
+      "message": "spike: route-level chunk splitting measurements (not for merge)"
+    },
+    "parents": [
+      {
+        "sha": "c3b06d585e5dc7a2a0a240e499a94e1b0efb7f66"
+      }
+    ],
+    "stats": {
+      "additions": 11,
+      "deletions": 0,
+      "total": 11
+    },
+    "files": [
+      {
+        "filename": "docs/spike/bundle-perf.md",
+        "additions": 11,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c85206f7db7ee2ded28b6bf16fee4fba0b57a022",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-31T19:55:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-31T19:55:00Z"
+      },
+      "message": "Merge pull request #5 from meridian/feature/MER-104-tenant-switch"
+    },
+    "parents": [
+      {
+        "sha": "aa6b07a3ae8645a0047be801d91532a04eed9e88"
+      },
+      {
+        "sha": "4087b30e3df64658ef8c2b4bbccb55161bb6eb63"
+      }
+    ],
+    "stats": {
+      "additions": 59,
+      "deletions": 22,
+      "total": 81
+    },
+    "files": [
+      {
+        "filename": "web/hooks/useTenant.ts",
+        "additions": 7,
+        "deletions": 21
+      },
+      {
+        "filename": "web/lib/task104_tenant_switch.test.ts",
+        "additions": 48,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/tenantStore.ts",
+        "additions": 4,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "c3b06d585e5dc7a2a0a240e499a94e1b0efb7f66",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c3b06d585e5dc7a2a0a240e499a94e1b0efb7f66",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-31T19:55:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-07-31T19:55:00Z"
+      },
+      "message": "Merge pull request #5 from meridian/feature/MER-104-tenant-switch"
+    },
+    "parents": [
+      {
+        "sha": "a2082a88029ca7e502db411a89455a95f1823b43"
+      },
+      {
+        "sha": "6faf06ca79f3b7888217c0c8185f8242687bf33f"
+      }
+    ],
+    "stats": {
+      "additions": 59,
+      "deletions": 22,
+      "total": 81
+    },
+    "files": [
+      {
+        "filename": "web/hooks/useTenant.ts",
+        "additions": 7,
+        "deletions": 21
+      },
+      {
+        "filename": "web/lib/task104_tenant_switch.test.ts",
+        "additions": 48,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/tenantStore.ts",
+        "additions": 4,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "7f2b7e04ee0445fc2a2b22286b18aa590bb16f0f",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/7f2b7e04ee0445fc2a2b22286b18aa590bb16f0f",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-04T17:10:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-04T17:10:00Z"
+      },
+      "message": "test: MER-105 billing auth coverage spec (red)"
+    },
+    "parents": [
+      {
+        "sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022"
+      }
+    ],
+    "stats": {
+      "additions": 50,
+      "deletions": 0,
+      "total": 50
+    },
+    "files": [
+      {
+        "filename": "web/lib/task880_billing_auth.test.ts",
+        "additions": 50,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "d58102bd36515b5d63e9c36851ec418605030fc4",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/d58102bd36515b5d63e9c36851ec418605030fc4",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-05T18:20:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-05T18:20:00Z"
+      },
+      "message": "fix(console): restore billing auth coverage in app-router profile (MER-105)"
+    },
+    "parents": [
+      {
+        "sha": "7f2b7e04ee0445fc2a2b22286b18aa590bb16f0f"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "web/lib/matcher.ts",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "c16d303d3230405a56e5b582767611d4cdca2645",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c16d303d3230405a56e5b582767611d4cdca2645",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-06T15:45:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-06T15:45:00Z"
+      },
+      "message": "feat(console): render server bootstrap flags before hydration (MER-941)"
+    },
+    "parents": [
+      {
+        "sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022"
+      }
+    ],
+    "stats": {
+      "additions": 39,
+      "deletions": 0,
+      "total": 39
+    },
+    "files": [
+      {
+        "filename": "web/lib/bootstrap.ts",
+        "additions": 39,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "8c46f2e983e7d68795f191418b040d7b7c79f4ec",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/8c46f2e983e7d68795f191418b040d7b7c79f4ec",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-07T18:10:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-07T18:10:00Z"
+      },
+      "message": "docs: refresh domain layout and local verification commands"
+    },
+    "parents": [
+      {
+        "sha": "c16d303d3230405a56e5b582767611d4cdca2645"
+      }
+    ],
+    "stats": {
+      "additions": 3,
+      "deletions": 1,
+      "total": 4
+    },
+    "files": [
+      {
+        "filename": "README.md",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "9c62969dba955433e7663cecf18347cadb31b305",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/9c62969dba955433e7663cecf18347cadb31b305",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-07T20:40:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-07T20:40:00Z"
+      },
+      "message": "Merge pull request #7 from meridian/feature/MER-105-billing-auth"
+    },
+    "parents": [
+      {
+        "sha": "8c46f2e983e7d68795f191418b040d7b7c79f4ec"
+      },
+      {
+        "sha": "d58102bd36515b5d63e9c36851ec418605030fc4"
+      }
+    ],
+    "stats": {
+      "additions": 51,
+      "deletions": 1,
+      "total": 52
+    },
+    "files": [
+      {
+        "filename": "web/lib/matcher.ts",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/task880_billing_auth.test.ts",
+        "additions": 50,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "f783d43e0a5d392e4fc6c86b279a6f777337a6b8",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/f783d43e0a5d392e4fc6c86b279a6f777337a6b8",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-08T14:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-08T14:00:00Z"
+      },
+      "message": "feat(platform): add compatibility adapters for imports, replay and tenant services"
+    },
+    "parents": [
+      {
+        "sha": "9c62969dba955433e7663cecf18347cadb31b305"
+      }
+    ],
+    "stats": {
+      "additions": 271,
+      "deletions": 0,
+      "total": 271
+    },
+    "files": [
+      {
+        "filename": "internal/audit/decode.go",
+        "additions": 29,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/billing/cache.go",
+        "additions": 11,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/billing/lineitems.go",
+        "additions": 44,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/jobs/preview.go",
+        "additions": 26,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payments/idempotency.go",
+        "additions": 11,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payroll/schema.go",
+        "additions": 9,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/validation/purchase_order.go",
+        "additions": 27,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/webhooks/registry.go",
+        "additions": 48,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/filterURL.ts",
+        "additions": 19,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/publicConfig.ts",
+        "additions": 10,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/schemas.ts",
+        "additions": 20,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/sseAuth.ts",
+        "additions": 17,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "862ae3997a8b50fff6cbfa33ecf210a3746a2d12",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/862ae3997a8b50fff6cbfa33ecf210a3746a2d12",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-11T16:30:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-11T16:30:00Z"
+      },
+      "message": "test: MER-103 tenant grace-period import contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "f783d43e0a5d392e4fc6c86b279a6f777337a6b8"
+      }
+    ],
+    "stats": {
+      "additions": 57,
+      "deletions": 0,
+      "total": 57
+    },
+    "files": [
+      {
+        "filename": "internal/store/task103_override_keys_test.go",
+        "additions": 57,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "809e3612d9511d8c607407f30fc79778f7e38899",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/809e3612d9511d8c607407f30fc79778f7e38899",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-12T18:05:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-12T18:05:00Z"
+      },
+      "message": "fix(store): normalize legacy tenant override imports to seeded keys (MER-103)"
+    },
+    "parents": [
+      {
+        "sha": "862ae3997a8b50fff6cbfa33ecf210a3746a2d12"
+      }
+    ],
+    "stats": {
+      "additions": 10,
+      "deletions": 1,
+      "total": 11
+    },
+    "files": [
+      {
+        "filename": "internal/store/store.go",
+        "additions": 10,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/afd99e66332c1bc84601d0fbfe13d32fcdf11abc",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-14T19:40:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-08-14T19:40:00Z"
+      },
+      "message": "Merge pull request #8 from meridian/feature/MER-103-override-keys"
+    },
+    "parents": [
+      {
+        "sha": "f783d43e0a5d392e4fc6c86b279a6f777337a6b8"
+      },
+      {
+        "sha": "809e3612d9511d8c607407f30fc79778f7e38899"
+      }
+    ],
+    "stats": {
+      "additions": 67,
+      "deletions": 1,
+      "total": 68
+    },
+    "files": [
+      {
+        "filename": "internal/store/store.go",
+        "additions": 10,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/store/task103_override_keys_test.go",
+        "additions": 57,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "0567b58aa44bba7c5ca27f2c06e1a1d147704abc",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/0567b58aa44bba7c5ca27f2c06e1a1d147704abc",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-18T16:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-18T16:00:00Z"
+      },
+      "message": "test: MER-106 production config parity contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc"
+      }
+    ],
+    "stats": {
+      "additions": 33,
+      "deletions": 0,
+      "total": 33
+    },
+    "files": [
+      {
+        "filename": "internal/config/task106_compose_test.go",
+        "additions": 33,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "9cd410dfac35200c94b32069c11f98baab03d85c",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/9cd410dfac35200c94b32069c11f98baab03d85c",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-19T18:20:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-19T18:20:00Z"
+      },
+      "message": "fix(deploy): align compose environment with config loader (MER-106)"
+    },
+    "parents": [
+      {
+        "sha": "0567b58aa44bba7c5ca27f2c06e1a1d147704abc"
+      }
+    ],
+    "stats": {
+      "additions": 2,
+      "deletions": 2,
+      "total": 4
+    },
+    "files": [
+      {
+        "filename": "docker-compose.yml",
+        "additions": 2,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-21T20:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-08-21T20:00:00Z"
+      },
+      "message": "Merge pull request #9 from meridian/feature/MER-106-config-env"
+    },
+    "parents": [
+      {
+        "sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc"
+      },
+      {
+        "sha": "9cd410dfac35200c94b32069c11f98baab03d85c"
+      }
+    ],
+    "stats": {
+      "additions": 35,
+      "deletions": 2,
+      "total": 37
+    },
+    "files": [
+      {
+        "filename": "docker-compose.yml",
+        "additions": 2,
+        "deletions": 2
+      },
+      {
+        "filename": "internal/config/task106_compose_test.go",
+        "additions": 33,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "f5275532f1be03f52c591cbd9c31e4ac4008fc7b",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/f5275532f1be03f52c591cbd9c31e4ac4008fc7b",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-08-25T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-08-25T16:00:00Z"
+      },
+      "message": "test: MER-107 optional config presence contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5"
+      }
+    ],
+    "stats": {
+      "additions": 41,
+      "deletions": 1,
+      "total": 42
+    },
+    "files": [
+      {
+        "filename": "internal/config/config_test.go",
+        "additions": 3,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/config/task107_optional_config_test.go",
+        "additions": 38,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "cb209cfa7172b201ab7af6ab95163f0a1e505c89",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/cb209cfa7172b201ab7af6ab95163f0a1e505c89",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-08-26T18:25:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-08-26T18:25:00Z"
+      },
+      "message": "fix(config): represent optional partner URL with pointer (MER-107)"
+    },
+    "parents": [
+      {
+        "sha": "f5275532f1be03f52c591cbd9c31e4ac4008fc7b"
+      }
+    ],
+    "stats": {
+      "additions": 2,
+      "deletions": 2,
+      "total": 4
+    },
+    "files": [
+      {
+        "filename": "internal/config/config.go",
+        "additions": 2,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "bafdf50d7e8e24a71d74dad63f508408860fedcc",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/bafdf50d7e8e24a71d74dad63f508408860fedcc",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-08-28T20:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-08-28T20:00:00Z"
+      },
+      "message": "Merge pull request #10 from meridian/feature/MER-107-optional-config"
+    },
+    "parents": [
+      {
+        "sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5"
+      },
+      {
+        "sha": "cb209cfa7172b201ab7af6ab95163f0a1e505c89"
+      }
+    ],
+    "stats": {
+      "additions": 43,
+      "deletions": 3,
+      "total": 46
+    },
+    "files": [
+      {
+        "filename": "internal/config/config.go",
+        "additions": 2,
+        "deletions": 2
+      },
+      {
+        "filename": "internal/config/config_test.go",
+        "additions": 3,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/config/task107_optional_config_test.go",
+        "additions": 38,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "1171cc115df4b5a539446e00fdcf8b2f034e5d30",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/1171cc115df4b5a539446e00fdcf8b2f034e5d30",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-30T15:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-08-30T15:00:00Z"
+      },
+      "message": "feat(events): add correlation ids to replay envelope (MER-108 prep)"
+    },
+    "parents": [
+      {
+        "sha": "bafdf50d7e8e24a71d74dad63f508408860fedcc"
+      }
+    ],
+    "stats": {
+      "additions": 3,
+      "deletions": 0,
+      "total": 3
+    },
+    "files": [
+      {
+        "filename": "internal/events/bus.go",
+        "additions": 3,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "1e4fd499c522c6120be2a478dfa38f0b449105df",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/1e4fd499c522c6120be2a478dfa38f0b449105df",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-01T16:10:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-01T16:10:00Z"
+      },
+      "message": "test: MER-108 persisted event decoder compatibility (red)"
+    },
+    "parents": [
+      {
+        "sha": "1171cc115df4b5a539446e00fdcf8b2f034e5d30"
+      }
+    ],
+    "stats": {
+      "additions": 33,
+      "deletions": 0,
+      "total": 33
+    },
+    "files": [
+      {
+        "filename": "internal/events/task108_event_tags_test.go",
+        "additions": 33,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "17f13565ceaf36237b3c9ffb41bcb6e024c23cfc",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/17f13565ceaf36237b3c9ffb41bcb6e024c23cfc",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-02T18:05:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-02T18:05:00Z"
+      },
+      "message": "fix(events): align correlation id tags for replay (MER-108)"
+    },
+    "parents": [
+      {
+        "sha": "1e4fd499c522c6120be2a478dfa38f0b449105df"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "internal/events/bus.go",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "890ab774ddedacc0c28dd72297e093cf4f0fcd82",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/890ab774ddedacc0c28dd72297e093cf4f0fcd82",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-04T19:30:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-04T19:30:00Z"
+      },
+      "message": "Merge pull request #11 from meridian/feature/MER-108-event-tags"
+    },
+    "parents": [
+      {
+        "sha": "1171cc115df4b5a539446e00fdcf8b2f034e5d30"
+      },
+      {
+        "sha": "17f13565ceaf36237b3c9ffb41bcb6e024c23cfc"
+      }
+    ],
+    "stats": {
+      "additions": 34,
+      "deletions": 1,
+      "total": 35
+    },
+    "files": [
+      {
+        "filename": "internal/events/bus.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/events/task108_event_tags_test.go",
+        "additions": 33,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "26b4a789939d92e0242fcc8400697e4c2c193839",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/26b4a789939d92e0242fcc8400697e4c2c193839",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-06T14:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-06T14:00:00Z"
+      },
+      "message": "feat(jobs): add tenant-scoped job wrapper for export workers"
+    },
+    "parents": [
+      {
+        "sha": "890ab774ddedacc0c28dd72297e093cf4f0fcd82"
+      }
+    ],
+    "stats": {
+      "additions": 28,
+      "deletions": 0,
+      "total": 28
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/tenant.go",
+        "additions": 28,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "80d8732d94af478e941df153529cc20d61e27ce5",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/80d8732d94af478e941df153529cc20d61e27ce5",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-08T16:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-08T16:00:00Z"
+      },
+      "message": "test: MER-109 tenant context propagation into async exports (red)"
+    },
+    "parents": [
+      {
+        "sha": "26b4a789939d92e0242fcc8400697e4c2c193839"
+      }
+    ],
+    "stats": {
+      "additions": 31,
+      "deletions": 0,
+      "total": 31
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/task109_tenant_context_test.go",
+        "additions": 31,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "d2d467e09a21bfff284624feaecb261583b120c1",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/d2d467e09a21bfff284624feaecb261583b120c1",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-09T18:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-09T18:00:00Z"
+      },
+      "message": "fix(jobs): carry tenant identity into async worker context (MER-109)"
+    },
+    "parents": [
+      {
+        "sha": "80d8732d94af478e941df153529cc20d61e27ce5"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 2,
+      "total": 3
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/tenant.go",
+        "additions": 1,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "68c3f717f27a4696d7da792d74c8aa8c231a45c4",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/68c3f717f27a4696d7da792d74c8aa8c231a45c4",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-11T19:45:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-09-11T19:45:00Z"
+      },
+      "message": "Merge pull request #12 from meridian/feature/MER-109-tenant-job"
+    },
+    "parents": [
+      {
+        "sha": "26b4a789939d92e0242fcc8400697e4c2c193839"
+      },
+      {
+        "sha": "d2d467e09a21bfff284624feaecb261583b120c1"
+      }
+    ],
+    "stats": {
+      "additions": 32,
+      "deletions": 2,
+      "total": 34
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/task109_tenant_context_test.go",
+        "additions": 31,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/jobs/tenant.go",
+        "additions": 1,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "2c1a3bda8bf596ad8c1a100214626cacf75bc68f",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/2c1a3bda8bf596ad8c1a100214626cacf75bc68f",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-09-13T15:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-09-13T15:00:00Z"
+      },
+      "message": "hotfix(console): map new gateway timeout code in UI"
+    },
+    "parents": [
+      {
+        "sha": "68c3f717f27a4696d7da792d74c8aa8c231a45c4"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "b17a1a67722ea91deda38c9189de9685e604d644",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/b17a1a67722ea91deda38c9189de9685e604d644",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-15T16:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-15T16:00:00Z"
+      },
+      "message": "test: MER-110 generated error catalog parity contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "2c1a3bda8bf596ad8c1a100214626cacf75bc68f"
+      }
+    ],
+    "stats": {
+      "additions": 46,
+      "deletions": 0,
+      "total": 46
+    },
+    "files": [
+      {
+        "filename": "tools/gendocs/catalog_test.go",
+        "additions": 46,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "104421c579069e505112d8011629643b5224231a",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/104421c579069e505112d8011629643b5224231a",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-16T18:10:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-16T18:10:00Z"
+      },
+      "message": "fix(errors): regenerate catalogs from api source of truth (MER-110)"
+    },
+    "parents": [
+      {
+        "sha": "b17a1a67722ea91deda38c9189de9685e604d644"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/9e519f8d1f54444509296d39a2f786d3e52a47c9",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-18T20:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-09-18T20:00:00Z"
+      },
+      "message": "Merge pull request #13 from meridian/feature/MER-110-generated-catalog"
+    },
+    "parents": [
+      {
+        "sha": "2c1a3bda8bf596ad8c1a100214626cacf75bc68f"
+      },
+      {
+        "sha": "104421c579069e505112d8011629643b5224231a"
+      }
+    ],
+    "stats": {
+      "additions": 47,
+      "deletions": 1,
+      "total": 48
+    },
+    "files": [
+      {
+        "filename": "tools/gendocs/catalog_test.go",
+        "additions": 46,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/errcodes_gen.ts",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "b14057d9bd00fbc1710a0d4921cfaeb20a552388",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/b14057d9bd00fbc1710a0d4921cfaeb20a552388",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-22T16:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-22T16:00:00Z"
+      },
+      "message": "test: MER-111 ensure Docker embeds current console build (red)"
+    },
+    "parents": [
+      {
+        "sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9"
+      }
+    ],
+    "stats": {
+      "additions": 35,
+      "deletions": 0,
+      "total": 35
+    },
+    "files": [
+      {
+        "filename": "web/embed_contract_test.go",
+        "additions": 35,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "04683487fcc18e7422677aae07c5d0f3b9bc89ea",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/04683487fcc18e7422677aae07c5d0f3b9bc89ea",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-23T18:10:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-23T18:10:00Z"
+      },
+      "message": "fix(build): compile Next bundle before embedding it in server image (MER-111)"
+    },
+    "parents": [
+      {
+        "sha": "b14057d9bd00fbc1710a0d4921cfaeb20a552388"
+      }
+    ],
+    "stats": {
+      "additions": 8,
+      "deletions": 0,
+      "total": 8
+    },
+    "files": [
+      {
+        "filename": "Dockerfile",
+        "additions": 8,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/0274b1fa52703f0973e4c45317db7fe1d0c6ac7d",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-25T19:45:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-25T19:45:00Z"
+      },
+      "message": "Merge pull request #14 from meridian/feature/MER-111-frontend-build"
+    },
+    "parents": [
+      {
+        "sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9"
+      },
+      {
+        "sha": "04683487fcc18e7422677aae07c5d0f3b9bc89ea"
+      }
+    ],
+    "stats": {
+      "additions": 43,
+      "deletions": 0,
+      "total": 43
+    },
+    "files": [
+      {
+        "filename": "Dockerfile",
+        "additions": 8,
+        "deletions": 0
+      },
+      {
+        "filename": "web/embed_contract_test.go",
+        "additions": 35,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "c2cf3b0d76b3e51204a5cca4222bd3c63c1eb902",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c2cf3b0d76b3e51204a5cca4222bd3c63c1eb902",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-29T16:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-29T16:00:00Z"
+      },
+      "message": "test: MER-112 new-region bootstrap sequence contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d"
+      }
+    ],
+    "stats": {
+      "additions": 41,
+      "deletions": 0,
+      "total": 41
+    },
+    "files": [
+      {
+        "filename": "internal/config/task112_bootstrap_test.go",
+        "additions": 41,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "47167f41534e3a73c333af57ab6b2a1ef45a368b",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/47167f41534e3a73c333af57ab6b2a1ef45a368b",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-29T16:30:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-29T16:30:00Z"
+      },
+      "message": "test: correct bootstrap target scan in MER-112 spec"
+    },
+    "parents": [
+      {
+        "sha": "c2cf3b0d76b3e51204a5cca4222bd3c63c1eb902"
+      }
+    ],
+    "stats": {
+      "additions": 7,
+      "deletions": 4,
+      "total": 11
+    },
+    "files": [
+      {
+        "filename": "internal/config/task112_bootstrap_test.go",
+        "additions": 7,
+        "deletions": 4
+      }
+    ]
+  },
+  {
+    "sha": "a6a4c7af0a55ffbc8e7c97c45cc3adcb2a4b9220",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/a6a4c7af0a55ffbc8e7c97c45cc3adcb2a4b9220",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-30T18:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-09-30T18:00:00Z"
+      },
+      "message": "fix(dev): require schema migrations before server run (MER-112)"
+    },
+    "parents": [
+      {
+        "sha": "47167f41534e3a73c333af57ab6b2a1ef45a368b"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "Makefile",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c51a8a593e8268e783b40a98a2d47f5a29452f71",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-10-02T19:30:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-10-02T19:30:00Z"
+      },
+      "message": "Merge pull request #15 from meridian/feature/MER-112-fresh-bootstrap"
+    },
+    "parents": [
+      {
+        "sha": "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d"
+      },
+      {
+        "sha": "a6a4c7af0a55ffbc8e7c97c45cc3adcb2a4b9220"
+      }
+    ],
+    "stats": {
+      "additions": 45,
+      "deletions": 1,
+      "total": 46
+    },
+    "files": [
+      {
+        "filename": "Makefile",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/config/task112_bootstrap_test.go",
+        "additions": 44,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "4767bb1aebd386c53c105fcbd2683a402a5a2cda",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/4767bb1aebd386c53c105fcbd2683a402a5a2cda",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-06T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-06T16:00:00Z"
+      },
+      "message": "test: MER-113 finance review status schema contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71"
+      }
+    ],
+    "stats": {
+      "additions": 24,
+      "deletions": 0,
+      "total": 24
+    },
+    "files": [
+      {
+        "filename": "internal/billing/task113_review_status_test.go",
+        "additions": 24,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "04be15f507f8ebce9866dc223c4c31562b35f5f1",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/04be15f507f8ebce9866dc223c4c31562b35f5f1",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-06T16:10:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-06T16:10:00Z"
+      },
+      "message": "test: keep MER-113 red checks executable before enum addition"
+    },
+    "parents": [
+      {
+        "sha": "4767bb1aebd386c53c105fcbd2683a402a5a2cda"
+      }
+    ],
+    "stats": {
+      "additions": 3,
+      "deletions": 3,
+      "total": 6
+    },
+    "files": [
+      {
+        "filename": "internal/billing/task113_review_status_test.go",
+        "additions": 3,
+        "deletions": 3
+      }
+    ]
+  },
+  {
+    "sha": "21383ba8e8d61bd4139a348a87a09864735ea8e1",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/21383ba8e8d61bd4139a348a87a09864735ea8e1",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-06T16:20:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-06T16:20:00Z"
+      },
+      "message": "test: allow additive finance schema version bumps"
+    },
+    "parents": [
+      {
+        "sha": "04be15f507f8ebce9866dc223c4c31562b35f5f1"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "internal/billing/billing_test.go",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "ae18d008407057184b14e4cf1c997ae62f24454a",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/ae18d008407057184b14e4cf1c997ae62f24454a",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-07T18:10:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-07T18:10:00Z"
+      },
+      "message": "feat(billing): add finance review status and schema v5 (MER-113)"
+    },
+    "parents": [
+      {
+        "sha": "21383ba8e8d61bd4139a348a87a09864735ea8e1"
+      }
+    ],
+    "stats": {
+      "additions": 17,
+      "deletions": 1,
+      "total": 18
+    },
+    "files": [
+      {
+        "filename": "internal/billing/invoice.go",
+        "additions": 3,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/invoiceStatus.ts",
+        "additions": 14,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "bde5a9354e5e97225802773809cee0efa6f9afec",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/bde5a9354e5e97225802773809cee0efa6f9afec",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-09T19:30:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-10-09T19:30:00Z"
+      },
+      "message": "Merge pull request #16 from meridian/feature/MER-113-review-status"
+    },
+    "parents": [
+      {
+        "sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71"
+      },
+      {
+        "sha": "ae18d008407057184b14e4cf1c997ae62f24454a"
+      }
+    ],
+    "stats": {
+      "additions": 42,
+      "deletions": 2,
+      "total": 44
+    },
+    "files": [
+      {
+        "filename": "internal/billing/billing_test.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/billing/invoice.go",
+        "additions": 3,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/billing/task113_review_status_test.go",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/invoiceStatus.ts",
+        "additions": 14,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "44bd00c212cf9c999965426a4e1dcf7265d26070",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/44bd00c212cf9c999965426a4e1dcf7265d26070",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-13T16:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-13T16:00:00Z"
+      },
+      "message": "test: MER-114 tenant isolation for webhook fallback registry (red)"
+    },
+    "parents": [
+      {
+        "sha": "bde5a9354e5e97225802773809cee0efa6f9afec"
+      }
+    ],
+    "stats": {
+      "additions": 37,
+      "deletions": 0,
+      "total": 37
+    },
+    "files": [
+      {
+        "filename": "internal/webhooks/registry_test.go",
+        "additions": 37,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "a5c878e04552cec2766d16e8eb413d1897be6464",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/a5c878e04552cec2766d16e8eb413d1897be6464",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-14T18:20:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-14T18:20:00Z"
+      },
+      "message": "fix(webhooks): tenant-scope static fallback subscriptions (MER-114)"
+    },
+    "parents": [
+      {
+        "sha": "44bd00c212cf9c999965426a4e1dcf7265d26070"
+      }
+    ],
+    "stats": {
+      "additions": 5,
+      "deletions": 3,
+      "total": 8
+    },
+    "files": [
+      {
+        "filename": "internal/webhooks/registry.go",
+        "additions": 5,
+        "deletions": 3
+      }
+    ]
+  },
+  {
+    "sha": "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-16T19:40:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-16T19:40:00Z"
+      },
+      "message": "Merge pull request #17 from meridian/feature/MER-114-tenant-webhooks"
+    },
+    "parents": [
+      {
+        "sha": "bde5a9354e5e97225802773809cee0efa6f9afec"
+      },
+      {
+        "sha": "a5c878e04552cec2766d16e8eb413d1897be6464"
+      }
+    ],
+    "stats": {
+      "additions": 42,
+      "deletions": 3,
+      "total": 45
+    },
+    "files": [
+      {
+        "filename": "internal/webhooks/registry.go",
+        "additions": 5,
+        "deletions": 3
+      },
+      {
+        "filename": "internal/webhooks/registry_test.go",
+        "additions": 37,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "e5ee9787d3f46319bd2b082c9b8e2195d788f6f6",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/e5ee9787d3f46319bd2b082c9b8e2195d788f6f6",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-10-18T15:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-10-18T15:00:00Z"
+      },
+      "message": "refactor(jobs): align preview queue ids with legacy invoice key"
+    },
+    "parents": [
+      {
+        "sha": "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027"
+      }
+    ],
+    "stats": {
+      "additions": 4,
+      "deletions": 1,
+      "total": 5
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/preview.go",
+        "additions": 4,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "ad1fb17250bc280224471cfe435c06e25a9223c7",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/ad1fb17250bc280224471cfe435c06e25a9223c7",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-20T16:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-20T16:00:00Z"
+      },
+      "message": "test: MER-115 tenant-specific preview cancellation contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "e5ee9787d3f46319bd2b082c9b8e2195d788f6f6"
+      }
+    ],
+    "stats": {
+      "additions": 34,
+      "deletions": 0,
+      "total": 34
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/task115_preview_cancel_test.go",
+        "additions": 34,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "29346cbb6d708801068e0a40cc6a1cc722efc059",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/29346cbb6d708801068e0a40cc6a1cc722efc059",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-21T17:20:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-21T17:20:00Z"
+      },
+      "message": "test: wait for targeted preview cancellation before checking queue"
+    },
+    "parents": [
+      {
+        "sha": "ad1fb17250bc280224471cfe435c06e25a9223c7"
+      }
+    ],
+    "stats": {
+      "additions": 4,
+      "deletions": 3,
+      "total": 7
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/task115_preview_cancel_test.go",
+        "additions": 4,
+        "deletions": 3
+      }
+    ]
+  },
+  {
+    "sha": "6a57d0377b37b9508a9479ffb43bedb464ec15a9",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/6a57d0377b37b9508a9479ffb43bedb464ec15a9",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-21T18:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-21T18:00:00Z"
+      },
+      "message": "fix(jobs): tenant-scope preview ids for safe cancellation (MER-115)"
+    },
+    "parents": [
+      {
+        "sha": "29346cbb6d708801068e0a40cc6a1cc722efc059"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 4,
+      "total": 5
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/preview.go",
+        "additions": 1,
+        "deletions": 4
+      }
+    ]
+  },
+  {
+    "sha": "4289bc34c25a6aef5ae0757b7dee24f8254471ab",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/4289bc34c25a6aef5ae0757b7dee24f8254471ab",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-23T19:30:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-10-23T19:30:00Z"
+      },
+      "message": "Merge pull request #18 from meridian/feature/MER-115-preview-cancel"
+    },
+    "parents": [
+      {
+        "sha": "e5ee9787d3f46319bd2b082c9b8e2195d788f6f6"
+      },
+      {
+        "sha": "6a57d0377b37b9508a9479ffb43bedb464ec15a9"
+      }
+    ],
+    "stats": {
+      "additions": 36,
+      "deletions": 4,
+      "total": 40
+    },
+    "files": [
+      {
+        "filename": "internal/jobs/preview.go",
+        "additions": 1,
+        "deletions": 4
+      },
+      {
+        "filename": "internal/jobs/task115_preview_cancel_test.go",
+        "additions": 35,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "c885ccd8ee87b693c91226e43e42863b29fe2754",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c885ccd8ee87b693c91226e43e42863b29fe2754",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-25T14:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-25T14:00:00Z"
+      },
+      "message": "ops: add tenant-scoped audit export rate policy"
+    },
+    "parents": [
+      {
+        "sha": "4289bc34c25a6aef5ae0757b7dee24f8254471ab"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 0,
+      "total": 1
+    },
+    "files": [
+      {
+        "filename": "configs/ratelimits.yaml",
+        "additions": 1,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "193215da88f5426709709f1e878ba8857ec20615",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/193215da88f5426709709f1e878ba8857ec20615",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-27T16:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-27T16:00:00Z"
+      },
+      "message": "test: MER-116 edge/API tenant export limit parity (red)"
+    },
+    "parents": [
+      {
+        "sha": "c885ccd8ee87b693c91226e43e42863b29fe2754"
+      }
+    ],
+    "stats": {
+      "additions": 33,
+      "deletions": 0,
+      "total": 33
+    },
+    "files": [
+      {
+        "filename": "internal/ratelimit/task116_tenant_limit_test.go",
+        "additions": 33,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "537924e998db02658740a8e7c7eab97ac9db8469",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/537924e998db02658740a8e7c7eab97ac9db8469",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-28T17:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-28T17:00:00Z"
+      },
+      "message": "test: extend rate limit mirror fixture for tenant bucket"
+    },
+    "parents": [
+      {
+        "sha": "193215da88f5426709709f1e878ba8857ec20615"
+      }
+    ],
+    "stats": {
+      "additions": 1,
+      "deletions": 1,
+      "total": 2
+    },
+    "files": [
+      {
+        "filename": "internal/ratelimit/limiter_test.go",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "3c77d2a1cc64a7a452c5af6987a9fef6268ffb09",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/3c77d2a1cc64a7a452c5af6987a9fef6268ffb09",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-28T18:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-28T18:00:00Z"
+      },
+      "message": "fix(limits): mirror tenant export bucket across Go and nginx (MER-116)"
+    },
+    "parents": [
+      {
+        "sha": "537924e998db02658740a8e7c7eab97ac9db8469"
+      }
+    ],
+    "stats": {
+      "additions": 6,
+      "deletions": 0,
+      "total": 6
+    },
+    "files": [
+      {
+        "filename": "deploy/nginx.conf",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/ratelimit/limiter.go",
+        "additions": 1,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "ffa824482c775efb8b0ab6602307841dd7fe5358",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/ffa824482c775efb8b0ab6602307841dd7fe5358",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-30T19:30:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-10-30T19:30:00Z"
+      },
+      "message": "Merge pull request #19 from meridian/feature/MER-116-tenant-limit"
+    },
+    "parents": [
+      {
+        "sha": "c885ccd8ee87b693c91226e43e42863b29fe2754"
+      },
+      {
+        "sha": "3c77d2a1cc64a7a452c5af6987a9fef6268ffb09"
+      }
+    ],
+    "stats": {
+      "additions": 40,
+      "deletions": 1,
+      "total": 41
+    },
+    "files": [
+      {
+        "filename": "deploy/nginx.conf",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/ratelimit/limiter.go",
+        "additions": 1,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/ratelimit/limiter_test.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/ratelimit/task116_tenant_limit_test.go",
+        "additions": 33,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "6981ed543101d375429d1e8b103e30afed495f1d",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/6981ed543101d375429d1e8b103e30afed495f1d",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-11-03T16:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-11-03T16:00:00Z"
+      },
+      "message": "test: MER-117 outbox durability and invoice version order (red)"
+    },
+    "parents": [
+      {
+        "sha": "ffa824482c775efb8b0ab6602307841dd7fe5358"
+      }
+    ],
+    "stats": {
+      "additions": 44,
+      "deletions": 0,
+      "total": 44
+    },
+    "files": [
+      {
+        "filename": "internal/billing/task117_line_version_test.go",
+        "additions": 44,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "299005aa0656e826bbdfdcd5a4f9a495d95bce10",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/299005aa0656e826bbdfdcd5a4f9a495d95bce10",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-11-04T18:10:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-11-04T18:10:00Z"
+      },
+      "message": "fix(billing): advance line-item version only after durable publish (MER-117)"
+    },
+    "parents": [
+      {
+        "sha": "6981ed543101d375429d1e8b103e30afed495f1d"
+      }
+    ],
+    "stats": {
+      "additions": 6,
+      "deletions": 5,
+      "total": 11
+    },
+    "files": [
+      {
+        "filename": "internal/billing/lineitems.go",
+        "additions": 6,
+        "deletions": 5
+      }
+    ]
+  },
+  {
+    "sha": "3553a93b7d015a20ec13ff7ccab76af501427bb1",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/3553a93b7d015a20ec13ff7ccab76af501427bb1",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-11-06T19:30:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-11-06T19:30:00Z"
+      },
+      "message": "Merge pull request #20 from meridian/feature/MER-117-line-version-order"
+    },
+    "parents": [
+      {
+        "sha": "ffa824482c775efb8b0ab6602307841dd7fe5358"
+      },
+      {
+        "sha": "299005aa0656e826bbdfdcd5a4f9a495d95bce10"
+      }
+    ],
+    "stats": {
+      "additions": 50,
+      "deletions": 5,
+      "total": 55
+    },
+    "files": [
+      {
+        "filename": "internal/billing/lineitems.go",
+        "additions": 6,
+        "deletions": 5
+      },
+      {
+        "filename": "internal/billing/task117_line_version_test.go",
+        "additions": 44,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "32a7eef7115c0b00e0a0fbf29cc5d4280ac440b7",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/32a7eef7115c0b00e0a0fbf29cc5d4280ac440b7",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-11-10T16:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-11-10T16:00:00Z"
+      },
+      "message": "test: MER-118 tenant totals cache isolation contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "3553a93b7d015a20ec13ff7ccab76af501427bb1"
+      }
+    ],
+    "stats": {
+      "additions": 29,
+      "deletions": 0,
+      "total": 29
+    },
+    "files": [
+      {
+        "filename": "internal/billing/task118_cache_scope_test.go",
+        "additions": 29,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "82dfa7ef0802f1777b3282bbcc638e2a043b790e",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/82dfa7ef0802f1777b3282bbcc638e2a043b790e",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-11-11T18:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-11-11T18:00:00Z"
+      },
+      "message": "fix(cache): write invoice totals under tenant-scoped key (MER-118)"
+    },
+    "parents": [
+      {
+        "sha": "32a7eef7115c0b00e0a0fbf29cc5d4280ac440b7"
+      }
+    ],
+    "stats": {
+      "additions": 4,
+      "deletions": 5,
+      "total": 9
+    },
+    "files": [
+      {
+        "filename": "internal/billing/cache.go",
+        "additions": 4,
+        "deletions": 5
+      }
+    ]
+  },
+  {
+    "sha": "229352c267bcd1cbcdc22951a2ed35bf882d78f1",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/229352c267bcd1cbcdc22951a2ed35bf882d78f1",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-11-13T19:30:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2026-11-13T19:30:00Z"
+      },
+      "message": "Merge pull request #21 from meridian/feature/MER-118-tenant-cache"
+    },
+    "parents": [
+      {
+        "sha": "3553a93b7d015a20ec13ff7ccab76af501427bb1"
+      },
+      {
+        "sha": "82dfa7ef0802f1777b3282bbcc638e2a043b790e"
+      }
+    ],
+    "stats": {
+      "additions": 33,
+      "deletions": 5,
+      "total": 38
+    },
+    "files": [
+      {
+        "filename": "internal/billing/cache.go",
+        "additions": 4,
+        "deletions": 5
+      },
+      {
+        "filename": "internal/billing/task118_cache_scope_test.go",
+        "additions": 29,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "b0670f3a18159d7a732cb629a05a5c8fa4f35a88",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/b0670f3a18159d7a732cb629a05a5c8fa4f35a88",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-17T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-17T16:00:00Z"
+      },
+      "message": "test: MER-119 tenant and page cache key contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "229352c267bcd1cbcdc22951a2ed35bf882d78f1"
+      }
+    ],
+    "stats": {
+      "additions": 30,
+      "deletions": 0,
+      "total": 30
+    },
+    "files": [
+      {
+        "filename": "web/lib/task119_pagination_key.test.ts",
+        "additions": 30,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "55f663f53e3a6c27b5a9a2a88573c5d24b7dc70f",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/55f663f53e3a6c27b5a9a2a88573c5d24b7dc70f",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-18T18:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-18T18:00:00Z"
+      },
+      "message": "fix(console): generate invoice cache keys with tenant and page (MER-119)"
+    },
+    "parents": [
+      {
+        "sha": "b0670f3a18159d7a732cb629a05a5c8fa4f35a88"
+      }
+    ],
+    "stats": {
+      "additions": 6,
+      "deletions": 5,
+      "total": 11
+    },
+    "files": [
+      {
+        "filename": "web/lib/swrKeys.ts",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "web/pages/invoices.tsx",
+        "additions": 4,
+        "deletions": 3
+      },
+      {
+        "filename": "web/routes.yaml",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/32e57f1fe424fc43d5779b2b121dee3ecd987a74",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-20T19:30:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-20T19:30:00Z"
+      },
+      "message": "Merge pull request #22 from meridian/feature/MER-119-pagination-key"
+    },
+    "parents": [
+      {
+        "sha": "229352c267bcd1cbcdc22951a2ed35bf882d78f1"
+      },
+      {
+        "sha": "55f663f53e3a6c27b5a9a2a88573c5d24b7dc70f"
+      }
+    ],
+    "stats": {
+      "additions": 36,
+      "deletions": 5,
+      "total": 41
+    },
+    "files": [
+      {
+        "filename": "web/lib/swrKeys.ts",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/task119_pagination_key.test.ts",
+        "additions": 30,
+        "deletions": 0
+      },
+      {
+        "filename": "web/pages/invoices.tsx",
+        "additions": 4,
+        "deletions": 3
+      },
+      {
+        "filename": "web/routes.yaml",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "849b2ad4cec5f390ccfd2b3ad5717342c9d8c939",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/849b2ad4cec5f390ccfd2b3ad5717342c9d8c939",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-24T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-24T16:00:00Z"
+      },
+      "message": "test: MER-120 partial purchase order autosave contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74"
+      }
+    ],
+    "stats": {
+      "additions": 47,
+      "deletions": 0,
+      "total": 47
+    },
+    "files": [
+      {
+        "filename": "internal/validation/task120_draft_validation_test.go",
+        "additions": 30,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/task120_schema_mode.test.ts",
+        "additions": 17,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "1bf4e9af46e7ecafdd33db7a50982ca0a0b9f11c",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/1bf4e9af46e7ecafdd33db7a50982ca0a0b9f11c",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-25T18:10:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-25T18:10:00Z"
+      },
+      "message": "fix(procurement): keep draft autosave lenient, submit strict (MER-120)"
+    },
+    "parents": [
+      {
+        "sha": "849b2ad4cec5f390ccfd2b3ad5717342c9d8c939"
+      }
+    ],
+    "stats": {
+      "additions": 13,
+      "deletions": 12,
+      "total": 25
+    },
+    "files": [
+      {
+        "filename": "internal/validation/purchase_order.go",
+        "additions": 8,
+        "deletions": 8
+      },
+      {
+        "filename": "web/lib/schemas.ts",
+        "additions": 5,
+        "deletions": 4
+      }
+    ]
+  },
+  {
+    "sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/7f9a96889710de8d55bf1dce7e78665e656d0f07",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-27T19:30:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-11-27T19:30:00Z"
+      },
+      "message": "Merge pull request #23 from meridian/feature/MER-120-draft-validation"
+    },
+    "parents": [
+      {
+        "sha": "32e57f1fe424fc43d5779b2b121dee3ecd987a74"
+      },
+      {
+        "sha": "1bf4e9af46e7ecafdd33db7a50982ca0a0b9f11c"
+      }
+    ],
+    "stats": {
+      "additions": 60,
+      "deletions": 12,
+      "total": 72
+    },
+    "files": [
+      {
+        "filename": "internal/validation/purchase_order.go",
+        "additions": 8,
+        "deletions": 8
+      },
+      {
+        "filename": "internal/validation/task120_draft_validation_test.go",
+        "additions": 30,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/schemas.ts",
+        "additions": 5,
+        "deletions": 4
+      },
+      {
+        "filename": "web/lib/task120_schema_mode.test.ts",
+        "additions": 17,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "1a4760b6dd68eef998740e704171e8a37c3ba1af",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/1a4760b6dd68eef998740e704171e8a37c3ba1af",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-01T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-01T16:00:00Z"
+      },
+      "message": "test: MER-121 audit table URL/cache filter contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07"
+      }
+    ],
+    "stats": {
+      "additions": 30,
+      "deletions": 0,
+      "total": 30
+    },
+    "files": [
+      {
+        "filename": "web/lib/task121_filter_url.test.ts",
+        "additions": 30,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "e04c9106f67a6c71de6a7ae3e59e2bc5e36a84e7",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/e04c9106f67a6c71de6a7ae3e59e2bc5e36a84e7",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-02T18:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-02T18:00:00Z"
+      },
+      "message": "fix(console): restore sort and direction from audit URL state (MER-121)"
+    },
+    "parents": [
+      {
+        "sha": "1a4760b6dd68eef998740e704171e8a37c3ba1af"
+      }
+    ],
+    "stats": {
+      "additions": 6,
+      "deletions": 1,
+      "total": 7
+    },
+    "files": [
+      {
+        "filename": "web/lib/filterURL.ts",
+        "additions": 6,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "c6e1111a98eaa58eba918cc241beabd889482b73",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c6e1111a98eaa58eba918cc241beabd889482b73",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-04T19:30:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-04T19:30:00Z"
+      },
+      "message": "Merge pull request #24 from meridian/feature/MER-121-audit-filter-url"
+    },
+    "parents": [
+      {
+        "sha": "7f9a96889710de8d55bf1dce7e78665e656d0f07"
+      },
+      {
+        "sha": "e04c9106f67a6c71de6a7ae3e59e2bc5e36a84e7"
+      }
+    ],
+    "stats": {
+      "additions": 36,
+      "deletions": 1,
+      "total": 37
+    },
+    "files": [
+      {
+        "filename": "web/lib/filterURL.ts",
+        "additions": 6,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/task121_filter_url.test.ts",
+        "additions": 30,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "c419377f105c3b3762cf9d637a75c3a1471d2844",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c419377f105c3b3762cf9d637a75c3a1471d2844",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-08T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-08T16:00:00Z"
+      },
+      "message": "test: MER-122 localized generated error fallback contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "c6e1111a98eaa58eba918cc241beabd889482b73"
+      }
+    ],
+    "stats": {
+      "additions": 27,
+      "deletions": 0,
+      "total": 27
+    },
+    "files": [
+      {
+        "filename": "web/lib/task122_error_fallback.test.ts",
+        "additions": 27,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "fa3938c1e3504609078496c8a75b0c31026ae8b9",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/fa3938c1e3504609078496c8a75b0c31026ae8b9",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-09T18:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-09T18:00:00Z"
+      },
+      "message": "fix(i18n): fall back to generated English error catalog (MER-122)"
+    },
+    "parents": [
+      {
+        "sha": "c419377f105c3b3762cf9d637a75c3a1471d2844"
+      }
+    ],
+    "stats": {
+      "additions": 3,
+      "deletions": 1,
+      "total": 4
+    },
+    "files": [
+      {
+        "filename": "web/lib/errMessages.ts",
+        "additions": 3,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "f073401fd44c3a0df7bd936369718c206e60527b",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/f073401fd44c3a0df7bd936369718c206e60527b",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-11T19:30:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-11T19:30:00Z"
+      },
+      "message": "Merge pull request #25 from meridian/feature/MER-122-localized-error-fallback"
+    },
+    "parents": [
+      {
+        "sha": "c6e1111a98eaa58eba918cc241beabd889482b73"
+      },
+      {
+        "sha": "fa3938c1e3504609078496c8a75b0c31026ae8b9"
+      }
+    ],
+    "stats": {
+      "additions": 30,
+      "deletions": 1,
+      "total": 31
+    },
+    "files": [
+      {
+        "filename": "web/lib/errMessages.ts",
+        "additions": 3,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/task122_error_fallback.test.ts",
+        "additions": 27,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "339fb94a9902687ed39ad83e0e471d828e24e7a2",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/339fb94a9902687ed39ad83e0e471d828e24e7a2",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-15T16:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-15T16:00:00Z"
+      },
+      "message": "test: MER-123 public bundle environment boundary (red)"
+    },
+    "parents": [
+      {
+        "sha": "f073401fd44c3a0df7bd936369718c206e60527b"
+      }
+    ],
+    "stats": {
+      "additions": 27,
+      "deletions": 0,
+      "total": 27
+    },
+    "files": [
+      {
+        "filename": "web/lib/task123_public_config.test.ts",
+        "additions": 27,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "9d9a389d87596caacb14bab41edfc8f2b09ccc83",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/9d9a389d87596caacb14bab41edfc8f2b09ccc83",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-15T16:10:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-15T16:10:00Z"
+      },
+      "message": "test: keep public config checks executable before fix"
+    },
+    "parents": [
+      {
+        "sha": "339fb94a9902687ed39ad83e0e471d828e24e7a2"
+      }
+    ],
+    "stats": {
+      "additions": 5,
+      "deletions": 5,
+      "total": 10
+    },
+    "files": [
+      {
+        "filename": "web/lib/task123_public_config.test.ts",
+        "additions": 5,
+        "deletions": 5
+      }
+    ]
+  },
+  {
+    "sha": "2cc10dc37882a70b0a2789128f39ce728f14c861",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/2cc10dc37882a70b0a2789128f39ce728f14c861",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-16T18:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-16T18:00:00Z"
+      },
+      "message": "fix(web): expose only public API origin to client bundle (MER-123)"
+    },
+    "parents": [
+      {
+        "sha": "9d9a389d87596caacb14bab41edfc8f2b09ccc83"
+      }
+    ],
+    "stats": {
+      "additions": 4,
+      "deletions": 3,
+      "total": 7
+    },
+    "files": [
+      {
+        "filename": "web/lib/publicConfig.ts",
+        "additions": 4,
+        "deletions": 3
+      }
+    ]
+  },
+  {
+    "sha": "958b5e6096c2b0be94440fc1a23732a8afef2858",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/958b5e6096c2b0be94440fc1a23732a8afef2858",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-18T19:30:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-12-18T19:30:00Z"
+      },
+      "message": "Merge pull request #26 from meridian/feature/MER-123-public-api-config"
+    },
+    "parents": [
+      {
+        "sha": "f073401fd44c3a0df7bd936369718c206e60527b"
+      },
+      {
+        "sha": "2cc10dc37882a70b0a2789128f39ce728f14c861"
+      }
+    ],
+    "stats": {
+      "additions": 31,
+      "deletions": 3,
+      "total": 34
+    },
+    "files": [
+      {
+        "filename": "web/lib/publicConfig.ts",
+        "additions": 4,
+        "deletions": 3
+      },
+      {
+        "filename": "web/lib/task123_public_config.test.ts",
+        "additions": 27,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "1d941403488386339199032041a4d7df71315794",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/1d941403488386339199032041a4d7df71315794",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-22T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-22T16:00:00Z"
+      },
+      "message": "test: MER-124 authenticated hydration flag source contract (red)"
+    },
+    "parents": [
+      {
+        "sha": "958b5e6096c2b0be94440fc1a23732a8afef2858"
+      }
+    ],
+    "stats": {
+      "additions": 41,
+      "deletions": 0,
+      "total": 41
+    },
+    "files": [
+      {
+        "filename": "web/lib/task124_bootstrap_auth.test.ts",
+        "additions": 41,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "c22bf396eb6bce18f967f3b3afa69f5a4175117d",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c22bf396eb6bce18f967f3b3afa69f5a4175117d",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-22T16:10:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-22T16:10:00Z"
+      },
+      "message": "test: target authenticated-session local storage leak in MER-124 spec"
+    },
+    "parents": [
+      {
+        "sha": "1d941403488386339199032041a4d7df71315794"
+      }
+    ],
+    "stats": {
+      "additions": 14,
+      "deletions": 2,
+      "total": 16
+    },
+    "files": [
+      {
+        "filename": "web/lib/task124_bootstrap_auth.test.ts",
+        "additions": 14,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "382184ac9233c841bab815cfb768c3ebbf99dc8a",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/382184ac9233c841bab815cfb768c3ebbf99dc8a",
+    "commit": {
+      "author": {
+        "name": "Sofia Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-12-22T16:20:00Z"
+      },
+      "committer": {
+        "name": "Sofia Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2026-12-22T16:20:00Z"
+      },
+      "message": "feat(console): gate tenant policy after mount to avoid first-paint flicker"
+    },
+    "parents": [
+      {
+        "sha": "c22bf396eb6bce18f967f3b3afa69f5a4175117d"
+      }
+    ],
+    "stats": {
+      "additions": 11,
+      "deletions": 2,
+      "total": 13
+    },
+    "files": [
+      {
+        "filename": "web/pages/_app.tsx",
+        "additions": 11,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "48952f7ea889504ca33f970001e4bac8edf3b14e",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/48952f7ea889504ca33f970001e4bac8edf3b14e",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-22T16:30:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-22T16:30:00Z"
+      },
+      "message": "test: pin authenticated policy hydration source (red)"
+    },
+    "parents": [
+      {
+        "sha": "382184ac9233c841bab815cfb768c3ebbf99dc8a"
+      }
+    ],
+    "stats": {
+      "additions": 8,
+      "deletions": 0,
+      "total": 8
+    },
+    "files": [
+      {
+        "filename": "web/lib/task124_bootstrap_auth.test.ts",
+        "additions": 8,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "7cf2c938a6a857cfb7c57ae98262c74761b06555",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/7cf2c938a6a857cfb7c57ae98262c74761b06555",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-23T18:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-23T18:00:00Z"
+      },
+      "message": "fix(console): apply tenant policy during first render (MER-124)"
+    },
+    "parents": [
+      {
+        "sha": "48952f7ea889504ca33f970001e4bac8edf3b14e"
+      }
+    ],
+    "stats": {
+      "additions": 8,
+      "deletions": 9,
+      "total": 17
+    },
+    "files": [
+      {
+        "filename": "web/pages/_app.tsx",
+        "additions": 8,
+        "deletions": 9
+      }
+    ]
+  },
+  {
+    "sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/4715436c3906ac17ecfdc7470e00fdd8cdf1699c",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-23T20:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2026-12-23T20:00:00Z"
+      },
+      "message": "Merge pull request #27 from meridian/feature/MER-124-bootstrap-auth"
+    },
+    "parents": [
+      {
+        "sha": "958b5e6096c2b0be94440fc1a23732a8afef2858"
+      },
+      {
+        "sha": "7cf2c938a6a857cfb7c57ae98262c74761b06555"
+      }
+    ],
+    "stats": {
+      "additions": 71,
+      "deletions": 2,
+      "total": 73
+    },
+    "files": [
+      {
+        "filename": "web/lib/task124_bootstrap_auth.test.ts",
+        "additions": 61,
+        "deletions": 0
+      },
+      {
+        "filename": "web/pages/_app.tsx",
+        "additions": 10,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "e3aba53f77926ce8ef89c63352805b37898ff777",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/e3aba53f77926ce8ef89c63352805b37898ff777",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-06T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-06T16:00:00Z"
+      },
+      "message": "feat(payroll): add shift differential pay component (MER-201)"
+    },
+    "parents": [
+      {
+        "sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c"
+      }
+    ],
+    "stats": {
+      "additions": 44,
+      "deletions": 1,
+      "total": 45
+    },
+    "files": [
+      {
+        "filename": "internal/payroll/eval201_test.go",
+        "additions": 42,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payroll/export.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/payComponents.ts",
+        "additions": 1,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "3ff9f6d7b110391499cc04a24cb436cc83319cc0",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/3ff9f6d7b110391499cc04a24cb436cc83319cc0",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-07T18:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-07T18:00:00Z"
+      },
+      "message": "fix(payroll): append shift differential and bump workbook schema (MER-201)"
+    },
+    "parents": [
+      {
+        "sha": "e3aba53f77926ce8ef89c63352805b37898ff777"
+      }
+    ],
+    "stats": {
+      "additions": 11,
+      "deletions": 8,
+      "total": 19
+    },
+    "files": [
+      {
+        "filename": "internal/payroll/export.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/payroll/export_test.go",
+        "additions": 8,
+        "deletions": 5
+      },
+      {
+        "filename": "internal/payroll/schema.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/payComponents.ts",
+        "additions": 1,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "80402dba9eb1da7a0625fff1104dee32643223f2",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/80402dba9eb1da7a0625fff1104dee32643223f2",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-08T20:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-08T20:00:00Z"
+      },
+      "message": "Merge pull request #28 from meridian/feature/MER-201-payroll-columns"
+    },
+    "parents": [
+      {
+        "sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c"
+      },
+      {
+        "sha": "3ff9f6d7b110391499cc04a24cb436cc83319cc0"
+      }
+    ],
+    "stats": {
+      "additions": 53,
+      "deletions": 7,
+      "total": 60
+    },
+    "files": [
+      {
+        "filename": "internal/payroll/eval201_test.go",
+        "additions": 42,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payroll/export.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "internal/payroll/export_test.go",
+        "additions": 8,
+        "deletions": 5
+      },
+      {
+        "filename": "internal/payroll/schema.go",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "filename": "web/lib/payComponents.ts",
+        "additions": 1,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "c70c8faa2b83df68f8b253e2673be3b5acdbdd74",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/c70c8faa2b83df68f8b253e2673be3b5acdbdd74",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-01-13T16:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-01-13T16:00:00Z"
+      },
+      "message": "feat(store): add transactional bulk soft-delete with retention note (MER-202)"
+    },
+    "parents": [
+      {
+        "sha": "80402dba9eb1da7a0625fff1104dee32643223f2"
+      }
+    ],
+    "stats": {
+      "additions": 55,
+      "deletions": 0,
+      "total": 55
+    },
+    "files": [
+      {
+        "filename": "internal/store/bulk_delete.go",
+        "additions": 20,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/store/eval202_test.go",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/store/soft_delete.go",
+        "additions": 11,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "8be4ff72fca539620280d4982731e92d78031fbb",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/8be4ff72fca539620280d4982731e92d78031fbb",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-01-15T20:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-01-15T20:00:00Z"
+      },
+      "message": "Merge pull request #29 from meridian/feature/MER-202-bulk-delete"
+    },
+    "parents": [
+      {
+        "sha": "80402dba9eb1da7a0625fff1104dee32643223f2"
+      },
+      {
+        "sha": "c70c8faa2b83df68f8b253e2673be3b5acdbdd74"
+      }
+    ],
+    "stats": {
+      "additions": 55,
+      "deletions": 0,
+      "total": 55
+    },
+    "files": [
+      {
+        "filename": "internal/store/bulk_delete.go",
+        "additions": 20,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/store/eval202_test.go",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/store/soft_delete.go",
+        "additions": 11,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "f8c30ef0504af33ea4163baf52100a22be698cff",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/f8c30ef0504af33ea4163baf52100a22be698cff",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2027-01-20T16:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2027-01-20T16:00:00Z"
+      },
+      "message": "fix(web): restore query-token auth for legacy event stream (MER-203)"
+    },
+    "parents": [
+      {
+        "sha": "8be4ff72fca539620280d4982731e92d78031fbb"
+      }
+    ],
+    "stats": {
+      "additions": 37,
+      "deletions": 1,
+      "total": 38
+    },
+    "files": [
+      {
+        "filename": "web/lib/eval203_sse.test.ts",
+        "additions": 29,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/sseAuth.ts",
+        "additions": 8,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/416e4638564d2479255f37ae6b1d66ce18f1d84c",
+    "commit": {
+      "author": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2027-01-22T20:00:00Z"
+      },
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2027-01-22T20:00:00Z"
+      },
+      "message": "Merge pull request #30 from meridian/feature/MER-203-sse-auth"
+    },
+    "parents": [
+      {
+        "sha": "8be4ff72fca539620280d4982731e92d78031fbb"
+      },
+      {
+        "sha": "f8c30ef0504af33ea4163baf52100a22be698cff"
+      }
+    ],
+    "stats": {
+      "additions": 37,
+      "deletions": 1,
+      "total": 38
+    },
+    "files": [
+      {
+        "filename": "web/lib/eval203_sse.test.ts",
+        "additions": 29,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/sseAuth.ts",
+        "additions": 8,
+        "deletions": 1
+      }
+    ]
+  },
+  {
+    "sha": "6c4dcbeea8957f14e97d87223815d47ee0780435",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/6c4dcbeea8957f14e97d87223815d47ee0780435",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-27T16:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-27T16:00:00Z"
+      },
+      "message": "test: pin pay component mirror alignment across Go and TypeScript (MER-204)"
+    },
+    "parents": [
+      {
+        "sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c"
+      }
+    ],
+    "stats": {
+      "additions": 28,
+      "deletions": 0,
+      "total": 28
+    },
+    "files": [
+      {
+        "filename": "web/lib/eval204_paylabels.test.ts",
+        "additions": 28,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "490fc4188b5f8d1caf2f97815d534ba6537fec30",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/490fc4188b5f8d1caf2f97815d534ba6537fec30",
+    "commit": {
+      "author": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-29T20:00:00Z"
+      },
+      "committer": {
+        "name": "Sofia Almeida",
+        "email": "sofia@meridian-erp.dev",
+        "date": "2027-01-29T20:00:00Z"
+      },
+      "message": "Merge pull request #31 from meridian/feature/MER-204-pay-labels"
+    },
+    "parents": [
+      {
+        "sha": "416e4638564d2479255f37ae6b1d66ce18f1d84c"
+      },
+      {
+        "sha": "6c4dcbeea8957f14e97d87223815d47ee0780435"
+      }
+    ],
+    "stats": {
+      "additions": 28,
+      "deletions": 0,
+      "total": 28
+    },
+    "files": [
+      {
+        "filename": "web/lib/eval204_paylabels.test.ts",
+        "additions": 28,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "88dae0af3fe5aff631f13d0a374b3aae5e757ff8",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/88dae0af3fe5aff631f13d0a374b3aae5e757ff8",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-02-03T16:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-02-03T16:00:00Z"
+      },
+      "message": "fix(billing): evaluate overdue against tenant-local business date (MER-205)"
+    },
+    "parents": [
+      {
+        "sha": "490fc4188b5f8d1caf2f97815d534ba6537fec30"
+      }
+    ],
+    "stats": {
+      "additions": 70,
+      "deletions": 2,
+      "total": 72
+    },
+    "files": [
+      {
+        "filename": "internal/billing/eval205_test.go",
+        "additions": 40,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/billing/overdue.go",
+        "additions": 20,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/jobs/overdue.go",
+        "additions": 10,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "4df408a65d33865f5d6f3061844abc08cbb5f664",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/4df408a65d33865f5d6f3061844abc08cbb5f664",
+    "commit": {
+      "author": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-02-05T20:00:00Z"
+      },
+      "committer": {
+        "name": "Priya Sharma",
+        "email": "priya@meridian-erp.dev",
+        "date": "2027-02-05T20:00:00Z"
+      },
+      "message": "Merge pull request #32 from meridian/feature/MER-205-overdue-tz"
+    },
+    "parents": [
+      {
+        "sha": "490fc4188b5f8d1caf2f97815d534ba6537fec30"
+      },
+      {
+        "sha": "88dae0af3fe5aff631f13d0a374b3aae5e757ff8"
+      }
+    ],
+    "stats": {
+      "additions": 70,
+      "deletions": 2,
+      "total": 72
+    },
+    "files": [
+      {
+        "filename": "internal/billing/eval205_test.go",
+        "additions": 40,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/billing/overdue.go",
+        "additions": 20,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/jobs/overdue.go",
+        "additions": 10,
+        "deletions": 2
+      }
+    ]
+  },
+  {
+    "sha": "3ac96f41c0ae331c43c4fd06e9d6060fdf966a30",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/3ac96f41c0ae331c43c4fd06e9d6060fdf966a30",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-10T16:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-10T16:00:00Z"
+      },
+      "message": "fix(payments): derive idempotency key from attempt, not retry number (MER-206)"
+    },
+    "parents": [
+      {
+        "sha": "4df408a65d33865f5d6f3061844abc08cbb5f664"
+      }
+    ],
+    "stats": {
+      "additions": 61,
+      "deletions": 5,
+      "total": 66
+    },
+    "files": [
+      {
+        "filename": "internal/payments/eval206_test.go",
+        "additions": 36,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payments/idempotency.go",
+        "additions": 14,
+        "deletions": 5
+      },
+      {
+        "filename": "internal/payments/ledger.go",
+        "additions": 11,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "93c99fe65568325d2395525518284f59a9100a23",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/93c99fe65568325d2395525518284f59a9100a23",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-12T20:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-12T20:00:00Z"
+      },
+      "message": "Merge pull request #33 from meridian/feature/MER-206-idempotency"
+    },
+    "parents": [
+      {
+        "sha": "4df408a65d33865f5d6f3061844abc08cbb5f664"
+      },
+      {
+        "sha": "3ac96f41c0ae331c43c4fd06e9d6060fdf966a30"
+      }
+    ],
+    "stats": {
+      "additions": 61,
+      "deletions": 5,
+      "total": 66
+    },
+    "files": [
+      {
+        "filename": "internal/payments/eval206_test.go",
+        "additions": 36,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payments/idempotency.go",
+        "additions": 14,
+        "deletions": 5
+      },
+      {
+        "filename": "internal/payments/ledger.go",
+        "additions": 11,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "6f9208f59216751494daba0d8c43ee569dc71571",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/6f9208f59216751494daba0d8c43ee569dc71571",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-17T16:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-17T16:00:00Z"
+      },
+      "message": "fix(audit): decode pre-expansion rows through the v1 shim (MER-207)"
+    },
+    "parents": [
+      {
+        "sha": "93c99fe65568325d2395525518284f59a9100a23"
+      }
+    ],
+    "stats": {
+      "additions": 62,
+      "deletions": 10,
+      "total": 72
+    },
+    "files": [
+      {
+        "filename": "internal/audit/decode.go",
+        "additions": 33,
+        "deletions": 10
+      },
+      {
+        "filename": "internal/audit/eval207_test.go",
+        "additions": 29,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "7cda3e9560f221d6c08ec6efb3034d96128bf4ff",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/7cda3e9560f221d6c08ec6efb3034d96128bf4ff",
+    "commit": {
+      "author": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-19T20:00:00Z"
+      },
+      "committer": {
+        "name": "Marcus Lee",
+        "email": "marcus@meridian-erp.dev",
+        "date": "2027-02-19T20:00:00Z"
+      },
+      "message": "Merge pull request #34 from meridian/feature/MER-207-audit-v1"
+    },
+    "parents": [
+      {
+        "sha": "93c99fe65568325d2395525518284f59a9100a23"
+      },
+      {
+        "sha": "6f9208f59216751494daba0d8c43ee569dc71571"
+      }
+    ],
+    "stats": {
+      "additions": 62,
+      "deletions": 10,
+      "total": 72
+    },
+    "files": [
+      {
+        "filename": "internal/audit/decode.go",
+        "additions": 33,
+        "deletions": 10
+      },
+      {
+        "filename": "internal/audit/eval207_test.go",
+        "additions": 29,
+        "deletions": 0
+      }
+    ]
+  },
+  {
+    "sha": "0000000000000000000000000000000000000000",
+    "html_url": "https://github.com/meridian/meridian-erp/commit/5b9a89cd643292130af4bd0891591ce6e427df43",
+    "commit": {
+      "author": {},
+      "committer": {
+        "name": "Dan Levin",
+        "email": "dan@meridian-erp.dev",
+        "date": "2026-07-10T16:05:00Z"
+      },
+      "message": "feat(payroll): CSV export package + web pay-component labels (MER-901)"
+    },
+    "parents": [
+      {
+        "sha": "ffffffffffffffffffffffffffffffffffffffff"
+      }
+    ],
+    "stats": {
+      "additions": 124,
+      "deletions": 0,
+      "total": 124
+    },
+    "files": [
+      {
+        "filename": "internal/payroll/export.go",
+        "additions": 48,
+        "deletions": 0
+      },
+      {
+        "filename": "internal/payroll/export_test.go",
+        "additions": 51,
+        "deletions": 0
+      },
+      {
+        "filename": "web/lib/payComponents.ts",
+        "additions": 25,
+        "deletions": 0
+      }
+    ]
+  }
+]

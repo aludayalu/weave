@@ -1,0 +1,244 @@
+{
+  "task_id": "mer-101",
+  "channel": "billing",
+  "window": {
+    "start": "2026-07-08T15:00:00Z",
+    "end": "2026-07-10T21:12:00Z"
+  },
+  "message_count": 13,
+  "messages": [
+    {
+      "message_id": "1524429855129600000",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-07-08T15:00:00Z",
+      "ts_raw": "2026-07-08T15:00:00+00:00",
+      "ts_epoch": 1783522800,
+      "content": "@priya Harborline Logistics' warehouse retries are treating an upstream timeout as a hard card decline, delaying order fulfillment. Opening MER-101 to track it. ok this is the third report on this, starting now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-101"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524432120053760001",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-08T15:09:00Z",
+      "ts_raw": "2026-07-08T15:09:00+00:00",
+      "ts_epoch": 1783523340,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524452504371200002",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-08T16:30:00Z",
+      "ts_raw": "2026-07-08T16:30:00+00:00",
+      "ts_epoch": 1783528200,
+      "content": "```\n{\"partial\": tru",
+      "edited": "2026-07-08T16:30:00Z",
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t01-52969131",
+          "filename": "t01-client-report.pdf",
+          "path": "raw/attachments/jira/reports/t01-client-report.pdf",
+          "bytes": 68817,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t01-50361968",
+          "filename": "t01-gateway-log.log",
+          "path": "raw/attachments/jira/logs/t01-gateway-log.log",
+          "bytes": 331,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1524475153612800011",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-08T18:00:00Z",
+      "ts_raw": "2026-07-08T18:00:00+00:00",
+      "ts_epoch": 1783533600,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524550651084800012",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-07-08T23:00:00Z",
+      "ts_raw": "2026-07-08T23:00:00+00:00",
+      "ts_epoch": 1783551600,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524626148556800013",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-09T04:00:00Z",
+      "ts_raw": "2026-07-09T04:00:00+00:00",
+      "ts_epoch": 1783569600,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524817408819200003",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-07-09T16:40:00Z",
+      "ts_raw": "2026-07-09T16:40:00+00:00",
+      "ts_epoch": 1783615200,
+      "content": "spec-first per team rule — tests for MER-101 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-101"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524884098252800004",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-09T21:05:00Z",
+      "ts_raw": "2026-07-09T21:05:00+00:00",
+      "ts_epoch": 1783631100,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524896681164800005",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-09T21:55:00Z",
+      "ts_raw": "2026-07-09T21:55:00+00:00",
+      "ts_epoch": 1783634100,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524904230912000006",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-07-09T22:25:00Z",
+      "ts_raw": "2026-07-09T22:25:00+00:00",
+      "ts_epoch": 1783635900,
+      "content": "PR #1 is up: `feature/MER-101-gateway-timeout`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-101"
+      ],
+      "mentions_pr": [
+        1
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1524915555532800007",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-07-09T23:10:00Z",
+      "ts_raw": "2026-07-09T23:10:00+00:00",
+      "ts_epoch": 1783638600,
+      "content": "reviewed #1 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1524924363571200008",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-07-09T23:45:00Z",
+      "ts_raw": "2026-07-09T23:45:00+00:00",
+      "ts_epoch": 1783640700,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1525247241093120009",
+      "channel": "billing",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-07-10T21:08:00Z",
+      "ts_raw": "2026-07-10T21:08:00+00:00",
+      "ts_epoch": 1783717680,
+      "content": "deploy is green, MER-101 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-101"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    }
+  ]
+}

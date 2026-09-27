@@ -1,0 +1,81 @@
+{
+  "task_id": "mer-121",
+  "issue": {
+    "issue_key": "MER-121",
+    "summary": "Audit filters disappear on browser back navigation",
+    "description": "A finance analyst filters audit events, opens a record, then returns to an unfiltered table with stale cached results.\n\nTribal constraint: Filter state belongs in URL search parameters and the cache key; useFilteredTable serializes filters in fixed field order for stable keys.",
+    "status": "Done",
+    "reporter": "Priya Sharma",
+    "assignee": "Priya Sharma",
+    "created_utc": "2026-12-02T13:18:00Z",
+    "updated_utc": "2026-12-04T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21024",
+        "filename": "t22-support-report.pdf",
+        "path": "raw/attachments/jira/reports/t22-support-report.pdf",
+        "bytes": 68857,
+        "content_type": "application/pdf",
+        "created_utc": "2026-12-02T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-121",
+      "ts_utc": "2026-12-02T13:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-121",
+      "ts_utc": "2026-12-02T13:18:00Z",
+      "author": "Priya Sharma",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Priya Sharma"
+    },
+    {
+      "issue_key": "MER-121",
+      "ts_utc": "2026-12-03T14:58:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-121",
+      "ts_utc": "2026-12-03T21:28:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-121",
+      "ts_utc": "2026-12-03T21:28:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #24"
+    },
+    {
+      "issue_key": "MER-121",
+      "ts_utc": "2026-12-04T19:48:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-121",
+      "ts_utc": "2026-12-04T19:48:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

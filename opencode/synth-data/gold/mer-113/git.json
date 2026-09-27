@@ -1,0 +1,96 @@
+{
+  "task_id": "mer-113",
+  "pull_request": {
+    "pr_number": 16,
+    "title": "test: MER-113 finance review status schema contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-113-review-status",
+    "merge_sha": "bde5a9354e5e97225802773809cee0efa6f9afec",
+    "opened_ts_utc": "2026-10-07T18:10:00Z",
+    "merged_ts_utc": "2026-10-09T19:30:00Z",
+    "closed_ts_utc": "2026-10-09T19:30:00Z"
+  },
+  "merge_sha": "bde5a9354e5e97225802773809cee0efa6f9afec",
+  "base_sha": "c51a8a593e8268e783b40a98a2d47f5a29452f71",
+  "head_sha": "ae18d008407057184b14e4cf1c997ae62f24454a",
+  "commit_count": 4,
+  "commits": [
+    {
+      "sha": "4767bb1aebd386c53c105fcbd2683a402a5a2cda",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-06T16:00:00Z",
+      "committed_ts_utc": "2026-10-06T16:00:00Z",
+      "message": "test: MER-113 finance review status schema contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "c51a8a593e8268e783b40a98a2d47f5a29452f71"
+      ],
+      "additions": 24,
+      "deletions": 0,
+      "changed_files": [
+        "internal/billing/task113_review_status_test.go"
+      ]
+    },
+    {
+      "sha": "04be15f507f8ebce9866dc223c4c31562b35f5f1",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-06T16:10:00Z",
+      "committed_ts_utc": "2026-10-06T16:10:00Z",
+      "message": "test: keep MER-113 red checks executable before enum addition",
+      "is_merge": false,
+      "parent_shas": [
+        "4767bb1aebd386c53c105fcbd2683a402a5a2cda"
+      ],
+      "additions": 3,
+      "deletions": 3,
+      "changed_files": [
+        "internal/billing/task113_review_status_test.go"
+      ]
+    },
+    {
+      "sha": "21383ba8e8d61bd4139a348a87a09864735ea8e1",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-06T16:20:00Z",
+      "committed_ts_utc": "2026-10-06T16:20:00Z",
+      "message": "test: allow additive finance schema version bumps",
+      "is_merge": false,
+      "parent_shas": [
+        "04be15f507f8ebce9866dc223c4c31562b35f5f1"
+      ],
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": [
+        "internal/billing/billing_test.go"
+      ]
+    },
+    {
+      "sha": "ae18d008407057184b14e4cf1c997ae62f24454a",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-07T18:10:00Z",
+      "committed_ts_utc": "2026-10-07T18:10:00Z",
+      "message": "feat(billing): add finance review status and schema v5 (MER-113)",
+      "is_merge": false,
+      "parent_shas": [
+        "21383ba8e8d61bd4139a348a87a09864735ea8e1"
+      ],
+      "additions": 17,
+      "deletions": 1,
+      "changed_files": [
+        "internal/billing/invoice.go",
+        "web/lib/invoiceStatus.ts"
+      ]
+    }
+  ],
+  "files": [
+    "internal/billing/billing_test.go",
+    "internal/billing/invoice.go",
+    "internal/billing/task113_review_status_test.go",
+    "web/lib/invoiceStatus.ts"
+  ]
+}

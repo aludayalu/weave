@@ -1,0 +1,5906 @@
+[
+  {
+    "id": "20001",
+    "key": "MER-101",
+    "fields": {
+      "summary": "Partner payment timeouts are misclassified",
+      "description": "Harborline Logistics' warehouse retries are treating an upstream timeout as a hard card decline, delaying order fulfillment.\n\nTribal constraint: Payment codes are append-only per module; partner integrations use numeric ranges and api/errors.yaml generates both Go messages and TypeScript mappings.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-07-08T15:00:00+00:00",
+      "updated": "2026-07-10T21:30:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21001",
+          "filename": "t01-client-report.pdf",
+          "size": 68817,
+          "mimeType": "application/pdf",
+          "created": "2026-07-08T15:40:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t01-client-report.pdf"
+        },
+        {
+          "id": "21001",
+          "filename": "t01-gateway-log.log",
+          "size": 331,
+          "mimeType": "text/plain",
+          "created": "2026-07-08T15:40:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t01-gateway-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30001",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-07-08T15:00:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21001",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30011",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-07-09T16:40:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30021",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-07-09T23:10:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #1"
+            }
+          ]
+        },
+        {
+          "id": "30031",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-07-10T21:30:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20002",
+    "key": "MER-102",
+    "fields": {
+      "summary": "Compliance export gate differs by tenant",
+      "description": "The compliance rollout flag appears enabled in some tenant environments but disabled in others after a control-plane sync.\n\nTribal constraint: The SQL seed's dotted lowercase spelling is canonical; Go uses kebab case, Kubernetes uses uppercase underscores, and cache invalidation has a separate registry.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-07-15T14:19:00+00:00",
+      "updated": "2026-07-17T20:49:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21002",
+          "filename": "t02-flag-debug.pdf",
+          "size": 69129,
+          "mimeType": "application/pdf",
+          "created": "2026-07-15T14:59:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t02-flag-debug.pdf"
+        },
+        {
+          "id": "21002",
+          "filename": "t02-tenant-snapshot.pdf",
+          "size": 68766,
+          "mimeType": "application/pdf",
+          "created": "2026-07-15T14:59:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t02-tenant-snapshot.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30002",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-07-15T14:19:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21002",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30012",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-07-16T15:59:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30022",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-07-16T22:29:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #2"
+            }
+          ]
+        },
+        {
+          "id": "30032",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-07-17T20:49:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20008",
+    "key": "MER-103",
+    "fields": {
+      "summary": "Tenant grace-period overrides silently fall back",
+      "description": "Harborline's configured seven-day grace period is ignored for invoices created by the regional import job.\n\nTribal constraint: Override keys are seeded as dotted lowercase in SQL; old imports submit mixed-case underscore names, while reads currently only lowercase.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2026-08-12T13:28:00+00:00",
+      "updated": "2026-08-14T19:58:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21008",
+          "filename": "t03-client-report.pdf",
+          "size": 69303,
+          "mimeType": "application/pdf",
+          "created": "2026-08-12T14:08:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/t03-client-report.pdf"
+        },
+        {
+          "id": "21008",
+          "filename": "t03-import-log.log",
+          "size": 904,
+          "created": "2026-08-12T14:08:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/t03-import-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30008",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-08-12T13:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21008",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30018",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-08-13T15:08:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30028",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-08-13T21:38:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #8"
+            }
+          ]
+        },
+        {
+          "id": "30038",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-08-14T19:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20009",
+    "key": "MER-106",
+    "fields": {
+      "summary": "Container pool setting is ignored in production",
+      "description": "The new database pool ceiling is present in the deployment manifest, but pods still start with the generated default and queue invoice writes.\n\nTribal constraint: Compose and Go use different historical environment prefixes; generated defaults run during build, and the deployment uses a separate env alias.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2026-08-19T13:48:00+00:00",
+      "updated": "2026-08-21T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "deploys"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21009",
+          "filename": "t04-incident-log.log",
+          "size": 331,
+          "created": "2026-08-19T14:28:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/logs/t04-incident-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30009",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-08-19T13:48:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21009",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30019",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-08-20T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30029",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-08-20T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #9"
+            }
+          ]
+        },
+        {
+          "id": "30039",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-08-21T20:18:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20010",
+    "key": "MER-107",
+    "fields": {
+      "summary": "Optional partner URL is indistinguishable from an empty value",
+      "description": "Self-hosted customers with no partner webhook configured are being treated as if they explicitly configured an empty endpoint.\n\nTribal constraint: Value-vs-unset follows migration guarantees; confdiff interprets pointers as runtime-optional and zero values as guaranteed defaults.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Sofia Almeida"
+      },
+      "assignee": {
+        "displayName": "Sofia Almeida"
+      },
+      "created": "2026-08-26T13:48:00+00:00",
+      "updated": "2026-08-28T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21010",
+          "filename": "t05-support-report.pdf",
+          "size": 71515,
+          "mimeType": "application/pdf",
+          "created": "2026-08-26T14:28:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/reports/t05-support-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30010",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-08-26T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21010",
+              "toString": "Sofia Almeida"
+            }
+          ]
+        },
+        {
+          "id": "30020",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-08-27T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30030",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-08-27T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #10"
+            }
+          ]
+        },
+        {
+          "id": "30040",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-08-28T20:18:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20011",
+    "key": "MER-108",
+    "fields": {
+      "summary": "Historical invoice events fail replay after a field rename",
+      "description": "Finance's reconciliation replay rejects persisted invoice events written by older server versions.\n\nTribal constraint: Event payloads are append-only and decoded through both JSON and mapstructure; stored tag names are a compatibility contract, not cosmetic struct labels.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-09-02T13:18:00+00:00",
+      "updated": "2026-09-04T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21011",
+          "filename": "t06-replay-log.log",
+          "size": 346,
+          "mimeType": "text/plain",
+          "created": "2026-09-02T13:58:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t06-replay-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30011",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-02T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21011",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30021",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-03T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30031",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-03T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #11"
+            }
+          ]
+        },
+        {
+          "id": "30041",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-04T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20012",
+    "key": "MER-109",
+    "fields": {
+      "summary": "Async invoice export loses tenant context",
+      "description": "A queued export occasionally reads the default tenant after being launched from a tenant-specific invoice route.\n\nTribal constraint: Workers replay handlers without HTTP middleware; tenant identity must be carried in the route-created context/envelope, not reconstructed from headers.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-09-09T13:33:00+00:00",
+      "updated": "2026-09-11T20:03:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21012",
+          "filename": "t07-client-report.pdf",
+          "size": 67548,
+          "mimeType": "application/pdf",
+          "created": "2026-09-09T14:13:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t07-client-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30012",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-09T13:33:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21012",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30022",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-10T15:13:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30032",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-10T21:43:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #12"
+            }
+          ]
+        },
+        {
+          "id": "30042",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-11T20:03:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20013",
+    "key": "MER-110",
+    "fields": {
+      "summary": "Generated error catalogs drift between services",
+      "description": "The console shows raw error codes for a partner-facing error while Go logs show a friendly message for the same response.\n\nTribal constraint: api/errors.yaml is the only source of truth; generated Go and TypeScript files must be regenerated together, and reserved module blocks are not allocated by alphabetical order.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-09-16T13:48:00+00:00",
+      "updated": "2026-09-18T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21013",
+          "filename": "t08-client-report.pdf",
+          "size": 70824,
+          "mimeType": "application/pdf",
+          "created": "2026-09-16T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t08-client-report.pdf"
+        },
+        {
+          "id": "21013",
+          "filename": "t08-release-log.log",
+          "size": 777,
+          "created": "2026-09-16T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t08-release-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30013",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-16T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21013",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30023",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-17T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30033",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-17T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #13"
+            }
+          ]
+        },
+        {
+          "id": "30043",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-18T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20004",
+    "key": "MER-851",
+    "fields": {
+      "summary": "GDPR audit export exposes personal data",
+      "description": "Crestwood Dental's erasure review found personal identifiers in the admin audit export despite the ordinary event endpoint masking them.\n\nTribal constraint: The hand-written marshaler and generated easyjson path differ; all serialization boundaries, including the fast export path, must use the redaction policy and the compliance flag.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2026-07-22T13:08:00+00:00",
+      "updated": "2026-07-24T19:38:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "incidents"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21004",
+          "filename": "t09-gdpr-report.pdf",
+          "size": 70129,
+          "mimeType": "application/pdf",
+          "created": "2026-07-22T13:48:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/t09-gdpr-report.pdf"
+        },
+        {
+          "id": "21004",
+          "filename": "t09-audit-export-log.log",
+          "size": 693,
+          "mimeType": "text/plain",
+          "created": "2026-07-22T13:48:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/logs/t09-audit-export-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30004",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-07-22T13:08:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21004",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30014",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-07-23T14:48:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30024",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-07-23T21:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #4"
+            }
+          ]
+        },
+        {
+          "id": "30034",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-07-24T19:38:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20014",
+    "key": "MER-111",
+    "fields": {
+      "summary": "Released binary serves yesterday's console bundle",
+      "description": "The API deployment contains the new invoice screen assets in the workspace, but the compiled binary continues to serve the prior version.\n\nTribal constraint: The Go binary embeds web/dist at compile time; Docker's build context can contain a stale bundle unless the frontend build stage precedes Go compilation.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2026-09-23T13:33:00+00:00",
+      "updated": "2026-09-25T20:03:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "deploys"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21014",
+          "filename": "t10-release-report.pdf",
+          "size": 71862,
+          "mimeType": "application/pdf",
+          "created": "2026-09-23T14:13:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/t10-release-report.pdf"
+        },
+        {
+          "id": "21014",
+          "filename": "t10-bundle-log.log",
+          "size": 346,
+          "mimeType": "text/plain",
+          "created": "2026-09-23T14:13:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/t10-bundle-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30014",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-23T13:33:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21014",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30024",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-24T15:13:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30034",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-09-24T21:43:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #14"
+            }
+          ]
+        },
+        {
+          "id": "30044",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-25T20:03:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20015",
+    "key": "MER-112",
+    "fields": {
+      "summary": "Fresh environments start before schema migrations",
+      "description": "A new staging region boots the service successfully, then fails the first invoice write because the required tables are absent.\n\nTribal constraint: make run generates code but does not apply migrations; onboarding expects a distinct migration prerequisite and migration ordering is filename-based.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2026-09-30T13:18:00+00:00",
+      "updated": "2026-10-02T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "deploys"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21015",
+          "filename": "t11-staging-incident.pdf",
+          "size": 70057,
+          "mimeType": "application/pdf",
+          "created": "2026-09-30T13:58:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/t11-staging-incident.pdf"
+        },
+        {
+          "id": "21015",
+          "filename": "t11-startup-log.log",
+          "size": 356,
+          "mimeType": "text/plain",
+          "created": "2026-09-30T13:58:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/logs/t11-startup-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30015",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-09-30T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21015",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30025",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-01T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30035",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-10-01T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #15"
+            }
+          ]
+        },
+        {
+          "id": "30045",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-02T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20016",
+    "key": "MER-113",
+    "fields": {
+      "summary": "New invoice status breaks finance's workbook mapping",
+      "description": "Finance's monthly workbook imports the new review state as a paid invoice, distorting cash forecasts.\n\nTribal constraint: Status strings and ordinal positions are an external report contract; report_schema_version must be bumped and the generated string mapping refreshed.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2026-10-07T13:18:00+00:00",
+      "updated": "2026-10-09T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21016",
+          "filename": "t12-finance-report.pdf",
+          "size": 71179,
+          "mimeType": "application/pdf",
+          "created": "2026-10-07T13:58:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/t12-finance-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30016",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-07T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21016",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30026",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-08T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30036",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-10-08T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #16"
+            }
+          ]
+        },
+        {
+          "id": "30046",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-09T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20017",
+    "key": "MER-114",
+    "fields": {
+      "summary": "Webhook subscription from another subsidiary is selected",
+      "description": "A subsidiary received an invoice notification intended for a similarly named account in another organization.\n\nTribal constraint: Subscriptions have both a static fallback registry and a DB-loaded registry; tenant scoping was added to the database path later, leaving the fallback lookup keyed only by name.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2026-10-14T13:28:00+00:00",
+      "updated": "2026-10-16T19:58:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "incidents"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21017",
+          "filename": "t13-client-report.pdf",
+          "size": 73614,
+          "mimeType": "application/pdf",
+          "created": "2026-10-14T14:08:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/t13-client-report.pdf"
+        },
+        {
+          "id": "21017",
+          "filename": "t13-webhook-log.log",
+          "size": 331,
+          "mimeType": "text/plain",
+          "created": "2026-10-14T14:08:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/logs/t13-webhook-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30017",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-14T13:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21017",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30027",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-15T15:08:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30037",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-10-15T21:38:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #17"
+            }
+          ]
+        },
+        {
+          "id": "30047",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-16T19:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20018",
+    "key": "MER-115",
+    "fields": {
+      "summary": "Invoice preview cancellation leaves billable work running",
+      "description": "Users navigate away from expensive invoice previews, but worker capacity remains occupied until the full calculation finishes.\n\nTribal constraint: Jobs intentionally outlive HTTP request contexts; the supported cancellation path is Runner.Cancel(jobID), and preview jobs must retain their stable job ID across retries.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2026-10-21T13:18:00+00:00",
+      "updated": "2026-10-23T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21018",
+          "filename": "t14-capacity-report.pdf",
+          "size": 71608,
+          "mimeType": "application/pdf",
+          "created": "2026-10-21T13:58:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/t14-capacity-report.pdf"
+        },
+        {
+          "id": "21018",
+          "filename": "t14-worker-log.log",
+          "size": 1043,
+          "mimeType": "text/plain",
+          "created": "2026-10-21T13:58:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/logs/t14-worker-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30018",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-21T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21018",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30028",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-22T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30038",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-10-22T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #18"
+            }
+          ]
+        },
+        {
+          "id": "30048",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-10-23T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20019",
+    "key": "MER-116",
+    "fields": {
+      "summary": "Tenant export throttles disagree between edge and API",
+      "description": "Large audit exports are rejected by nginx at one rate and by the Go service at another, causing confusing retry behavior.\n\nTribal constraint: configs/ratelimits.yaml is shared with the nginx generated snippet; scope names and values must match, and tenant export uses a separate bucket from global API traffic.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Sofia Almeida"
+      },
+      "assignee": {
+        "displayName": "Sofia Almeida"
+      },
+      "created": "2026-10-28T13:18:00+00:00",
+      "updated": "2026-10-30T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "deploys"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21019",
+          "filename": "t15-incident-log.log",
+          "size": 333,
+          "mimeType": "text/plain",
+          "created": "2026-10-28T13:58:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/logs/t15-incident-log.log"
+        },
+        {
+          "id": "21019",
+          "filename": "t15-nginx-log.log",
+          "size": 346,
+          "mimeType": "text/plain",
+          "created": "2026-10-28T13:58:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/logs/t15-nginx-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30019",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-10-28T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21019",
+              "toString": "Sofia Almeida"
+            }
+          ]
+        },
+        {
+          "id": "30029",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-10-29T14:58:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30039",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-10-29T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #19"
+            }
+          ]
+        },
+        {
+          "id": "30049",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-10-30T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20020",
+    "key": "MER-117",
+    "fields": {
+      "summary": "Invoice line versions advance before the event is durable",
+      "description": "A retry after a broker interruption is rejected as stale even though downstream consumers never received the prior line-item update.\n\nTribal constraint: The outbox consumer is writer of record; version advancement happens only after durable publish/consumer application, not when the HTTP producer assembles the event.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2026-11-04T13:18:00+00:00",
+      "updated": "2026-11-06T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21020",
+          "filename": "t16-reconciliation-report.pdf",
+          "size": 71460,
+          "mimeType": "application/pdf",
+          "created": "2026-11-04T13:58:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/t16-reconciliation-report.pdf"
+        },
+        {
+          "id": "21020",
+          "filename": "t16-outbox-log.log",
+          "size": 333,
+          "mimeType": "text/plain",
+          "created": "2026-11-04T13:58:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/logs/t16-outbox-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30020",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-11-04T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21020",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30030",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-11-05T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30040",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-05T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #20"
+            }
+          ]
+        },
+        {
+          "id": "30050",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-11-06T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20021",
+    "key": "MER-118",
+    "fields": {
+      "summary": "Totals cache returns another tenant's cached summary",
+      "description": "After a tenant migration, two customers intermittently see the same cached invoice total on the dashboard.\n\nTribal constraint: Legacy keys have two segments; current keys require a tenant segment. Both formats parse, so the cache layer must use the shared CacheKey helper and isolate legacy invalidation.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-11-11T13:18:00+00:00",
+      "updated": "2026-11-13T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "incidents"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21021",
+          "filename": "t17-client-report.pdf",
+          "size": 72485,
+          "mimeType": "application/pdf",
+          "created": "2026-11-11T13:58:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t17-client-report.pdf"
+        },
+        {
+          "id": "21021",
+          "filename": "t17-cache-log.log",
+          "size": 333,
+          "mimeType": "text/plain",
+          "created": "2026-11-11T13:58:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t17-cache-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30021",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-11-11T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21021",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30031",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-11-12T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30041",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-12T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #21"
+            }
+          ]
+        },
+        {
+          "id": "30051",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-11-13T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20005",
+    "key": "MER-104",
+    "fields": {
+      "summary": "Workspace switch shows stale tenant invoice data",
+      "description": "Vantage Foods users see Harborline invoice counts after switching workspaces until a full page reload.\n\nTribal constraint: Tenant store is an SSR snapshot; useSyncExternalStore is the subscription contract and tenant-derived caches must be invalidated on switch.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Sofia Almeida"
+      },
+      "assignee": {
+        "displayName": "Sofia Almeida"
+      },
+      "created": "2026-07-29T13:43:00+00:00",
+      "updated": "2026-07-31T20:13:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-frontend"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21005",
+          "filename": "t18-client-report.pdf",
+          "size": 70124,
+          "mimeType": "application/pdf",
+          "created": "2026-07-29T14:23:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/reports/t18-client-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30005",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-07-29T13:43:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21005",
+              "toString": "Sofia Almeida"
+            }
+          ]
+        },
+        {
+          "id": "30015",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-07-30T15:23:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30025",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-07-30T21:53:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #5"
+            }
+          ]
+        },
+        {
+          "id": "30035",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-07-31T20:13:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20022",
+    "key": "MER-119",
+    "fields": {
+      "summary": "Pagination returns stale invoices after navigation",
+      "description": "Returning to a paginated invoice list shows rows from the prior tenant/page even though the URL has changed.\n\nTribal constraint: Most SWR keys are generated from routes.yaml; the invoice page has a local historical literal that must preserve both tenant and page dimensions when its contract changes.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2026-11-18T13:18:00+00:00",
+      "updated": "2026-11-20T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-frontend"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21022",
+          "filename": "t19-support-report.pdf",
+          "size": 71799,
+          "mimeType": "application/pdf",
+          "created": "2026-11-18T13:58:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/t19-support-report.pdf"
+        },
+        {
+          "id": "21022",
+          "filename": "t19-network-log.log",
+          "size": 601,
+          "mimeType": "text/plain",
+          "created": "2026-11-18T13:58:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/t19-network-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30022",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-18T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21022",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30032",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-19T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30042",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-11-19T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #22"
+            }
+          ]
+        },
+        {
+          "id": "30052",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-20T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20007",
+    "key": "MER-105",
+    "fields": {
+      "summary": "Billing API is reachable without a session in app-router profile",
+      "description": "A security review found anonymous requests can reach billing endpoints after production enabled the app-router middleware profile.\n\nTribal constraint: Legacy and v2 middleware coexist behind a deployment profile; matcher coverage must be equivalent even though both files compile and old profile tests pass.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Sofia Almeida"
+      },
+      "assignee": {
+        "displayName": "Sofia Almeida"
+      },
+      "created": "2026-08-05T14:28:00+00:00",
+      "updated": "2026-08-07T20:58:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "incidents"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21007",
+          "filename": "t20-pentest-report.pdf",
+          "size": 72423,
+          "mimeType": "application/pdf",
+          "created": "2026-08-05T15:08:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/reports/t20-pentest-report.pdf"
+        },
+        {
+          "id": "21007",
+          "filename": "t20-curl-log.log",
+          "size": 331,
+          "mimeType": "text/plain",
+          "created": "2026-08-05T15:08:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/logs/t20-curl-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30007",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-08-05T14:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21007",
+              "toString": "Sofia Almeida"
+            }
+          ]
+        },
+        {
+          "id": "30017",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-08-06T16:08:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30027",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-08-06T22:38:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #7"
+            }
+          ]
+        },
+        {
+          "id": "30037",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2026-08-07T20:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20023",
+    "key": "MER-120",
+    "fields": {
+      "summary": "Autosave rejects an intentionally incomplete draft",
+      "description": "Users cannot save a partially completed purchase order while working through the required fields, though final submission must remain strict.\n\nTribal constraint: Frontend required means user guidance; backend validation allows missing values during draft autosave and enforces the full schema only on submit.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2026-11-25T13:18:00+00:00",
+      "updated": "2026-11-27T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-frontend"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21023",
+          "filename": "t21-client-report.pdf",
+          "size": 70695,
+          "mimeType": "application/pdf",
+          "created": "2026-11-25T13:58:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/t21-client-report.pdf"
+        },
+        {
+          "id": "21023",
+          "filename": "t21-validation-log.log",
+          "size": 967,
+          "mimeType": "text/plain",
+          "created": "2026-11-25T13:58:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/t21-validation-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30023",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-25T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21023",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30033",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-26T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30043",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-11-26T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #23"
+            }
+          ]
+        },
+        {
+          "id": "30053",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-11-27T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20024",
+    "key": "MER-121",
+    "fields": {
+      "summary": "Audit filters disappear on browser back navigation",
+      "description": "A finance analyst filters audit events, opens a record, then returns to an unfiltered table with stale cached results.\n\nTribal constraint: Filter state belongs in URL search parameters and the cache key; useFilteredTable serializes filters in fixed field order for stable keys.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2026-12-02T13:18:00+00:00",
+      "updated": "2026-12-04T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-frontend"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21024",
+          "filename": "t22-support-report.pdf",
+          "size": 68857,
+          "mimeType": "application/pdf",
+          "created": "2026-12-02T13:58:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/t22-support-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30024",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-02T13:18:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21024",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30034",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-03T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30044",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-12-03T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #24"
+            }
+          ]
+        },
+        {
+          "id": "30054",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-04T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20025",
+    "key": "MER-122",
+    "fields": {
+      "summary": "New backend error has no localized console message",
+      "description": "German and French tenants see a raw numeric code when a new payment state is returned by the API.\n\nTribal constraint: errcodes_gen.ts provides generated English fallback; hand-maintained locale tables are intentionally incomplete and must fall back through the generated message map.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2026-12-09T13:18:00+00:00",
+      "updated": "2026-12-11T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-frontend"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21025",
+          "filename": "t23-client-report.pdf",
+          "size": 71404,
+          "created": "2026-12-09T13:58:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/t23-client-report.pdf"
+        },
+        {
+          "id": "21025",
+          "filename": "t23-locale-log.log",
+          "size": 333,
+          "mimeType": "text/plain",
+          "created": "2026-12-09T13:58:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/t23-locale-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30025",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-09T13:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21025",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30035",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-10T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30045",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2026-12-10T21:28:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #25"
+            }
+          ]
+        },
+        {
+          "id": "30055",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-11T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20026",
+    "key": "MER-123",
+    "fields": {
+      "summary": "Frontend build leaks a server-only integration setting",
+      "description": "A deployment audit flags an integration credential in the web build environment; the browser needs only the public API origin.\n\nTribal constraint: Only NEXT_PUBLIC_* variables may enter the bundle; server values come from the 1Password environment item and CI's scanner must inspect build inputs as well as source literals.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-12-16T13:18:00+00:00",
+      "updated": "2026-12-18T19:48:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "deploys"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21026",
+          "filename": "t24-security-report.pdf",
+          "size": 71721,
+          "mimeType": "application/pdf",
+          "created": "2026-12-16T13:58:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t24-security-report.pdf"
+        },
+        {
+          "id": "21026",
+          "filename": "t24-build-log.log",
+          "size": 333,
+          "mimeType": "text/plain",
+          "created": "2026-12-16T13:58:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t24-build-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30026",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-16T13:18:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21026",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30036",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-17T14:58:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30046",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-17T21:28:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #26"
+            }
+          ]
+        },
+        {
+          "id": "30056",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-18T19:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20027",
+    "key": "MER-124",
+    "fields": {
+      "summary": "Feature flag flickers during authenticated hydration",
+      "description": "Signed-in users briefly see a feature-enabled screen that disappears after the server-provided tenant policy loads.\n\nTribal constraint: Authenticated rendering must use window.__MERIDIAN__ from the server; localStorage is only a logged-out fallback and reading it during render violates hydration parity.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-12-21T13:48:00+00:00",
+      "updated": "2026-12-23T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-frontend"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21027",
+          "filename": "t25-client-report.pdf",
+          "size": 70550,
+          "created": "2026-12-21T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t25-client-report.pdf"
+        },
+        {
+          "id": "21027",
+          "filename": "t25-hydration-log.log",
+          "size": 954,
+          "mimeType": "text/plain",
+          "created": "2026-12-21T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t25-hydration-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30027",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-21T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21027",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30037",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-22T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30047",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-22T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #27"
+            }
+          ]
+        },
+        {
+          "id": "30057",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-23T20:18:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20028",
+    "key": "MER-201",
+    "fields": {
+      "summary": "Payroll export inserts a component in the wrong spreadsheet column",
+      "description": "Finance's January workbook maps a new shift differential into the retirement column because component ordering changed.\n\nTribal constraint: Column position is contractual across the Go export and frontend labels; new components append only after reserved positions and schema versions identify the layout.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2027-01-06T13:48:00+00:00",
+      "updated": "2027-01-08T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21028",
+          "filename": "e01-finance-report.pdf",
+          "size": 72888,
+          "created": "2027-01-06T14:28:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/e01-finance-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30028",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-06T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21028",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30038",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-07T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30048",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-07T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #28"
+            }
+          ]
+        },
+        {
+          "id": "30058",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-08T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20029",
+    "key": "MER-202",
+    "fields": {
+      "summary": "Bulk procurement removal omits required audit context",
+      "description": "A bulk cleanup request deletes purchase orders without the compliance note required for retention review.\n\nTribal constraint: Single-record helper is retained for compatibility; bulk removal must use the separate transactional helper and persist a non-empty audit note for every affected id.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2027-01-13T13:48:00+00:00",
+      "updated": "2027-01-15T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21029",
+          "filename": "e02-compliance-report.pdf",
+          "size": 71589,
+          "created": "2027-01-13T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/e02-compliance-report.pdf"
+        },
+        {
+          "id": "21029",
+          "filename": "e02-delete-log.log",
+          "size": 480,
+          "mimeType": "text/plain",
+          "created": "2027-01-13T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/e02-delete-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30029",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-13T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21029",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30039",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-14T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30049",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-14T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #29"
+            }
+          ]
+        },
+        {
+          "id": "30059",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-15T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20030",
+    "key": "MER-203",
+    "fields": {
+      "summary": "Legacy event stream rejects valid signed-in browser sessions",
+      "description": "The old pages server's event stream drops authenticated users because EventSource cannot attach the standard authorization header.\n\nTribal constraint: Only the legacy SSE endpoint permits a short-lived query token; the app-router handler must continue requiring the normal session cookie.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2027-01-20T13:48:00+00:00",
+      "updated": "2027-01-22T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "incidents"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21030",
+          "filename": "e03-support-report.pdf",
+          "size": 72026,
+          "mimeType": "application/pdf",
+          "created": "2027-01-20T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/e03-support-report.pdf"
+        },
+        {
+          "id": "21030",
+          "filename": "e03-sse-log.log",
+          "size": 331,
+          "mimeType": "text/plain",
+          "created": "2027-01-20T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/e03-sse-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30030",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-20T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21030",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30040",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-21T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30050",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-21T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #30"
+            }
+          ]
+        },
+        {
+          "id": "30060",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-22T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20031",
+    "key": "MER-204",
+    "fields": {
+      "summary": "Payroll labels no longer line up with exported pay columns",
+      "description": "A new payroll component shifts labels for downstream columns in the CSV preview and finance's workbook.\n\nTribal constraint: The Go column registry and TypeScript positional array are mirrors; the payroll schema version and explicit order check are the cross-language contract.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2027-01-27T13:48:00+00:00",
+      "updated": "2027-01-29T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21031",
+          "filename": "e04-finance-report.pdf",
+          "size": 72377,
+          "mimeType": "application/pdf",
+          "created": "2027-01-27T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/e04-finance-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30031",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2027-01-27T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21031",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30041",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2027-01-28T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30051",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-28T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #31"
+            }
+          ]
+        },
+        {
+          "id": "30061",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2027-01-29T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20032",
+    "key": "MER-205",
+    "fields": {
+      "summary": "Overdue badge differs from the tenant's local business date",
+      "description": "A Denver tenant sees an invoice marked overdue the evening before its local due date, while UTC reports say it is still current.\n\nTribal constraint: Overdue is defined by tenant-local calendar date; the denormalized field is refreshed by a backfill job that must receive tenant timezone, not host timezone.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Sofia Almeida"
+      },
+      "assignee": {
+        "displayName": "Sofia Almeida"
+      },
+      "created": "2027-02-03T13:48:00+00:00",
+      "updated": "2027-02-05T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21032",
+          "filename": "e05-client-report.pdf",
+          "size": 71763,
+          "mimeType": "application/pdf",
+          "created": "2027-02-03T14:28:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/reports/e05-client-report.pdf"
+        },
+        {
+          "id": "21032",
+          "filename": "e05-timezone-log.log",
+          "size": 333,
+          "mimeType": "text/plain",
+          "created": "2027-02-03T14:28:00+00:00",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "content": "raw/attachments/jira/logs/e05-timezone-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30032",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2027-02-03T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21032",
+              "toString": "Sofia Almeida"
+            }
+          ]
+        },
+        {
+          "id": "30042",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2027-02-04T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30052",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-04T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #32"
+            }
+          ]
+        },
+        {
+          "id": "30062",
+          "author": {
+            "displayName": "Sofia Almeida"
+          },
+          "created": "2027-02-05T20:18:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20033",
+    "key": "MER-206",
+    "fields": {
+      "summary": "Concurrent payment retries can charge the same attempt twice",
+      "description": "A gateway timeout triggers overlapping retry workers and the ledger records two charges for a single payment attempt.\n\nTribal constraint: Idempotency keys are per attempt because the ledger reconciler groups on that value; retries within an attempt must reuse it, while a new attempt advances the attempt sequence.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2027-02-10T13:48:00+00:00",
+      "updated": "2027-02-12T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "incidents"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21033",
+          "filename": "e06-client-report.pdf",
+          "size": 72569,
+          "mimeType": "application/pdf",
+          "created": "2027-02-10T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/e06-client-report.pdf"
+        },
+        {
+          "id": "21033",
+          "filename": "e06-payment-log.log",
+          "size": 346,
+          "created": "2027-02-10T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/e06-payment-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30033",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-10T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21033",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30043",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-11T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30053",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-02-11T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #33"
+            }
+          ]
+        },
+        {
+          "id": "30063",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-12T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20034",
+    "key": "MER-207",
+    "fields": {
+      "summary": "Audit replay fails on records written before the schema expansion",
+      "description": "A partner's historical audit export cannot be replayed after a new optional actor field was introduced.\n\nTribal constraint: Old rows pass through the version-1 decoder shim; new fields require an explicit opt-in/default in that shim because stored snapshots predate the field.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2027-02-17T13:48:00+00:00",
+      "updated": "2027-02-19T20:18:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21034",
+          "filename": "e07-partner-report.pdf",
+          "size": 73134,
+          "mimeType": "application/pdf",
+          "created": "2027-02-17T14:28:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/e07-partner-report.pdf"
+        },
+        {
+          "id": "21034",
+          "filename": "e07-replay-log.log",
+          "size": 333,
+          "mimeType": "text/plain",
+          "created": "2027-02-17T14:28:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/logs/e07-replay-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30034",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-02-17T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21034",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30044",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-02-18T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30054",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-18T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #34"
+            }
+          ]
+        },
+        {
+          "id": "30064",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-02-19T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20033",
+    "key": "MER-206",
+    "fields": {
+      "summary": "Concurrent payment retries can charge the same attempt twice",
+      "description": "A gateway timeout triggers overlapping retry workers and the ledger records two charges for a single payment attempt.\n\nTribal constraint: Idempotency keys are per attempt because the ledger reconciler groups on that value; retries within an attempt must reuse it, while a new attempt advances the attempt sequence.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2027-02-10T13:48:00+00:00",
+      "updated": "2027-02-12T20:21:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "incidents"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21033",
+          "filename": "e06-client-report.pdf",
+          "size": 73009,
+          "created": "2027-02-10T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/e06-client-report.pdf"
+        },
+        {
+          "id": "21033",
+          "filename": "e06-payment-log.log",
+          "size": 346,
+          "mimeType": "text/plain",
+          "created": "2027-02-10T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/e06-payment-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30033",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-10T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21033",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30043",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-11T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30053",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-02-11T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #33"
+            }
+          ]
+        },
+        {
+          "id": "30063",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-02-12T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20012",
+    "key": "MER-109",
+    "fields": {
+      "summary": "Async invoice export loses tenant context",
+      "description": "A queued export occasionally reads the default tenant after being launched from a tenant-specific invoice route.\n\nTribal constraint: Workers replay handlers without HTTP middleware; tenant identity must be carried in the route-created context/envelope, not reconstructed from headers.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-09-09T13:33:00+00:00",
+      "updated": "2026-09-11T20:06:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21012",
+          "filename": "t07-client-report.pdf",
+          "size": 67548,
+          "mimeType": "application/pdf",
+          "created": "2026-09-09T14:13:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t07-client-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30012",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-09T13:33:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21012",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30022",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-10T15:13:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30032",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-10T21:43:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #12"
+            }
+          ]
+        },
+        {
+          "id": "30042",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-11T20:03:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20013",
+    "key": "MER-110",
+    "fields": {
+      "summary": "Generated error catalogs drift between services",
+      "description": "The console shows raw error codes for a partner-facing error while Go logs show a friendly message for the same response.\n\nTribal constraint: api/errors.yaml is the only source of truth; generated Go and TypeScript files must be regenerated together, and reserved module blocks are not allocated by alphabetical order.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-09-16T13:48:00+00:00",
+      "updated": "2026-09-18T20:21:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21013",
+          "filename": "t08-client-report.pdf",
+          "size": 70777,
+          "mimeType": "application/pdf",
+          "created": "2026-09-16T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t08-client-report.pdf"
+        },
+        {
+          "id": "21013",
+          "filename": "t08-release-log.log",
+          "size": 797,
+          "mimeType": "text/plain",
+          "created": "2026-09-16T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t08-release-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30013",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-16T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21013",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30023",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-17T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30033",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-09-17T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #13"
+            }
+          ]
+        },
+        {
+          "id": "30043",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-18T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20028",
+    "key": "MER-201",
+    "fields": {
+      "summary": "Payroll export inserts a component in the wrong spreadsheet column",
+      "description": "Finance's January workbook maps a new shift differential into the retirement column because component ordering changed.\n\nTribal constraint: Column position is contractual across the Go export and frontend labels; new components append only after reserved positions and schema versions identify the layout.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Marcus Lee"
+      },
+      "assignee": {
+        "displayName": "Marcus Lee"
+      },
+      "created": "2027-01-06T13:48:00+00:00",
+      "updated": "2027-01-08T20:21:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-billing"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21028",
+          "filename": "e01-finance-report.pdf",
+          "size": 73773,
+          "created": "2027-01-06T14:28:00+00:00",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "content": "raw/attachments/jira/reports/e01-finance-report.pdf"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30028",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-06T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21028",
+              "toString": "Marcus Lee"
+            }
+          ]
+        },
+        {
+          "id": "30038",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-07T15:28:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30048",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-07T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #28"
+            }
+          ]
+        },
+        {
+          "id": "30058",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-08T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "20029",
+    "key": "MER-202",
+    "fields": {
+      "summary": "Bulk procurement removal omits required audit context",
+      "description": "A bulk cleanup request deletes purchase orders without the compliance note required for retention review.\n\nTribal constraint: Single-record helper is retained for compatibility; bulk removal must use the separate transactional helper and persist a non-empty audit note for every affected id.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Priya Sharma"
+      },
+      "assignee": {
+        "displayName": "Priya Sharma"
+      },
+      "created": "2027-01-13T13:48:00+00:00",
+      "updated": "2027-01-15T20:21:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-platform"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21029",
+          "filename": "e02-compliance-report.pdf",
+          "size": 72348,
+          "mimeType": "application/pdf",
+          "created": "2027-01-13T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/reports/e02-compliance-report.pdf"
+        },
+        {
+          "id": "21029",
+          "filename": "e02-delete-log.log",
+          "size": 1193,
+          "mimeType": "text/plain",
+          "created": "2027-01-13T14:28:00+00:00",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "content": "raw/attachments/jira/logs/e02-delete-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30029",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-13T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21029",
+              "toString": "Priya Sharma"
+            }
+          ]
+        },
+        {
+          "id": "30039",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-14T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30049",
+          "author": {
+            "displayName": "Marcus Lee"
+          },
+          "created": "2027-01-14T21:58:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #29"
+            }
+          ]
+        },
+        {
+          "id": "30059",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2027-01-15T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "20027",
+    "key": "MER-124",
+    "fields": {
+      "summary": "Feature flag flickers during authenticated hydration",
+      "description": "Signed-in users briefly see a feature-enabled screen that disappears after the server-provided tenant policy loads.\n\nTribal constraint: Authenticated rendering must use window.__MERIDIAN__ from the server; localStorage is only a logged-out fallback and reading it during render violates hydration parity.",
+      "issuetype": {
+        "name": "Bug"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "High"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": {
+        "displayName": "Dan Levin"
+      },
+      "created": "2026-12-21T13:48:00+00:00",
+      "updated": "2026-12-23T20:21:00+00:00",
+      "labels": [
+        "dataset-generated",
+        "eng-frontend"
+      ],
+      "resolution": {
+        "name": "Fixed"
+      },
+      "attachment": [
+        {
+          "id": "21027",
+          "filename": "t25-client-report.pdf",
+          "size": 70682,
+          "created": "2026-12-21T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/reports/t25-client-report.pdf"
+        },
+        {
+          "id": "21027",
+          "filename": "t25-hydration-log.log",
+          "size": 1120,
+          "mimeType": "text/plain",
+          "created": "2026-12-21T14:28:00+00:00",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "content": "raw/attachments/jira/logs/t25-hydration-log.log"
+        }
+      ]
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 4,
+      "total": 4,
+      "histories": [
+        {
+          "id": "30027",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-21T13:48:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10001",
+              "toString": "In Progress"
+            },
+            {
+              "field": "assignee",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "21027",
+              "toString": "Dan Levin"
+            }
+          ]
+        },
+        {
+          "id": "30037",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-22T15:28:00+00:00",
+          "items": [
+            {
+              "field": "labels",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "spec-first"
+            }
+          ]
+        },
+        {
+          "id": "30047",
+          "author": {
+            "displayName": "Priya Sharma"
+          },
+          "created": "2026-12-22T21:58:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10001",
+              "fromString": "In Progress",
+              "to": "10002",
+              "toString": "In Review"
+            },
+            {
+              "field": "Link",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": null,
+              "toString": "PR #27"
+            }
+          ]
+        },
+        {
+          "id": "30057",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-12-23T20:18:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10002",
+              "fromString": "In Review",
+              "to": "10003",
+              "toString": "Done"
+            },
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        },
+        {
+          "id": "0",
+          "author": {},
+          "created": "",
+          "items": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "29999",
+    "key": "MER-998",
+    "fields": {
+      "summary": "Ops: rotate read replica credentials",
+      "description": "unrelated maintenance ticket",
+      "issuetype": {
+        "name": "Task"
+      },
+      "status": {
+        "name": "Done"
+      },
+      "priority": {
+        "name": "Low"
+      },
+      "reporter": {
+        "displayName": "Dan Levin"
+      },
+      "assignee": null,
+      "created": "2026-09-15T13:00:00+00:00",
+      "updated": "2026-09-15T13:20:00+00:00",
+      "labels": [
+        "chore"
+      ],
+      "attachment": []
+    },
+    "changelog": {
+      "startAt": 0,
+      "maxResults": 2,
+      "total": 2,
+      "histories": [
+        {
+          "id": "39901",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-15T13:00:00+00:00",
+          "items": [
+            {
+              "field": "status",
+              "fieldtype": "jira",
+              "from": "10000",
+              "fromString": "To Do",
+              "to": "10003",
+              "toString": "Done"
+            }
+          ]
+        },
+        {
+          "id": "39902",
+          "author": {
+            "displayName": "Dan Levin"
+          },
+          "created": "2026-09-15T13:20:00+00:00",
+          "items": [
+            {
+              "field": "resolution",
+              "fieldtype": "jira",
+              "from": null,
+              "fromString": null,
+              "to": "10000",
+              "toString": "Fixed"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

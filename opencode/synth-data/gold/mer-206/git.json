@@ -1,0 +1,45 @@
+{
+  "task_id": "mer-206",
+  "pull_request": {
+    "pr_number": 33,
+    "title": "fix(payments): derive idempotency key from attempt, not retry number (MER-206)",
+    "state": "closed",
+    "merged": true,
+    "author": "Marcus Lee",
+    "branch": "feature/MER-206-idempotency",
+    "merge_sha": "93c99fe65568325d2395525518284f59a9100a23",
+    "opened_ts_utc": "2027-02-10T16:00:00Z",
+    "merged_ts_utc": "2027-02-12T20:00:00Z",
+    "closed_ts_utc": "2027-02-12T20:00:00Z"
+  },
+  "merge_sha": "93c99fe65568325d2395525518284f59a9100a23",
+  "base_sha": "4df408a65d33865f5d6f3061844abc08cbb5f664",
+  "head_sha": "3ac96f41c0ae331c43c4fd06e9d6060fdf966a30",
+  "commit_count": 1,
+  "commits": [
+    {
+      "sha": "3ac96f41c0ae331c43c4fd06e9d6060fdf966a30",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2027-02-10T16:00:00Z",
+      "committed_ts_utc": "2027-02-10T16:00:00Z",
+      "message": "fix(payments): derive idempotency key from attempt, not retry number (MER-206)",
+      "is_merge": false,
+      "parent_shas": [
+        "4df408a65d33865f5d6f3061844abc08cbb5f664"
+      ],
+      "additions": 61,
+      "deletions": 5,
+      "changed_files": [
+        "internal/payments/eval206_test.go",
+        "internal/payments/idempotency.go",
+        "internal/payments/ledger.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/payments/eval206_test.go",
+    "internal/payments/idempotency.go",
+    "internal/payments/ledger.go"
+  ]
+}

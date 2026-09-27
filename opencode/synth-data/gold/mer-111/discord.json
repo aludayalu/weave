@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-111",
+  "channel": "deploys",
+  "window": {
+    "start": "2026-09-23T13:33:00Z",
+    "end": "2026-09-25T20:03:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1552311826513920000",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-23T13:33:00Z",
+      "ts_raw": "2026-09-23T13:33:00+00:00",
+      "ts_epoch": 1790170380,
+      "content": "@marcus The API deployment contains the new invoice screen assets in the workspace, but the compiled binary continues to serve the prior version. Opening MER-111 to track it. reproduced it locally, it's real.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-111"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552314091438080001",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-23T13:42:00Z",
+      "ts_raw": "2026-09-23T13:42:00+00:00",
+      "ts_epoch": 1790170920,
+      "content": "ack. looking now. filing evidence on the ticket (release-report).",
+      "edited": "2026-09-23T13:42:00Z",
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552334475755520002",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-09-23T15:03:00Z",
+      "ts_raw": "1790175780",
+      "ts_epoch": 1790175780,
+      "content": "fyi release-report is attached to MER-111 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-111"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t10-21992541",
+          "filename": "t10-release-report.pdf",
+          "path": "raw/attachments/jira/reports/t10-release-report.pdf",
+          "bytes": 71095,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t10-47641865",
+          "filename": "t10-bundle-log.log",
+          "path": "raw/attachments/jira/logs/t10-bundle-log.log",
+          "bytes": 346,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1552357124997120011",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-23T16:33:00Z",
+      "ts_raw": "2026-09-23T16:33:00+00:00",
+      "ts_epoch": 1790181180,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552432622469120012",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-09-23T21:33:00Z",
+      "ts_raw": "2026-09-23T21:33:00+00:00",
+      "ts_epoch": 1790199180,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552508119941120013",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-24T02:33:00Z",
+      "ts_raw": "2026-09-24T02:33:00+00:00",
+      "ts_epoch": 1790217180,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552699380203520003",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-24T15:13:00Z",
+      "ts_raw": "2026-09-24T15:13:00+00:00",
+      "ts_epoch": 1790262780,
+      "content": "spec-first per team rule — tests for MER-111 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-111"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552766069637120004",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-24T19:38:00Z",
+      "ts_raw": "2026-09-24T19:38:00+00:00",
+      "ts_epoch": 1790278680,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552778652549120005",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-09-24T20:28:00Z",
+      "ts_raw": "2026-09-24T20:28:00+00:00",
+      "ts_epoch": 1790281680,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552786202296320006",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-24T20:58:00Z",
+      "ts_raw": "2026-09-24T20:58:00+00:00",
+      "ts_epoch": 1790283480,
+      "content": "PR #14 is up: `feature/MER-111-frontend-build`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-111"
+      ],
+      "mentions_pr": [
+        14
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1552797526917120007",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-09-24T21:43:00Z",
+      "ts_raw": "2026-09-24T21:43:00+00:00",
+      "ts_epoch": 1790286180,
+      "content": "reviewed #14 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1552806334955520008",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-24T22:18:00Z",
+      "ts_raw": "2026-09-24T22:18:00+00:00",
+      "ts_epoch": 1790288280,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1553129212477440009",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-09-25T19:41:00Z",
+      "ts_raw": "2026-09-25T19:41:00+00:00",
+      "ts_epoch": 1790365260,
+      "content": "deploy is green, MER-111 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-111"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1553134748958720010",
+      "channel": "deploys",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-09-25T20:03:00Z",
+      "ts_raw": "2026-09-25T20:03:00+00:00",
+      "ts_epoch": 1790366580,
+      "content": "MER-111 closed — PR #14 merged. done, PR is up and CI is green",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-111"
+      ],
+      "mentions_pr": [
+        14
+      ],
+      "attachments": []
+    }
+  ]
+}

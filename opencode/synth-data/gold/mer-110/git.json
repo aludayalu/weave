@@ -1,0 +1,59 @@
+{
+  "task_id": "mer-110",
+  "pull_request": {
+    "pr_number": 13,
+    "title": "test: MER-110 generated error catalog parity contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Marcus Lee",
+    "branch": "feature/MER-110-generated-catalog",
+    "merge_sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9",
+    "opened_ts_utc": "2026-09-16T18:10:00Z",
+    "merged_ts_utc": "2026-09-18T20:00:00Z",
+    "closed_ts_utc": "2026-09-18T20:00:00Z"
+  },
+  "merge_sha": "9e519f8d1f54444509296d39a2f786d3e52a47c9",
+  "base_sha": "2c1a3bda8bf596ad8c1a100214626cacf75bc68f",
+  "head_sha": "104421c579069e505112d8011629643b5224231a",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "b17a1a67722ea91deda38c9189de9685e604d644",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-15T16:00:00Z",
+      "committed_ts_utc": "2026-09-15T16:00:00Z",
+      "message": "test: MER-110 generated error catalog parity contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "2c1a3bda8bf596ad8c1a100214626cacf75bc68f"
+      ],
+      "additions": 46,
+      "deletions": 0,
+      "changed_files": [
+        "tools/gendocs/catalog_test.go"
+      ]
+    },
+    {
+      "sha": "104421c579069e505112d8011629643b5224231a",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-16T18:10:00Z",
+      "committed_ts_utc": "2026-09-16T18:10:00Z",
+      "message": "fix(errors): regenerate catalogs from api source of truth (MER-110)",
+      "is_merge": false,
+      "parent_shas": [
+        "b17a1a67722ea91deda38c9189de9685e604d644"
+      ],
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": [
+        "web/lib/errcodes_gen.ts"
+      ]
+    }
+  ],
+  "files": [
+    "tools/gendocs/catalog_test.go",
+    "web/lib/errcodes_gen.ts"
+  ]
+}

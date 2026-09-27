@@ -1,0 +1,45 @@
+{
+  "task_id": "mer-202",
+  "pull_request": {
+    "pr_number": 29,
+    "title": "feat(store): add transactional bulk soft-delete with retention note (MER-202)",
+    "state": "closed",
+    "merged": true,
+    "author": "Priya Sharma",
+    "branch": "feature/MER-202-bulk-delete",
+    "merge_sha": "8be4ff72fca539620280d4982731e92d78031fbb",
+    "opened_ts_utc": "2027-01-13T16:00:00Z",
+    "merged_ts_utc": "2027-01-15T20:00:00Z",
+    "closed_ts_utc": "2027-01-15T20:00:00Z"
+  },
+  "merge_sha": "8be4ff72fca539620280d4982731e92d78031fbb",
+  "base_sha": "80402dba9eb1da7a0625fff1104dee32643223f2",
+  "head_sha": "c70c8faa2b83df68f8b253e2673be3b5acdbdd74",
+  "commit_count": 1,
+  "commits": [
+    {
+      "sha": "c70c8faa2b83df68f8b253e2673be3b5acdbdd74",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2027-01-13T16:00:00Z",
+      "committed_ts_utc": "2027-01-13T16:00:00Z",
+      "message": "feat(store): add transactional bulk soft-delete with retention note (MER-202)",
+      "is_merge": false,
+      "parent_shas": [
+        "80402dba9eb1da7a0625fff1104dee32643223f2"
+      ],
+      "additions": 55,
+      "deletions": 0,
+      "changed_files": [
+        "internal/store/bulk_delete.go",
+        "internal/store/eval202_test.go",
+        "internal/store/soft_delete.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/store/bulk_delete.go",
+    "internal/store/eval202_test.go",
+    "internal/store/soft_delete.go"
+  ]
+}

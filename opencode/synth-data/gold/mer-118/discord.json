@@ -1,0 +1,262 @@
+{
+  "task_id": "mer-118",
+  "channel": "incidents",
+  "window": {
+    "start": "2026-11-11T13:18:00Z",
+    "end": "2026-11-13T19:48:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1570065057054720000",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-11-11T13:18:00Z",
+      "ts_raw": "2026-11-11T13:18:00+00:00",
+      "ts_epoch": 1794403080,
+      "content": "@priya After a tenant migration, two customers intermittently see the same cached invoice total on the dashboard. Opening MER-118 to track it. ok this is the third report on this, starting now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-118"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570067321978880001",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-11T13:27:00Z",
+      "ts_raw": "2026-11-11T13:27:00+00:00",
+      "ts_epoch": 1794403620,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570087706296320002",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-11T14:48:00Z",
+      "ts_raw": "2026-11-11T14:48:00+00:00",
+      "ts_epoch": 1794408480,
+      "content": "fyi client-report is attached to MER-118 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-118"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t17-7450221",
+          "filename": "t17-client-report.pdf",
+          "path": "raw/attachments/jira/reports/t17-client-report.pdf",
+          "bytes": 72485,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t17-95484413",
+          "filename": "t17-cache-log.log",
+          "path": "raw/attachments/jira/logs/t17-cache-log.log",
+          "bytes": 333,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1570110355537920011",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-11T16:18:00Z",
+      "ts_raw": "2026-11-11T16:18:00+00:00",
+      "ts_epoch": 1794413880,
+      "content": "rotating the read replica creds tonight, no action needed",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570185853009920012",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-11-11T21:18:00Z",
+      "ts_raw": "2026-11-11T21:18:00+00:00",
+      "ts_epoch": 1794431880,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570261350481920013",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-12T02:18:00Z",
+      "ts_raw": "2026-11-12T02:18:00+00:00",
+      "ts_epoch": 1794449880,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570452610744320003",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-11-12T14:58:00Z",
+      "ts_raw": "2026-11-12T14:58:00+00:00",
+      "ts_epoch": 1794495480,
+      "content": "spec-first per team rule — tests for MER-118 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-118"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570519300177920004",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-12T19:23:00Z",
+      "ts_raw": "1794511380",
+      "ts_epoch": 1794511380,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570531883089920005",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-12T20:13:00Z",
+      "ts_raw": "2026-11-12T14:13:00-06:00",
+      "ts_epoch": 1794514380,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570539432837120006",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-11-12T20:43:00Z",
+      "ts_raw": "2026-11-12T20:43:00+00:00",
+      "ts_epoch": 1794516180,
+      "content": "PR #21 is up: `feature/MER-118-tenant-cache`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-118"
+      ],
+      "mentions_pr": [
+        21
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1570550757457920007",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-12T21:28:00Z",
+      "ts_raw": "2026-11-12T21:28:00+00:00",
+      "ts_epoch": 1794518880,
+      "content": "reviewed #21 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570559565496320008",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-11-12T22:03:00Z",
+      "ts_raw": "2026-11-12T22:03:00+00:00",
+      "ts_epoch": 1794520980,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570882443018240009",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-13T19:26:00Z",
+      "ts_raw": "2026-11-13T19:26:00+00:00",
+      "ts_epoch": 1794597960,
+      "content": "deploy is green, MER-118 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-118"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1570887979499520010",
+      "channel": "incidents",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-11-13T19:48:00Z",
+      "ts_raw": "2026-11-13T19:48:00+00:00",
+      "ts_epoch": 1794599280,
+      "content": "&amp;&lt;legacy&gt;",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    }
+  ]
+}

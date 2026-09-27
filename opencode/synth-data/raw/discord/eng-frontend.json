@@ -1,0 +1,1184 @@
+{
+  "channel": {
+    "id": "1103",
+    "name": "eng-frontend",
+    "type": "GUILD_TEXT"
+  },
+  "exported_at": "2027-02-19T20:00:00+00:00",
+  "message_count": 89,
+  "messages": [
+    {
+      "message_id": "1532487448657920005",
+      "author": {
+        "id": "301002",
+        "name": "Deleted User"
+      },
+      "timestamp": "1785443880",
+      "edited": null,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "jump_url": "https://discord.com/channels/9901/1103/1532487448657920005",
+      "attachments": []
+    },
+    {
+      "message_id": "1577675202232320000",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "1796217480",
+      "edited": null,
+      "content": "@marcus A finance analyst filters audit events, opens a record, then returns to an unfiltered table with stale cached results. Opening MER-121 to track it. picking this up now.",
+      "jump_url": "https://discord.com/channels/9901/1103/1577675202232320000",
+      "attachments": []
+    },
+    {
+      "message_id": "1532020622622720000",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-07-29T13:43:00+00:00",
+      "edited": null,
+      "content": "@priya Vantage Foods users see Harborline invoice counts after switching workspaces until a full page reload. Opening MER-104 to track it. took first pass at this, thoughts below.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532020622622720000",
+      "attachments": []
+    },
+    {
+      "message_id": "1532020622622720000",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-07-29T13:43:00+00:00",
+      "edited": null,
+      "content": "@priya Vantage Foods users see Harborline invoice counts after switching workspaces until a full page reload. Opening MER-104 to track it. took first pass at this, thoughts below.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532020622622720000",
+      "attachments": []
+    },
+    {
+      "message_id": "1532022887546880001",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-07-29T13:52:00+00:00",
+      "edited": null,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "jump_url": "https://discord.com/channels/9901/1103/1532022887546880001",
+      "attachments": []
+    },
+    {
+      "message_id": "1532043271864320002",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-07-29T15:13:00+00:00",
+      "edited": null,
+      "content": "fyi client-report is attached to MER-104 if you want the raw capture.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532043271864320002",
+      "attachments": [
+        {
+          "uuid": "t18-12255203",
+          "original_filename": "t18-client-report.pdf",
+          "size": 69897,
+          "content_type": "application/pdf",
+          "path": "raw/attachments/jira/reports/t18-client-report.pdf"
+        },
+        {
+          "uuid": "t18-30842454",
+          "original_filename": "t18-tenant-switch-screenshot.png",
+          "size": 0,
+          "content_type": "image/png",
+          "path": "raw/attachments/discord/images/t18-tenant-switch-screenshot.png"
+        }
+      ]
+    },
+    {
+      "message_id": "1532065921105920011",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-07-29T16:43:00+00:00",
+      "edited": null,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "jump_url": "https://discord.com/channels/9901/1103/1532065921105920011",
+      "attachments": []
+    },
+    {
+      "message_id": "1532141418577920012",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-07-29T21:43:00+00:00",
+      "edited": null,
+      "content": "   ",
+      "jump_url": "https://discord.com/channels/9901/1103/1532141418577920012",
+      "attachments": []
+    },
+    {
+      "message_id": "1532216916049920013",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-07-30T02:43:00+00:00",
+      "edited": null,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "jump_url": "https://discord.com/channels/9901/1103/1532216916049920013",
+      "attachments": []
+    },
+    {
+      "message_id": "1532408176312320003",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-07-30T15:23:00+00:00",
+      "edited": null,
+      "content": "spec-first per team rule — tests for MER-104 are red on main now, pushing as I go.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532408176312320003",
+      "attachments": []
+    },
+    {
+      "message_id": "1532474865745920004",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-07-30T19:48:00+00:00",
+      "edited": null,
+      "content": "<@301002> can you?",
+      "jump_url": "https://discord.com/channels/9901/1103/1532474865745920004",
+      "attachments": []
+    },
+    {
+      "message_id": "1532494998405120006",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-07-30T21:08:00+00:00",
+      "edited": null,
+      "content": "PR #5 is up: `feature/MER-104-tenant-switch`. review when you can.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532494998405120006",
+      "attachments": []
+    },
+    {
+      "message_id": "1532506323025920007",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-07-30T21:53:00+00:00",
+      "edited": null,
+      "content": "reviewed #5 — left two comments, nothing structural.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532506323025920007",
+      "attachments": []
+    },
+    {
+      "message_id": "1532515131064320008",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-07-30T22:28:00+00:00",
+      "edited": null,
+      "content": "addressed both, pushing.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532515131064320008",
+      "attachments": []
+    },
+    {
+      "message_id": "1532838008586240009",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-07-31T19:51:00+00:00",
+      "edited": null,
+      "content": "deploy is green, MER-104 is ready to close.",
+      "jump_url": "https://discord.com/channels/9901/1103/1532838008586240009",
+      "attachments": []
+    },
+    {
+      "message_id": "1532843545067520010",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-07-31T20:13:00+00:00",
+      "edited": null,
+      "content": "MER-104 closed — PR #5 merged. shipped — flag is live in staging, will confirm after the nightly job",
+      "jump_url": "https://discord.com/channels/9901/1103/1532843545067520010",
+      "attachments": []
+    },
+    {
+      "message_id": "1572601772113920000",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-18T13:18:00+00:00",
+      "edited": null,
+      "content": "@marcus Returning to a paginated invoice list shows rows from the prior tenant/page even though the URL has changed. Opening MER-119 to track it. picking this up now.",
+      "jump_url": "https://discord.com/channels/9901/1103/1572601772113920000",
+      "attachments": []
+    },
+    {
+      "message_id": "1572604037038080001",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-11-18T13:27:00+00:00",
+      "edited": null,
+      "content": "ack. looking now. filing evidence on the ticket (support-report).",
+      "jump_url": "https://discord.com/channels/9901/1103/1572604037038080001",
+      "attachments": []
+    },
+    {
+      "message_id": "1572647070597120011",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-11-18T16:18:00+00:00",
+      "edited": null,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "jump_url": "https://discord.com/channels/9901/1103/1572647070597120011",
+      "attachments": []
+    },
+    {
+      "message_id": "1572798065541120013",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-11-19T02:18:00+00:00",
+      "edited": null,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "jump_url": "https://discord.com/channels/9901/1103/1572798065541120013",
+      "attachments": []
+    },
+    {
+      "message_id": "1572989325803520003",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-19T08:58:00-06:00",
+      "edited": null,
+      "content": "spec-first per team rule — tests for MER-119 are red on main now, pushing as I go.",
+      "jump_url": "https://discord.com/channels/9901/1103/1572989325803520003",
+      "attachments": []
+    },
+    {
+      "message_id": "1573056015237120004",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-11-19T13:23:00-06:00",
+      "edited": null,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "jump_url": "https://discord.com/channels/9901/1103/1573056015237120004",
+      "attachments": []
+    },
+    {
+      "message_id": "1573068598149120005",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-11-19T20:13:00+00:00",
+      "edited": null,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "jump_url": "https://discord.com/channels/9901/1103/1573068598149120005",
+      "attachments": []
+    },
+    {
+      "message_id": "1573076147896320006",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-19T20:43:00+00:00",
+      "edited": null,
+      "content": "PR #22 is up: `feature/MER-119-pagination-key`. review when you can.",
+      "jump_url": "https://discord.com/channels/9901/1103/1573076147896320006",
+      "attachments": []
+    },
+    {
+      "message_id": "1573087472517120007",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-11-19T21:28:00+00:00",
+      "edited": null,
+      "content": "reviewed #22 — left two comments, nothing structural.",
+      "jump_url": "https://discord.com/channels/9901/1103/1573087472517120007",
+      "attachments": []
+    },
+    {
+      "message_id": "1573096280555520008",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-19T22:03:00+00:00",
+      "edited": null,
+      "content": "addressed both, pushing.",
+      "jump_url": "https://discord.com/channels/9901/1103/1573096280555520008",
+      "attachments": []
+    },
+    {
+      "message_id": "1573419158077440009",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-11-20T19:26:00+00:00",
+      "edited": null,
+      "content": "deploy is green, MER-119 is ready to close.",
+      "jump_url": "https://discord.com/channels/9901/1103/1573419158077440009",
+      "attachments": []
+    },
+    {
+      "message_id": "1573424694558720010",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-20T19:48:00+00:00",
+      "edited": null,
+      "content": "MER-119 closed — PR #22 merged. fix is merged, thanks for the quick turnaround",
+      "jump_url": "https://discord.com/channels/9901/1103/1573424694558720010",
+      "attachments": []
+    },
+    {
+      "message_id": "1575138487173120000",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-25T13:18:00+00:00",
+      "edited": null,
+      "content": "@marcus Users cannot save a partially completed purchase order while working through the required fields, though final submission must remain strict. Opening MER-120 to track it. ok this is the third report on this, starting now.",
+      "jump_url": "https://discord.com/channels/9901/1103/1575138487173120000",
+      "attachments": []
+    },
+    {
+      "message_id": "1575140752097280001",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-11-25T13:27:00+00:00",
+      "edited": null,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "jump_url": "https://discord.com/channels/9901/1103/1575140752097280001",
+      "attachments": []
+    },
+    {
+      "message_id": "1575161136414720002",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-11-25T14:48:00+00:00",
+      "edited": null,
+      "content": "fyi client-report is attached to MER-120 if you want the raw capture.",
+      "jump_url": "https://discord.com/channels/9901/1103/1575161136414720002",
+      "attachments": [
+        {
+          "uuid": "t21-24662966",
+          "original_filename": "t21-client-report.pdf",
+          "size": 70695,
+          "content_type": "application/pdf",
+          "path": "raw/attachments/jira/reports/t21-client-report.pdf"
+        },
+        {
+          "uuid": "t21-25992782",
+          "original_filename": "t21-validation-log.log",
+          "size": 331,
+          "content_type": "text/plain",
+          "path": "raw/attachments/jira/logs/t21-validation-log.log"
+        }
+      ]
+    },
+    {
+      "message_id": "1575183785656320011",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-11-25T16:18:00+00:00",
+      "edited": null,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "jump_url": "https://discord.com/channels/9901/1103/1575183785656320011",
+      "attachments": []
+    },
+    {
+      "message_id": "526189008415903226",
+      "author": {
+        "id": null,
+        "name": null
+      },
+      "timestamp": "2026-11-25T16:18:00+00:00",
+      "edited": null,
+      "content": "",
+      "jump_url": null,
+      "attachments": []
+    },
+    {
+      "message_id": "1575259283128320012",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-25T21:18:00+00:00",
+      "edited": null,
+      "content": "<@301002> can you?",
+      "jump_url": "https://discord.com/channels/9901/1103/1575259283128320012",
+      "attachments": []
+    },
+    {
+      "message_id": "1575334780600320013",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-26T02:18:00+00:00",
+      "edited": null,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "jump_url": "https://discord.com/channels/9901/1103/1575334780600320013",
+      "attachments": []
+    },
+    {
+      "message_id": "1575526040862720003",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-26T08:58:00-06:00",
+      "edited": null,
+      "content": "spec-first per team rule — tests for MER-120 are red on main now, pushing as I go.",
+      "jump_url": "https://discord.com/channels/9901/1103/1575526040862720003",
+      "attachments": []
+    },
+    {
+      "message_id": "1575624187576320007",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-11-26T15:28:00-06:00",
+      "edited": null,
+      "content": "reviewed #23 — left two comments, nothing structural.",
+      "jump_url": "https://discord.com/channels/9901/1103/1575624187576320007",
+      "attachments": []
+    },
+    {
+      "message_id": "1575592730296320004",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-11-26T19:23:00+00:00",
+      "edited": null,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "jump_url": "https://discord.com/channels/9901/1103/1575592730296320004",
+      "attachments": []
+    },
+    {
+      "message_id": "1575605313208320005",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-11-26T20:13:00+00:00",
+      "edited": null,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "jump_url": "https://discord.com/channels/9901/1103/1575605313208320005",
+      "attachments": []
+    },
+    {
+      "message_id": "1575612862955520006",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-26T20:43:00+00:00",
+      "edited": null,
+      "content": "PR #23 is up: `feature/MER-120-draft-validation`. review when you can.",
+      "jump_url": "https://discord.com/channels/9901/1103/1575612862955520006",
+      "attachments": []
+    },
+    {
+      "message_id": "1575632995614720008",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-26T22:03:00+00:00",
+      "edited": null,
+      "content": "addressed both, pushing.",
+      "jump_url": "https://discord.com/channels/9901/1103/1575632995614720008",
+      "attachments": []
+    },
+    {
+      "message_id": "1575955873136640009",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-11-27T19:26:00+00:00",
+      "edited": null,
+      "content": "deploy is green, MER-120 is ready to close.",
+      "jump_url": "https://discord.com/channels/9901/1103/1575955873136640009",
+      "attachments": []
+    },
+    {
+      "message_id": "1575961409617920010",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-11-27T19:48:00+00:00",
+      "edited": null,
+      "content": "MER-120 closed — PR #23 merged. closing this out, follow-up filed for the remaining edge case",
+      "jump_url": "https://discord.com/channels/9901/1103/1575961409617920010",
+      "attachments": []
+    },
+    {
+      "message_id": "1577677467156480001",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-02T13:27:00+00:00",
+      "edited": null,
+      "content": "ack. looking now. filing evidence on the ticket (support-report).",
+      "jump_url": "https://discord.com/channels/9901/1103/1577677467156480001",
+      "attachments": []
+    },
+    {
+      "message_id": "1577697851473920002",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-02T14:48:00+00:00",
+      "edited": null,
+      "content": "fyi support-report is attached to MER-121 if you want the raw capture.",
+      "jump_url": "https://discord.com/channels/9901/1103/1577697851473920002",
+      "attachments": [
+        {
+          "uuid": "t22-27494594",
+          "original_filename": "t22-support-report.pdf",
+          "size": 68857,
+          "content_type": "application/pdf",
+          "path": "raw/attachments/jira/reports/t22-support-report.pdf"
+        },
+        {
+          "uuid": "t22-6867693",
+          "original_filename": "t22-browser-screenshot.png",
+          "size": 20553,
+          "content_type": "image/png",
+          "path": "raw/attachments/discord/images/t22-browser-screenshot.png"
+        }
+      ]
+    },
+    {
+      "message_id": "1577720500715520011",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-02T16:18:00+00:00",
+      "edited": null,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "jump_url": "https://discord.com/channels/9901/1103/1577720500715520011",
+      "attachments": []
+    },
+    {
+      "message_id": "1577795998187520012",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-02T21:18:00+00:00",
+      "edited": null,
+      "content": "the coffee machine is fixed (somehow)",
+      "jump_url": "https://discord.com/channels/9901/1103/1577795998187520012",
+      "attachments": []
+    },
+    {
+      "message_id": "1577871495659520013",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-03T02:18:00+00:00",
+      "edited": null,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "jump_url": "https://discord.com/channels/9901/1103/1577871495659520013",
+      "attachments": []
+    },
+    {
+      "message_id": "1578062755921920003",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-03T14:58:00+00:00",
+      "edited": null,
+      "content": "\u0000\u0007 garbage from the export",
+      "jump_url": "https://discord.com/channels/9901/1103/1578062755921920003",
+      "attachments": []
+    },
+    {
+      "message_id": "1578129445355520004",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-03T19:23:00+00:00",
+      "edited": null,
+      "content": "   ",
+      "jump_url": "https://discord.com/channels/9901/1103/1578129445355520004",
+      "attachments": []
+    },
+    {
+      "message_id": "1578142028267520005",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-03T20:13:00",
+      "edited": null,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "jump_url": "https://discord.com/channels/9901/1103/1578142028267520005",
+      "attachments": []
+    },
+    {
+      "message_id": "1578142028267520005",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-03T20:13:00+00:00",
+      "edited": null,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "jump_url": "https://discord.com/channels/9901/1103/1578142028267520005",
+      "attachments": []
+    },
+    {
+      "message_id": "1578149578014720006",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-03T20:43:00+00:00",
+      "edited": null,
+      "content": "PR #24 is up: `feature/MER-121-audit-filter-url`. review when you can.",
+      "jump_url": "https://discord.com/channels/9901/1103/1578149578014720006",
+      "attachments": []
+    },
+    {
+      "message_id": "1578160902635520007",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-03T21:28:00+00:00",
+      "edited": null,
+      "content": "reviewed #24 — left two comments, nothing structural.",
+      "jump_url": "https://discord.com/channels/9901/1103/1578160902635520007",
+      "attachments": []
+    },
+    {
+      "message_id": "1578169710673920008",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-03T22:03:00+00:00",
+      "edited": null,
+      "content": "https://discord.com/channels/9901/1101/0 (deleted message placeholder)",
+      "jump_url": "https://discord.com/channels/9901/1103/1578169710673920008",
+      "attachments": []
+    },
+    {
+      "message_id": "1578492588195840009",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-04T19:26:00+00:00",
+      "edited": "2026-12-04T19:26:00+00:00",
+      "content": "deploy is green, MER-121 is ready to close.",
+      "jump_url": "https://discord.com/channels/9901/1103/1578492588195840009",
+      "attachments": []
+    },
+    {
+      "message_id": "1578498124677120010",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-04T19:48:00+00:00",
+      "edited": null,
+      "content": "MER-121 closed — PR #24 merged. fix is merged, thanks for the quick turnaround",
+      "jump_url": "https://discord.com/channels/9901/1103/1578498124677120010",
+      "attachments": []
+    },
+    {
+      "message_id": "1580211917291520000",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-09T07:18:00-06:00",
+      "edited": null,
+      "content": "@marcus German and French tenants see a raw numeric code when a new payment state is returned by the API. Opening MER-122 to track it. picking this up now.",
+      "jump_url": "https://discord.com/channels/9901/1103/1580211917291520000",
+      "attachments": []
+    },
+    {
+      "message_id": "1580214182215680001",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-09T13:27:00+00:00",
+      "edited": null,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "jump_url": "https://discord.com/channels/9901/1103/1580214182215680001",
+      "attachments": []
+    },
+    {
+      "message_id": "1580234566533120002",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-09T14:48:00+00:00",
+      "edited": null,
+      "content": "fyi client-report is attached to MER-122 if you want the raw capture.",
+      "jump_url": "https://discord.com/channels/9901/1103/1580234566533120002",
+      "attachments": [
+        {
+          "uuid": "t23-95954709",
+          "original_filename": "t23-client-report.pdf",
+          "size": 71404,
+          "content_type": "application/pdf",
+          "path": "raw/attachments/jira/reports/t23-client-report.pdf"
+        },
+        {
+          "uuid": "t23-59416067",
+          "original_filename": "t23-locale-log.log",
+          "size": 333,
+          "content_type": "text/plain",
+          "path": "raw/attachments/jira/logs/t23-locale-log.log"
+        }
+      ]
+    },
+    {
+      "message_id": "1580234566533120002",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-09T14:48:00+00:00",
+      "edited": null,
+      "content": "fyi client-report is attached to MER-122 if you want the raw capture.",
+      "jump_url": "https://discord.com/channels/9901/1103/1580234566533120002",
+      "attachments": [
+        {
+          "uuid": "t23-95954709",
+          "original_filename": "t23-client-report.pdf",
+          "size": 71404,
+          "content_type": "application/pdf",
+          "path": "raw/attachments/jira/reports/t23-client-report.pdf"
+        },
+        {
+          "uuid": "t23-59416067",
+          "original_filename": "t23-locale-log.log",
+          "size": 333,
+          "content_type": "text/plain",
+          "path": "raw/attachments/jira/logs/t23-locale-log.log"
+        }
+      ]
+    },
+    {
+      "message_id": "1580257215774720011",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-09T16:18:00+00:00",
+      "edited": null,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "jump_url": "https://discord.com/channels/9901/1103/1580257215774720011",
+      "attachments": []
+    },
+    {
+      "message_id": "1580332713246720012",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-09T21:18:00+00:00",
+      "edited": "2026-12-09T21:18:00+00:00",
+      "content": "standup in 5, billing standup moved to 10:30",
+      "jump_url": "https://discord.com/channels/9901/1103/1580332713246720012",
+      "attachments": []
+    },
+    {
+      "message_id": "1580408210718720013",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-10T02:18:00+00:00",
+      "edited": null,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "jump_url": "https://discord.com/channels/9901/1103/1580408210718720013",
+      "attachments": []
+    },
+    {
+      "message_id": "1580599470981120003",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-10T14:58:00+00:00",
+      "edited": null,
+      "content": "spec-first per team rule — tests for MER-122 are red on main now, pushing as I go.",
+      "jump_url": "https://discord.com/channels/9901/1103/1580599470981120003",
+      "attachments": []
+    },
+    {
+      "message_id": "1580666160414720004",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-10T19:23:00+00:00",
+      "edited": null,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "jump_url": "https://discord.com/channels/9901/1103/1580666160414720004",
+      "attachments": []
+    },
+    {
+      "message_id": "1580678743326720005",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-10T20:13:00+00:00",
+      "edited": null,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "jump_url": "https://discord.com/channels/9901/1103/1580678743326720005",
+      "attachments": []
+    },
+    {
+      "message_id": "1580686293073920006",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-10T20:43:00+00:00",
+      "edited": null,
+      "content": "PR #25 is up: `feature/MER-122-localized-error-fallback`. review when you can.",
+      "jump_url": "https://discord.com/channels/9901/1103/1580686293073920006",
+      "attachments": []
+    },
+    {
+      "message_id": "1580697617694720007",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-10T21:28:00+00:00",
+      "edited": null,
+      "content": "reviewed #25 — left two comments, nothing structural.",
+      "jump_url": "https://discord.com/channels/9901/1103/1580697617694720007",
+      "attachments": []
+    },
+    {
+      "message_id": "1580706425733120008",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-10T22:03:00+00:00",
+      "edited": null,
+      "content": "addressed both, pushing.",
+      "jump_url": "https://discord.com/channels/9901/1103/1580706425733120008",
+      "attachments": []
+    },
+    {
+      "message_id": "1581029303255040009",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-11T19:26:00+00:00",
+      "edited": null,
+      "content": "deploy is green, MER-122 is ready to close.",
+      "jump_url": "https://discord.com/channels/9901/1103/1581029303255040009",
+      "attachments": []
+    },
+    {
+      "message_id": "1581034839736320010",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-11T19:48:00+00:00",
+      "edited": null,
+      "content": "MER-122 closed — PR #25 merged. done, PR is up and CI is green",
+      "jump_url": "https://discord.com/channels/9901/1103/1581034839736320010",
+      "attachments": []
+    },
+    {
+      "message_id": "1584568121425920000",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-21T13:48:00+00:00",
+      "edited": null,
+      "content": "@priya Signed-in users briefly see a feature-enabled screen that disappears after the server-provided tenant policy loads. Opening MER-124 to track it. ok this is the third report on this, starting now.",
+      "jump_url": "https://discord.com/channels/9901/1103/1584568121425920000",
+      "attachments": []
+    },
+    {
+      "message_id": "1584570386350080001",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-21T13:57:00+00:00",
+      "edited": null,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "jump_url": "https://discord.com/channels/9901/1103/1584570386350080001",
+      "attachments": []
+    },
+    {
+      "message_id": "1584590770667520002",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-21T15:18:00+00:00",
+      "edited": null,
+      "content": "fyi client-report is attached to MER-124 if you want the raw capture.",
+      "jump_url": "https://discord.com/channels/9901/1103/1584590770667520002",
+      "attachments": [
+        {
+          "uuid": "t25-23793416",
+          "original_filename": "t25-client-report.pdf",
+          "size": 70550,
+          "content_type": "application/pdf",
+          "path": "raw/attachments/jira/reports/t25-client-report.pdf"
+        },
+        {
+          "uuid": "t25-62686158",
+          "original_filename": "t25-hydration-log.log",
+          "size": 333,
+          "content_type": "text/plain",
+          "path": "raw/attachments/jira/logs/t25-hydration-log.log"
+        }
+      ]
+    },
+    {
+      "message_id": "1584613419909120011",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2026-12-21T16:48:00+00:00",
+      "edited": null,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "jump_url": "https://discord.com/channels/9901/1103/1584613419909120011",
+      "attachments": []
+    },
+    {
+      "message_id": "1584688917381120012",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-21T21:48:00+00:00",
+      "edited": null,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "jump_url": "https://discord.com/channels/9901/1103/1584688917381120012",
+      "attachments": []
+    },
+    {
+      "message_id": "1584764414853120013",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-22T02:48:00+00:00",
+      "edited": null,
+      "content": "the coffee machine is fixed (somehow)",
+      "jump_url": "https://discord.com/channels/9901/1103/1584764414853120013",
+      "attachments": []
+    },
+    {
+      "message_id": "1584955675115520003",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-22T15:28:00+00:00",
+      "edited": null,
+      "content": "spec-first per team rule — tests for MER-124 are red on main now, pushing as I go.",
+      "jump_url": "https://discord.com/channels/9901/1103/1584955675115520003",
+      "attachments": []
+    },
+    {
+      "message_id": "1585022364549120004",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-22T19:53:00+00:00",
+      "edited": null,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "jump_url": "https://discord.com/channels/9901/1103/1585022364549120004",
+      "attachments": []
+    },
+    {
+      "message_id": "1585034947461120005",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-22T20:43:00+00:00",
+      "edited": null,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "jump_url": "https://discord.com/channels/9901/1103/1585034947461120005",
+      "attachments": []
+    },
+    {
+      "message_id": "1585042497208320006",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-22T21:13:00+00:00",
+      "edited": null,
+      "content": "PR #27 is up: `feature/MER-124-bootstrap-auth`. review when you can.",
+      "jump_url": "https://discord.com/channels/9901/1103/1585042497208320006",
+      "attachments": []
+    },
+    {
+      "message_id": "1585053821829120007",
+      "author": {
+        "id": "301001",
+        "name": "Priya Sharma"
+      },
+      "timestamp": "2026-12-22T21:58:00+00:00",
+      "edited": null,
+      "content": "reviewed #27 — left two comments, nothing structural.",
+      "jump_url": "https://discord.com/channels/9901/1103/1585053821829120007",
+      "attachments": []
+    },
+    {
+      "message_id": "590157429856217188",
+      "author": {
+        "id": null,
+        "name": null
+      },
+      "timestamp": "2026-12-22T21:58:00+00:00",
+      "edited": null,
+      "content": "",
+      "jump_url": null,
+      "attachments": []
+    },
+    {
+      "message_id": "1585062629867520008",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-22T22:33:00+00:00",
+      "edited": null,
+      "content": "ok\r\n\r\n-- \nsent from phone",
+      "jump_url": "https://discord.com/channels/9901/1103/1585062629867520008",
+      "attachments": []
+    },
+    {
+      "message_id": "1585385507389440009",
+      "author": {
+        "id": "301002",
+        "name": "Marcus Lee"
+      },
+      "timestamp": "2026-12-23T19:56:00+00:00",
+      "edited": "2026-12-23T19:56:00+00:00",
+      "content": "deploy is green, MER-124 is ready to close.",
+      "jump_url": "https://discord.com/channels/9901/1103/1585385507389440009",
+      "attachments": []
+    },
+    {
+      "message_id": "1585391043870720010",
+      "author": {
+        "id": "301004",
+        "name": "Dan Levin"
+      },
+      "timestamp": "2026-12-23T20:18:00+00:00",
+      "edited": null,
+      "content": "MER-124 closed — PR #27 merged. closing this out, follow-up filed for the remaining edge case",
+      "jump_url": "https://discord.com/channels/9901/1103/1585391043870720010",
+      "attachments": []
+    },
+    {
+      "message_id": "1572624421355520002",
+      "author": {
+        "id": "301003",
+        "name": "Sofia Almeida"
+      },
+      "timestamp": "2027-12-23T14:48:00+00:00",
+      "edited": null,
+      "content": "fyi support-report is attached to MER-119 if you want the raw capture.",
+      "jump_url": "https://discord.com/channels/9901/1103/1572624421355520002",
+      "attachments": [
+        {
+          "uuid": "t19-65219215",
+          "original_filename": "t19-support-report.pdf",
+          "size": 71613,
+          "content_type": "application/pdf",
+          "path": "raw/attachments/jira/reports/t19-support-report.pdf"
+        },
+        {
+          "uuid": "t19-3331577",
+          "original_filename": "t19-network-log.log",
+          "size": 333,
+          "content_type": "text/plain",
+          "path": "raw/attachments/jira/logs/t19-network-log.log"
+        }
+      ]
+    },
+    {
+      "message_id": "1572722568069120012",
+      "author": {
+        "id": "301001",
+        "name": "Deleted User"
+      },
+      "timestamp": "2027-12-23T21:18:00+00:00",
+      "edited": null,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "jump_url": "https://discord.com/channels/9901/1103/1572722568069120012",
+      "attachments": []
+    }
+  ]
+}

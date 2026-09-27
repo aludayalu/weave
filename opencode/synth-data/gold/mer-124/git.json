@@ -1,0 +1,110 @@
+{
+  "task_id": "mer-124",
+  "pull_request": {
+    "pr_number": 27,
+    "title": "test: MER-124 authenticated hydration flag source contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Sofia Almeida",
+    "branch": "feature/MER-124-bootstrap-auth",
+    "merge_sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c",
+    "opened_ts_utc": "2026-12-23T18:00:00Z",
+    "merged_ts_utc": "2026-12-23T20:00:00Z",
+    "closed_ts_utc": "2026-12-23T20:00:00Z"
+  },
+  "merge_sha": "4715436c3906ac17ecfdc7470e00fdd8cdf1699c",
+  "base_sha": "958b5e6096c2b0be94440fc1a23732a8afef2858",
+  "head_sha": "7cf2c938a6a857cfb7c57ae98262c74761b06555",
+  "commit_count": 5,
+  "commits": [
+    {
+      "sha": "1d941403488386339199032041a4d7df71315794",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-22T16:00:00Z",
+      "committed_ts_utc": "2026-12-22T16:00:00Z",
+      "message": "test: MER-124 authenticated hydration flag source contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "958b5e6096c2b0be94440fc1a23732a8afef2858"
+      ],
+      "additions": 41,
+      "deletions": 0,
+      "changed_files": [
+        "web/lib/task124_bootstrap_auth.test.ts"
+      ]
+    },
+    {
+      "sha": "c22bf396eb6bce18f967f3b3afa69f5a4175117d",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-22T16:10:00Z",
+      "committed_ts_utc": "2026-12-22T16:10:00Z",
+      "message": "test: target authenticated-session local storage leak in MER-124 spec",
+      "is_merge": false,
+      "parent_shas": [
+        "1d941403488386339199032041a4d7df71315794"
+      ],
+      "additions": 14,
+      "deletions": 2,
+      "changed_files": [
+        "web/lib/task124_bootstrap_auth.test.ts"
+      ]
+    },
+    {
+      "sha": "382184ac9233c841bab815cfb768c3ebbf99dc8a",
+      "author_name": "Sofia Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-22T16:20:00Z",
+      "committed_ts_utc": "2026-12-22T16:20:00Z",
+      "message": "feat(console): gate tenant policy after mount to avoid first-paint flicker",
+      "is_merge": false,
+      "parent_shas": [
+        "c22bf396eb6bce18f967f3b3afa69f5a4175117d"
+      ],
+      "additions": 11,
+      "deletions": 2,
+      "changed_files": [
+        "web/pages/_app.tsx"
+      ]
+    },
+    {
+      "sha": "48952f7ea889504ca33f970001e4bac8edf3b14e",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-22T16:30:00Z",
+      "committed_ts_utc": "2026-12-22T16:30:00Z",
+      "message": "test: pin authenticated policy hydration source (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "382184ac9233c841bab815cfb768c3ebbf99dc8a"
+      ],
+      "additions": 8,
+      "deletions": 0,
+      "changed_files": [
+        "web/lib/task124_bootstrap_auth.test.ts"
+      ]
+    },
+    {
+      "sha": "7cf2c938a6a857cfb7c57ae98262c74761b06555",
+      "author_name": "Sofia Almeida",
+      "author_email": "sofia@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-23T18:00:00Z",
+      "committed_ts_utc": "2026-12-23T18:00:00Z",
+      "message": "fix(console): apply tenant policy during first render (MER-124)",
+      "is_merge": false,
+      "parent_shas": [
+        "48952f7ea889504ca33f970001e4bac8edf3b14e"
+      ],
+      "additions": 8,
+      "deletions": 9,
+      "changed_files": [
+        "web/pages/_app.tsx"
+      ]
+    }
+  ],
+  "files": [
+    "web/lib/task124_bootstrap_auth.test.ts",
+    "web/pages/_app.tsx"
+  ]
+}

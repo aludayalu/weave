@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-119",
+  "issue": {
+    "issue_key": "MER-119",
+    "summary": "Pagination returns stale invoices after navigation",
+    "description": "Returning to a paginated invoice list shows rows from the prior tenant/page even though the URL has changed.\n\nTribal constraint: Most SWR keys are generated from routes.yaml; the invoice page has a local historical literal that must preserve both tenant and page dimensions when its contract changes.",
+    "status": "Done",
+    "reporter": "Priya Sharma",
+    "assignee": "Priya Sharma",
+    "created_utc": "2026-11-18T13:18:00Z",
+    "updated_utc": "2026-11-20T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21022",
+        "filename": "t19-support-report.pdf",
+        "path": "raw/attachments/jira/reports/t19-support-report.pdf",
+        "bytes": 71613,
+        "content_type": "application/pdf",
+        "created_utc": "2026-11-18T13:58:00Z"
+      },
+      {
+        "attachment_id": "21022",
+        "filename": "t19-network-log.log",
+        "path": "raw/attachments/jira/logs/t19-network-log.log",
+        "bytes": 333,
+        "content_type": "text/plain",
+        "created_utc": "2026-11-18T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-119",
+      "ts_utc": "2026-11-18T13:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-119",
+      "ts_utc": "2026-11-18T13:18:00Z",
+      "author": "Priya Sharma",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Priya Sharma"
+    },
+    {
+      "issue_key": "MER-119",
+      "ts_utc": "2026-11-19T14:58:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-119",
+      "ts_utc": "2026-11-19T21:28:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-119",
+      "ts_utc": "2026-11-19T21:28:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #22"
+    },
+    {
+      "issue_key": "MER-119",
+      "ts_utc": "2026-11-20T19:48:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-119",
+      "ts_utc": "2026-11-20T19:48:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

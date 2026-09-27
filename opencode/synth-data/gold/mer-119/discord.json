@@ -1,0 +1,217 @@
+{
+  "task_id": "mer-119",
+  "channel": "eng-frontend",
+  "window": {
+    "start": "2026-11-18T13:18:00Z",
+    "end": "2026-11-20T19:48:00Z"
+  },
+  "message_count": 12,
+  "messages": [
+    {
+      "message_id": "1572601772113920000",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-18T13:18:00Z",
+      "ts_raw": "2026-11-18T13:18:00+00:00",
+      "ts_epoch": 1795007880,
+      "content": "@marcus Returning to a paginated invoice list shows rows from the prior tenant/page even though the URL has changed. Opening MER-119 to track it. picking this up now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-119"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1572604037038080001",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-18T13:27:00Z",
+      "ts_raw": "2026-11-18T13:27:00+00:00",
+      "ts_epoch": 1795008420,
+      "content": "ack. looking now. filing evidence on the ticket (support-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1572647070597120011",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-11-18T16:18:00Z",
+      "ts_raw": "2026-11-18T16:18:00+00:00",
+      "ts_epoch": 1795018680,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1572798065541120013",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-11-19T02:18:00Z",
+      "ts_raw": "2026-11-19T02:18:00+00:00",
+      "ts_epoch": 1795054680,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1572989325803520003",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-19T14:58:00Z",
+      "ts_raw": "2026-11-19T08:58:00-06:00",
+      "ts_epoch": 1795100280,
+      "content": "spec-first per team rule — tests for MER-119 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-119"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1573056015237120004",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-19T19:23:00Z",
+      "ts_raw": "2026-11-19T13:23:00-06:00",
+      "ts_epoch": 1795116180,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1573068598149120005",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-11-19T20:13:00Z",
+      "ts_raw": "2026-11-19T20:13:00+00:00",
+      "ts_epoch": 1795119180,
+      "content": "the interesting part is that the obvious fix passes locally and still ships broken",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1573076147896320006",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-19T20:43:00Z",
+      "ts_raw": "2026-11-19T20:43:00+00:00",
+      "ts_epoch": 1795120980,
+      "content": "PR #22 is up: `feature/MER-119-pagination-key`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-119"
+      ],
+      "mentions_pr": [
+        22
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1573087472517120007",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-11-19T21:28:00Z",
+      "ts_raw": "2026-11-19T21:28:00+00:00",
+      "ts_epoch": 1795123680,
+      "content": "reviewed #22 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1573096280555520008",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-19T22:03:00Z",
+      "ts_raw": "2026-11-19T22:03:00+00:00",
+      "ts_epoch": 1795125780,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1573419158077440009",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-11-20T19:26:00Z",
+      "ts_raw": "2026-11-20T19:26:00+00:00",
+      "ts_epoch": 1795202760,
+      "content": "deploy is green, MER-119 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-119"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1573424694558720010",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-11-20T19:48:00Z",
+      "ts_raw": "2026-11-20T19:48:00+00:00",
+      "ts_epoch": 1795204080,
+      "content": "MER-119 closed — PR #22 merged. fix is merged, thanks for the quick turnaround",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-119"
+      ],
+      "mentions_pr": [
+        22
+      ],
+      "attachments": []
+    }
+  ]
+}

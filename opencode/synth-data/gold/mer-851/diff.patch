@@ -1,0 +1,308 @@
+diff --git a/api/errors.yaml b/api/errors.yaml
+index b43dbca..33f4b87 100644
+--- a/api/errors.yaml
++++ b/api/errors.yaml
+@@ -21,6 +21,8 @@ modules:
+         message: resource conflict
+       - name: internal
+         message: internal error
++      - name: forbidden
++        message: access forbidden
+ 
+   - name: billing
+     base: 2000
+diff --git a/internal/audit/export.go b/internal/audit/export.go
+index c21223d..e33ea6f 100644
+--- a/internal/audit/export.go
++++ b/internal/audit/export.go
+@@ -15,12 +15,13 @@ var ExportHeader = []string{
+ 
+ // ExportRecords renders records for GET /api/audit/export.
+ //
+-// Perf note (MER-777): this path previously json.Marshal'd each record and
+-// dominated export latency; it now serializes via the generated marshaler.
++// Compliance note (MER-851): this is a trust boundary — every record goes
++// through the redacting MarshalJSON. The generated easyjson marshaler is
++// intentionally NOT used here (it does not redact; see its header).
+ func ExportRecords(rs []Record) ([]byte, error) {
+ 	var rows []json.RawMessage
+ 	for _, r := range rs {
+-		raw, err := EasyJSONMarshal(r)
++		raw, err := json.Marshal(r)
+ 		if err != nil {
+ 			return nil, fmt.Errorf("audit export: %w", err)
+ 		}
+diff --git a/internal/audit/helpers_test.go b/internal/audit/helpers_test.go
+new file mode 100644
+index 0000000..c02dd15
+--- /dev/null
++++ b/internal/audit/helpers_test.go
+@@ -0,0 +1,5 @@
++package audit
++
++import "os"
++
++func osReadFile(p string) ([]byte, error) { return os.ReadFile(p) }
+diff --git a/internal/audit/record.go b/internal/audit/record.go
+index 5635387..fe71c67 100644
+--- a/internal/audit/record.go
++++ b/internal/audit/record.go
+@@ -30,6 +30,7 @@ type Record struct {
+ var redactFields = map[string]bool{
+ 	"user_email":  true,
+ 	"national_id": true,
++	"ip_address":  true, // GDPR art. 4(1): personal data (MER-851)
+ }
+ 
+ const redactedValue = "[redacted]"
+diff --git a/internal/audit/task851_export_spec_test.go b/internal/audit/task851_export_spec_test.go
+new file mode 100644
+index 0000000..cd37aad
+--- /dev/null
++++ b/internal/audit/task851_export_spec_test.go
+@@ -0,0 +1,62 @@
++package audit
++
++import (
++	"encoding/json"
++	"strings"
++	"testing"
++	"time"
++)
++
++// MER-851 / GDPR: Crestwood Dental's erasure request surfaced live PII in
++// the admin audit export. Redaction is policy (redactFields) and must
++// hold on EVERY serialization boundary, including the export path.
++
++func specRecord() Record {
++	return Record{
++		ID: "a-9", Actor: "dan", Action: "gdpr.erasure", Resource: "contact_55",
++		UserEmail: "patient@example.test", NationalID: "999-88-7777",
++		IPAddress: "203.0.113.7", Tenant: "crestwood",
++		At: time.Date(2026, 7, 21, 15, 0, 0, 0, time.UTC),
++	}
++}
++
++func TestExportRecordsRedactsPII(t *testing.T) {
++	raw, err := ExportRecords([]Record{specRecord()})
++	if err != nil {
++		t.Fatal(err)
++	}
++	s := string(raw)
++	for _, secret := range []string{"patient@example.test", "999-88-7777", "203.0.113.7"} {
++		if strings.Contains(s, secret) {
++			t.Errorf("export leaked %q", secret)
++		}
++	}
++}
++
++func TestIPAddressIsAPolicyField(t *testing.T) {
++	if !Redacted("ip_address") {
++		t.Error("ip_address must be in redactFields (GDPR art. 4(1) — treat as personal data)")
++	}
++}
++
++func TestMarshalJSONRedactsIP(t *testing.T) {
++	raw, err := json.Marshal(specRecord())
++	if err != nil {
++		t.Fatal(err)
++	}
++	if strings.Contains(string(raw), "203.0.113.7") {
++		t.Error("MarshalJSON leaked ip_address")
++	}
++}
++
++func TestExportPathAvoidsGeneratedMarshaler(t *testing.T) {
++	// The easyjson output does not redact (see its header). The export
++	// boundary must never call it directly.
++	src, err := osReadFile("export.go")
++	if err != nil {
++		t.Fatal(err)
++	}
++	if strings.Contains(string(src), "EasyJSONMarshal") {
++		t.Error("export.go calls the non-redacting generated marshaler")
++	}
++}
+diff --git a/internal/httpapi/router.go b/internal/httpapi/router.go
+index d492c75..f9bd72c 100644
+--- a/internal/httpapi/router.go
++++ b/internal/httpapi/router.go
+@@ -64,6 +64,12 @@ func New(d Deps) *http.ServeMux {
+ 
+ 	// --- audit --------------------------------------------------------
+ 	mux.HandleFunc("GET /api/audit/export", func(w http.ResponseWriter, r *http.Request) {
++		// Compliance gate (MER-851): ops can disable the export surface
++		// from any of the three flag homes (see internal/flags).
++		if d.Flags.Get(flags.FlagComplianceExportGate) == "off" {
++			writeErr(w, errs.New(errs.CodeCoreForbidden, "audit export disabled by flag"))
++			return
++		}
+ 		recs, err := d.Export()
+ 		if err != nil {
+ 			writeErr(w, errs.New(errs.CodeCoreInternal, "export query failed"))
+@@ -131,6 +137,8 @@ func statusFor(c errs.Code) int {
+ 		return http.StatusBadRequest
+ 	case errs.CodeCoreConflict:
+ 		return http.StatusConflict
++	case errs.CodeCoreForbidden:
++		return http.StatusForbidden
+ 	default:
+ 		if c >= errs.RangePayment && c < errs.RangePayment+100 {
+ 			return http.StatusBadGateway
+diff --git a/internal/httpapi/task851_export_spec_test.go b/internal/httpapi/task851_export_spec_test.go
+new file mode 100644
+index 0000000..41e779c
+--- /dev/null
++++ b/internal/httpapi/task851_export_spec_test.go
+@@ -0,0 +1,91 @@
++package httpapi
++
++import (
++	"encoding/json"
++	"net/http"
++	"net/http/httptest"
++	"strings"
++	"testing"
++
++	"github.com/meridian-erp/meridian/internal/audit"
++	"github.com/meridian-erp/meridian/internal/flags"
++	errs "github.com/meridian-erp/meridian/pkg/errs"
++)
++
++// MER-851: the audit export endpoints are the compliance boundary.
++
++func gateDeps(gate string) Deps {
++	return Deps{
++		Flags: flags.New(flags.MapStore{"compliance.export.gate": gate}),
++		Export: func() ([]audit.Record, error) {
++			return []audit.Record{{
++				ID: "a-9", Actor: "dan", Action: "gdpr.erasure", Resource: "contact_55",
++				UserEmail: "patient@example.test", NationalID: "999-88-7777",
++				IPAddress: "203.0.113.7", Tenant: "crestwood",
++			}}, nil
++		},
++	}
++}
++
++func get(t *testing.T, deps Deps, path string) *httptest.ResponseRecorder {
++	t.Helper()
++	rec := httptest.NewRecorder()
++	New(deps).ServeHTTP(rec, httptest.NewRequest("GET", path, nil))
++	return rec
++}
++
++func TestExportEndpointRedactsPII(t *testing.T) {
++	rec := get(t, gateDeps("on"), "/api/audit/export")
++	if rec.Code != http.StatusOK {
++		t.Fatalf("status %d", rec.Code)
++	}
++	s := rec.Body.String()
++	for _, secret := range []string{"patient@example.test", "999-88-7777", "203.0.113.7"} {
++		if strings.Contains(s, secret) {
++			t.Errorf("/api/audit/export leaked %q", secret)
++		}
++	}
++}
++
++func TestEventsEndpointRedactsIP(t *testing.T) {
++	rec := get(t, gateDeps("on"), "/api/audit/events")
++	if strings.Contains(rec.Body.String(), "203.0.113.7") {
++		t.Error("/api/audit/events leaked ip_address")
++	}
++	if !strings.Contains(rec.Body.String(), "contact_55") {
++		t.Error("non-PII payload missing")
++	}
++}
++
++func TestExportGateAllowsWhenOn(t *testing.T) {
++	rec := get(t, gateDeps("on"), "/api/audit/export")
++	if rec.Code != http.StatusOK {
++		t.Errorf("status %d, want 200", rec.Code)
++	}
++}
++
++func TestExportGateDeniesWhenOff(t *testing.T) {
++	// Cross-task: exercises flag resolution (MER-102 keys), the gate and
++	// the forbidden error code together.
++	rec := get(t, gateDeps("off"), "/api/audit/export")
++	if rec.Code != http.StatusForbidden {
++		t.Errorf("status %d, want 403 — gate value must actually be enforced", rec.Code)
++	}
++	var e map[string]any
++	if err := json.Unmarshal(rec.Body.Bytes(), &e); err != nil {
++		t.Fatalf("body not JSON: %v", err)
++	}
++	if e["code"] != float64(1004) {
++		t.Errorf("code = %v, want 1004 (core.forbidden)", e["code"])
++	}
++}
++
++func TestForbiddenCodeRegistered(t *testing.T) {
++	c, ok := errs.CodeByName("core.forbidden")
++	if !ok {
++		t.Fatal("core.forbidden missing from api/errors.yaml — run make gen")
++	}
++	if int(c) != 1004 {
++		t.Errorf("core.forbidden = %d, want 1004 (append-only inside the core block)", int(c))
++	}
++}
+diff --git a/pkg/errs/code.go b/pkg/errs/code.go
+index 294d300..5292dcf 100644
+--- a/pkg/errs/code.go
++++ b/pkg/errs/code.go
+@@ -24,6 +24,9 @@ const (
+ 	CodeCoreInvalidArgument
+ 	CodeCoreConflict
+ 	CodeCoreInternal
++	// CodeCoreForbidden: authorization denied (MER-851 compliance gate).
++	// APPEND-ONLY inside the core block.
++	CodeCoreForbidden
+ )
+ 
+ // Billing module codes.
+diff --git a/pkg/errs/messages_gen.go b/pkg/errs/messages_gen.go
+index 8cd0ec9..2b630cc 100644
+--- a/pkg/errs/messages_gen.go
++++ b/pkg/errs/messages_gen.go
+@@ -8,6 +8,7 @@ var messages = map[Code]string{
+ 	1001: "invalid argument", // core.invalid_argument
+ 	1002: "resource conflict", // core.conflict
+ 	1003: "internal error", // core.internal
++	1004: "access forbidden", // core.forbidden
+ 	2000: "invoice not found", // billing.invoice_not_found
+ 	2001: "invoice is locked for editing", // billing.invoice_locked
+ 	2002: "invoice totals do not match line items", // billing.totals_mismatch
+@@ -25,6 +26,7 @@ var codeNames = map[string]Code{
+ 	"core.invalid_argument": 1001, // invalid argument
+ 	"core.conflict": 1002, // resource conflict
+ 	"core.internal": 1003, // internal error
++	"core.forbidden": 1004, // access forbidden
+ 	"billing.invoice_not_found": 2000, // invoice not found
+ 	"billing.invoice_locked": 2001, // invoice is locked for editing
+ 	"billing.totals_mismatch": 2002, // invoice totals do not match line items
+diff --git a/web/lib/errcodes_gen.ts b/web/lib/errcodes_gen.ts
+index 3540844..fd916af 100644
+--- a/web/lib/errcodes_gen.ts
++++ b/web/lib/errcodes_gen.ts
+@@ -9,11 +9,12 @@ export interface ErrModule {
+ }
+ 
+ export const ERR_MODULES: ErrModule[] = [
+-  { name: "core", base: 1000, size: 4, description: "Core service errors", codes: {
++  { name: "core", base: 1000, size: 5, description: "Core service errors", codes: {
+     "not_found": 1000,
+     "invalid_argument": 1001,
+     "conflict": 1002,
+     "internal": 1003,
++    "forbidden": 1004,
+   } },
+   { name: "billing", base: 2000, size: 3, description: "Billing and invoicing errors", codes: {
+     "invoice_not_found": 2000,
+@@ -39,6 +40,7 @@ export const ERR_MESSAGES: Record<number, string> = {
+   1001: "invalid argument",
+   1002: "resource conflict",
+   1003: "internal error",
++  1004: "access forbidden",
+   2000: "invoice not found",
+   2001: "invoice is locked for editing",
+   2002: "invoice totals do not match line items",

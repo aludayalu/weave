@@ -1,0 +1,59 @@
+{
+  "task_id": "mer-105",
+  "pull_request": {
+    "pr_number": 7,
+    "title": "test: MER-105 billing auth coverage spec (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Priya Sharma",
+    "branch": "feature/MER-105-billing-auth",
+    "merge_sha": "9c62969dba955433e7663cecf18347cadb31b305",
+    "opened_ts_utc": "2026-08-05T18:20:00Z",
+    "merged_ts_utc": "2026-08-07T20:40:00Z",
+    "closed_ts_utc": "2026-08-07T20:40:00Z"
+  },
+  "merge_sha": "9c62969dba955433e7663cecf18347cadb31b305",
+  "base_sha": "c85206f7db7ee2ded28b6bf16fee4fba0b57a022",
+  "head_sha": "d58102bd36515b5d63e9c36851ec418605030fc4",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "7f2b7e04ee0445fc2a2b22286b18aa590bb16f0f",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-04T17:10:00Z",
+      "committed_ts_utc": "2026-08-04T17:10:00Z",
+      "message": "test: MER-105 billing auth coverage spec (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "c85206f7db7ee2ded28b6bf16fee4fba0b57a022"
+      ],
+      "additions": 50,
+      "deletions": 0,
+      "changed_files": [
+        "web/lib/task880_billing_auth.test.ts"
+      ]
+    },
+    {
+      "sha": "d58102bd36515b5d63e9c36851ec418605030fc4",
+      "author_name": "Marcus Lee",
+      "author_email": "marcus@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-05T18:20:00Z",
+      "committed_ts_utc": "2026-08-05T18:20:00Z",
+      "message": "fix(console): restore billing auth coverage in app-router profile (MER-105)",
+      "is_merge": false,
+      "parent_shas": [
+        "7f2b7e04ee0445fc2a2b22286b18aa590bb16f0f"
+      ],
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": [
+        "web/lib/matcher.ts"
+      ]
+    }
+  ],
+  "files": [
+    "web/lib/matcher.ts",
+    "web/lib/task880_billing_auth.test.ts"
+  ]
+}

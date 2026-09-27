@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-112",
+  "issue": {
+    "issue_key": "MER-112",
+    "summary": "Fresh environments start before schema migrations",
+    "description": "A new staging region boots the service successfully, then fails the first invoice write because the required tables are absent.\n\nTribal constraint: make run generates code but does not apply migrations; onboarding expects a distinct migration prerequisite and migration ordering is filename-based.",
+    "status": "Done",
+    "reporter": "Marcus Lee",
+    "assignee": "Marcus Lee",
+    "created_utc": "2026-09-30T13:18:00Z",
+    "updated_utc": "2026-10-02T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21015",
+        "filename": "t11-staging-incident.pdf",
+        "path": "raw/attachments/jira/reports/t11-staging-incident.pdf",
+        "bytes": 70057,
+        "content_type": "application/pdf",
+        "created_utc": "2026-09-30T13:58:00Z"
+      },
+      {
+        "attachment_id": "21015",
+        "filename": "t11-startup-log.log",
+        "path": "raw/attachments/jira/logs/t11-startup-log.log",
+        "bytes": 333,
+        "content_type": "text/plain",
+        "created_utc": "2026-09-30T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-112",
+      "ts_utc": "2026-09-30T13:18:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-112",
+      "ts_utc": "2026-09-30T13:18:00Z",
+      "author": "Marcus Lee",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Marcus Lee"
+    },
+    {
+      "issue_key": "MER-112",
+      "ts_utc": "2026-10-01T14:58:00Z",
+      "author": "Marcus Lee",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-112",
+      "ts_utc": "2026-10-01T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-112",
+      "ts_utc": "2026-10-01T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #15"
+    },
+    {
+      "issue_key": "MER-112",
+      "ts_utc": "2026-10-02T19:48:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-112",
+      "ts_utc": "2026-10-02T19:48:00Z",
+      "author": "Marcus Lee",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

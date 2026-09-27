@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-120",
+  "jira": "MER-120",
+  "pr": 23,
+  "repository": "meridian-erp",
+  "repo_revision": "1bf4e9af46 (task branch tip)",
+  "title": "Autosave rejects an intentionally incomplete draft",
+  "summary": "MER-120 raised in #eng-frontend, shipped in PR #23",
+  "start_ts_utc": "2026-11-25T13:18:00Z",
+  "end_ts_utc": "2026-11-27T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Priya Sharma",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@marcus Users cannot save a partially completed purchase order while working through the required fields, though final submission must remain strict. Opening MER-120 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "fyi client-report is attached to MER-120 if you want the raw capture.",
+      "reminder: freeze starts friday for the payments repo",
+      "<@301002> can you?",
+      "standup in 5, billing standup moved to 10:30",
+      "spec-first per team rule — tests for MER-120 are red on main now, pushing as I go.",
+      "cross-team contract involved here, so I opened a ticket before touching anything",
+      "the interesting part is that the obvious fix passes locally and still ships broken",
+      "PR #23 is up: `feature/MER-120-draft-validation`. review when you can.",
+      "reviewed #23 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "Users cannot save a partially completed purchase order while working through the required fields, though final submission must remain strict.\n\nTribal constraint: Frontend required means user guidance; backend validation allows missing values during draft autosave and enforces the full schema only on submit.",
+    "documents": [
+      "t21-client-report.pdf",
+      "t21-validation-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 4512,
+    "documents": 2
+  }
+}

@@ -1,0 +1,53 @@
+diff --git a/web/lib/eval203_sse.test.ts b/web/lib/eval203_sse.test.ts
+new file mode 100644
+index 0000000..2f2f4db
+--- /dev/null
++++ b/web/lib/eval203_sse.test.ts
+@@ -0,0 +1,29 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { authorizeSSE, isUsableQueryToken } from "./sseAuth.ts";
++
++const token = "aB3dEfGh1jKlMn0pQrS";
++
++test("legacy server accepts a short-lived query token", () => {
++  assert.equal(authorizeSSE("legacy", { queryToken: token }), true);
++});
++
++test("app-router SSE still rejects query tokens", () => {
++  assert.equal(authorizeSSE("app", { queryToken: token }), false);
++});
++
++test("session cookie authorizes both servers", () => {
++  assert.equal(authorizeSSE("legacy", { sessionCookie: "s" }), true);
++  assert.equal(authorizeSSE("app", { sessionCookie: "s" }), true);
++});
++
++test("missing credentials are rejected everywhere", () => {
++  assert.equal(authorizeSSE("legacy", {}), false);
++  assert.equal(authorizeSSE("app", {}), false);
++});
++
++test("guest or malformed tokens are refused", () => {
++  assert.equal(isUsableQueryToken("guest_token_1234567890"), false);
++  assert.equal(isUsableQueryToken("short"), false);
++  assert.equal(isUsableQueryToken(undefined), false);
++});
+diff --git a/web/lib/sseAuth.ts b/web/lib/sseAuth.ts
+index d4f317b..dd996aa 100644
+--- a/web/lib/sseAuth.ts
++++ b/web/lib/sseAuth.ts
+@@ -13,5 +13,12 @@ export interface SSECredentials {
+ 
+ export function authorizeSSE(profile: SSEProfile, credentials: SSECredentials): boolean {
+   if (credentials.sessionCookie) return true;
+-  return false; // query-token fallback is restored for the legacy server in MER-203
++  if (profile === "legacy") return isUsableQueryToken(credentials.queryToken);
++  return false; // app-router SSE requires the session cookie
++}
++
++/** Legacy EventSource tokens are short lived and issued by the pages server. */
++export function isUsableQueryToken(token?: string): boolean {
++  if (!token) return false;
++  return /^[A-Za-z0-9_-]{16,}$/.test(token) && !token.includes("guest");
+ }

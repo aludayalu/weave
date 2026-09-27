@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-124",
+  "channel": "eng-frontend",
+  "window": {
+    "start": "2026-12-21T13:48:00Z",
+    "end": "2026-12-23T20:18:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1584568121425920000",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-21T13:48:00Z",
+      "ts_raw": "2026-12-21T13:48:00+00:00",
+      "ts_epoch": 1797860880,
+      "content": "@priya Signed-in users briefly see a feature-enabled screen that disappears after the server-provided tenant policy loads. Opening MER-124 to track it. ok this is the third report on this, starting now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-124"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1584570386350080001",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-21T13:57:00Z",
+      "ts_raw": "2026-12-21T13:57:00+00:00",
+      "ts_epoch": 1797861420,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1584590770667520002",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-21T15:18:00Z",
+      "ts_raw": "2026-12-21T15:18:00+00:00",
+      "ts_epoch": 1797866280,
+      "content": "fyi client-report is attached to MER-124 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-124"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t25-23793416",
+          "filename": "t25-client-report.pdf",
+          "path": "raw/attachments/jira/reports/t25-client-report.pdf",
+          "bytes": 70550,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t25-62686158",
+          "filename": "t25-hydration-log.log",
+          "path": "raw/attachments/jira/logs/t25-hydration-log.log",
+          "bytes": 333,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1584613419909120011",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-12-21T16:48:00Z",
+      "ts_raw": "2026-12-21T16:48:00+00:00",
+      "ts_epoch": 1797871680,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1584688917381120012",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-21T21:48:00Z",
+      "ts_raw": "2026-12-21T21:48:00+00:00",
+      "ts_epoch": 1797889680,
+      "content": "anyone seen the staging pg bump? unrelated",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1584764414853120013",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-22T02:48:00Z",
+      "ts_raw": "2026-12-22T02:48:00+00:00",
+      "ts_epoch": 1797907680,
+      "content": "the coffee machine is fixed (somehow)",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1584955675115520003",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-22T15:28:00Z",
+      "ts_raw": "2026-12-22T15:28:00+00:00",
+      "ts_epoch": 1797953280,
+      "content": "spec-first per team rule — tests for MER-124 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-124"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1585022364549120004",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-22T19:53:00Z",
+      "ts_raw": "2026-12-22T19:53:00+00:00",
+      "ts_epoch": 1797969180,
+      "content": "grepped the whole repo and the constraint isn't where I'd expect",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1585034947461120005",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-22T20:43:00Z",
+      "ts_raw": "2026-12-22T20:43:00+00:00",
+      "ts_epoch": 1797972180,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1585042497208320006",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-22T21:13:00Z",
+      "ts_raw": "2026-12-22T21:13:00+00:00",
+      "ts_epoch": 1797973980,
+      "content": "PR #27 is up: `feature/MER-124-bootstrap-auth`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-124"
+      ],
+      "mentions_pr": [
+        27
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1585053821829120007",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-22T21:58:00Z",
+      "ts_raw": "2026-12-22T21:58:00+00:00",
+      "ts_epoch": 1797976680,
+      "content": "reviewed #27 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1585062629867520008",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-22T22:33:00Z",
+      "ts_raw": "2026-12-22T22:33:00+00:00",
+      "ts_epoch": 1797978780,
+      "content": "ok\n\n-- \nsent from phone",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1585385507389440009",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-23T19:56:00Z",
+      "ts_raw": "2026-12-23T19:56:00+00:00",
+      "ts_epoch": 1798055760,
+      "content": "deploy is green, MER-124 is ready to close.",
+      "edited": "2026-12-23T19:56:00Z",
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-124"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1585391043870720010",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-23T20:18:00Z",
+      "ts_raw": "2026-12-23T20:18:00+00:00",
+      "ts_epoch": 1798057080,
+      "content": "MER-124 closed — PR #27 merged. closing this out, follow-up filed for the remaining edge case",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-124"
+      ],
+      "mentions_pr": [
+        27
+      ],
+      "attachments": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+diff --git a/internal/events/bus.go b/internal/events/bus.go
+index 0c32acc..4a3daa2 100644
+--- a/internal/events/bus.go
++++ b/internal/events/bus.go
+@@ -22,7 +22,7 @@ type WireEvent struct {
+ 	Tenant    string         `json:"tenant" mapstructure:"tenant"`
+ 	// CorrelationID was added for replay diagnostics; the two decoders
+ 	// currently use different names and old mapstructure rows omit it.
+-	CorrelationID string `json:"correlation_id" mapstructure:"correlationID"`
++	CorrelationID string `json:"correlation_id" mapstructure:"correlation_id"`
+ 	Attempts  int            `json:"attempts" mapstructure:"attempts"`
+ 	CreatedAt time.Time      `json:"created_at" mapstructure:"created_at"`
+ 	Payload   map[string]any `json:"payload" mapstructure:"payload"`
+diff --git a/internal/events/task108_event_tags_test.go b/internal/events/task108_event_tags_test.go
+new file mode 100644
+index 0000000..07bc253
+--- /dev/null
++++ b/internal/events/task108_event_tags_test.go
+@@ -0,0 +1,33 @@
++package events
++
++import (
++	"encoding/json"
++	"reflect"
++	"strings"
++	"testing"
++)
++
++func TestCorrelationIDTagsAgreeAcrossDecoders(t *testing.T) {
++	f, _ := reflect.TypeOf(WireEvent{}).FieldByName("CorrelationID")
++	if got := f.Tag.Get("json"); got != "correlation_id" { t.Fatalf("json tag=%q", got) }
++	if got := f.Tag.Get("mapstructure"); got != "correlation_id" { t.Errorf("mapstructure tag=%q; persisted row decoder loses correlation id", got) }
++}
++
++func TestCorrelationIDSurvivesJSONPersistence(t *testing.T) {
++	raw, err := json.Marshal(WireEvent{ID:"evt-7", Type:"invoice.updated", CorrelationID:"corr-77"})
++	if err != nil { t.Fatal(err) }
++	if !strings.Contains(string(raw), `"correlation_id":"corr-77"`) { t.Errorf("payload=%s", raw) }
++}
++
++func TestOldPayloadWithoutCorrelationStillDecodes(t *testing.T) {
++	var e WireEvent
++	if err := json.Unmarshal([]byte(`{"id":"old","type":"invoice.updated","tenant":"vantage"}`), &e); err != nil { t.Fatal(err) }
++	if e.ID != "old" || e.CorrelationID != "" { t.Errorf("legacy decode=%+v", e) }
++}
++
++func TestNewPayloadKeepsTenantAndAttempts(t *testing.T) {
++	raw, _ := json.Marshal(WireEvent{ID:"x", Tenant:"crestwood", CorrelationID:"c", Attempts:2})
++	var got map[string]any
++	if err := json.Unmarshal(raw,&got); err != nil { t.Fatal(err) }
++	if got["tenant"] != "crestwood" || got["attempts"] != float64(2) { t.Errorf("payload=%v", got) }
++}

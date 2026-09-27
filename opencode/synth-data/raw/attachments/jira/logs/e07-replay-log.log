@@ -1,0 +1,5 @@
+2026-01-01T00:00:00Z INFO  meridian-api booting (commit $main)
+2026-01-01T00:00:01Z WARN  request slow: GET /api/billing/totals 1240ms
+2026-01-01T00:00:02Z ERROR upstream failure: context deadline exceeded
+2026-01-01T00:00:02Z ERROR at internal/handler.dispatch (/srv/meridian)
+2026-01-01T00:00:03Z INFO  ticket MER-207 acknowledged

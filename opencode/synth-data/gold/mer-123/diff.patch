@@ -1,0 +1,50 @@
+diff --git a/web/lib/publicConfig.ts b/web/lib/publicConfig.ts
+index 31575d8..9b9c789 100644
+--- a/web/lib/publicConfig.ts
++++ b/web/lib/publicConfig.ts
+@@ -3,8 +3,9 @@ export interface PublicConfig {
+   apiOrigin: string;
+ }
+ 
+-// The source currently uses a server-only name; Next does not expose it
+-// to the browser bundle and local dev masks the missing value.
+ export function publicConfig(env: Record<string, string | undefined>): PublicConfig {
+-  return { apiOrigin: env.API_URL ?? "http://localhost:8080" };
++  // Only NEXT_PUBLIC_* values are inlined into the browser bundle. API_URL
++  // belongs to the server runtime; using it here would either leak an
++  // internal origin or silently fall back in production (MER-123).
++  return { apiOrigin: env.NEXT_PUBLIC_API_URL || "http://localhost:8080" };
+ }
+diff --git a/web/lib/task123_public_config.test.ts b/web/lib/task123_public_config.test.ts
+new file mode 100644
+index 0000000..0dad4d9
+--- /dev/null
++++ b/web/lib/task123_public_config.test.ts
+@@ -0,0 +1,27 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { publicConfig } from "./publicConfig.ts";
++
++test("browser bundle reads only NEXT_PUBLIC_API_URL", () => {
++  assert.deepEqual(publicConfig({ NEXT_PUBLIC_API_URL: "https://api.meridian.test", API_URL: "https://internal.test" }),{apiOrigin:"https://api.meridian.test"});
++});
++
++test("server-only API_URL cannot silently become browser config", () => {
++  assert.deepEqual(publicConfig({ API_URL: "https://private.internal" }),{apiOrigin:"http://localhost:8080"});
++});
++
++test("server secrets are not copied into browser config", () => {
++  const config=publicConfig({NEXT_PUBLIC_API_URL:"https://api.meridian.test",DATABASE_URL:"postgres://private",STRIPE_SECRET_KEY:"sk_test_secret"});
++  assert.equal(JSON.stringify(config).includes("private"),false);
++  assert.equal(JSON.stringify(config).includes("sk_test_secret"),false);
++});
++
++test("empty public origin falls back predictably", () => {
++  assert.equal(publicConfig({NEXT_PUBLIC_API_URL:""}).apiOrigin,"http://localhost:8080");
++});
++
++test("CI secret scanner remains wired in workflow", async () => {
++  const fs=await import("node:fs");
++  const wf=fs.readFileSync(new URL("../../.github/workflows/ci.yml",import.meta.url),"utf8");
++  assert.match(wf,/check-secrets\.sh/);
++});

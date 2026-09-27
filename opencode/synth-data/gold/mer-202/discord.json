@@ -1,0 +1,151 @@
+{
+  "task_id": "mer-202",
+  "channel": "eng-platform",
+  "window": {
+    "start": "2027-01-14T15:28:00Z",
+    "end": "2027-01-15T20:18:00Z"
+  },
+  "message_count": 8,
+  "messages": [
+    {
+      "message_id": "1593290596024320003",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-14T15:28:00Z",
+      "ts_raw": "2027-01-14T15:28:00+00:00",
+      "ts_epoch": 1799940480,
+      "content": "spec-first per team rule — tests for MER-202 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-202"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1593357285457920004",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-01-14T19:53:00Z",
+      "ts_raw": "2027-01-14T19:53:00+00:00",
+      "ts_epoch": 1799956380,
+      "content": "the generated artifacts are the source of truth, not the file you're editing",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1593369868369920005",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-01-14T20:43:00Z",
+      "ts_raw": "2027-01-14T20:43:00+00:00",
+      "ts_epoch": 1799959380,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1593377418117120006",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-14T21:13:00Z",
+      "ts_raw": "2027-01-14T21:13:00+00:00",
+      "ts_epoch": 1799961180,
+      "content": "PR #29 is up: `feature/MER-202-bulk-delete`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-202"
+      ],
+      "mentions_pr": [
+        29
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1593388742737920007",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2027-01-14T21:58:00Z",
+      "ts_raw": "2027-01-14T21:58:00+00:00",
+      "ts_epoch": 1799963880,
+      "content": "reviewed #29 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1593397550776320008",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-14T22:33:00Z",
+      "ts_raw": "2027-01-14T22:33:00+00:00",
+      "ts_epoch": 1799965980,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1593720428298240009",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2027-01-15T19:56:00Z",
+      "ts_raw": "2027-01-15T19:56:00+00:00",
+      "ts_epoch": 1800042960,
+      "content": "deploy is green, MER-202 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-202"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1593725964779520010",
+      "channel": "eng-platform",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2027-01-15T20:18:00Z",
+      "ts_raw": "2027-01-15T20:18:00+00:00",
+      "ts_epoch": 1800044280,
+      "content": "MER-202 closed — PR #29 merged. shipped — flag is live in staging, will confirm after the nightly job",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-202"
+      ],
+      "mentions_pr": [
+        29
+      ],
+      "attachments": []
+    }
+  ]
+}

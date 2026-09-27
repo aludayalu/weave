@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-120",
+  "issue": {
+    "issue_key": "MER-120",
+    "summary": "Autosave rejects an intentionally incomplete draft",
+    "description": "Users cannot save a partially completed purchase order while working through the required fields, though final submission must remain strict.\n\nTribal constraint: Frontend required means user guidance; backend validation allows missing values during draft autosave and enforces the full schema only on submit.",
+    "status": "Done",
+    "reporter": "Priya Sharma",
+    "assignee": "Priya Sharma",
+    "created_utc": "2026-11-25T13:18:00Z",
+    "updated_utc": "2026-11-27T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21023",
+        "filename": "t21-client-report.pdf",
+        "path": "raw/attachments/jira/reports/t21-client-report.pdf",
+        "bytes": 70695,
+        "content_type": "application/pdf",
+        "created_utc": "2026-11-25T13:58:00Z"
+      },
+      {
+        "attachment_id": "21023",
+        "filename": "t21-validation-log.log",
+        "path": "raw/attachments/jira/logs/t21-validation-log.log",
+        "bytes": 331,
+        "content_type": "text/plain",
+        "created_utc": "2026-11-25T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-120",
+      "ts_utc": "2026-11-25T13:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-120",
+      "ts_utc": "2026-11-25T13:18:00Z",
+      "author": "Priya Sharma",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Priya Sharma"
+    },
+    {
+      "issue_key": "MER-120",
+      "ts_utc": "2026-11-26T14:58:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-120",
+      "ts_utc": "2026-11-26T21:28:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-120",
+      "ts_utc": "2026-11-26T21:28:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #23"
+    },
+    {
+      "issue_key": "MER-120",
+      "ts_utc": "2026-11-27T19:48:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-120",
+      "ts_utc": "2026-11-27T19:48:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

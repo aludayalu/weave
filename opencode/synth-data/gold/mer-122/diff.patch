@@ -1,0 +1,55 @@
+diff --git a/web/lib/errMessages.ts b/web/lib/errMessages.ts
+index e2db132..5564256 100644
+--- a/web/lib/errMessages.ts
++++ b/web/lib/errMessages.ts
+@@ -6,6 +6,8 @@
+  *   2. run `npm run i18n-extract` to pick the new key up here
+  * Until step 2 runs, UIs fall back to the generated English message.
+  */
++import { ERR_MESSAGES } from "./errcodes_gen.ts";
++
+ export type Locale = "en" | "de" | "fr";
+ 
+ const en: Record<number, string> = {
+@@ -41,7 +43,7 @@ const TABLES: Record<Locale, Record<number, string>> = { en, de, fr };
+ 
+ /** messageFor returns the localized message, falling back to en, then undefined. */
+ export function messageFor(code: number, locale: Locale = "en"): string | undefined {
+-  return TABLES[locale][code] ?? TABLES.en[code];
++  return TABLES[locale][code] ?? TABLES.en[code] ?? ERR_MESSAGES[code];
+ }
+ 
+ /** supportedLocales lists locales with COMPLETE coverage of a code set. */
+diff --git a/web/lib/task122_error_fallback.test.ts b/web/lib/task122_error_fallback.test.ts
+new file mode 100644
+index 0000000..732e149
+--- /dev/null
++++ b/web/lib/task122_error_fallback.test.ts
+@@ -0,0 +1,27 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { messageFor } from "./errMessages.ts";
++import { ERR_MESSAGES } from "./errcodes_gen.ts";
++
++test("new gateway timeout has a message for each supported locale", () => {
++  for (const locale of ["en","de","fr"] as const) {
++    assert.equal(messageFor(3003,locale),"payment gateway timeout");
++  }
++});
++
++test("every generated code has a non-empty locale fallback", () => {
++  for (const code of Object.keys(ERR_MESSAGES).map(Number)) {
++    for (const locale of ["en","de","fr"] as const) {
++      assert.ok(messageFor(code,locale),`missing ${locale} fallback for ${code}`);
++    }
++  }
++});
++
++test("hand-translated message takes precedence over generated English", () => {
++  assert.equal(messageFor(1000,"de"),"Ressource nicht gefunden.");
++  assert.equal(messageFor(1000,"fr"),"Ressource introuvable.");
++});
++
++test("unknown numeric codes remain undefined for caller fallback", () => {
++  assert.equal(messageFor(987654,"de"),undefined);
++});

@@ -1,0 +1,59 @@
+{
+  "task_id": "mer-108",
+  "pull_request": {
+    "pr_number": 11,
+    "title": "test: MER-108 persisted event decoder compatibility (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Priya Sharma",
+    "branch": "feature/MER-108-event-tags",
+    "merge_sha": "890ab774ddedacc0c28dd72297e093cf4f0fcd82",
+    "opened_ts_utc": "2026-09-02T18:05:00Z",
+    "merged_ts_utc": "2026-09-04T19:30:00Z",
+    "closed_ts_utc": "2026-09-04T19:30:00Z"
+  },
+  "merge_sha": "890ab774ddedacc0c28dd72297e093cf4f0fcd82",
+  "base_sha": "1171cc115df4b5a539446e00fdcf8b2f034e5d30",
+  "head_sha": "17f13565ceaf36237b3c9ffb41bcb6e024c23cfc",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "1e4fd499c522c6120be2a478dfa38f0b449105df",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-01T16:10:00Z",
+      "committed_ts_utc": "2026-09-01T16:10:00Z",
+      "message": "test: MER-108 persisted event decoder compatibility (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "1171cc115df4b5a539446e00fdcf8b2f034e5d30"
+      ],
+      "additions": 33,
+      "deletions": 0,
+      "changed_files": [
+        "internal/events/task108_event_tags_test.go"
+      ]
+    },
+    {
+      "sha": "17f13565ceaf36237b3c9ffb41bcb6e024c23cfc",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-09-02T18:05:00Z",
+      "committed_ts_utc": "2026-09-02T18:05:00Z",
+      "message": "fix(events): align correlation id tags for replay (MER-108)",
+      "is_merge": false,
+      "parent_shas": [
+        "1e4fd499c522c6120be2a478dfa38f0b449105df"
+      ],
+      "additions": 1,
+      "deletions": 1,
+      "changed_files": [
+        "internal/events/bus.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/events/bus.go",
+    "internal/events/task108_event_tags_test.go"
+  ]
+}

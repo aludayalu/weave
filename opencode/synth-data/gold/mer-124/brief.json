@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-124",
+  "jira": "MER-124",
+  "pr": 27,
+  "repository": "meridian-erp",
+  "repo_revision": "7cf2c938a6 (task branch tip)",
+  "title": "Feature flag flickers during authenticated hydration",
+  "summary": "MER-124 raised in #eng-frontend, shipped in PR #27",
+  "start_ts_utc": "2026-12-21T13:48:00Z",
+  "end_ts_utc": "2026-12-23T20:18:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Dan Levin",
+    "Marcus Lee"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya Signed-in users briefly see a feature-enabled screen that disappears after the server-provided tenant policy loads. Opening MER-124 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "fyi client-report is attached to MER-124 if you want the raw capture.",
+      "anyone seen the staging pg bump? unrelated",
+      "anyone seen the staging pg bump? unrelated",
+      "the coffee machine is fixed (somehow)",
+      "spec-first per team rule — tests for MER-124 are red on main now, pushing as I go.",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "checked the pinned messages in this channel, the convention explains it",
+      "PR #27 is up: `feature/MER-124-bootstrap-auth`. review when you can.",
+      "reviewed #27 — left two comments, nothing structural.",
+      "ok\n\n-- \nsent from phone"
+    ],
+    "ticket": "Signed-in users briefly see a feature-enabled screen that disappears after the server-provided tenant policy loads.\n\nTribal constraint: Authenticated rendering must use window.__MERIDIAN__ from the server; localStorage is only a logged-out fallback and reading it during render violates hydration parity.",
+    "documents": [
+      "t25-client-report.pdf",
+      "t25-hydration-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 14,
+    "commits": 5,
+    "patch_bytes": 3868,
+    "documents": 2
+  }
+}

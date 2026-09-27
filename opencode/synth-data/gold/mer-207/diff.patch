@@ -1,0 +1,93 @@
+diff --git a/internal/audit/decode.go b/internal/audit/decode.go
+index db70108..9240b76 100644
+--- a/internal/audit/decode.go
++++ b/internal/audit/decode.go
+@@ -10,20 +10,43 @@ type storedEnvelope struct {
+ 	Record  json.RawMessage `json:"record"`
+ }
+ 
+-// DecodeStored reads the versioned audit row format. The current decoder
+-// directly unmarshals the nested record; pre-schema-expansion rows use
+-// actor_name and therefore need the v1 compatibility shim (MER-207).
++// v1Record is the pre-schema-expansion row shape. Older rows stored the
++// actor in actor_name and had no ip_address column (MER-207).
++type v1Record struct {
++	ID         string `json:"id"`
++	ActorName  string `json:"actor_name"`
++	Action     string `json:"action"`
++	Resource   string `json:"resource"`
++	IPAddress  string `json:"ip_address,omitempty"`
++	NationalID string `json:"national_id,omitempty"`
++	Tenant     string `json:"tenant"`
++}
++
++// DecodeStored reads the versioned audit row format, applying the
++// compatibility shim required by rows written before the actor/ip fields
++// existed. New fields are opt-in per envelope version: without registering
++// them here, historical rows decode with empty values.
+ func DecodeStored(data []byte) (Record, error) {
+ 	var env storedEnvelope
+ 	if err := json.Unmarshal(data, &env); err != nil {
+ 		return Record{}, err
+ 	}
+-	if env.Version == 0 {
+-		return Record{}, fmt.Errorf("audit: missing envelope version")
+-	}
+-	var r Record
+-	if err := json.Unmarshal(env.Record, &r); err != nil {
+-		return Record{}, err
++	switch env.Version {
++	case 1:
++		var v1 v1Record
++		if err := json.Unmarshal(env.Record, &v1); err != nil {
++			return Record{}, err
++		}
++		return Record{ID: v1.ID, Actor: v1.ActorName, Action: v1.Action,
++			Resource: v1.Resource, IPAddress: v1.IPAddress, NationalID: v1.NationalID,
++			Tenant: v1.Tenant}, nil
++	case 2:
++		var r Record
++		if err := json.Unmarshal(env.Record, &r); err != nil {
++			return Record{}, err
++		}
++		return r, nil
++	default:
++		return Record{}, fmt.Errorf("audit: unsupported envelope version %d", env.Version)
+ 	}
+-	return r, nil
+ }
+diff --git a/internal/audit/eval207_test.go b/internal/audit/eval207_test.go
+new file mode 100644
+index 0000000..b0681ac
+--- /dev/null
++++ b/internal/audit/eval207_test.go
+@@ -0,0 +1,29 @@
++package audit
++
++import "testing"
++
++func TestV1RowDecodesActorFromLegacyField(t *testing.T) {
++	row := []byte(`{"version":1,"record":{"id":"a-1","actor_name":"dan","action":"gdpr.erasure","resource":"c-1","tenant":"crestwood"}}`)
++	r, err := DecodeStored(row)
++	if err != nil { t.Fatal(err) }
++	if r.Actor != "dan" || r.ID != "a-1" { t.Errorf("v1 decode=%+v", r) }
++}
++
++func TestV1RowCarriesIPWhenPresent(t *testing.T) {
++	row := []byte(`{"version":1,"record":{"id":"a-2","actor_name":"priya","ip_address":"203.0.113.7","tenant":"vantage"}}`)
++	r, _ := DecodeStored(row)
++	if r.IPAddress != "203.0.113.7" { t.Errorf("ip=%q", r.IPAddress) }
++}
++
++func TestV2RowUnaffected(t *testing.T) {
++	row := []byte(`{"version":2,"record":{"id":"a-3","actor":"sofia","tenant":"harborline"}}`)
++	r, err := DecodeStored(row)
++	if err != nil { t.Fatal(err) }
++	if r.Actor != "sofia" { t.Errorf("v2 decode=%+v", r) }
++}
++
++func TestUnknownVersionIsRejected(t *testing.T) {
++	if _, err := DecodeStored([]byte(`{"version":9,"record":{}}`)); err == nil {
++		t.Fatal("unsupported envelope version must error")
++	}
++}

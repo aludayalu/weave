@@ -1,0 +1,76 @@
+{
+  "task_id": "mer-115",
+  "pull_request": {
+    "pr_number": 18,
+    "title": "test: MER-115 tenant-specific preview cancellation contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Priya Sharma",
+    "branch": "feature/MER-115-preview-cancel",
+    "merge_sha": "4289bc34c25a6aef5ae0757b7dee24f8254471ab",
+    "opened_ts_utc": "2026-10-21T18:00:00Z",
+    "merged_ts_utc": "2026-10-23T19:30:00Z",
+    "closed_ts_utc": "2026-10-23T19:30:00Z"
+  },
+  "merge_sha": "4289bc34c25a6aef5ae0757b7dee24f8254471ab",
+  "base_sha": "e5ee9787d3f46319bd2b082c9b8e2195d788f6f6",
+  "head_sha": "6a57d0377b37b9508a9479ffb43bedb464ec15a9",
+  "commit_count": 3,
+  "commits": [
+    {
+      "sha": "ad1fb17250bc280224471cfe435c06e25a9223c7",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-20T16:00:00Z",
+      "committed_ts_utc": "2026-10-20T16:00:00Z",
+      "message": "test: MER-115 tenant-specific preview cancellation contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "e5ee9787d3f46319bd2b082c9b8e2195d788f6f6"
+      ],
+      "additions": 34,
+      "deletions": 0,
+      "changed_files": [
+        "internal/jobs/task115_preview_cancel_test.go"
+      ]
+    },
+    {
+      "sha": "29346cbb6d708801068e0a40cc6a1cc722efc059",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-21T17:20:00Z",
+      "committed_ts_utc": "2026-10-21T17:20:00Z",
+      "message": "test: wait for targeted preview cancellation before checking queue",
+      "is_merge": false,
+      "parent_shas": [
+        "ad1fb17250bc280224471cfe435c06e25a9223c7"
+      ],
+      "additions": 4,
+      "deletions": 3,
+      "changed_files": [
+        "internal/jobs/task115_preview_cancel_test.go"
+      ]
+    },
+    {
+      "sha": "6a57d0377b37b9508a9479ffb43bedb464ec15a9",
+      "author_name": "Priya Sharma",
+      "author_email": "priya@meridian-erp.dev",
+      "authored_ts_utc": "2026-10-21T18:00:00Z",
+      "committed_ts_utc": "2026-10-21T18:00:00Z",
+      "message": "fix(jobs): tenant-scope preview ids for safe cancellation (MER-115)",
+      "is_merge": false,
+      "parent_shas": [
+        "29346cbb6d708801068e0a40cc6a1cc722efc059"
+      ],
+      "additions": 1,
+      "deletions": 4,
+      "changed_files": [
+        "internal/jobs/preview.go"
+      ]
+    }
+  ],
+  "files": [
+    "internal/jobs/preview.go",
+    "internal/jobs/task115_preview_cancel_test.go"
+  ]
+}

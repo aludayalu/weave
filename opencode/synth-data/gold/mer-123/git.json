@@ -1,0 +1,76 @@
+{
+  "task_id": "mer-123",
+  "pull_request": {
+    "pr_number": 26,
+    "title": "test: MER-123 public bundle environment boundary (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Dan Levin",
+    "branch": "feature/MER-123-public-api-config",
+    "merge_sha": "958b5e6096c2b0be94440fc1a23732a8afef2858",
+    "opened_ts_utc": "2026-12-16T18:00:00Z",
+    "merged_ts_utc": "2026-12-18T19:30:00Z",
+    "closed_ts_utc": "2026-12-18T19:30:00Z"
+  },
+  "merge_sha": "958b5e6096c2b0be94440fc1a23732a8afef2858",
+  "base_sha": "f073401fd44c3a0df7bd936369718c206e60527b",
+  "head_sha": "2cc10dc37882a70b0a2789128f39ce728f14c861",
+  "commit_count": 3,
+  "commits": [
+    {
+      "sha": "339fb94a9902687ed39ad83e0e471d828e24e7a2",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-15T16:00:00Z",
+      "committed_ts_utc": "2026-12-15T16:00:00Z",
+      "message": "test: MER-123 public bundle environment boundary (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "f073401fd44c3a0df7bd936369718c206e60527b"
+      ],
+      "additions": 27,
+      "deletions": 0,
+      "changed_files": [
+        "web/lib/task123_public_config.test.ts"
+      ]
+    },
+    {
+      "sha": "9d9a389d87596caacb14bab41edfc8f2b09ccc83",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-15T16:10:00Z",
+      "committed_ts_utc": "2026-12-15T16:10:00Z",
+      "message": "test: keep public config checks executable before fix",
+      "is_merge": false,
+      "parent_shas": [
+        "339fb94a9902687ed39ad83e0e471d828e24e7a2"
+      ],
+      "additions": 5,
+      "deletions": 5,
+      "changed_files": [
+        "web/lib/task123_public_config.test.ts"
+      ]
+    },
+    {
+      "sha": "2cc10dc37882a70b0a2789128f39ce728f14c861",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-12-16T18:00:00Z",
+      "committed_ts_utc": "2026-12-16T18:00:00Z",
+      "message": "fix(web): expose only public API origin to client bundle (MER-123)",
+      "is_merge": false,
+      "parent_shas": [
+        "9d9a389d87596caacb14bab41edfc8f2b09ccc83"
+      ],
+      "additions": 4,
+      "deletions": 3,
+      "changed_files": [
+        "web/lib/publicConfig.ts"
+      ]
+    }
+  ],
+  "files": [
+    "web/lib/publicConfig.ts",
+    "web/lib/task123_public_config.test.ts"
+  ]
+}

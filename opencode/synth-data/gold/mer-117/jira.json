@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-117",
+  "issue": {
+    "issue_key": "MER-117",
+    "summary": "Invoice line versions advance before the event is durable",
+    "description": "A retry after a broker interruption is rejected as stale even though downstream consumers never received the prior line-item update.\n\nTribal constraint: The outbox consumer is writer of record; version advancement happens only after durable publish/consumer application, not when the HTTP producer assembles the event.",
+    "status": "Done",
+    "reporter": "Marcus Lee",
+    "assignee": "Marcus Lee",
+    "created_utc": "2026-11-04T13:18:00Z",
+    "updated_utc": "2026-11-06T19:48:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21020",
+        "filename": "t16-reconciliation-report.pdf",
+        "path": "raw/attachments/jira/reports/t16-reconciliation-report.pdf",
+        "bytes": 71143,
+        "content_type": "application/pdf",
+        "created_utc": "2026-11-04T13:58:00Z"
+      },
+      {
+        "attachment_id": "21020",
+        "filename": "t16-outbox-log.log",
+        "path": "raw/attachments/jira/logs/t16-outbox-log.log",
+        "bytes": 333,
+        "content_type": "text/plain",
+        "created_utc": "2026-11-04T13:58:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-117",
+      "ts_utc": "2026-11-04T13:18:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-117",
+      "ts_utc": "2026-11-04T13:18:00Z",
+      "author": "Marcus Lee",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Marcus Lee"
+    },
+    {
+      "issue_key": "MER-117",
+      "ts_utc": "2026-11-05T14:58:00Z",
+      "author": "Marcus Lee",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-117",
+      "ts_utc": "2026-11-05T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-117",
+      "ts_utc": "2026-11-05T21:28:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #20"
+    },
+    {
+      "issue_key": "MER-117",
+      "ts_utc": "2026-11-06T19:48:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-117",
+      "ts_utc": "2026-11-06T19:48:00Z",
+      "author": "Marcus Lee",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21031",
+    "path": "raw/attachments/jira/reports/e04-finance-report.pdf",
+    "filename": "e04-finance-report.pdf",
+    "bytes": 71496,
+    "sha256": "c031f5bb6981dea1",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-204",
+    "linked_channel": null,
+    "linked_ts_utc": "2027-01-27T14:28:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "e04-5815207",
+    "path": "raw/attachments/discord/images/e04-preview-screenshot.png",
+    "filename": "e04-preview-screenshot.png",
+    "bytes": 22477,
+    "sha256": "ae4b5bce920ce1b0",
+    "doc_type": "image/png",
+    "linked_issue_key": null,
+    "linked_channel": "billing",
+    "linked_ts_utc": "2027-01-27T15:18:00Z",
+    "extracted_text": "[image captured; OCR text unavailable in this build]"
+  }
+]

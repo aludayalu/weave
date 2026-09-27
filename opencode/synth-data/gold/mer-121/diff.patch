@@ -1,0 +1,57 @@
+diff --git a/web/lib/filterURL.ts b/web/lib/filterURL.ts
+index cca955c..2a0c056 100644
+--- a/web/lib/filterURL.ts
++++ b/web/lib/filterURL.ts
+@@ -3,10 +3,15 @@ import type { TableFilters } from "./filterKey.ts";
+ // filtersFromURL restores query state for browser back/forward navigation.
+ // The legacy parser reads q/status but drops sort and direction.
+ export function filtersFromURL(params: URLSearchParams): TableFilters {
+-  return {
++  const filters: TableFilters = {
+     q: params.get("q") ?? undefined,
+     status: params.get("status") ?? undefined,
+   };
++  const sort = params.get("sort");
++  const dir = params.get("dir");
++  if (sort) filters.sort = sort;
++  if (dir === "asc" || dir === "desc") filters.dir = dir;
++  return filters;
+ }
+ 
+ export function filtersToURL(filters: TableFilters): URLSearchParams {
+diff --git a/web/lib/task121_filter_url.test.ts b/web/lib/task121_filter_url.test.ts
+new file mode 100644
+index 0000000..0a1628b
+--- /dev/null
++++ b/web/lib/task121_filter_url.test.ts
+@@ -0,0 +1,30 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { filtersFromURL, filtersToURL } from "./filterURL.ts";
++import { stableFilterKey } from "./filterKey.ts";
++
++test("restores sort and direction after browser back navigation", () => {
++  const filters=filtersFromURL(new URLSearchParams("q=invoice&status=open&sort=created_at&dir=desc"));
++  assert.equal(filters.sort,"created_at");
++  assert.equal(filters.dir,"desc");
++});
++
++test("URL filter state round-trips all dimensions", () => {
++  const original={q:"acme",status:"open",sort:"created_at",dir:"desc" as const};
++  assert.deepEqual(filtersFromURL(filtersToURL(original)),original);
++});
++
++test("sort change changes the shared cache key", () => {
++  const asc=stableFilterKey(filtersFromURL(new URLSearchParams("status=open&sort=created_at&dir=asc")));
++  const desc=stableFilterKey(filtersFromURL(new URLSearchParams("status=open&sort=created_at&dir=desc")));
++  assert.notEqual(asc,desc);
++});
++
++test("q and status behavior remains unchanged", () => {
++  assert.deepEqual(filtersFromURL(new URLSearchParams("q=refund&status=paid")),{q:"refund",status:"paid"});
++});
++
++test("invalid direction falls back to absent rather than an arbitrary value", () => {
++  const f=filtersFromURL(new URLSearchParams("dir=sideways"));
++  assert.equal(f.dir,undefined);
++});

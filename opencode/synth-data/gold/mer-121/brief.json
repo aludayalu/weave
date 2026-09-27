@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-121",
+  "jira": "MER-121",
+  "pr": 24,
+  "repository": "meridian-erp",
+  "repo_revision": "e04c9106f6 (task branch tip)",
+  "title": "Audit filters disappear on browser back navigation",
+  "summary": "MER-121 raised in #eng-frontend, shipped in PR #24",
+  "start_ts_utc": "2026-12-02T13:18:00Z",
+  "end_ts_utc": "2026-12-04T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Priya Sharma",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@marcus A finance analyst filters audit events, opens a record, then returns to an unfiltered table with stale cached results. Opening MER-121 to track it. picking this up now.",
+      "ack. looking now. filing evidence on the ticket (support-report).",
+      "fyi support-report is attached to MER-121 if you want the raw capture.",
+      "reminder: freeze starts friday for the payments repo",
+      "the coffee machine is fixed (somehow)",
+      "reminder: freeze starts friday for the payments repo",
+      "garbage from the export",
+      "the generated artifacts are the source of truth, not the file you're editing",
+      "PR #24 is up: `feature/MER-121-audit-filter-url`. review when you can.",
+      "reviewed #24 — left two comments, nothing structural.",
+      "https://discord.com/channels/9901/1101/0 (deleted message placeholder)",
+      "deploy is green, MER-121 is ready to close."
+    ],
+    "ticket": "A finance analyst filters audit events, opens a record, then returns to an unfiltered table with stale cached results.\n\nTribal constraint: Filter state belongs in URL search parameters and the cache key; useFilteredTable serializes filters in fixed field order for stable keys.",
+    "documents": [
+      "t22-support-report.pdf",
+      "t22-browser-screenshot.png"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 13,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 2379,
+    "documents": 2
+  }
+}

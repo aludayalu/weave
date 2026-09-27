@@ -1,0 +1,266 @@
+{
+  "task_id": "mer-122",
+  "channel": "eng-frontend",
+  "window": {
+    "start": "2026-12-09T13:18:00Z",
+    "end": "2026-12-11T19:48:00Z"
+  },
+  "message_count": 14,
+  "messages": [
+    {
+      "message_id": "1580211917291520000",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-09T13:18:00Z",
+      "ts_raw": "2026-12-09T07:18:00-06:00",
+      "ts_epoch": 1796822280,
+      "content": "@marcus German and French tenants see a raw numeric code when a new payment state is returned by the API. Opening MER-122 to track it. picking this up now.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-122"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580214182215680001",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-09T13:27:00Z",
+      "ts_raw": "2026-12-09T13:27:00+00:00",
+      "ts_epoch": 1796822820,
+      "content": "ack. looking now. filing evidence on the ticket (client-report).",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580234566533120002",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-12-09T14:48:00Z",
+      "ts_raw": "2026-12-09T14:48:00+00:00",
+      "ts_epoch": 1796827680,
+      "content": "fyi client-report is attached to MER-122 if you want the raw capture.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-122"
+      ],
+      "mentions_pr": [],
+      "attachments": [
+        {
+          "uuid": "t23-95954709",
+          "filename": "t23-client-report.pdf",
+          "path": "raw/attachments/jira/reports/t23-client-report.pdf",
+          "bytes": 71404,
+          "content_type": "application/pdf"
+        },
+        {
+          "uuid": "t23-59416067",
+          "filename": "t23-locale-log.log",
+          "path": "raw/attachments/jira/logs/t23-locale-log.log",
+          "bytes": 333,
+          "content_type": "text/plain"
+        }
+      ]
+    },
+    {
+      "message_id": "1580257215774720011",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-09T16:18:00Z",
+      "ts_raw": "2026-12-09T16:18:00+00:00",
+      "ts_epoch": 1796833080,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580332713246720012",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-09T21:18:00Z",
+      "ts_raw": "2026-12-09T21:18:00+00:00",
+      "ts_epoch": 1796851080,
+      "content": "standup in 5, billing standup moved to 10:30",
+      "edited": "2026-12-09T21:18:00Z",
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580408210718720013",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301004",
+      "author_name": "Dan Levin",
+      "ts_utc": "2026-12-10T02:18:00Z",
+      "ts_raw": "2026-12-10T02:18:00+00:00",
+      "ts_epoch": 1796869080,
+      "content": "reminder: freeze starts friday for the payments repo",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580599470981120003",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-10T14:58:00Z",
+      "ts_raw": "2026-12-10T14:58:00+00:00",
+      "ts_epoch": 1796914680,
+      "content": "spec-first per team rule — tests for MER-122 are red on main now, pushing as I go.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-122"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580666160414720004",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-10T19:23:00Z",
+      "ts_raw": "2026-12-10T19:23:00+00:00",
+      "ts_epoch": 1796930580,
+      "content": "checked the pinned messages in this channel, the convention explains it",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580678743326720005",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-12-10T20:13:00Z",
+      "ts_raw": "2026-12-10T20:13:00+00:00",
+      "ts_epoch": 1796933580,
+      "content": "cross-team contract involved here, so I opened a ticket before touching anything",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580686293073920006",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-10T20:43:00Z",
+      "ts_raw": "2026-12-10T20:43:00+00:00",
+      "ts_epoch": 1796935380,
+      "content": "PR #25 is up: `feature/MER-122-localized-error-fallback`. review when you can.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-122"
+      ],
+      "mentions_pr": [
+        25
+      ],
+      "attachments": []
+    },
+    {
+      "message_id": "1580697617694720007",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301002",
+      "author_name": "Marcus Lee",
+      "ts_utc": "2026-12-10T21:28:00Z",
+      "ts_raw": "2026-12-10T21:28:00+00:00",
+      "ts_epoch": 1796938080,
+      "content": "reviewed #25 — left two comments, nothing structural.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1580706425733120008",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-10T22:03:00Z",
+      "ts_raw": "2026-12-10T22:03:00+00:00",
+      "ts_epoch": 1796940180,
+      "content": "addressed both, pushing.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1581029303255040009",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301003",
+      "author_name": "Sofia Almeida",
+      "ts_utc": "2026-12-11T19:26:00Z",
+      "ts_raw": "2026-12-11T19:26:00+00:00",
+      "ts_epoch": 1797017160,
+      "content": "deploy is green, MER-122 is ready to close.",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-122"
+      ],
+      "mentions_pr": [],
+      "attachments": []
+    },
+    {
+      "message_id": "1581034839736320010",
+      "channel": "eng-frontend",
+      "guild": "meridian-systems",
+      "author_id": "301001",
+      "author_name": "Priya Sharma",
+      "ts_utc": "2026-12-11T19:48:00Z",
+      "ts_raw": "2026-12-11T19:48:00+00:00",
+      "ts_epoch": 1797018480,
+      "content": "MER-122 closed — PR #25 merged. done, PR is up and CI is green",
+      "edited": null,
+      "is_thread": false,
+      "mentions_ticket": [
+        "MER-122"
+      ],
+      "mentions_pr": [
+        25
+      ],
+      "attachments": []
+    }
+  ]
+}

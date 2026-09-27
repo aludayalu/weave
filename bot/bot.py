@@ -123,27 +123,35 @@ async def archive(ctx, start_from=None):
 
     return [channels_done, total_messages]
 
+@app.get("/guilds")
+async def api_guilds():
+    return {"guilds": [{"id": g.id, "name": g.name} for g in bot.guilds]}
 
-@app.get("/archive")
-async def api_archive(channel_id: int, guild_dir: str, start_from: str = None):
-    channel = bot.get_channel(channel_id)
-    if channel is None:
-        try:
-            channel = await bot.fetch_channel(channel_id)
-        except Exception as e:
-            return {"error": f"channel not found: {e!r}"}
+@app.get("/archive_guild")
+async def api_archive_guild(guild_id: int, start_from: str = None):
+    guild = bot.get_guild(guild_id)
+    if guild is None:
+        return {"error": "guild not found"}
 
     start_dt = None
     if start_from:
         start_dt = datetime.fromisoformat(start_from).astimezone(timezone.utc)
 
+    class FakeCtx:
+        pass
+
+    ctx = FakeCtx()
+    ctx.guild = guild
+
+    target = guild.system_channel or (guild.text_channels[0] if guild.text_channels else None)
+    ctx.send = target.send if target else (lambda *a, **k: None)
+
     try:
-        count, channel_file = await archive_channel(channel, guild_dir, start_dt)
+        [channels_done, total_messages] = await archive(ctx, start_from=start_dt)
     except Exception as e:
         return {"error": f"archive failed: {e!r}"}
 
-    return {"count": count, "channel_file": channel_file}
-
+    return {"channels_done": channels_done, "total_messages": total_messages}
 
 @bot.event
 async def on_ready():

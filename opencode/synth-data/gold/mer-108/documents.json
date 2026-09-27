@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21011",
+    "path": "raw/attachments/jira/logs/t06-replay-log.log",
+    "filename": "t06-replay-log.log",
+    "bytes": 346,
+    "sha256": "fab431ebe74ca694",
+    "doc_type": "text/plain",
+    "linked_issue_key": "MER-108",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-09-02T13:58:00Z",
+    "extracted_text": "2026-01-01T00:00:00Z INFO  meridian-api booting (commit $main)\n2026-01-01T00:00:01Z WARN  request slow: GET /api/tenants/harborline/invoices 1240ms\n2026-01-01T00:00:02Z ERROR upstream failure: context deadline exceeded\n2026-01-01T00:00:02Z ERROR at internal/handler.dispatch (/srv/meridian)\n2026-01-01T00:00:03Z INFO  ticket MER-108 acknowledged\n"
+  },
+  {
+    "doc_id": "t06-13369183",
+    "path": "raw/attachments/discord/images/t06-event-sample.png",
+    "filename": "t06-event-sample.png",
+    "bytes": 20260,
+    "sha256": "98460b6ef32f89c1",
+    "doc_type": "image/png",
+    "linked_issue_key": null,
+    "linked_channel": "billing",
+    "linked_ts_utc": "2026-09-02T14:48:00Z",
+    "extracted_text": "[image captured; OCR text unavailable in this build]"
+  }
+]

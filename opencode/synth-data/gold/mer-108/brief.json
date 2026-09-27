@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-108",
+  "jira": "MER-108",
+  "pr": 11,
+  "repository": "meridian-erp",
+  "repo_revision": "17f13565ce (task branch tip)",
+  "title": "Historical invoice events fail replay after a field rename",
+  "summary": "MER-108 raised in #billing, shipped in PR #11",
+  "start_ts_utc": "2026-09-02T13:18:00Z",
+  "end_ts_utc": "2026-09-04T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Dan Levin",
+    "Marcus Lee"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya Finance's reconciliation replay rejects persisted invoice events written by older server versions. Opening MER-108 to track it. picking this up now.",
+      "ack. looking now. filing evidence on the ticket (replay-log).",
+      "fyi replay-log is attached to MER-108 if you want the raw capture.",
+      "anyone seen the staging pg bump? unrelated",
+      "the coffee machine is fixed (somehow)",
+      "the coffee machine is fixed (somehow)",
+      "spec-first per team rule — tests for MER-108 are red on main now, pushing as I go.",
+      "the interesting part is that the obvious fix passes locally and still ships broken",
+      "reverted my first attempt, it broke the partner integration",
+      "PR #11 is up: `feature/MER-108-event-tags`. review when you can.",
+      "reviewed #11 — left two comments, nothing structural.",
+      "https://discord.com/channels/9901/1101/0 (deleted message placeholder)"
+    ],
+    "ticket": "Finance's reconciliation replay rejects persisted invoice events written by older server versions.\n\nTribal constraint: Event payloads are append-only and decoded through both JSON and mapstructure; stored tag names are a compatibility contract, not cosmetic struct labels.",
+    "documents": [
+      "t06-replay-log.log",
+      "t06-event-sample.png"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 2384,
+    "documents": 2
+  }
+}

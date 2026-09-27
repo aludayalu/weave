@@ -1,0 +1,89 @@
+{
+  "task_id": "mer-102",
+  "issue": {
+    "issue_key": "MER-102",
+    "summary": "Compliance export gate differs by tenant",
+    "description": "The compliance rollout flag appears enabled in some tenant environments but disabled in others after a control-plane sync.\n\nTribal constraint: The SQL seed's dotted lowercase spelling is canonical; Go uses kebab case, Kubernetes uses uppercase underscores, and cache invalidation has a separate registry.",
+    "status": "Done",
+    "reporter": "Dan Levin",
+    "assignee": "Dan Levin",
+    "created_utc": "2026-07-15T14:19:00Z",
+    "updated_utc": "2026-07-17T20:49:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21002",
+        "filename": "t02-flag-debug.pdf",
+        "path": "raw/attachments/jira/reports/t02-flag-debug.pdf",
+        "bytes": 68766,
+        "content_type": "application/pdf",
+        "created_utc": "2026-07-15T14:59:00Z"
+      },
+      {
+        "attachment_id": "21002",
+        "filename": "t02-tenant-snapshot.pdf",
+        "path": "raw/attachments/jira/reports/t02-tenant-snapshot.pdf",
+        "bytes": 68766,
+        "content_type": "application/pdf",
+        "created_utc": "2026-07-15T14:59:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-102",
+      "ts_utc": "2026-07-15T14:19:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-102",
+      "ts_utc": "2026-07-15T14:19:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-102",
+      "ts_utc": "2026-07-16T15:59:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-102",
+      "ts_utc": "2026-07-16T22:29:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-102",
+      "ts_utc": "2026-07-16T22:29:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #2"
+    },
+    {
+      "issue_key": "MER-102",
+      "ts_utc": "2026-07-17T20:49:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-102",
+      "ts_utc": "2026-07-17T20:49:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

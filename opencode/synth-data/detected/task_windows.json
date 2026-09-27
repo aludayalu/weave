@@ -1,0 +1,1367 @@
+{
+  "produced_by": "local-standin-detector",
+  "task_count": 32,
+  "tasks": [
+    {
+      "task_id": "mer-101",
+      "title": "@priya Harborline Logistics' warehouse retries are treating an upstream timeout as a hard ",
+      "start_ts_utc": "2026-07-08T15:00:00Z",
+      "end_ts_utc": "2026-07-10T21:12:00Z",
+      "confidence": 0.7,
+      "summary": "MER-101 raised in #billing, shipped in PR #1",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1524429855129600000",
+          "end_message_id": "1525247241093120009",
+          "supporting_message_ids": [
+            "1524429855129600000",
+            "1524817408819200003",
+            "1524904230912000006",
+            "1525247241093120009"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-101"
+          ],
+          "closing_event_ts_utc": "2026-07-08T15:21:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "798a23ef4fa0321fce53581b80c6b5eea39bdc6d"
+          ],
+          "pr_numbers": [
+            1
+          ],
+          "branch": "feature/MER-101-gateway-timeout"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-102",
+      "title": "@priya The compliance rollout flag appears enabled in some tenant environments but disable",
+      "start_ts_utc": "2026-07-15T14:19:00Z",
+      "end_ts_utc": "2026-07-17T20:49:00Z",
+      "confidence": 0.95,
+      "summary": "MER-102 raised in #eng-platform, shipped in PR #2",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-platform",
+          "start_message_id": "1526956252200960000",
+          "end_message_id": "1527779174645760010",
+          "supporting_message_ids": [
+            "1526956252200960000",
+            "1526978901442560002",
+            "1527343805890560003",
+            "1527430627983360006",
+            "1527779174645760010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-102"
+          ],
+          "closing_event_ts_utc": "2026-07-17T20:49:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "65d25a33c70fd702999b5b611f10654498f83c39"
+          ],
+          "pr_numbers": [
+            2
+          ],
+          "branch": "feature/MER-102-flag-keys"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-851",
+      "title": "@priya Crestwood Dental's erasure review found personal identifiers in the admin audit exp",
+      "start_ts_utc": "2026-07-22T13:08:00Z",
+      "end_ts_utc": "2026-07-24T19:38:00Z",
+      "confidence": 0.95,
+      "summary": "MER-851 raised in #incidents, shipped in PR #4",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "incidents",
+          "start_message_id": "1529475099525120000",
+          "end_message_id": "1530298021969920010",
+          "supporting_message_ids": [
+            "1529475099525120000",
+            "1529497748766720002",
+            "1529862653214720003",
+            "1529949475307520006",
+            "1530292485488640009",
+            "1530298021969920010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-851"
+          ],
+          "closing_event_ts_utc": "2026-07-24T19:38:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "f169a128c5a9d01cfc0d7559e754c9edebad2d27"
+          ],
+          "pr_numbers": [
+            4
+          ],
+          "branch": "feature/MER-851-audit-redaction"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-104",
+      "title": "@priya Vantage Foods users see Harborline invoice counts after switching workspaces until ",
+      "start_ts_utc": "2026-07-29T13:43:00Z",
+      "end_ts_utc": "2026-07-31T20:13:00Z",
+      "confidence": 0.95,
+      "summary": "MER-104 raised in #eng-frontend, shipped in PR #5",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-frontend",
+          "start_message_id": "1532020622622720000",
+          "end_message_id": "1532843545067520010",
+          "supporting_message_ids": [
+            "1532020622622720000",
+            "1532043271864320002",
+            "1532408176312320003",
+            "1532494998405120006",
+            "1532838008586240009",
+            "1532843545067520010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-104"
+          ],
+          "closing_event_ts_utc": "2026-07-31T20:13:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "c85206f7db7ee2ded28b6bf16fee4fba0b57a022"
+          ],
+          "pr_numbers": [
+            5
+          ],
+          "branch": "feature/MER-104-tenant-switch"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-105",
+      "title": "@priya A security review found anonymous requests can reach billing endpoints after produc",
+      "start_ts_utc": "2026-08-05T14:28:00Z",
+      "end_ts_utc": "2026-08-07T20:58:00Z",
+      "confidence": 0.95,
+      "summary": "MER-105 raised in #incidents, shipped in PR #7",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "incidents",
+          "start_message_id": "1534568662302720000",
+          "end_message_id": "1535391584747520010",
+          "supporting_message_ids": [
+            "1534568662302720000",
+            "1534591311544320002",
+            "1534956215992320003",
+            "1535043038085120006",
+            "1535386048266240009",
+            "1535391584747520010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-105"
+          ],
+          "closing_event_ts_utc": "2026-08-07T20:58:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "9c62969dba955433e7663cecf18347cadb31b305"
+          ],
+          "pr_numbers": [
+            7
+          ],
+          "branch": "feature/MER-105-billing-auth"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-103",
+      "title": "@marcus Harborline's configured seven-day grace period is ignored for invoices created by ",
+      "start_ts_utc": "2026-08-12T13:28:00Z",
+      "end_ts_utc": "2026-08-14T19:58:00Z",
+      "confidence": 0.95,
+      "summary": "MER-103 raised in #billing, shipped in PR #8",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1537090277867520000",
+          "end_message_id": "1537913200312320010",
+          "supporting_message_ids": [
+            "1537090277867520000",
+            "1537477831557120003",
+            "1537564653649920006",
+            "1537907663831040009",
+            "1537913200312320010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-103"
+          ],
+          "closing_event_ts_utc": "2026-08-14T19:58:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "afd99e66332c1bc84601d0fbfe13d32fcdf11abc"
+          ],
+          "pr_numbers": [
+            8
+          ],
+          "branch": "feature/MER-103-override-keys"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-106",
+      "title": "@priya The new database pool ceiling is present in the deployment manifest, but pods still",
+      "start_ts_utc": "2026-08-19T13:48:00Z",
+      "end_ts_utc": "2026-08-21T20:00:00Z",
+      "confidence": 0.7,
+      "summary": "MER-106 raised in #deploys, shipped in PR #9",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "deploys",
+          "start_message_id": "1539632026091520000",
+          "end_message_id": "1540449412055040009",
+          "supporting_message_ids": [
+            "1539632026091520000",
+            "1539654675333120002",
+            "1540019579781120003",
+            "1540106401873920006",
+            "1540449412055040009"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-106"
+          ],
+          "closing_event_ts_utc": "2026-08-19T14:09:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5"
+          ],
+          "pr_numbers": [
+            9
+          ],
+          "branch": "feature/MER-106-config-env"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-107",
+      "title": "@priya Self-hosted customers with no partner webhook configured are being treated as if th",
+      "start_ts_utc": "2026-08-26T13:48:00Z",
+      "end_ts_utc": "2026-08-28T20:00:00Z",
+      "confidence": 0.7,
+      "summary": "MER-107 raised in #eng-platform, shipped in PR #10",
+      "participants": [
+        "Deleted User",
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-platform",
+          "start_message_id": "1542168741150720000",
+          "end_message_id": "1542986127114240009",
+          "supporting_message_ids": [
+            "1542168741150720000",
+            "1542191390392320002",
+            "1542556294840320003",
+            "1542643116933120006",
+            "1542986127114240009"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-107"
+          ],
+          "closing_event_ts_utc": "2026-08-26T14:09:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "bafdf50d7e8e24a71d74dad63f508408860fedcc"
+          ],
+          "pr_numbers": [
+            10
+          ],
+          "branch": "feature/MER-107-optional-config"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-108",
+      "title": "@priya Finance's reconciliation replay rejects persisted invoice events written by older s",
+      "start_ts_utc": "2026-09-02T13:18:00Z",
+      "end_ts_utc": "2026-09-04T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-108 raised in #billing, shipped in PR #11",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1544697906462720000",
+          "end_message_id": "1545520828907520010",
+          "supporting_message_ids": [
+            "1544697906462720000",
+            "1544720555704320002",
+            "1545085460152320003",
+            "1545172282245120006",
+            "1545515292426240009",
+            "1545520828907520010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-108"
+          ],
+          "closing_event_ts_utc": "2026-09-04T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "890ab774ddedacc0c28dd72297e093cf4f0fcd82"
+          ],
+          "pr_numbers": [
+            11
+          ],
+          "branch": "feature/MER-108-event-tags"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-109",
+      "title": "@priya A queued export occasionally reads the default tenant after being launched from a t",
+      "start_ts_utc": "2026-09-09T13:33:00Z",
+      "end_ts_utc": "2026-09-11T20:03:00Z",
+      "confidence": 0.95,
+      "summary": "MER-109 raised in #eng-platform, shipped in PR #12",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-platform",
+          "start_message_id": "1547238396395520000",
+          "end_message_id": "1548061318840320010",
+          "supporting_message_ids": [
+            "1547238396395520000",
+            "1547261045637120002",
+            "1547625950085120003",
+            "1547712772177920006",
+            "1548055782359040009",
+            "1548061318840320010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-109"
+          ],
+          "closing_event_ts_utc": "2026-09-11T20:03:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "68c3f717f27a4696d7da792d74c8aa8c231a45c4"
+          ],
+          "pr_numbers": [
+            12
+          ],
+          "branch": "feature/MER-109-tenant-job"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-110",
+      "title": "fyi client-report is attached to MER-110 if you want the raw capture.",
+      "start_ts_utc": "2026-09-16T15:18:00Z",
+      "end_ts_utc": "2026-09-18T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-110 raised in #eng-platform, shipped in PR #13",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-platform",
+          "start_message_id": "1549801535569920002",
+          "end_message_id": "1550601808773120010",
+          "supporting_message_ids": [
+            "1549801535569920002",
+            "1550166440017920003",
+            "1550253262110720006",
+            "1550596272291840009",
+            "1550601808773120010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-110"
+          ],
+          "closing_event_ts_utc": "2026-09-18T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "9e519f8d1f54444509296d39a2f786d3e52a47c9"
+          ],
+          "pr_numbers": [
+            13
+          ],
+          "branch": "feature/MER-110-generated-catalog"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-111",
+      "title": "@marcus The API deployment contains the new invoice screen assets in the workspace, but th",
+      "start_ts_utc": "2026-09-23T13:33:00Z",
+      "end_ts_utc": "2026-09-25T20:03:00Z",
+      "confidence": 0.95,
+      "summary": "MER-111 raised in #deploys, shipped in PR #14",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "deploys",
+          "start_message_id": "1552311826513920000",
+          "end_message_id": "1553134748958720010",
+          "supporting_message_ids": [
+            "1552311826513920000",
+            "1552334475755520002",
+            "1552699380203520003",
+            "1552786202296320006",
+            "1553129212477440009",
+            "1553134748958720010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-111"
+          ],
+          "closing_event_ts_utc": "2026-09-25T20:03:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "0274b1fa52703f0973e4c45317db7fe1d0c6ac7d"
+          ],
+          "pr_numbers": [
+            14
+          ],
+          "branch": "feature/MER-111-frontend-build"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-112",
+      "title": "@priya A new staging region boots the service successfully, then fails the first invoice w",
+      "start_ts_utc": "2026-09-30T13:18:00Z",
+      "end_ts_utc": "2026-10-02T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-112 raised in #deploys, shipped in PR #15",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "deploys",
+          "start_message_id": "1554844766699520000",
+          "end_message_id": "1555667689144320010",
+          "supporting_message_ids": [
+            "1554844766699520000",
+            "1554867415941120002",
+            "1555232320389120003",
+            "1555319142481920006",
+            "1555662152663040009",
+            "1555667689144320010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-112"
+          ],
+          "closing_event_ts_utc": "2026-10-02T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "c51a8a593e8268e783b40a98a2d47f5a29452f71"
+          ],
+          "pr_numbers": [
+            15
+          ],
+          "branch": "feature/MER-112-fresh-bootstrap"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-113",
+      "title": "@priya Finance's monthly workbook imports the new review state as a paid invoice, distorti",
+      "start_ts_utc": "2026-10-07T13:18:00Z",
+      "end_ts_utc": "2026-10-09T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-113 raised in #billing, shipped in PR #16",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1557381481758720000",
+          "end_message_id": "1558204404203520010",
+          "supporting_message_ids": [
+            "1557381481758720000",
+            "1557404131000320002",
+            "1557855857541120006",
+            "1558204404203520010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-113"
+          ],
+          "closing_event_ts_utc": "2026-10-09T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "bde5a9354e5e97225802773809cee0efa6f9afec"
+          ],
+          "pr_numbers": [
+            16
+          ],
+          "branch": "feature/MER-113-review-status"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-114",
+      "title": "@priya A subsidiary received an invoice notification intended for a similarly named accoun",
+      "start_ts_utc": "2026-10-14T13:28:00Z",
+      "end_ts_utc": "2026-10-16T19:58:00Z",
+      "confidence": 0.95,
+      "summary": "MER-114 raised in #incidents, shipped in PR #17",
+      "participants": [
+        "Deleted User",
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "incidents",
+          "start_message_id": "1559920713400320000",
+          "end_message_id": "1560743635845120010",
+          "supporting_message_ids": [
+            "1559920713400320000",
+            "1559943362641920002",
+            "1560308267089920003",
+            "1560395089182720006",
+            "1560738099363840009",
+            "1560743635845120010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-114"
+          ],
+          "closing_event_ts_utc": "2026-10-16T19:58:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "7efcf7c27c3622ee68cb0e55e669e5d5ea1ef027"
+          ],
+          "pr_numbers": [
+            17
+          ],
+          "branch": "feature/MER-114-tenant-webhooks"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-115",
+      "title": "@priya Users navigate away from expensive invoice previews, but worker capacity remains oc",
+      "start_ts_utc": "2026-10-21T13:18:00Z",
+      "end_ts_utc": "2026-10-23T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-115 raised in #eng-platform, shipped in PR #18",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-platform",
+          "start_message_id": "1562454911877120000",
+          "end_message_id": "1563277834321920010",
+          "supporting_message_ids": [
+            "1562454911877120000",
+            "1562477561118720002",
+            "1562842465566720003",
+            "1562929287659520006",
+            "1563272297840640009",
+            "1563277834321920010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-115"
+          ],
+          "closing_event_ts_utc": "2026-10-23T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "4289bc34c25a6aef5ae0757b7dee24f8254471ab"
+          ],
+          "pr_numbers": [
+            18
+          ],
+          "branch": "feature/MER-115-preview-cancel"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-116",
+      "title": "@priya Large audit exports are rejected by nginx at one rate and by the Go service at anot",
+      "start_ts_utc": "2026-10-28T13:18:00Z",
+      "end_ts_utc": "2026-10-30T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-116 raised in #deploys, shipped in PR #19",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "deploys",
+          "start_message_id": "1564991626936320000",
+          "end_message_id": "1565814549381120010",
+          "supporting_message_ids": [
+            "1564991626936320000",
+            "1565014276177920002",
+            "1565379180625920003",
+            "1565466002718720006",
+            "1565809012899840009",
+            "1565814549381120010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-116"
+          ],
+          "closing_event_ts_utc": "2026-10-30T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "ffa824482c775efb8b0ab6602307841dd7fe5358"
+          ],
+          "pr_numbers": [
+            19
+          ],
+          "branch": "feature/MER-116-tenant-limit"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-117",
+      "title": "@priya A retry after a broker interruption is rejected as stale even though downstream con",
+      "start_ts_utc": "2026-11-04T13:18:00Z",
+      "end_ts_utc": "2026-11-06T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-117 raised in #billing, shipped in PR #20",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1567528341995520000",
+          "end_message_id": "1568351264440320010",
+          "supporting_message_ids": [
+            "1567528341995520000",
+            "1567550991237120002",
+            "1567915895685120003",
+            "1568002717777920006",
+            "1568345727959040009",
+            "1568351264440320010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-117"
+          ],
+          "closing_event_ts_utc": "2026-11-06T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "3553a93b7d015a20ec13ff7ccab76af501427bb1"
+          ],
+          "pr_numbers": [
+            20
+          ],
+          "branch": "feature/MER-117-line-version-order"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-118",
+      "title": "@priya After a tenant migration, two customers intermittently see the same cached invoice ",
+      "start_ts_utc": "2026-11-11T13:18:00Z",
+      "end_ts_utc": "2026-11-13T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-118 raised in #incidents, shipped in PR #21",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "incidents",
+          "start_message_id": "1570065057054720000",
+          "end_message_id": "1570882443018240009",
+          "supporting_message_ids": [
+            "1570065057054720000",
+            "1570087706296320002",
+            "1570452610744320003",
+            "1570539432837120006",
+            "1570882443018240009"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-118"
+          ],
+          "closing_event_ts_utc": "2026-11-13T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "229352c267bcd1cbcdc22951a2ed35bf882d78f1"
+          ],
+          "pr_numbers": [
+            21
+          ],
+          "branch": "feature/MER-118-tenant-cache"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-119",
+      "title": "@marcus Returning to a paginated invoice list shows rows from the prior tenant/page even t",
+      "start_ts_utc": "2026-11-18T13:18:00Z",
+      "end_ts_utc": "2026-11-20T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-119 raised in #eng-frontend, shipped in PR #22",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-frontend",
+          "start_message_id": "1572601772113920000",
+          "end_message_id": "1573424694558720010",
+          "supporting_message_ids": [
+            "1572601772113920000",
+            "1572989325803520003",
+            "1573076147896320006",
+            "1573419158077440009",
+            "1573424694558720010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-119"
+          ],
+          "closing_event_ts_utc": "2026-11-20T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "32e57f1fe424fc43d5779b2b121dee3ecd987a74"
+          ],
+          "pr_numbers": [
+            22
+          ],
+          "branch": "feature/MER-119-pagination-key"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-120",
+      "title": "@marcus Users cannot save a partially completed purchase order while working through the r",
+      "start_ts_utc": "2026-11-25T13:18:00Z",
+      "end_ts_utc": "2026-11-27T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-120 raised in #eng-frontend, shipped in PR #23",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-frontend",
+          "start_message_id": "1575138487173120000",
+          "end_message_id": "1575961409617920010",
+          "supporting_message_ids": [
+            "1575138487173120000",
+            "1575161136414720002",
+            "1575526040862720003",
+            "1575612862955520006",
+            "1575955873136640009",
+            "1575961409617920010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-120"
+          ],
+          "closing_event_ts_utc": "2026-11-27T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "7f9a96889710de8d55bf1dce7e78665e656d0f07"
+          ],
+          "pr_numbers": [
+            23
+          ],
+          "branch": "feature/MER-120-draft-validation"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-121",
+      "title": "@marcus A finance analyst filters audit events, opens a record, then returns to an unfilte",
+      "start_ts_utc": "2026-12-02T13:18:00Z",
+      "end_ts_utc": "2026-12-04T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-121 raised in #eng-frontend, shipped in PR #24",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-frontend",
+          "start_message_id": "1577675202232320000",
+          "end_message_id": "1578498124677120010",
+          "supporting_message_ids": [
+            "1577675202232320000",
+            "1577697851473920002",
+            "1578149578014720006",
+            "1578492588195840009",
+            "1578498124677120010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-121"
+          ],
+          "closing_event_ts_utc": "2026-12-04T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "c6e1111a98eaa58eba918cc241beabd889482b73"
+          ],
+          "pr_numbers": [
+            24
+          ],
+          "branch": "feature/MER-121-audit-filter-url"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-122",
+      "title": "@marcus German and French tenants see a raw numeric code when a new payment state is retur",
+      "start_ts_utc": "2026-12-09T13:18:00Z",
+      "end_ts_utc": "2026-12-11T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-122 raised in #eng-frontend, shipped in PR #25",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-frontend",
+          "start_message_id": "1580211917291520000",
+          "end_message_id": "1581034839736320010",
+          "supporting_message_ids": [
+            "1580211917291520000",
+            "1580234566533120002",
+            "1580599470981120003",
+            "1580686293073920006",
+            "1581029303255040009",
+            "1581034839736320010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-122"
+          ],
+          "closing_event_ts_utc": "2026-12-11T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "f073401fd44c3a0df7bd936369718c206e60527b"
+          ],
+          "pr_numbers": [
+            25
+          ],
+          "branch": "feature/MER-122-localized-error-fallback"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-123",
+      "title": "@priya A deployment audit flags an integration credential in the web build environment; th",
+      "start_ts_utc": "2026-12-16T13:18:00Z",
+      "end_ts_utc": "2026-12-18T19:48:00Z",
+      "confidence": 0.95,
+      "summary": "MER-123 raised in #deploys, shipped in PR #26",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "deploys",
+          "start_message_id": "1582748632350720000",
+          "end_message_id": "1583571554795520010",
+          "supporting_message_ids": [
+            "1582748632350720000",
+            "1582771281592320002",
+            "1583136186040320003",
+            "1583223008133120006",
+            "1583571554795520010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-123"
+          ],
+          "closing_event_ts_utc": "2026-12-18T19:48:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "958b5e6096c2b0be94440fc1a23732a8afef2858"
+          ],
+          "pr_numbers": [
+            26
+          ],
+          "branch": "feature/MER-123-public-api-config"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-124",
+      "title": "@priya Signed-in users briefly see a feature-enabled screen that disappears after the serv",
+      "start_ts_utc": "2026-12-21T13:48:00Z",
+      "end_ts_utc": "2026-12-23T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-124 raised in #eng-frontend, shipped in PR #27",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-frontend",
+          "start_message_id": "1584568121425920000",
+          "end_message_id": "1585391043870720010",
+          "supporting_message_ids": [
+            "1584568121425920000",
+            "1584590770667520002",
+            "1584955675115520003",
+            "1585042497208320006",
+            "1585385507389440009",
+            "1585391043870720010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-124"
+          ],
+          "closing_event_ts_utc": "2026-12-23T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "4715436c3906ac17ecfdc7470e00fdd8cdf1699c"
+          ],
+          "pr_numbers": [
+            27
+          ],
+          "branch": "feature/MER-124-bootstrap-auth"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-201",
+      "title": "@priya Finance's January workbook maps a new shift differential into the retirement column",
+      "start_ts_utc": "2027-01-06T13:48:00Z",
+      "end_ts_utc": "2027-01-08T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-201 raised in #billing, shipped in PR #28",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1590366327275520000",
+          "end_message_id": "1591189249720320010",
+          "supporting_message_ids": [
+            "1590366327275520000",
+            "1590388976517120002",
+            "1590753880965120003",
+            "1590840703057920006",
+            "1591183713239040009",
+            "1591189249720320010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-201"
+          ],
+          "closing_event_ts_utc": "2027-01-08T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "80402dba9eb1da7a0625fff1104dee32643223f2"
+          ],
+          "pr_numbers": [
+            28
+          ],
+          "branch": "feature/MER-201-payroll-columns"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-202",
+      "title": "spec-first per team rule \u2014 tests for MER-202 are red on main now, pushing as I go.",
+      "start_ts_utc": "2027-01-14T15:28:00Z",
+      "end_ts_utc": "2027-01-15T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-202 raised in #eng-platform, shipped in PR #29",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-platform",
+          "start_message_id": "1593290596024320003",
+          "end_message_id": "1593725964779520010",
+          "supporting_message_ids": [
+            "1593290596024320003",
+            "1593377418117120006",
+            "1593720428298240009",
+            "1593725964779520010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-202"
+          ],
+          "closing_event_ts_utc": "2027-01-15T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "8be4ff72fca539620280d4982731e92d78031fbb"
+          ],
+          "pr_numbers": [
+            29
+          ],
+          "branch": "feature/MER-202-bulk-delete"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-203",
+      "title": "@marcus The old pages server's event stream drops authenticated users because EventSource ",
+      "start_ts_utc": "2027-01-20T13:48:00Z",
+      "end_ts_utc": "2027-01-22T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-203 raised in #incidents, shipped in PR #30",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "incidents",
+          "start_message_id": "1595439757393920000",
+          "end_message_id": "1596262679838720010",
+          "supporting_message_ids": [
+            "1595439757393920000",
+            "1595462406635520002",
+            "1595914133176320006",
+            "1596257143357440009",
+            "1596262679838720010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-203"
+          ],
+          "closing_event_ts_utc": "2027-01-22T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "416e4638564d2479255f37ae6b1d66ce18f1d84c"
+          ],
+          "pr_numbers": [
+            30
+          ],
+          "branch": "feature/MER-203-sse-auth"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-204",
+      "title": "@priya A new payroll component shifts labels for downstream columns in the CSV preview and",
+      "start_ts_utc": "2027-01-27T13:48:00Z",
+      "end_ts_utc": "2027-01-29T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-204 raised in #billing, shipped in PR #31",
+      "participants": [
+        "Dan Levin",
+        "Marcus Lee"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1597976472453120000",
+          "end_message_id": "1598799394897920010",
+          "supporting_message_ids": [
+            "1597976472453120000",
+            "1597999121694720002",
+            "1598364026142720003",
+            "1598450848235520006",
+            "1598793858416640009",
+            "1598799394897920010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-204"
+          ],
+          "closing_event_ts_utc": "2027-01-29T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "490fc4188b5f8d1caf2f97815d534ba6537fec30"
+          ],
+          "pr_numbers": [
+            31
+          ],
+          "branch": "feature/MER-204-pay-labels"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-205",
+      "title": "@priya A Denver tenant sees an invoice marked overdue the evening before its local due dat",
+      "start_ts_utc": "2027-02-03T13:48:00Z",
+      "end_ts_utc": "2027-02-05T20:00:00Z",
+      "confidence": 0.7,
+      "summary": "MER-205 raised in #billing, shipped in PR #32",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "billing",
+          "start_message_id": "1600513187512320000",
+          "end_message_id": "1601330573475840009",
+          "supporting_message_ids": [
+            "1600513187512320000",
+            "1600535836753920002",
+            "1600900741201920003",
+            "1600987563294720006",
+            "1601330573475840009"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-205"
+          ],
+          "closing_event_ts_utc": "2027-02-03T14:09:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "4df408a65d33865f5d6f3061844abc08cbb5f664"
+          ],
+          "pr_numbers": [
+            32
+          ],
+          "branch": "feature/MER-205-overdue-tz"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-206",
+      "title": "@marcus A gateway timeout triggers overlapping retry workers and the ledger records two ch",
+      "start_ts_utc": "2027-02-10T13:48:00Z",
+      "end_ts_utc": "2027-02-12T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-206 raised in #incidents, shipped in PR #33",
+      "participants": [
+        "Priya Sharma",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "incidents",
+          "start_message_id": "1603049902571520000",
+          "end_message_id": "1603872825016320010",
+          "supporting_message_ids": [
+            "1603049902571520000",
+            "1603072551813120002",
+            "1603437456261120003",
+            "1603524278353920006",
+            "1603867288535040009",
+            "1603872825016320010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-206"
+          ],
+          "closing_event_ts_utc": "2027-02-12T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "93c99fe65568325d2395525518284f59a9100a23"
+          ],
+          "pr_numbers": [
+            33
+          ],
+          "branch": "feature/MER-206-idempotency"
+        },
+        "documents": []
+      }
+    },
+    {
+      "task_id": "mer-207",
+      "title": "@priya A partner's historical audit export cannot be replayed after a new optional actor f",
+      "start_ts_utc": "2027-02-17T13:48:00Z",
+      "end_ts_utc": "2027-02-19T20:18:00Z",
+      "confidence": 0.95,
+      "summary": "MER-207 raised in #eng-platform, shipped in PR #34",
+      "participants": [
+        "Marcus Lee",
+        "Sofia Almeida"
+      ],
+      "evidence": {
+        "discord": {
+          "channel": "eng-platform",
+          "start_message_id": "1605586617630720000",
+          "end_message_id": "1606409540075520010",
+          "supporting_message_ids": [
+            "1605586617630720000",
+            "1605609266872320002",
+            "1605974171320320003",
+            "1606060993413120006",
+            "1606404003594240009",
+            "1606409540075520010"
+          ]
+        },
+        "jira": {
+          "issue_keys": [
+            "MER-207"
+          ],
+          "closing_event_ts_utc": "2027-02-19T20:18:00Z"
+        },
+        "github": {
+          "merge_shas": [
+            "7cda3e9560f221d6c08ec6efb3034d96128bf4ff"
+          ],
+          "pr_numbers": [
+            34
+          ],
+          "branch": "feature/MER-207-audit-v1"
+        },
+        "documents": []
+      }
+    }
+  ]
+}

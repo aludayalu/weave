@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21009",
+    "path": "raw/attachments/jira/logs/t04-incident-log.log",
+    "filename": "t04-incident-log.log",
+    "bytes": 331,
+    "sha256": "d17a8655e945aef3",
+    "doc_type": "application/octet-stream",
+    "linked_issue_key": "MER-106",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-08-19T14:28:00Z",
+    "extracted_text": "2026-01-01T00:00:00Z INFO  meridian-api booting (commit $main)\n2026-01-01T00:00:01Z WARN  request slow: GET /api/audit/export 1240ms\n2026-01-01T00:00:02Z ERROR upstream failure: context deadline exceeded\n2026-01-01T00:00:02Z ERROR at internal/handler.dispatch (/srv/meridian)\n2026-01-01T00:00:03Z INFO  ticket MER-106 acknowledged\n"
+  },
+  {
+    "doc_id": "t04-23396526",
+    "path": "raw/attachments/discord/images/t04-deployment-screenshot.png",
+    "filename": "t04-deployment-screenshot.png",
+    "bytes": 20363,
+    "sha256": "ef21e9411ccfaee1",
+    "doc_type": "image/png",
+    "linked_issue_key": null,
+    "linked_channel": "deploys",
+    "linked_ts_utc": "2026-08-19T15:18:00Z",
+    "extracted_text": "[image captured; OCR text unavailable in this build]"
+  }
+]

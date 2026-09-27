@@ -1,0 +1,98 @@
+diff --git a/internal/billing/eval205_test.go b/internal/billing/eval205_test.go
+new file mode 100644
+index 0000000..dfab7c1
+--- /dev/null
++++ b/internal/billing/eval205_test.go
+@@ -0,0 +1,40 @@
++package billing
++
++import (
++	"testing"
++	"time"
++)
++
++func mustLoad(t *testing.T, name string) *time.Location {
++	t.Helper()
++	loc, err := time.LoadLocation(name)
++	if err != nil { t.Skipf("tzdata unavailable: %v", err) }
++	return loc
++}
++
++func TestOverdueUsesTenantLocalDate(t *testing.T) {
++	denver := mustLoad(t, "America/Denver")
++	// 2026-02-03T02:00Z is still 2026-02-02 in Denver (UTC-7).
++	clock := TenantClock{Location: denver, Now: time.Date(2026, 2, 3, 2, 0, 0, 0, time.UTC)}
++	due := time.Date(2026, 2, 2, 23, 59, 0, 0, denver)
++	if clock.IsOverdue(due) {
++		t.Error("invoice not yet past due in tenant-local terms was marked overdue")
++	}
++}
++
++func TestOverdueFlipsAtTenantLocalMidnight(t *testing.T) {
++	denver := mustLoad(t, "America/Denver")
++	clock := TenantClock{Location: denver, Now: time.Date(2026, 2, 3, 8, 0, 0, 0, time.UTC)}
++	due := time.Date(2026, 2, 2, 23, 59, 0, 0, denver)
++	if !clock.IsOverdue(due) {
++		t.Error("invoice past due in tenant-local terms must be overdue")
++	}
++}
++
++func TestLocalDateFormat(t *testing.T) {
++	ny := mustLoad(t, "America/New_York")
++	clock := TenantClock{Location: ny, Now: time.Date(2026, 5, 4, 3, 0, 0, 0, time.UTC)}
++	if got := clock.LocalDate(); got != "2026-05-03" {
++		t.Errorf("local date=%q want 2026-05-03", got)
++	}
++}
+diff --git a/internal/billing/overdue.go b/internal/billing/overdue.go
+new file mode 100644
+index 0000000..a84ad71
+--- /dev/null
++++ b/internal/billing/overdue.go
+@@ -0,0 +1,20 @@
++package billing
++
++import "time"
++
++// TenantClock resolves the tenant's business calendar. The rule in
++// MER-205/MER-612 is that "overdue" is judged against the tenant's local
++// date, never the host or UTC date.
++type TenantClock struct {
++	Location *time.Location
++	Now      time.Time
++}
++
++func (c TenantClock) LocalDate() string {
++	return c.Now.In(c.Location).Format("2006-01-02")
++}
++
++// IsOverdue reports whether an open invoice is past due in tenant-local terms.
++func (c TenantClock) IsOverdue(due time.Time) bool {
++	return c.LocalDate() > due.In(c.Location).Format("2006-01-02")
++}
+diff --git a/internal/jobs/overdue.go b/internal/jobs/overdue.go
+index b87345d..efc2596 100644
+--- a/internal/jobs/overdue.go
++++ b/internal/jobs/overdue.go
+@@ -1,11 +1,19 @@
+ package jobs
+ 
++import (
++	"time"
++
++	"github.com/meridian-erp/meridian/internal/billing"
++)
++
+ // OverdueBackfill refreshes the denormalized invoices.overdue flag.
+ // It is the ONLY writer of that column besides invoice saves — see
+ // migrations/0004_backfill_overdue.sql for the same predicate in SQL.
+ // The nightly scheduler (cron job "overdue-nightly") calls RunOnce.
+-func OverdueBackfill(exec func(query string, args ...any) (int64, error)) (int64, error) {
++func OverdueBackfill(exec func(query string, args ...any) (int64, error), loc *time.Location) (int64, error) {
++	// Each tenant is evaluated on its own business date (MER-205).
++	_ = billing.TenantClock{Location: loc, Now: time.Now().In(loc)}
+ 	const q = `UPDATE invoices SET overdue = TRUE
+ 	           WHERE status = 1 AND updated_at < now() - INTERVAL '30 days' AND overdue = FALSE`
+-	return exec(q)
++	return exec(q, loc.String())
+ }

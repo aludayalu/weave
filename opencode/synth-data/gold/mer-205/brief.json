@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-205",
+  "jira": "MER-205",
+  "pr": 32,
+  "repository": "meridian-erp",
+  "repo_revision": "88dae0af3f (task branch tip)",
+  "title": "Overdue badge differs from the tenant's local business date",
+  "summary": "MER-205 raised in #billing, shipped in PR #32",
+  "start_ts_utc": "2027-02-03T13:48:00Z",
+  "end_ts_utc": "2027-02-05T20:00:00Z",
+  "duration_minutes": 3252,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya A Denver tenant sees an invoice marked overdue the evening before its local due date, while UTC reports say it is still current. Opening MER-205 to track it. picking this up now.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "fyi client-report is attached to MER-205 if you want the raw capture.",
+      "rotating the read replica creds tonight, no action needed",
+      "standup in 5, billing standup moved to 10:30",
+      "reminder: freeze starts friday for the payments repo",
+      "spec-first per team rule — tests for MER-205 are red on main now, pushing as I go.",
+      "reverted my first attempt, it broke the partner integration",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "PR #32 is up: `feature/MER-205-overdue-tz`. review when you can.",
+      "reviewed #32 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "A Denver tenant sees an invoice marked overdue the evening before its local due date, while UTC reports say it is still current.\n\nTribal constraint: Overdue is defined by tenant-local calendar date; the denormalized field is refreshed by a backfill job that must receive tenant timezone, not host timezone.",
+    "documents": [
+      "e05-client-report.pdf",
+      "e05-timezone-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 13,
+    "jira_events": 7,
+    "commits": 1,
+    "patch_bytes": 3347,
+    "documents": 2
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "task_id": "mer-202",
+  "issue": {
+    "issue_key": "MER-202",
+    "summary": "Bulk procurement removal omits required audit context",
+    "description": "A bulk cleanup request deletes purchase orders without the compliance note required for retention review.\n\nTribal constraint: Single-record helper is retained for compatibility; bulk removal must use the separate transactional helper and persist a non-empty audit note for every affected id.",
+    "status": "Done",
+    "reporter": "Priya Sharma",
+    "assignee": "Priya Sharma",
+    "created_utc": "2027-01-13T13:48:00Z",
+    "updated_utc": "2027-01-15T20:21:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21029",
+        "filename": "e02-compliance-report.pdf",
+        "path": "raw/attachments/jira/reports/e02-compliance-report.pdf",
+        "bytes": 71589,
+        "content_type": "application/pdf",
+        "created_utc": "2027-01-13T14:28:00Z"
+      },
+      {
+        "attachment_id": "21029",
+        "filename": "e02-delete-log.log",
+        "path": "raw/attachments/jira/logs/e02-delete-log.log",
+        "bytes": 346,
+        "content_type": "text/plain",
+        "created_utc": "2027-01-13T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-14T15:28:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-14T15:28:00Z",
+      "author": "Priya Sharma",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-14T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-14T21:58:00Z",
+      "author": "Marcus Lee",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #29"
+    },
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-15T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-15T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    },
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-15T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-202",
+      "ts_utc": "2027-01-15T20:18:00Z",
+      "author": "Priya Sharma",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

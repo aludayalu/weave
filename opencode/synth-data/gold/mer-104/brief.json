@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-104",
+  "jira": "MER-104",
+  "pr": 5,
+  "repository": "meridian-erp",
+  "repo_revision": "4087b30e3d (task branch tip)",
+  "title": "Workspace switch shows stale tenant invoice data",
+  "summary": "MER-104 raised in #eng-frontend, shipped in PR #5",
+  "start_ts_utc": "2026-07-29T13:43:00Z",
+  "end_ts_utc": "2026-07-31T20:13:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya Vantage Foods users see Harborline invoice counts after switching workspaces until a full page reload. Opening MER-104 to track it. took first pass at this, thoughts below.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "fyi client-report is attached to MER-104 if you want the raw capture.",
+      "standup in 5, billing standup moved to 10:30",
+      "standup in 5, billing standup moved to 10:30",
+      "spec-first per team rule — tests for MER-104 are red on main now, pushing as I go.",
+      "<@301002> can you?",
+      "checked the pinned messages in this channel, the convention explains it",
+      "PR #5 is up: `feature/MER-104-tenant-switch`. review when you can.",
+      "reviewed #5 — left two comments, nothing structural.",
+      "addressed both, pushing.",
+      "deploy is green, MER-104 is ready to close."
+    ],
+    "ticket": "Vantage Foods users see Harborline invoice counts after switching workspaces until a full page reload.\n\nTribal constraint: Tenant store is an SSR snapshot; useSyncExternalStore is the subscription contract and tenant-derived caches must be invalidated on switch.",
+    "documents": [
+      "t18-client-report.pdf",
+      "t18-tenant-switch-screenshot.png"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 13,
+    "jira_events": 7,
+    "commits": 2,
+    "patch_bytes": 4090,
+    "documents": 2
+  }
+}

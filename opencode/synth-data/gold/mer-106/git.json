@@ -1,0 +1,59 @@
+{
+  "task_id": "mer-106",
+  "pull_request": {
+    "pr_number": 9,
+    "title": "test: MER-106 production config parity contract (red)",
+    "state": "closed",
+    "merged": true,
+    "author": "Dan Levin",
+    "branch": "feature/MER-106-config-env",
+    "merge_sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5",
+    "opened_ts_utc": "2026-08-19T18:20:00Z",
+    "merged_ts_utc": "2026-08-21T20:00:00Z",
+    "closed_ts_utc": "2026-08-21T20:00:00Z"
+  },
+  "merge_sha": "4e6970b7d48929185f89f67ef91f1cfa5a7a1dd5",
+  "base_sha": "afd99e66332c1bc84601d0fbfe13d32fcdf11abc",
+  "head_sha": "9cd410dfac35200c94b32069c11f98baab03d85c",
+  "commit_count": 2,
+  "commits": [
+    {
+      "sha": "0567b58aa44bba7c5ca27f2c06e1a1d147704abc",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-18T16:00:00Z",
+      "committed_ts_utc": "2026-08-18T16:00:00Z",
+      "message": "test: MER-106 production config parity contract (red)",
+      "is_merge": false,
+      "parent_shas": [
+        "afd99e66332c1bc84601d0fbfe13d32fcdf11abc"
+      ],
+      "additions": 33,
+      "deletions": 0,
+      "changed_files": [
+        "internal/config/task106_compose_test.go"
+      ]
+    },
+    {
+      "sha": "9cd410dfac35200c94b32069c11f98baab03d85c",
+      "author_name": "Dan Levin",
+      "author_email": "dan@meridian-erp.dev",
+      "authored_ts_utc": "2026-08-19T18:20:00Z",
+      "committed_ts_utc": "2026-08-19T18:20:00Z",
+      "message": "fix(deploy): align compose environment with config loader (MER-106)",
+      "is_merge": false,
+      "parent_shas": [
+        "0567b58aa44bba7c5ca27f2c06e1a1d147704abc"
+      ],
+      "additions": 2,
+      "deletions": 2,
+      "changed_files": [
+        "docker-compose.yml"
+      ]
+    }
+  ],
+  "files": [
+    "docker-compose.yml",
+    "internal/config/task106_compose_test.go"
+  ]
+}

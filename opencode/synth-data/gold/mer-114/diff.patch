@@ -1,0 +1,75 @@
+diff --git a/internal/webhooks/registry.go b/internal/webhooks/registry.go
+index 2d24112..2879927 100644
+--- a/internal/webhooks/registry.go
++++ b/internal/webhooks/registry.go
+@@ -25,7 +25,7 @@ type Registry struct {
+ func NewRegistry(store Store, fallback []Subscription) *Registry {
+ 	r := &Registry{static: map[string]Subscription{}, store: store, byTenant: map[string][]Subscription{}}
+ 	for _, s := range fallback {
+-		r.static[s.Name] = s // legacy lookup is name-only (MER-114 report)
++		r.static[staticKey(s.Tenant, s.Name)] = s
+ 	}
+ 	for _, s := range store.List() {
+ 		r.byTenant[s.Tenant] = append(r.byTenant[s.Tenant], s)
+@@ -34,7 +34,7 @@ func NewRegistry(store Store, fallback []Subscription) *Registry {
+ }
+ 
+ // Resolve returns the subscription named name. The DB-loaded path is
+-// tenant scoped; the boot-time fallback still resolves by name only.
++	// tenant scoped, including the boot-time fallback registry.
+ func (r *Registry) Resolve(tenant, name string) (Subscription, bool) {
+ 	r.mu.RLock()
+ 	defer r.mu.RUnlock()
+@@ -43,6 +43,8 @@ func (r *Registry) Resolve(tenant, name string) (Subscription, bool) {
+ 			return s, true
+ 		}
+ 	}
+-	s, ok := r.static[name]
++	s, ok := r.static[staticKey(tenant, name)]
+ 	return s, ok
+ }
++
++func staticKey(tenant, name string) string { return tenant + "\x00" + name }
+diff --git a/internal/webhooks/registry_test.go b/internal/webhooks/registry_test.go
+new file mode 100644
+index 0000000..7664524
+--- /dev/null
++++ b/internal/webhooks/registry_test.go
+@@ -0,0 +1,37 @@
++package webhooks
++
++import "testing"
++
++type sliceStore []Subscription
++func (s sliceStore) List() []Subscription { return s }
++
++func TestStaticFallbackIsTenantScoped(t *testing.T) {
++	r := NewRegistry(sliceStore(nil), []Subscription{{Tenant:"subsidiary-a",Name:"invoice-events",URL:"https://a.test/hook"}})
++	got, ok := r.Resolve("subsidiary-b", "invoice-events")
++	if ok { t.Errorf("tenant B resolved tenant A subscription: %+v", got) }
++}
++
++func TestStaticFallbackResolvesOwningTenant(t *testing.T) {
++	r := NewRegistry(sliceStore(nil), []Subscription{{Tenant:"subsidiary-a",Name:"invoice-events",URL:"https://a.test/hook"}})
++	got, ok := r.Resolve("subsidiary-a", "invoice-events")
++	if !ok || got.URL!="https://a.test/hook" { t.Fatalf("got=%+v ok=%v",got,ok) }
++}
++
++func TestDatabaseSubscriptionOutranksStaticForTenant(t *testing.T) {
++	r := NewRegistry(sliceStore{{Tenant:"subsidiary-a",Name:"invoice-events",URL:"https://db-a.test/hook"}}, []Subscription{{Tenant:"subsidiary-a",Name:"invoice-events",URL:"https://static.test/hook"}})
++	got, ok := r.Resolve("subsidiary-a","invoice-events")
++	if !ok || got.URL!="https://db-a.test/hook" { t.Errorf("database value should win: %+v",got) }
++}
++
++func TestSameNameCanBelongToTwoTenants(t *testing.T) {
++	r := NewRegistry(sliceStore{{Tenant:"a",Name:"invoice-events",URL:"https://a.test"},{Tenant:"b",Name:"invoice-events",URL:"https://b.test"}}, nil)
++	for tenant,want := range map[string]string{"a":"https://a.test","b":"https://b.test"} {
++		got,ok:=r.Resolve(tenant,"invoice-events")
++		if !ok || got.URL!=want { t.Errorf("tenant %s got %+v",tenant,got) }
++	}
++}
++
++func TestMissingTenantNeverFallsBackToFirstMatch(t *testing.T) {
++	r := NewRegistry(sliceStore(nil), []Subscription{{Tenant:"a",Name:"invoice-events",URL:"https://a.test"}})
++	if _,ok:=r.Resolve("","invoice-events"); ok { t.Fatal("empty tenant must not resolve a customer subscription") }
++}

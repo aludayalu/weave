@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21007",
+    "path": "raw/attachments/jira/reports/t20-pentest-report.pdf",
+    "filename": "t20-pentest-report.pdf",
+    "bytes": 72423,
+    "sha256": "f78c8bcfaae590c9",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-105",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-08-05T15:08:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "21007",
+    "path": "raw/attachments/jira/logs/t20-curl-log.log",
+    "filename": "t20-curl-log.log",
+    "bytes": 331,
+    "sha256": "13d6ab7f4587a2e5",
+    "doc_type": "text/plain",
+    "linked_issue_key": "MER-105",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-08-05T15:08:00Z",
+    "extracted_text": "2026-01-01T00:00:00Z INFO  meridian-api booting (commit $main)\n2026-01-01T00:00:01Z WARN  request slow: GET /api/audit/export 1240ms\n2026-01-01T00:00:02Z ERROR upstream failure: context deadline exceeded\n2026-01-01T00:00:02Z ERROR at internal/handler.dispatch (/srv/meridian)\n2026-01-01T00:00:03Z INFO  ticket MER-105 acknowledged\n"
+  }
+]

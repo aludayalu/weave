@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21010",
+    "path": "raw/attachments/jira/reports/t05-support-report.pdf",
+    "filename": "t05-support-report.pdf",
+    "bytes": 71515,
+    "sha256": "fc5b9531e18402fa",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-107",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-08-26T14:28:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "t05-92337948",
+    "path": "raw/attachments/discord/images/t05-config-diff.png",
+    "filename": "t05-config-diff.png",
+    "bytes": 22705,
+    "sha256": "4b07f68626bb5ceb",
+    "doc_type": "image/png",
+    "linked_issue_key": null,
+    "linked_channel": "eng-platform",
+    "linked_ts_utc": "2026-08-26T15:18:00Z",
+    "extracted_text": "[image captured; OCR text unavailable in this build]"
+  }
+]

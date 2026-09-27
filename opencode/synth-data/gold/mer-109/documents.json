@@ -1,0 +1,26 @@
+[
+  {
+    "doc_id": "21012",
+    "path": "raw/attachments/jira/reports/t07-client-report.pdf",
+    "filename": "t07-client-report.pdf",
+    "bytes": 67548,
+    "sha256": "fea374cb41e7c942",
+    "doc_type": "application/pdf",
+    "linked_issue_key": "MER-109",
+    "linked_channel": null,
+    "linked_ts_utc": "2026-09-09T14:13:00Z",
+    "extracted_text": "[pdf report; extract with pypdf in the silver layer]"
+  },
+  {
+    "doc_id": "t07-56510107",
+    "path": "raw/attachments/discord/images/t07-worker-trace.png",
+    "filename": "t07-worker-trace.png",
+    "bytes": 21413,
+    "sha256": "54ab134c88a72f9a",
+    "doc_type": "image/png",
+    "linked_issue_key": null,
+    "linked_channel": "eng-platform",
+    "linked_ts_utc": "2026-09-09T15:03:00Z",
+    "extracted_text": "[image captured; OCR text unavailable in this build]"
+  }
+]

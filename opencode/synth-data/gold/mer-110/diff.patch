@@ -1,0 +1,65 @@
+diff --git a/tools/gendocs/catalog_test.go b/tools/gendocs/catalog_test.go
+new file mode 100644
+index 0000000..1a4b8b1
+--- /dev/null
++++ b/tools/gendocs/catalog_test.go
+@@ -0,0 +1,46 @@
++package main
++
++import (
++	"os"
++	"strings"
++	"testing"
++)
++
++func TestGeneratedGoMatchesCanonicalYAML(t *testing.T) {
++	mods, err := parse("../../api/errors.yaml")
++	if err != nil { t.Fatal(err) }
++	want := goOut(mods)
++	got, err := os.ReadFile("../../pkg/errs/messages_gen.go")
++	if err != nil { t.Fatal(err) }
++	if string(got) != want { t.Fatal("pkg/errs/messages_gen.go is stale; run make gen") }
++}
++
++func TestGeneratedTSMatchesCanonicalYAML(t *testing.T) {
++	mods, err := parse("../../api/errors.yaml")
++	if err != nil { t.Fatal(err) }
++	want := tsOut(mods)
++	got, err := os.ReadFile("../../web/lib/errcodes_gen.ts")
++	if err != nil { t.Fatal(err) }
++	if string(got) != want { t.Fatal("web/lib/errcodes_gen.ts drifted from api/errors.yaml; run make gen") }
++}
++
++func TestPaymentErrorRangeAndPartnerReservation(t *testing.T) {
++	mods, err := parse("../../api/errors.yaml")
++	if err != nil { t.Fatal(err) }
++	bases := map[int]string{}
++	for _, m := range mods {
++		if other, ok := bases[m.Base]; ok { t.Errorf("modules %s and %s share base %d", other,m.Name,m.Base) }
++		bases[m.Base] = m.Name
++	}
++	for _, m := range mods {
++		if m.Name == "partner" && len(m.Codes) != 0 { t.Error("partner range reserved for external integrations") }
++	}
++}
++
++func TestGatewayTimeoutIsNotRateLimitedInTS(t *testing.T) {
++	ts, err := os.ReadFile("../../web/lib/errcodes_gen.ts")
++	if err != nil { t.Fatal(err) }
++	s := string(ts)
++	if !strings.Contains(s, `"gateway_timeout": 3003`) { t.Error("gateway timeout must retain partner-published value 3003") }
++	if strings.Contains(s, `"gateway_timeout": 3002`) { t.Error("gateway timeout collided with rate_limited") }
++}
+diff --git a/web/lib/errcodes_gen.ts b/web/lib/errcodes_gen.ts
+index eb00f1e..fd916af 100644
+--- a/web/lib/errcodes_gen.ts
++++ b/web/lib/errcodes_gen.ts
+@@ -25,7 +25,7 @@ export const ERR_MODULES: ErrModule[] = [
+     "declined": 3000,
+     "expired": 3001,
+     "rate_limited": 3002,
+-    "gateway_timeout": 3002,
++    "gateway_timeout": 3003,
+   } },
+   { name: "partner", base: 4000, size: 0, description: "Reserved block for partner integrations (MER-912). Do not use.", codes: {
+   } },

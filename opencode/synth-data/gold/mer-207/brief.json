@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-207",
+  "jira": "MER-207",
+  "pr": 34,
+  "repository": "meridian-erp",
+  "repo_revision": "6f9208f592 (task branch tip)",
+  "title": "Audit replay fails on records written before the schema expansion",
+  "summary": "MER-207 raised in #eng-platform, shipped in PR #34",
+  "start_ts_utc": "2027-02-17T13:48:00Z",
+  "end_ts_utc": "2027-02-19T20:18:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya A partner's historical audit export cannot be replayed after a new optional actor field was introduced. Opening MER-207 to track it. ok this is the third report on this, starting now.",
+      "ack. looking now. filing evidence on the ticket (partner-report).",
+      "fyi partner-report is attached to MER-207 if you want the raw capture.",
+      "reminder: freeze starts friday for the payments repo",
+      "the coffee machine is fixed (somehow)",
+      "anyone seen the staging pg bump? unrelated",
+      "spec-first per team rule — tests for MER-207 are red on main now, pushing as I go.",
+      "the generated artifacts are the source of truth, not the file you're editing",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "PR #34 is up: `feature/MER-207-audit-v1`. review when you can.",
+      "reviewed #34 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "A partner's historical audit export cannot be replayed after a new optional actor field was introduced.\n\nTribal constraint: Old rows pass through the version-1 decoder shim; new fields require an explicit opt-in/default in that shim because stored snapshots predate the field.",
+    "documents": [
+      "e07-partner-report.pdf",
+      "e07-replay-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 1,
+    "patch_bytes": 3399,
+    "documents": 2
+  }
+}

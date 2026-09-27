@@ -1,0 +1,88 @@
+diff --git a/web/lib/task124_bootstrap_auth.test.ts b/web/lib/task124_bootstrap_auth.test.ts
+new file mode 100644
+index 0000000..44129b6
+--- /dev/null
++++ b/web/lib/task124_bootstrap_auth.test.ts
+@@ -0,0 +1,61 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { getBootstrap, flagEnabled } from "./bootstrap.ts";
++import { readFileSync } from "node:fs";
++import { fileURLToPath } from "node:url";
++
++function withWindow<T>(opts: { server?: any; storage?: any }, fn: () => T): T {
++  const g = globalThis as any;
++  const prevWindow = g.window;
++  const prevLocalStorage = g.localStorage;
++  g.window = { __MERIDIAN__: opts.server, localStorage: opts.storage ?? { getItem: () => null } };
++  g.localStorage = g.window.localStorage;
++  try { return fn(); } finally { g.window = prevWindow; g.localStorage = prevLocalStorage; }
++}
++
++test("authenticated render uses server blob, never localStorage", () => {
++  withWindow({
++    server: { flags: { "tenant.switch.v2": "on" }, version: "9" },
++    storage: { getItem: () => JSON.stringify({ flags: { "tenant.switch.v2": "off" }, version: "stale" }) },
++  }, () => {
++    assert.equal(flagEnabled("tenant.switch.v2"), true);
++    assert.equal(getBootstrap().version, "9");
++  });
++});
++
++test("authenticated sessions never consult localStorage, even for absent flags", () => {
++  let reads = 0;
++  withWindow({
++    server: { flags: {}, version: "9" },
++    storage: { getItem: () => { reads++; return JSON.stringify({ flags: { "audit.stream.v2": "on" }, version: "stale" }); } },
++  }, () => {
++    assert.equal(flagEnabled("audit.stream.v2"), false, "stale local flag leaked into an authenticated session");
++  });
++  assert.equal(reads, 0, "authenticated sessions must not consult localStorage");
++});
++
++test("server blob is authoritative even when empty", () => {
++  withWindow({ server: { flags: { "audit.stream.v2": "off" }, version: "9" }, storage: { getItem: () => JSON.stringify({ flags: { "audit.stream.v2": "on" }, version: "stale" }) } }, () => {
++    assert.equal(getBootstrap().version, "9");
++    assert.equal(flagEnabled("audit.stream.v2"), false);
++  });
++});
++
++test("logged-out visitors still fall back to localStorage", () => {
++  withWindow({ storage: { getItem: () => JSON.stringify({ flags: { "audit.stream.v2": "on" }, version: "cached" }) } }, () => {
++    assert.equal(flagEnabled("audit.stream.v2"), true);
++    assert.equal(getBootstrap().version, "cached");
++  });
++});
++
++test("no server blob and no cache yields empty bootstrap", () => {
++  withWindow({}, () => {
++    assert.deepEqual(getBootstrap(), { flags: {}, version: "0" });
++  });
++});
++
++test("app shell gates tenant policy on the server bootstrap, not post-mount state", () => {
++  const src = readFileSync(fileURLToPath(new URL("../pages/_app.tsx", import.meta.url)), "utf8");
++  assert.doesNotMatch(src, /useEffect\([\s\S]*setPolicyReady\(true\)/, "policy gate must not wait for a post-mount effect");
++  assert.doesNotMatch(src, /policyReady/);
++});
+diff --git a/web/pages/_app.tsx b/web/pages/_app.tsx
+index e100260..6f6cd1f 100644
+--- a/web/pages/_app.tsx
++++ b/web/pages/_app.tsx
+@@ -1,6 +1,14 @@
+-/** App shell: providers only. */
++/** App shell: providers and tenant policy gate.
++ *
++ * Policy comes from the server bootstrap blob (window.__MERIDIAN__) so the
++ * first client render matches SSR. Deferring the gate to a post-mount
++ * effect made authenticated users see a feature-enabled screen that
++ * flipped once tenant policy resolved (MER-124).
++ */
+ import type { AppProps } from "next/app";
++import { flagEnabled } from "../lib/bootstrap";
+ 
+ export default function App({ Component, pageProps }: AppProps) {
+-  return <Component {...pageProps} />;
++  const newBilling = flagEnabled("new.invoice.pipeline");
++  return <Component {...pageProps} newBilling={newBilling} />;
+ }

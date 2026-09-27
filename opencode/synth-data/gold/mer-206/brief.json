@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-206",
+  "jira": "MER-206",
+  "pr": 33,
+  "repository": "meridian-erp",
+  "repo_revision": "3ac96f41c0 (task branch tip)",
+  "title": "Concurrent payment retries can charge the same attempt twice",
+  "summary": "MER-206 raised in #incidents, shipped in PR #33",
+  "start_ts_utc": "2027-02-10T13:48:00Z",
+  "end_ts_utc": "2027-02-12T20:18:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Priya Sharma",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@marcus A gateway timeout triggers overlapping retry workers and the ledger records two charges for a single payment attempt. Opening MER-206 to track it. took first pass at this, thoughts below.",
+      "ack. looking now. filing evidence on the ticket (client-report).",
+      "fyi client-report is attached to MER-206 if you want the raw capture.",
+      "the coffee machine is fixed (somehow)",
+      "standup in 5, billing standup moved to 10:30",
+      "the coffee machine is fixed (somehow)",
+      "spec-first per team rule — tests for MER-206 are red on main now, pushing as I go.",
+      "grepped the whole repo and the constraint isn't where I'd expect",
+      "PR #33 is up: `feature/MER-206-idempotency`. review when you can.",
+      "reviewed #33 — left two comments, nothing structural.",
+      "addressed both, pushing.",
+      "deploy is green, MER-206 is ready to close."
+    ],
+    "ticket": "A gateway timeout triggers overlapping retry workers and the ledger records two charges for a single payment attempt.\n\nTribal constraint: Idempotency keys are per attempt because the ledger reconciler groups on that value; retries within an attempt must reuse it, while a new attempt advances the attempt sequence.",
+    "documents": [
+      "e06-client-report.pdf",
+      "e06-payment-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 13,
+    "jira_events": 14,
+    "commits": 1,
+    "patch_bytes": 3158,
+    "documents": 2
+  }
+}

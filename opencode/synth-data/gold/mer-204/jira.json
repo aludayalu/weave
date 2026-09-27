@@ -1,0 +1,81 @@
+{
+  "task_id": "mer-204",
+  "issue": {
+    "issue_key": "MER-204",
+    "summary": "Payroll labels no longer line up with exported pay columns",
+    "description": "A new payroll component shifts labels for downstream columns in the CSV preview and finance's workbook.\n\nTribal constraint: The Go column registry and TypeScript positional array are mirrors; the payroll schema version and explicit order check are the cross-language contract.",
+    "status": "Done",
+    "reporter": "Dan Levin",
+    "assignee": "Dan Levin",
+    "created_utc": "2027-01-27T13:48:00Z",
+    "updated_utc": "2027-01-29T20:18:00Z",
+    "attachments": [
+      {
+        "attachment_id": "21031",
+        "filename": "e04-finance-report.pdf",
+        "path": "raw/attachments/jira/reports/e04-finance-report.pdf",
+        "bytes": 71496,
+        "content_type": "application/pdf",
+        "created_utc": "2027-01-27T14:28:00Z"
+      }
+    ]
+  },
+  "changelog_events": [
+    {
+      "issue_key": "MER-204",
+      "ts_utc": "2027-01-27T13:48:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "To Do",
+      "to_value": "In Progress"
+    },
+    {
+      "issue_key": "MER-204",
+      "ts_utc": "2027-01-27T13:48:00Z",
+      "author": "Dan Levin",
+      "field": "assignee",
+      "from_value": null,
+      "to_value": "Dan Levin"
+    },
+    {
+      "issue_key": "MER-204",
+      "ts_utc": "2027-01-28T15:28:00Z",
+      "author": "Dan Levin",
+      "field": "labels",
+      "from_value": null,
+      "to_value": "spec-first"
+    },
+    {
+      "issue_key": "MER-204",
+      "ts_utc": "2027-01-28T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "status",
+      "from_value": "In Progress",
+      "to_value": "In Review"
+    },
+    {
+      "issue_key": "MER-204",
+      "ts_utc": "2027-01-28T21:58:00Z",
+      "author": "Priya Sharma",
+      "field": "Link",
+      "from_value": null,
+      "to_value": "PR #31"
+    },
+    {
+      "issue_key": "MER-204",
+      "ts_utc": "2027-01-29T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "status",
+      "from_value": "In Review",
+      "to_value": "Done"
+    },
+    {
+      "issue_key": "MER-204",
+      "ts_utc": "2027-01-29T20:18:00Z",
+      "author": "Dan Levin",
+      "field": "resolution",
+      "from_value": null,
+      "to_value": "Fixed"
+    }
+  ]
+}

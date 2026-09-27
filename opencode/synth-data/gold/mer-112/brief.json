@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-112",
+  "jira": "MER-112",
+  "pr": 15,
+  "repository": "meridian-erp",
+  "repo_revision": "a6a4c7af0a (task branch tip)",
+  "title": "Fresh environments start before schema migrations",
+  "summary": "MER-112 raised in #deploys, shipped in PR #15",
+  "start_ts_utc": "2026-09-30T13:18:00Z",
+  "end_ts_utc": "2026-10-02T19:48:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Marcus Lee",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@priya A new staging region boots the service successfully, then fails the first invoice write because the required tables are absent. Opening MER-112 to track it. took first pass at this, thoughts below.",
+      "ack. looking now. filing evidence on the ticket (staging-incident).",
+      "fyi staging-incident is attached to MER-112 if you want the raw capture.",
+      "rotating the read replica creds tonight, no action needed",
+      "garbage from the export",
+      "standup in 5, billing standup moved to 10:30",
+      "spec-first per team rule — tests for MER-112 are red on main now, pushing as I go.",
+      "ok\n\n-- \nsent from phone",
+      "checked the pinned messages in this channel, the convention explains it",
+      "PR #15 is up: `feature/MER-112-fresh-bootstrap`. review when you can.",
+      "reviewed #15 — left two comments, nothing structural.",
+      "addressed both, pushing."
+    ],
+    "ticket": "A new staging region boots the service successfully, then fails the first invoice write because the required tables are absent.\n\nTribal constraint: make run generates code but does not apply migrations; onboarding expects a distinct migration prerequisite and migration ordering is filename-based.",
+    "documents": [
+      "t11-staging-incident.pdf",
+      "t11-startup-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 14,
+    "jira_events": 7,
+    "commits": 3,
+    "patch_bytes": 2287,
+    "documents": 2
+  }
+}

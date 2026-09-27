@@ -1,0 +1,44 @@
+{
+  "task_id": "mer-203",
+  "jira": "MER-203",
+  "pr": 30,
+  "repository": "meridian-erp",
+  "repo_revision": "f8c30ef050 (task branch tip)",
+  "title": "Legacy event stream rejects valid signed-in browser sessions",
+  "summary": "MER-203 raised in #incidents, shipped in PR #30",
+  "start_ts_utc": "2027-01-20T13:48:00Z",
+  "end_ts_utc": "2027-01-22T20:18:00Z",
+  "duration_minutes": 3270,
+  "participants": [
+    "Priya Sharma",
+    "Sofia Almeida"
+  ],
+  "tribal_evidence": {
+    "discussion": [
+      "@marcus The old pages server's event stream drops authenticated users because EventSource cannot attach the standard authorization header. Opening MER-203 to track it. picking this up now.",
+      "ack. looking now. filing evidence on the ticket (support-report).",
+      "fyi support-report is attached to MER-203 if you want the raw capture.",
+      "reminder: freeze starts friday for the payments repo",
+      "rotating the read replica creds tonight, no action needed",
+      "```\n{\"partial\": tru",
+      "```\n{\"partial\": tru",
+      "checked the pinned messages in this channel, the convention explains it",
+      "cross-team contract involved here, so I opened a ticket before touching anything",
+      "PR #30 is up: `feature/MER-203-sse-auth`. review when you can.",
+      "addressed both, pushing.",
+      "deploy is green, MER-203 is ready to close."
+    ],
+    "ticket": "The old pages server's event stream drops authenticated users because EventSource cannot attach the standard authorization header.\n\nTribal constraint: Only the legacy SSE endpoint permits a short-lived query token; the app-router handler must continue requiring the normal session cookie.",
+    "documents": [
+      "e03-support-report.pdf",
+      "e03-sse-log.log"
+    ]
+  },
+  "coverage": {
+    "discord_messages": 13,
+    "jira_events": 7,
+    "commits": 1,
+    "patch_bytes": 2060,
+    "documents": 2
+  }
+}
