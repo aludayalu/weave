@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>weave — technical pipeline</title>
+<style>
+  :root {
+    --bg:#080907; --panel:#111310; --panel2:#171a13; --panel3:#1d2118;
+    --line:#252820; --line2:#343829;
+    --ink:#ecebe4; --muted:#9a988d; --dim:#6a685e;
+    --accent:#b6c34a; --accent2:#7d8a34;
+    --ok:#8bbf5a; --bad:#d9705a; --wire:#4a5138;
+    --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Inter, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+    --s: 1;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:var(--bg); color:var(--ink); font-family:var(--font);
+         -webkit-font-smoothing:antialiased; padding:40px 44px 60px; }
+  .wrap { max-width:1680px; margin-inline:auto; }
+
+  h1 { font-size:calc(40px * var(--s)); letter-spacing:-.03em; font-weight:600; }
+  .sub { color:var(--muted); font-size:calc(17px * var(--s)); margin-top:8px; max-width:90ch; line-height:1.5; }
+
+  .legend { display:flex; gap:22px; flex-wrap:wrap; margin:22px 0 30px;
+            font-size:calc(13px * var(--s)); color:var(--dim); }
+  .legend b { color:var(--muted); font-weight:500; }
+  .legend i { display:inline-block; width:10px; height:10px; border-radius:3px;
+              margin-right:7px; vertical-align:middle; }
+  .sw-store { background:var(--accent); }
+  .sw-transform { background:#4d7fb8; }
+  .sw-model { background:#7d8a34; }
+  .sw-verify { background:var(--ok); }
+  .sw-gate { background:var(--bad); }
+
+  /* the spine: five stages, left to right, each a column of nodes */
+  .spine { display:grid; grid-template-columns:repeat(5, 1fr); gap:0; align-items:stretch; }
+  .stage { display:flex; flex-direction:column; gap:14px; padding:0 16px;
+           border-left:1px dashed var(--wire); }
+  .stage:first-child { border-left:none; padding-left:0; }
+  .stage:last-child { padding-right:0; }
+
+  .stage-head { margin-bottom:2px; }
+  .stage-head .num { font-family:var(--mono); font-size:calc(12px * var(--s));
+                     letter-spacing:.16em; color:var(--accent); }
+  .stage-head h2 { font-size:calc(23px * var(--s)); letter-spacing:-.02em;
+                   font-weight:600; margin-top:4px; }
+  .stage-head p { font-size:calc(13.5px * var(--s)); color:var(--dim);
+                  margin-top:6px; line-height:1.45; }
+
+  .node { background:var(--panel); border:1px solid var(--line);
+          border-radius:12px; padding:14px 16px; }
+  .node.tall { padding:18px; }
+  .node .t { font-family:var(--mono); font-size:calc(11px * var(--s));
+             letter-spacing:.13em; text-transform:uppercase; color:var(--dim);
+             margin-bottom:8px; }
+  .node h3 { font-size:calc(16px * var(--s)); font-weight:600; letter-spacing:-.01em; }
+  .node p { font-size:calc(13px * var(--s)); color:var(--muted); margin-top:6px; line-height:1.45; }
+  .node ul { list-style:none; margin-top:9px; display:flex; flex-direction:column; gap:5px; }
+  .node li { font-size:calc(12.5px * var(--s)); color:var(--muted);
+             font-family:var(--mono); padding-left:13px; position:relative; }
+  .node li::before { content:"·"; position:absolute; left:2px; color:var(--accent2); }
+
+  .node.store { border-color:var(--accent2); background:var(--panel2); }
+  .node.verify { border-color:rgba(139,191,90,.45); background:rgba(139,191,90,.05); }
+  .node.gate { border-color:rgba(217,112,90,.5); background:rgba(217,112,90,.06); }
+  .node.model { border-color:#3f5f80; background:#121a24; }
+  .node .flag { display:inline-block; font-family:var(--mono); font-size:calc(10.5px * var(--s));
+                letter-spacing:.1em; text-transform:uppercase; padding:3px 8px;
+                border-radius:100px; margin-bottom:9px; }
+  .node.next { border-style:dashed; border-color:var(--line2); }
+  .node.next h3 { color:var(--muted); }
+  .flag.proven { color:var(--ok); border:1px solid rgba(139,191,90,.4); }
+  .flag.next   { color:var(--accent); border:1px solid var(--accent2); }
+
+  .counts { display:flex; gap:14px; margin-top:10px; }
+  .counts div { font-family:var(--mono); }
+  .counts .v { font-size:calc(19px * var(--s)); font-weight:600; color:var(--accent); }
+  .counts .k { font-size:calc(10px * var(--s)); color:var(--dim);
+               text-transform:uppercase; letter-spacing:.1em; }
+
+  .flow { display:flex; align-items:center; justify-content:center; color:var(--wire);
+          font-size:calc(18px * var(--s)); }
+
+  /* technology strip */
+  .tech { margin-top:34px; border-top:1px solid var(--line); padding-top:26px; }
+  .tech h2 { font-size:calc(19px * var(--s)); letter-spacing:-.02em; margin-bottom:16px; }
+  .tech-grid { display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; }
+  .tech-card { background:var(--panel); border:1px solid var(--line);
+               border-radius:12px; padding:15px 17px; }
+  .tech-card .k { font-size:calc(14.5px * var(--s)); font-weight:600; }
+  .tech-card .why { font-size:calc(12.5px * var(--s)); color:var(--muted); margin-top:6px; line-height:1.45; }
+  .tech-card .used { font-family:var(--mono); font-size:calc(10.5px * var(--s));
+                     color:var(--accent2); margin-top:8px; letter-spacing:.06em; }
+
+  /* evidence slots for their notebook screenshots */
+  .evidence { margin-top:30px; border-top:1px solid var(--line); padding-top:26px; }
+  .evidence h2 { font-size:calc(19px * var(--s)); letter-spacing:-.02em; margin-bottom:6px; }
+  .evidence > p { font-size:calc(13px * var(--s)); color:var(--dim); margin-bottom:16px; }
+  .shots { display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; }
+  .shot { border:1px dashed var(--line2); border-radius:12px; background:var(--panel);
+          aspect-ratio:16/10; display:grid; place-items:center; text-align:center;
+          padding:16px; color:var(--dim); font-size:calc(12.5px * var(--s)); }
+  .shot b { display:block; color:var(--muted); font-size:calc(13.5px * var(--s));
+            font-weight:600; margin-bottom:5px; }
+  .shot img { max-width:100%; max-height:100%; object-fit:contain; border-radius:8px; }
+  .shot.placed { border-style:solid; padding:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>The pipeline, end to end</h1>
+  <p class="sub">One path from a git repository and a chat export to a fine tuned model served
+     behind our own harness. Solid borders are proven against the live workspace and every
+     row count on this page was read back from the database. Dashed borders are written,
+     debugged and not yet run &mdash; the two LoRA trainers have never completed a step, and
+     nothing has been deployed to a customer.</p>
+
+  <div class="legend">
+    <span><i class="sw-store"></i><b>storage</b> &mdash; Databricks Lakebase, Postgres</span>
+    <span><i class="sw-transform"></i><b>transform</b> &mdash; static code, reproducible</span>
+    <span><i class="sw-verify"></i><b>verification</b> &mdash; checked, not trusted</span>
+    <span><i class="sw-gate"></i><b>gate</b> &mdash; can reject the model</span>
+  </div>
+
+  <div class="spine">
+
+    <!-- ============================================ 1. LAND -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="num">STAGE 01</div>
+        <h2>Land</h2>
+        <p>Everything in, nothing dropped. The only stage where volume is the goal.</p>
+      </div>
+      <div class="node store tall">
+        <div class="t">lakebase &middot; schema bronze <span class="flag proven">verified</span></div>
+        <h3>Raw history</h3>
+        <ul>
+          <li>github_commit</li>
+          <li>github_pull_request</li>
+          <li>github_event</li>
+          <li>jira_issue</li>
+          <li>jira_changelog_history</li>
+          <li>discord_message</li>
+          <li>discord_channel</li>
+          <li>document</li>
+        </ul>
+        <div class="counts">
+          <div><div class="v">458</div><div class="k">messages</div></div>
+          <div><div class="v">129</div><div class="k">commits</div></div>
+          <div><div class="v">143</div><div class="k">changelog</div></div>
+        </div>
+      </div>
+      <div class="node">
+        <div class="t">inbound <span class="flag proven">verified</span></div>
+        <h3>Two connectors</h3>
+        <p>GitHub REST for history. A Discord bot archives channels to JSON on demand, with
+           attachments on disk. Both land in the same shape.</p>
+      </div>
+    </div>
+
+    <div class="flow">›</div>
+
+    <!-- ============================================ 2. CLEAN -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="num">STAGE 02</div>
+        <h2>Clean and link</h2>
+        <p>Entities resolved across systems so a commit can be tied to a ticket and a
+           message.</p>
+      </div>
+      <div class="node store tall">
+        <div class="t">lakebase &middot; schema silver <span class="flag proven">verified</span></div>
+        <h3>One timeline</h3>
+        <ul>
+          <li>discord_message &nbsp;435</li>
+          <li>jira_changelog_event &nbsp;226</li>
+          <li>github_commit &nbsp;128</li>
+          <li>github_pull_request &nbsp;35</li>
+          <li>jira_issue &nbsp;33</li>
+          <li>document &nbsp;65</li>
+          <li>entity_link &nbsp;64</li>
+          <li>quarantine &nbsp;37</li>
+        </ul>
+        <p style="margin-top:10px">Rows that fail a rule go to <b>quarantine</b> rather than
+           being deleted, so the cleaning is auditable.</p>
+      </div>
+      <div class="node">
+        <div class="t">entity_link <span class="flag proven">verified</span></div>
+        <h3>Cross-system identity</h3>
+        <p>Commit SHA &rarr; ticket key &rarr; Discord thread. This is the join that makes a
+           time window meaningful later.</p>
+      </div>
+    </div>
+
+    <div class="flow">›</div>
+
+    <!-- ============================================ 3. WINDOWS -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="num">STAGE 03</div>
+        <h2>Find the tasks</h2>
+        <p>The hard one. Nobody ever labelled when work happened.</p>
+      </div>
+      <div class="node model tall">
+        <div class="t">ai gateway &middot; responses api <span class="flag proven">verified</span></div>
+        <h3>Model proposes windows</h3>
+        <p>A 30k token digest of tickets, chat and commits goes to
+           <span class="used" style="color:var(--accent2)">system.ai.qwen35-122b-a10b</span>
+           on the Unity Gateway, which returns start and end timestamps per task.</p>
+        <p style="margin-top:9px"><b>reasoning effort: none.</b> At low, medium or high this
+           model spends the entire output budget thinking and returns an empty answer.
+           Measured: 236 of 256 tokens spent reasoning on a one line json reply.</p>
+      </div>
+      <div class="node verify tall">
+        <div class="t">static verification <span class="flag proven">verified</span></div>
+        <h3>Checked against the record</h3>
+        <p>Every proposed boundary is validated against the rows it claims to cover. A window
+           that cites evidence which does not exist is dropped.</p>
+        <div class="counts">
+          <div><div class="v">32</div><div class="k">kept</div></div>
+          <div><div class="v">0</div><div class="k">dropped</div></div>
+        </div>
+      </div>
+      <div class="node gate tall">
+        <div class="t">the gate <span class="flag proven">verified</span></div>
+        <h3>Scored against a baseline</h3>
+        <p>A deterministic rule set proposes its own windows. If the model does not beat it,
+           <b>the baseline wins and the notebook says so</b>. The model has to earn its place.</p>
+      </div>
+    </div>
+
+    <div class="flow">›</div>
+
+    <!-- ============================================ 4. SLICE -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="num">STAGE 04</div>
+        <h2>Slice</h2>
+        <p>Pure static code. Re-running it produces the same bytes.</p>
+      </div>
+      <div class="node store tall">
+        <div class="t">lakebase &middot; schema gold <span class="flag proven">verified</span></div>
+        <h3>task_window / task_chunk</h3>
+        <p>One header row per task window, plus every silver record sliced into it. The model
+           never writes here &mdash; it proposes, the code decides.</p>
+        <div class="counts" style="margin-top:12px">
+          <div><div class="v">32</div><div class="k">windows</div></div>
+          <div><div class="v">810</div><div class="k">chunks</div></div>
+        </div>
+        <ul style="margin-top:12px">
+          <li>discord_message 433</li>
+          <li>jira_changelog_event 224</li>
+          <li>github_commit 87</li>
+          <li>github_pull_request 34</li>
+          <li>jira_issue 32</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flow">›</div>
+
+    <!-- ============================================ 5. REPLAY + TRAIN -->
+    <div class="stage">
+      <div class="stage-head">
+        <div class="num">STAGE 05</div>
+        <h2>Replay, then train</h2>
+        <p>The trajectory is the product, not the answer at the end of it.</p>
+      </div>
+      <div class="node model tall">
+        <div class="t">agent replay &middot; schema platinum <span class="flag proven">verified</span></div>
+        <h3>Redo the task, capture everything</h3>
+        <p>Each window is materialised as a sandbox: ticket, chat, events, commits, and stubs
+           for the touched files. An agent works it with the same ten tools our harness ships.</p>
+        <div class="counts" style="margin-top:10px">
+          <div><div class="v">1,167</div><div class="k">tool calls</div></div>
+          <div><div class="v">32</div><div class="k">trajectories</div></div>
+        </div>
+        <p style="margin-top:9px">Every turn, tool name, argument, result and pass/fail is
+           stored in order. Run concurrently, written as each completes.</p>
+      </div>
+      <div class="node verify tall">
+        <div class="t">dataset validation <span class="flag proven">verified</span></div>
+        <h3>Refuse to ship a broken set</h3>
+        <p>18 conversations, 131k tokens. Checked for: every tool call answered, no orphaned
+           results, no conversation ending on a tool message, no window in both splits, no
+           unknown tool name.</p>
+        <p style="margin-top:9px;color:var(--dim)">This caught 696 orphan results from a
+           single wrong key name before a training job ever saw them.</p>
+      </div>
+      <div class="node next tall">
+        <div class="t">training <span class="flag next">never run</span></div>
+        <h3>LoRA, assistant turns only</h3>
+        <p>Tool results are masked out. Training on them teaches the model to invent its own
+           tool output.</p>
+        <ul>
+          <li>databricks gpu job &middot; qwen3-8b</li>
+          <li>local mac path &middot; unsloth on mlx</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ==================================================== tech strip -->
+  <div class="tech">
+    <h2>Technology choices, and why each one</h2>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="k">Databricks Lakebase</div>
+        <div class="why">Postgres, not a warehouse. The pipeline needs transactional writes
+          from a long lived agent replay, and a real relational store for entity linking and
+          time range slicing. Portgres and a vector store would both be the wrong shape.</div>
+        <div class="used">4 schemas &middot; 11 tables</div>
+      </div>
+      <div class="tech-card">
+        <div class="k">Unity Gateway</div>
+        <div class="why">A 122B model hosted in the same workspace as the data, so the
+          detector never moves company data out. Priced at nothing, which is what makes
+          re-running the whole window detection affordable.</div>
+        <div class="used">system.ai.qwen35-122b-a10b</div>
+      </div>
+      <div class="tech-card">
+        <div class="k">Responses API, not chat completions</div>
+        <div class="why">The gateway's typed client silently drops
+          <span class="used" style="display:inline">reasoning_content</span> and its
+          serializer throws on an OpenAI shaped reply. Calling the route directly keeps the
+          reasoning we need to audit a decision.</div>
+        <div class="used">/ai-gateway/mlflow/v1/responses</div>
+      </div>
+      <div class="tech-card">
+        <div class="k">Our own harness as the runtime</div>
+        <div class="why">The trajectories are generated by the same ten tools the customer
+          runs. That is the moat: the model is fitted to a harness we own and can put on
+          every desktop, not to a generic tool calling format.</div>
+        <div class="used">10 tools &middot; Electron + Next</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================================================== evidence -->
+  <div class="evidence">
+    <h2>Evidence</h2>
+    <p>Drop notebook screenshots into <span class="used" style="color:var(--accent2)">deck/evidence/</span>
+       and name them evidence-1.png onward. They appear here in order.</p>
+    <div class="shots" id="shots">
+      <div class="shot"><span><b>01 &middot; Stage 03</b>32 windows proposed and verified against the record</span></div>
+      <div class="shot"><span><b>02 &middot; Stage 04</b>810 chunk rows sliced, gold schema created</span></div>
+      <div class="shot"><span><b>03 &middot; Stage 05</b>Agent replay, tool calls captured in order</span></div>
+      <div class="shot"><span><b>04 &middot; Validation</b>Dataset checks passing before training</span></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  // fill the evidence slots from deck/evidence/evidence-N.png when present
+  const dir = "evidence/";
+  let n = 1;
+  const fill = async () => {
+    while (n <= 4) {
+      const slot = document.querySelectorAll(".shot")[n - 1];
+      if (!slot) return;
+      try {
+        const response = await fetch(`${dir}evidence-${n}.png`, { method: "HEAD" });
+        if (!response.ok) return;
+        const img = new Image();
+        img.src = `${dir}evidence-${n}.png`;
+        img.onload = () => { slot.innerHTML = ""; slot.classList.add("placed"); slot.appendChild(img); };
+        img.onerror = () => {};
+        n++;
+      } catch { return; }
+    }
+  };
+  fill();
+</script>
+</body>
+</html>

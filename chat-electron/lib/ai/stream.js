@@ -1,4 +1,5 @@
 import { OpenRouter } from '@openrouter/sdk';
+import { usingWeave, weaveRequest, weaveStream } from './weave';
 import { SYSTEM_PROMPT } from './prompts';
 import { tools, processTools } from './tools';
 import { desktopContext } from './environment';
@@ -16,28 +17,32 @@ const PROVIDERS = ["baseten/fp8", "cohere"]
 async function generate_once(
     client, messages, chat_id,
     onOutputChunk = () => {}, onThinkingOutputChunk = () => {},
-    continue_ref
+    continue_ref, viaWeave = false
 ) {
 
     const toolCallBuffers = {}
 
-    const stream = await client.chat.send({
-        chatRequest: {
-            model: MODEL,
-            messages,
-            tools,
-            provider: {
-                order: PROVIDERS,
-                allow_fallbacks: true,
-                sort: "latency"
-            },
-            reasoning: {
-                "effort": "max",
-                "enabled": true,
-            },
-            stream: true,
-        }
-    }, { headers: {"X-Session-ID": String(chat_id)} });
+    const reasoning = {
+        "effort": "max",
+        "enabled": true,
+    }
+
+    const stream = viaWeave
+        ? weaveStream(weaveRequest({ model: MODEL, messages, tools, reasoning }))
+        : client.chat.send({
+            chatRequest: {
+                model: MODEL,
+                messages,
+                tools,
+                provider: {
+                    order: PROVIDERS,
+                    allow_fallbacks: true,
+                    sort: "latency"
+                },
+                reasoning,
+                stream: true,
+            }
+        }, { headers: {"X-Session-ID": String(chat_id)} });
 
     for await (const chunk of stream) {
         if (!continue_ref.current) {
@@ -83,7 +88,13 @@ async function generate_once(
 
 export async function generate_stream(user_given_messages, chat_id, continue_ref, onStartStream, onEndStream, onOutputChunk, onOutputThinkingChunk, onTools, onProcessedTools) {
     user_given_messages = await extract_indexed_db_items(user_given_messages)
-    var client = new OpenRouter({ apiKey: JSON.parse(localStorage.getItem("api_keys")).openrouter })
+    // the SDK is hardwired to openrouter.ai, so when the harness is pointed at a
+    // weave server the request is made there instead. Both carry the same shapes,
+    // which is why nothing below this line has to know the difference.
+    var viaWeave = usingWeave()
+    var client = viaWeave
+        ? null
+        : new OpenRouter({ apiKey: JSON.parse(localStorage.getItem("api_keys")).openrouter })
     var system = SYSTEM_PROMPT + await desktopContext()
     var messages = [{ role: "system", content: system }, ...user_given_messages]
 
@@ -129,7 +140,7 @@ export async function generate_stream(user_given_messages, chat_id, continue_ref
             break
         }
 
-        const result = await generate_once(client, messages, chat_id, onLocalOutput, onLocalThinking, continue_ref)
+        const result = await generate_once(client, messages, chat_id, onLocalOutput, onLocalThinking, continue_ref, viaWeave)
 
         if (!result || result.aborted || !continue_ref.current) {
             await onEndStream()

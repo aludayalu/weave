@@ -13,7 +13,8 @@ import pathlib
 import re
 
 HERE = pathlib.Path(__file__).resolve().parent
-SOURCES = ["00_recon.py", "01_three_dumps_to_lakebase.py", "02_silver_clean.py"]
+SOURCES = ["00_recon.py", "01_three_dumps_to_lakebase.py", "02_silver_clean.py",
+             "03_silver_to_gold.py"]
 
 
 def strip_comment(text):

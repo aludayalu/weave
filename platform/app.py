@@ -31,7 +31,8 @@ import uuid
 from pathlib import Path
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
-from fastapi.responses import FileResponse, JSONResponse, PlainTextResponse, RedirectResponse
+from fastapi.responses import (FileResponse, JSONResponse, PlainTextResponse,
+                              RedirectResponse, StreamingResponse)
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
@@ -60,6 +61,27 @@ PROXY_TOKEN = os.environ.get("WEAVE_PROXY_TOKEN", "").strip()
 OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY", "").strip()
 PROXY_MODEL = os.environ.get("WEAVE_PROXY_MODEL", "stealth/space-bunny-alpha")
+
+# Proxy calls arrive with the shared secret and no account behind them, so they
+# are attributed to one service account. Without this they bypass
+# inference_log entirely and the usage panel silently shows nothing, which is
+# worse than not having the panel at all.
+PROXY_ACCOUNT_EMAIL = os.environ.get(
+    "WEAVE_PROXY_ACCOUNT", "shared@weave.local")
+PROXY_ACCOUNT_NAME = "shared key"
+
+
+def proxy_account() -> dict:
+    """The account shared key traffic is billed and logged against."""
+    email = PROXY_ACCOUNT_EMAIL
+    existing = store.get_user(email)
+    if existing:
+        return existing
+    # created with an unusable random password: this account is never signed
+    # into through the web, only used as a label on proxied requests
+    user = store.create_user(email, secrets.token_urlsafe(32), PROXY_ACCOUNT_NAME)
+    store.credit(user["id"], 0.0, "grant", "shared key account")
+    return user
 SESSION_COOKIE = "weave_session"
 FREE_STARTING_CREDITS = 25.0
 
@@ -135,6 +157,94 @@ def is_proxy_token(authorization: str) -> bool:
     if not PROXY_TOKEN:
         return False
     return secrets.compare_digest(bearer(authorization), PROXY_TOKEN)
+
+
+def _tools_of(body) -> list | None:
+    """Tool schemas the caller sent, if any."""
+    return getattr(body, "tools", None)
+
+
+def usage_from(frames: list[bytes]) -> tuple[int, int]:
+    """Pull the usage frame out of the bytes that were just streamed.
+
+    OpenRouter sends usage on a final chunk when include_usage is set, so the
+    last data frame that carries a usage object wins. Frames may arrive split
+    across reads, so they are joined before parsing.
+    """
+    prompt = completion = 0
+    blob = b"".join(frames).decode("utf-8", "replace")
+    for line in blob.splitlines():
+        if not line.startswith("data:"):
+            continue
+        payload = line[5:].strip()
+        if not payload or payload == "[DONE]":
+            continue
+        try:
+            frame = json.loads(payload)
+        except ValueError:
+            continue
+        usage = frame.get("usage") or {}
+        if usage:
+            prompt = int(usage.get("prompt_tokens") or prompt)
+            completion = int(usage.get("completion_tokens") or completion)
+    return prompt, completion
+
+
+def log_proxy(owner: dict, model: str, started: float, prompt: int,
+              completion: int) -> None:
+    try:
+        store.insert("inference_log", {
+            "id": store.new_id("inf"), "user_id": owner["id"], "model_id": None,
+            "key_id": None, "at": store.now(), "prompt_tokens": prompt,
+            "completion_tokens": completion,
+            "credits": float(prompt + completion) / 100000.0,
+            "status": "ok", "latency_ms": int((time.time() - started) * 1000),
+            "detail": store.jdump({"via": "proxy", "model": model,
+                                   "upstream": "openrouter", "streamed": True}),
+        })
+    except Exception as error:                          # noqa: BLE001
+        print(f"note: could not log a proxied call: {type(error).__name__}: {error}")
+
+
+def openrouter_body(messages, model, max_tokens, temperature, tools=None,
+                    stream=False, reasoning=None) -> dict:
+    body: dict = {"model": model or PROXY_MODEL, "max_tokens": max_tokens,
+                  "messages": messages}
+    if temperature is not None:
+        body["temperature"] = temperature
+    if tools:
+        body["tools"] = tools
+    if reasoning:
+        body["reasoning"] = reasoning
+    if stream:
+        body["stream"] = True
+        # without this a streamed reply carries no usage at all, so the request
+        # panel would show a call with zero tokens
+        body["stream_options"] = {"include_usage": True}
+    return body
+
+
+def stream_openrouter(body: dict, timeout: int = 300):
+    """Open a streamed upstream reply and hand back the raw response.
+
+    Returns the urllib response so the caller can pass the body through as it
+    arrives, rather than buffering a whole completion to find out it was 4KB of
+    data: lines.
+    """
+    if not OPENROUTER_KEY:
+        raise HTTPException(503, "this proxy has no OpenRouter key configured")
+    request = urllib.request.Request(
+        OPENROUTER_URL, data=json.dumps(body).encode(),
+        headers={"Content-Type": "application/json",
+                 "Authorization": f"Bearer {OPENROUTER_KEY}",
+                 "X-Title": "weave"})
+    try:
+        return urllib.request.urlopen(request, timeout=timeout)
+    except urllib.error.HTTPError as error:
+        detail = error.read().decode()[:400]
+        raise HTTPException(502, f"openrouter returned {error.code}: {detail}")
+    except urllib.error.URLError as error:
+        raise HTTPException(502, f"could not reach openrouter: {error}")
 
 
 def call_openrouter(messages: list[dict], model: str, max_tokens: int,
@@ -422,6 +532,11 @@ class ChatRequest(BaseModel):
     max_tokens: int | None = None
     temperature: float | None = None
     stream: bool = False
+    # passed through untouched, because the harness sends the same tool schemas
+    # the trajectories were generated with and rewriting them here would make
+    # the served model disagree with the one it was trained against
+    tools: list[dict] | None = None
+    reasoning: dict | None = None
 
 
 @app.post("/v1/chat/completions")
@@ -438,11 +553,68 @@ def chat_completions(body: ChatRequest, request: Request,
         raise HTTPException(400, "messages is empty")
 
     if user is None:
-        # the shared secret, so forward upstream and hand the reply back as it
-        # came, which keeps the OpenAI shape the caller already expects
-        messages = [m.model_dump() for m in body.messages]
-        return call_openrouter(messages, body.model,
-                               body.max_tokens or 4096, body.temperature)
+        # the shared secret. Logged against the shared account so the request
+        # shows up in the usage panel rather than vanishing, then forwarded
+        # upstream and handed back exactly as it came, so the caller keeps the
+        # OpenAI shape they already expect.
+        started = time.time()
+        owner = proxy_account()
+
+        if body.stream:
+            # The harness streams, so the reply has to arrive as it is produced.
+            # Buffering it to log first would defeat the point, so the upstream
+            # body is piped straight through and logged once it ends, with the
+            # usage OpenRouter sends on the final frame.
+            upstream = stream_openrouter(openrouter_body(
+                [m.model_dump() for m in body.messages], body.model,
+                body.max_tokens or 4096, body.temperature,
+                tools=body.tools, stream=True, reasoning=body.reasoning))
+
+            def pump(source):
+                # The frames are teed as they go past. A urllib response cannot
+                # be rewound, so reading it again for the usage frame returns
+                # nothing, which is why the first version logged zero tokens on
+                # every streamed call.
+                tail: list[bytes] = []
+                try:
+                    for raw in source:
+                        tail.append(raw)
+                        if len(tail) > 400:
+                            tail.pop(0)
+                        yield raw
+                finally:
+                    log_proxy(owner, body.model, started, *usage_from(tail))
+                    source.close()
+
+            return StreamingResponse(
+                pump(upstream), media_type="text/event-stream",
+                headers={"Cache-Control": "no-cache",
+                         "X-Accel-Buffering": "no"})
+
+        
+        status, detail, usage = "ok", {}, {}
+        try:
+            reply = call_openrouter([m.model_dump() for m in body.messages],
+                                    body.model, body.max_tokens or 4096,
+                                    body.temperature)
+            usage = reply.get("usage") or {}
+        except HTTPException as failure:
+            status = "error"
+            detail = {"error": str(failure.detail)[:400]}
+            raise
+        finally:
+            credits = float(usage.get("total_tokens") or 0) / 100000.0
+            store.insert("inference_log", {
+                "id": store.new_id("inf"), "user_id": owner["id"], "model_id": None,
+                "key_id": None, "at": store.now(),
+                "prompt_tokens": int(usage.get("prompt_tokens") or 0),
+                "completion_tokens": int(usage.get("completion_tokens") or 0),
+                "credits": credits, "status": status,
+                "latency_ms": int((time.time() - started) * 1000),
+                "detail": store.jdump({"via": "proxy", "model": body.model,
+                                       "upstream": "openrouter", **detail}),
+            })
+        return reply
     started = time.time()
     model_id = None
     status = "ok"
