@@ -4,8 +4,8 @@
     "name": "general",
     "type": "text"
   },
-  "exported_at": "2026-09-26T22:21:15.474354+00:00",
-  "message_count": 14,
+  "exported_at": "2026-09-27T02:12:00.647079+00:00",
+  "message_count": 38,
   "messages": [
     {
       "message_id": "1553523880294092923",
@@ -103,11 +103,11 @@
       "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553526298066952324",
       "attachments": [
         {
-          "uuid": "f3acab09-d872-4417-b76f-49f0e05896cc",
+          "uuid": "3ad93307-4c91-4461-945e-6af22dcaa65d",
           "original_filename": "nono.mp3",
           "size": 219993,
           "content_type": "audio/mpeg3",
-          "path": "backup/Heketon_1553523686949265598/files/f3acab09-d872-4417-b76f-49f0e05896cc.mp3"
+          "path": "backup/Heketon_1553523686949265598/files/3ad93307-4c91-4461-945e-6af22dcaa65d.mp3"
         }
       ]
     },
@@ -181,6 +181,294 @@
       "edited": null,
       "content": "Starting archive...",
       "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553531926239776820",
+      "attachments": []
+    },
+    {
+      "message_id": "1553531931126141030",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-26T22:21:15.608000+00:00",
+      "edited": null,
+      "content": "Archive complete! 1 channels, 14 messages.",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553531931126141030",
+      "attachments": []
+    },
+    {
+      "message_id": "1553571770777337927",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T00:59:34.121000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553571770777337927",
+      "attachments": []
+    },
+    {
+      "message_id": "1553571772278902926",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T00:59:34.479000+00:00",
+      "edited": null,
+      "content": "Archive complete! 0 channels, 0 messages.",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553571772278902926",
+      "attachments": []
+    },
+    {
+      "message_id": "1553572138513072150",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:01:01.796000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553572138513072150",
+      "attachments": []
+    },
+    {
+      "message_id": "1553572586477199532",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:02:48.599000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553572586477199532",
+      "attachments": []
+    },
+    {
+      "message_id": "1553572769474805761",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:03:32.229000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553572769474805761",
+      "attachments": []
+    },
+    {
+      "message_id": "1553572771986939989",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:03:32.828000+00:00",
+      "edited": null,
+      "content": "Archive complete! 1 channels, 20 messages.",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553572771986939989",
+      "attachments": []
+    },
+    {
+      "message_id": "1553575519495266446",
+      "author": {
+        "id": "896310945805127740",
+        "name": "aludayalu"
+      },
+      "timestamp": "2026-09-27T01:14:27.885000+00:00",
+      "edited": null,
+      "content": "hi",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553575519495266446",
+      "attachments": []
+    },
+    {
+      "message_id": "1553576131465191435",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:16:53.790000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553576131465191435",
+      "attachments": []
+    },
+    {
+      "message_id": "1553576136397561899",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:16:54.966000+00:00",
+      "edited": null,
+      "content": "Archive complete! 2 channels, 23 messages.",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553576136397561899",
+      "attachments": []
+    },
+    {
+      "message_id": "1553580859221741609",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:35:40.975000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553580859221741609",
+      "attachments": []
+    },
+    {
+      "message_id": "1553581205688164475",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:37:03.579000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553581205688164475",
+      "attachments": []
+    },
+    {
+      "message_id": "1553581322893525124",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:37:31.523000+00:00",
+      "edited": null,
+      "content": "Archive complete! 2 channels, 351 messages.",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553581322893525124",
+      "attachments": []
+    },
+    {
+      "message_id": "1553582097065582646",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:40:36.100000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553582097065582646",
+      "attachments": []
+    },
+    {
+      "message_id": "1553583080810483743",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:44:30.643000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553583080810483743",
+      "attachments": []
+    },
+    {
+      "message_id": "1553583275237441597",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:45:16.998000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553583275237441597",
+      "attachments": []
+    },
+    {
+      "message_id": "1553583307281801337",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:45:24.638000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553583307281801337",
+      "attachments": []
+    },
+    {
+      "message_id": "1553584689657282623",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T01:50:54.222000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553584689657282623",
+      "attachments": []
+    },
+    {
+      "message_id": "1553587438713045053",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T02:01:49.648000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553587438713045053",
+      "attachments": []
+    },
+    {
+      "message_id": "1553589061128683542",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T02:08:16.462000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553589061128683542",
+      "attachments": []
+    },
+    {
+      "message_id": "1553589373537091716",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T02:09:30.946000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553589373537091716",
+      "attachments": []
+    },
+    {
+      "message_id": "1553589375860871279",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T02:09:31.500000+00:00",
+      "edited": null,
+      "content": "Archive complete! 2 channels, 35 messages.",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553589375860871279",
+      "attachments": []
+    },
+    {
+      "message_id": "1553589946839990333",
+      "author": {
+        "id": "896310945805127740",
+        "name": "aludayalu"
+      },
+      "timestamp": "2026-09-27T02:11:47.632000+00:00",
+      "edited": null,
+      "content": "hi",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553589946839990333",
+      "attachments": []
+    },
+    {
+      "message_id": "1553589999725973645",
+      "author": {
+        "id": "1553523043484049621",
+        "name": "Hacks#5867"
+      },
+      "timestamp": "2026-09-27T02:12:00.241000+00:00",
+      "edited": null,
+      "content": "Starting archive...",
+      "jump_url": "https://discord.com/channels/1553523686949265598/1553523688572326001/1553589999725973645",
       "attachments": []
     }
   ]

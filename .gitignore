@@ -1,1 +1,5 @@
 dctoken.txt
+*.db*
+__pycache__/
+data_store/
+backup/
